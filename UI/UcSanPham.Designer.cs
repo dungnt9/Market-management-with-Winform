@@ -57,13 +57,13 @@
             // 
             // GcSanPham
             // 
-            this.GcSanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.GcSanPham.Location = new System.Drawing.Point(0, 315);
+            this.GcSanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.GcSanPham.Location = new System.Drawing.Point(0, 298);
             this.GcSanPham.MainView = this.gridView;
-            this.GcSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.GcSanPham.MenuManager = this.ribbonControl;
             this.GcSanPham.Name = "GcSanPham";
-            this.GcSanPham.Size = new System.Drawing.Size(933, 424);
+            this.GcSanPham.Size = new System.Drawing.Size(933, 428);
             this.GcSanPham.TabIndex = 2;
             this.GcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -89,7 +89,7 @@
             this.BbiXoa,
             this.BbiLamMoi});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.OptionsMenuMinWidth = 385;
@@ -97,7 +97,7 @@
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(933, 153);
+            this.ribbonControl.Size = new System.Drawing.Size(934, 153);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -148,11 +148,11 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 705);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 725);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(933, 33);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(934, 33);
             // 
             // CmbTenSP
             // 
@@ -261,9 +261,9 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.GcSanPham);
             this.Controls.Add(this.ribbonControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcSanPham";
-            this.Size = new System.Drawing.Size(933, 738);
+            this.Size = new System.Drawing.Size(934, 758);
             ((System.ComponentModel.ISupportInitialize)(this.GcSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();

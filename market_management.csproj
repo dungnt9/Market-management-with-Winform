@@ -62,11 +62,11 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,17 +76,29 @@
     <Compile Include="UI\UcLoaiSanPham.Designer.cs">
       <DependentUpon>UcLoaiSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UcQLNhapHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcQLNhapHang.Designer.cs">
+      <DependentUpon>UcQLNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UcSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\UcSanPham.Designer.cs">
       <DependentUpon>UcSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UcTKKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcTKKhachHang.Designer.cs">
+      <DependentUpon>UcTKKhachHang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -102,8 +114,14 @@
     <EmbeddedResource Include="UI\UcLoaiSanPham.resx">
       <DependentUpon>UcLoaiSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcQLNhapHang.resx">
+      <DependentUpon>UcQLNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UcSanPham.resx">
       <DependentUpon>UcSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcTKKhachHang.resx">
+      <DependentUpon>UcTKKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

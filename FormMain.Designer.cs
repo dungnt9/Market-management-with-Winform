@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class FrmMain
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.PnlMain = new DevExpress.XtraEditors.PanelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.SP = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.NV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.KH = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.NCC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.LoaiSP = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.QLBanHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -47,20 +50,17 @@
             this.QLMaGiamGia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.BaoCaoThongKe = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.DangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.SP = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.NV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.KH = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.NCC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.LoaiSP = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TKDoanhThu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TKHangTon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TKKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.DangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
+            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PnlMain)).BeginInit();
             this.PnlMain.SuspendLayout();
@@ -149,103 +149,12 @@
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Quản lý thông tin danh mục";
             // 
-            // fluentDesignFormControl1
-            // 
-            this.fluentDesignFormControl1.FluentDesignForm = this;
-            this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barStaticItem1,
-            this.barStaticItem2,
-            this.barStaticItem3,
-            this.barStaticItem4});
-            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
-            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1198, 39);
-            this.fluentDesignFormControl1.TabIndex = 2;
-            this.fluentDesignFormControl1.TabStop = false;
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem1);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem2);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem3);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem4);
-            // 
-            // fluentFormDefaultManager1
-            // 
-            this.fluentFormDefaultManager1.Form = this;
-            this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barStaticItem1,
-            this.barStaticItem2,
-            this.barStaticItem3,
-            this.barStaticItem4});
-            this.fluentFormDefaultManager1.MaxItemId = 4;
-            // 
-            // accordionControlSeparator1
-            // 
-            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
-            // 
-            // accordionControlSeparator2
-            // 
-            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
-            // 
-            // QLBanHang
-            // 
-            this.QLBanHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
-            this.QLBanHang.Name = "QLBanHang";
-            this.QLBanHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.QLBanHang.Text = "Quản lý bán hàng";
-            // 
-            // accordionControlSeparator3
-            // 
-            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
-            // 
-            // QLNhapHang
-            // 
-            this.QLNhapHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
-            this.QLNhapHang.Name = "QLNhapHang";
-            this.QLNhapHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.QLNhapHang.Text = "Quản lý nhập hàng";
-            // 
-            // accordionControlSeparator4
-            // 
-            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
-            // 
-            // QLMaGiamGia
-            // 
-            this.QLMaGiamGia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement4.ImageOptions.Image")));
-            this.QLMaGiamGia.Name = "QLMaGiamGia";
-            this.QLMaGiamGia.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.QLMaGiamGia.Text = "Quản lý mã giảm giá";
-            // 
-            // accordionControlSeparator5
-            // 
-            this.accordionControlSeparator5.Name = "accordionControlSeparator5";
-            // 
-            // BaoCaoThongKe
-            // 
-            this.BaoCaoThongKe.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.TKDoanhThu,
-            this.TKHangTon,
-            this.TKKhachHang});
-            this.BaoCaoThongKe.Expanded = true;
-            this.BaoCaoThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement5.ImageOptions.Image")));
-            this.BaoCaoThongKe.Name = "BaoCaoThongKe";
-            this.BaoCaoThongKe.Text = "Báo cáo thống kê";
-            // 
-            // accordionControlSeparator6
-            // 
-            this.accordionControlSeparator6.Name = "accordionControlSeparator6";
-            // 
-            // DangXuat
-            // 
-            this.DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement6.ImageOptions.Image")));
-            this.DangXuat.Name = "DangXuat";
-            this.DangXuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.DangXuat.Text = "Đăng xuất";
-            // 
             // SP
             // 
             this.SP.Name = "SP";
             this.SP.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.SP.Text = "Sản phẩm";
+            this.SP.Click += new System.EventHandler(this.SP_Click);
             // 
             // NV
             // 
@@ -272,24 +181,110 @@
             this.LoaiSP.Text = "Loại sản phẩm";
             this.LoaiSP.Click += new System.EventHandler(this.LoaiSP_Click);
             // 
+            // accordionControlSeparator1
+            // 
+            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
+            // QLBanHang
+            // 
+            this.QLBanHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("QLBanHang.ImageOptions.Image")));
+            this.QLBanHang.Name = "QLBanHang";
+            this.QLBanHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.QLBanHang.Text = "Quản lý bán hàng";
+            // 
+            // accordionControlSeparator3
+            // 
+            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
+            // 
+            // QLNhapHang
+            // 
+            this.QLNhapHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("QLNhapHang.ImageOptions.Image")));
+            this.QLNhapHang.Name = "QLNhapHang";
+            this.QLNhapHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.QLNhapHang.Text = "Quản lý nhập hàng";
+            this.QLNhapHang.Click += new System.EventHandler(this.QLNhapHang_Click);
+            // 
+            // accordionControlSeparator4
+            // 
+            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
+            // 
+            // QLMaGiamGia
+            // 
+            this.QLMaGiamGia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("QLMaGiamGia.ImageOptions.Image")));
+            this.QLMaGiamGia.Name = "QLMaGiamGia";
+            this.QLMaGiamGia.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.QLMaGiamGia.Text = "Quản lý mã giảm giá";
+            this.QLMaGiamGia.Click += new System.EventHandler(this.QLMaGiamGia_Click);
+            // 
+            // accordionControlSeparator5
+            // 
+            this.accordionControlSeparator5.Name = "accordionControlSeparator5";
+            // 
+            // BaoCaoThongKe
+            // 
+            this.BaoCaoThongKe.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.TKDoanhThu,
+            this.TKHangTon,
+            this.TKKhachHang});
+            this.BaoCaoThongKe.Expanded = true;
+            this.BaoCaoThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BaoCaoThongKe.ImageOptions.Image")));
+            this.BaoCaoThongKe.Name = "BaoCaoThongKe";
+            this.BaoCaoThongKe.Text = "Báo cáo thống kê";
+            // 
             // TKDoanhThu
             // 
             this.TKDoanhThu.Name = "TKDoanhThu";
             this.TKDoanhThu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.TKDoanhThu.Text = "Thống kê doanh thu";
+            this.TKDoanhThu.Click += new System.EventHandler(this.TKDoanhThu_Click);
             // 
             // TKHangTon
             // 
             this.TKHangTon.Name = "TKHangTon";
             this.TKHangTon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.TKHangTon.Text = "Thống kê hàng tồn kho";
+            this.TKHangTon.Click += new System.EventHandler(this.TKHangTon_Click);
             // 
             // TKKhachHang
             // 
             this.TKKhachHang.Name = "TKKhachHang";
             this.TKKhachHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.TKKhachHang.Text = "Thống kê khách hàng";
-            this.TKKhachHang.Click += new System.EventHandler(this.accordionControlElement14_Click);
+            this.TKKhachHang.Click += new System.EventHandler(this.TKKhachHang_Click);
+            // 
+            // accordionControlSeparator6
+            // 
+            this.accordionControlSeparator6.Name = "accordionControlSeparator6";
+            // 
+            // DangXuat
+            // 
+            this.DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DangXuat.ImageOptions.Image")));
+            this.DangXuat.Name = "DangXuat";
+            this.DangXuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.DangXuat.Text = "Đăng xuất";
+            // 
+            // fluentDesignFormControl1
+            // 
+            this.fluentDesignFormControl1.FluentDesignForm = this;
+            this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barStaticItem1,
+            this.barStaticItem2,
+            this.barStaticItem3,
+            this.barStaticItem4});
+            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
+            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1198, 39);
+            this.fluentDesignFormControl1.TabIndex = 2;
+            this.fluentDesignFormControl1.TabStop = false;
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem2);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem3);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem4);
             // 
             // barStaticItem1
             // 
@@ -320,6 +315,16 @@
             this.barStaticItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barStaticItem4.ImageOptions.LargeImage")));
             this.barStaticItem4.Name = "barStaticItem4";
             this.barStaticItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // fluentFormDefaultManager1
+            // 
+            this.fluentFormDefaultManager1.Form = this;
+            this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barStaticItem1,
+            this.barStaticItem2,
+            this.barStaticItem3,
+            this.barStaticItem4});
+            this.fluentFormDefaultManager1.MaxItemId = 4;
             // 
             // FrmMain
             // 

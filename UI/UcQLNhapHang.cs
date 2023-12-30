@@ -13,19 +13,19 @@ using System.Windows.Forms;
 
 namespace market_management.UI
 {
-    public partial class UcLoaiSanPham : DevExpress.XtraEditors.XtraUserControl
+    public partial class UcQLNhapHang : DevExpress.XtraEditors.XtraUserControl
     {
-        public UcLoaiSanPham()
+        public UcQLNhapHang()
         {
             InitializeComponent();
 
             BindingList<Customer> dataSource = GetDataSource();
-            GcSanPham.DataSource = dataSource;
+            GcQLNhapHang.DataSource = dataSource;
             bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
-            GcSanPham.ShowRibbonPrintPreview();
+            GcQLNhapHang.ShowRibbonPrintPreview();
         }
         public BindingList<Customer> GetDataSource()
         {
@@ -64,11 +64,6 @@ namespace market_management.UI
             [Display(Name = "Zip Code")]
             public string ZipCode { get; set; }
             public string Phone { get; set; }
-        }
-
-        private void UcLoaiSanPham_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
