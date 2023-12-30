@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    public partial class Form1 : Form
+    public partial class FrmDangNhap : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public FrmDangNhap()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
