@@ -20,12 +20,12 @@ namespace market_management.UI
             InitializeComponent();
 
             BindingList<Customer> dataSource = GetDataSource();
-            GcSanPham.DataSource = dataSource;
+            GcSLoaiSP.DataSource = dataSource;
             bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
         }
         void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
         {
-            GcSanPham.ShowRibbonPrintPreview();
+            GcSLoaiSP.ShowRibbonPrintPreview();
         }
         public BindingList<Customer> GetDataSource()
         {

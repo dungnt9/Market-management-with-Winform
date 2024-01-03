@@ -30,36 +30,38 @@
         {
             this.GcQLNhapHang = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.RcQLNhapHang = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.BbiNew = new DevExpress.XtraBars.BarButtonItem();
             this.BbiSua = new DevExpress.XtraBars.BarButtonItem();
             this.BbiXoa = new DevExpress.XtraBars.BarButtonItem();
             this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RpQLNhapHang = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.RpgTacVuNhapHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.CmbSDTNCC = new System.Windows.Forms.ComboBox();
             this.CmbTenNCC = new System.Windows.Forms.ComboBox();
             this.CmbMaNCC = new System.Windows.Forms.ComboBox();
             this.CmbTenNV = new System.Windows.Forms.ComboBox();
             this.CmbMaNV = new System.Windows.Forms.ComboBox();
-            this.DtpThoiGianNhap = new System.Windows.Forms.DateTimePicker();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.LbThoiGian = new DevExpress.XtraEditors.LabelControl();
             this.TeThanhTien = new DevExpress.XtraEditors.TextEdit();
             this.TeMaDonNhap = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.LbThanhTien = new DevExpress.XtraEditors.LabelControl();
+            this.LbSDT = new DevExpress.XtraEditors.LabelControl();
+            this.LbMaNCC = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.LbTenNV = new DevExpress.XtraEditors.LabelControl();
+            this.LbMaNV = new DevExpress.XtraEditors.LabelControl();
+            this.LbMaDonNhap = new DevExpress.XtraEditors.LabelControl();
+            this.DeNgaySinh = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GcQLNhapHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RcQLNhapHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeThanhTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeMaDonNhap.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // GcQLNhapHang
@@ -68,7 +70,7 @@
             this.GcQLNhapHang.Location = new System.Drawing.Point(0, 306);
             this.GcQLNhapHang.MainView = this.gridView;
             this.GcQLNhapHang.Margin = new System.Windows.Forms.Padding(4);
-            this.GcQLNhapHang.MenuManager = this.ribbonControl;
+            this.GcQLNhapHang.MenuManager = this.RcQLNhapHang;
             this.GcQLNhapHang.Name = "GcQLNhapHang";
             this.GcQLNhapHang.Size = new System.Drawing.Size(933, 422);
             this.GcQLNhapHang.TabIndex = 2;
@@ -85,29 +87,29 @@
             this.gridView.OptionsBehavior.ReadOnly = true;
             this.gridView.OptionsEditForm.PopupEditFormWidth = 933;
             // 
-            // ribbonControl
+            // RcQLNhapHang
             // 
-            this.ribbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
-            this.ribbonControl.ExpandCollapseItem.Id = 0;
-            this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl.ExpandCollapseItem,
+            this.RcQLNhapHang.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
+            this.RcQLNhapHang.ExpandCollapseItem.Id = 0;
+            this.RcQLNhapHang.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.RcQLNhapHang.ExpandCollapseItem,
             this.bsiRecordsCount,
             this.BbiNew,
             this.BbiSua,
             this.BbiXoa,
             this.BbiLamMoi});
-            this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl.MaxItemId = 20;
-            this.ribbonControl.Name = "ribbonControl";
-            this.ribbonControl.OptionsMenuMinWidth = 385;
-            this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
-            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(934, 153);
-            this.ribbonControl.StatusBar = this.ribbonStatusBar;
-            this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            this.RcQLNhapHang.Location = new System.Drawing.Point(0, 0);
+            this.RcQLNhapHang.Margin = new System.Windows.Forms.Padding(4);
+            this.RcQLNhapHang.MaxItemId = 20;
+            this.RcQLNhapHang.Name = "RcQLNhapHang";
+            this.RcQLNhapHang.OptionsMenuMinWidth = 385;
+            this.RcQLNhapHang.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.RpQLNhapHang});
+            this.RcQLNhapHang.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.RcQLNhapHang.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.RcQLNhapHang.Size = new System.Drawing.Size(934, 154);
+            this.RcQLNhapHang.StatusBar = this.ribbonStatusBar;
+            this.RcQLNhapHang.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bsiRecordsCount
             // 
@@ -144,23 +146,25 @@
             this.BbiLamMoi.ImageOptions.ImageUri.Uri = "Refresh";
             this.BbiLamMoi.Name = "BbiLamMoi";
             // 
-            // ribbonPage1
+            // RpQLNhapHang
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-            this.ribbonPage1.MergeOrder = 0;
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Quản lý nhập hàng";
+            this.RpQLNhapHang.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.RpQLNhapHang.Appearance.Options.UseFont = true;
+            this.RpQLNhapHang.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.RpgTacVuNhapHang});
+            this.RpQLNhapHang.MergeOrder = 0;
+            this.RpQLNhapHang.Name = "RpQLNhapHang";
+            this.RpQLNhapHang.Text = "Quản lý nhập hàng";
             // 
-            // ribbonPageGroup1
+            // RpgTacVuNhapHang
             // 
-            this.ribbonPageGroup1.AllowTextClipping = false;
-            this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup1.ItemLinks.Add(this.BbiNew);
-            this.ribbonPageGroup1.ItemLinks.Add(this.BbiSua);
-            this.ribbonPageGroup1.ItemLinks.Add(this.BbiXoa);
-            this.ribbonPageGroup1.ItemLinks.Add(this.BbiLamMoi);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.RpgTacVuNhapHang.AllowTextClipping = false;
+            this.RpgTacVuNhapHang.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.RpgTacVuNhapHang.ItemLinks.Add(this.BbiNew);
+            this.RpgTacVuNhapHang.ItemLinks.Add(this.BbiSua);
+            this.RpgTacVuNhapHang.ItemLinks.Add(this.BbiXoa);
+            this.RpgTacVuNhapHang.ItemLinks.Add(this.BbiLamMoi);
+            this.RpgTacVuNhapHang.Name = "RpgTacVuNhapHang";
             // 
             // ribbonStatusBar
             // 
@@ -168,168 +172,202 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 725);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbonControl;
+            this.ribbonStatusBar.Ribbon = this.RcQLNhapHang;
             this.ribbonStatusBar.Size = new System.Drawing.Size(934, 33);
             // 
             // CmbSDTNCC
             // 
+            this.CmbSDTNCC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbSDTNCC.FormattingEnabled = true;
-            this.CmbSDTNCC.Location = new System.Drawing.Point(440, 261);
+            this.CmbSDTNCC.Location = new System.Drawing.Point(452, 261);
             this.CmbSDTNCC.Name = "CmbSDTNCC";
-            this.CmbSDTNCC.Size = new System.Drawing.Size(152, 24);
+            this.CmbSDTNCC.Size = new System.Drawing.Size(152, 28);
             this.CmbSDTNCC.TabIndex = 65;
             // 
             // CmbTenNCC
             // 
+            this.CmbTenNCC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbTenNCC.FormattingEnabled = true;
-            this.CmbTenNCC.Location = new System.Drawing.Point(440, 222);
+            this.CmbTenNCC.Location = new System.Drawing.Point(452, 222);
             this.CmbTenNCC.Name = "CmbTenNCC";
-            this.CmbTenNCC.Size = new System.Drawing.Size(152, 24);
+            this.CmbTenNCC.Size = new System.Drawing.Size(152, 28);
             this.CmbTenNCC.TabIndex = 64;
             // 
             // CmbMaNCC
             // 
+            this.CmbMaNCC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbMaNCC.FormattingEnabled = true;
-            this.CmbMaNCC.Location = new System.Drawing.Point(440, 178);
+            this.CmbMaNCC.Location = new System.Drawing.Point(452, 178);
             this.CmbMaNCC.Name = "CmbMaNCC";
-            this.CmbMaNCC.Size = new System.Drawing.Size(152, 24);
+            this.CmbMaNCC.Size = new System.Drawing.Size(152, 28);
             this.CmbMaNCC.TabIndex = 63;
             // 
             // CmbTenNV
             // 
+            this.CmbTenNV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbTenNV.FormattingEnabled = true;
-            this.CmbTenNV.Location = new System.Drawing.Point(746, 222);
+            this.CmbTenNV.Location = new System.Drawing.Point(754, 222);
             this.CmbTenNV.Name = "CmbTenNV";
-            this.CmbTenNV.Size = new System.Drawing.Size(145, 24);
+            this.CmbTenNV.Size = new System.Drawing.Size(145, 28);
             this.CmbTenNV.TabIndex = 62;
             // 
             // CmbMaNV
             // 
+            this.CmbMaNV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbMaNV.FormattingEnabled = true;
-            this.CmbMaNV.Location = new System.Drawing.Point(746, 178);
+            this.CmbMaNV.Location = new System.Drawing.Point(754, 178);
             this.CmbMaNV.Name = "CmbMaNV";
-            this.CmbMaNV.Size = new System.Drawing.Size(145, 24);
+            this.CmbMaNV.Size = new System.Drawing.Size(145, 28);
             this.CmbMaNV.TabIndex = 61;
             // 
-            // DtpThoiGianNhap
+            // LbThoiGian
             // 
-            this.DtpThoiGianNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpThoiGianNhap.Location = new System.Drawing.Point(117, 263);
-            this.DtpThoiGianNhap.Name = "DtpThoiGianNhap";
-            this.DtpThoiGianNhap.Size = new System.Drawing.Size(158, 23);
-            this.DtpThoiGianNhap.TabIndex = 60;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(37, 268);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(53, 16);
-            this.labelControl7.TabIndex = 59;
-            this.labelControl7.Text = "Thời gian";
+            this.LbThoiGian.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbThoiGian.Appearance.Options.UseFont = true;
+            this.LbThoiGian.Location = new System.Drawing.Point(37, 268);
+            this.LbThoiGian.Name = "LbThoiGian";
+            this.LbThoiGian.Size = new System.Drawing.Size(62, 20);
+            this.LbThoiGian.TabIndex = 59;
+            this.LbThoiGian.Text = "Thời gian";
             // 
             // TeThanhTien
             // 
-            this.TeThanhTien.Location = new System.Drawing.Point(117, 219);
-            this.TeThanhTien.MenuManager = this.ribbonControl;
+            this.TeThanhTien.Location = new System.Drawing.Point(141, 219);
+            this.TeThanhTien.MenuManager = this.RcQLNhapHang;
             this.TeThanhTien.Name = "TeThanhTien";
-            this.TeThanhTien.Size = new System.Drawing.Size(158, 22);
+            this.TeThanhTien.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeThanhTien.Properties.Appearance.Options.UseFont = true;
+            this.TeThanhTien.Size = new System.Drawing.Size(158, 26);
             this.TeThanhTien.TabIndex = 58;
             // 
             // TeMaDonNhap
             // 
-            this.TeMaDonNhap.Location = new System.Drawing.Point(117, 178);
-            this.TeMaDonNhap.MenuManager = this.ribbonControl;
+            this.TeMaDonNhap.Location = new System.Drawing.Point(141, 178);
+            this.TeMaDonNhap.MenuManager = this.RcQLNhapHang;
             this.TeMaDonNhap.Name = "TeMaDonNhap";
-            this.TeMaDonNhap.Size = new System.Drawing.Size(158, 22);
+            this.TeMaDonNhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeMaDonNhap.Properties.Appearance.Options.UseFont = true;
+            this.TeMaDonNhap.Size = new System.Drawing.Size(158, 26);
             this.TeMaDonNhap.TabIndex = 57;
             // 
-            // labelControl9
+            // LbThanhTien
             // 
-            this.labelControl9.Location = new System.Drawing.Point(37, 225);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(61, 16);
-            this.labelControl9.TabIndex = 56;
-            this.labelControl9.Text = "Thành tiền";
+            this.LbThanhTien.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbThanhTien.Appearance.Options.UseFont = true;
+            this.LbThanhTien.Location = new System.Drawing.Point(37, 225);
+            this.LbThanhTien.Name = "LbThanhTien";
+            this.LbThanhTien.Size = new System.Drawing.Size(69, 20);
+            this.LbThanhTien.TabIndex = 56;
+            this.LbThanhTien.Text = "Thành tiền";
             // 
-            // labelControl6
+            // LbSDT
             // 
-            this.labelControl6.Location = new System.Drawing.Point(328, 268);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(75, 16);
-            this.labelControl6.TabIndex = 55;
-            this.labelControl6.Text = "Số điện thoại";
+            this.LbSDT.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbSDT.Appearance.Options.UseFont = true;
+            this.LbSDT.Location = new System.Drawing.Point(328, 268);
+            this.LbSDT.Name = "LbSDT";
+            this.LbSDT.Size = new System.Drawing.Size(88, 20);
+            this.LbSDT.TabIndex = 55;
+            this.LbSDT.Text = "Số điện thoại";
             // 
-            // labelControl5
+            // LbMaNCC
             // 
-            this.labelControl5.Location = new System.Drawing.Point(328, 225);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(102, 16);
-            this.labelControl5.TabIndex = 54;
-            this.labelControl5.Text = "Tên nhà cung cấp";
+            this.LbMaNCC.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbMaNCC.Appearance.Options.UseFont = true;
+            this.LbMaNCC.Location = new System.Drawing.Point(328, 225);
+            this.LbMaNCC.Name = "LbMaNCC";
+            this.LbMaNCC.Size = new System.Drawing.Size(115, 20);
+            this.LbMaNCC.TabIndex = 54;
+            this.LbMaNCC.Text = "Tên nhà cung cấp";
             // 
             // labelControl4
             // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(328, 181);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(97, 16);
+            this.labelControl4.Size = new System.Drawing.Size(66, 20);
             this.labelControl4.TabIndex = 53;
-            this.labelControl4.Text = "Mã nhà cung cấp";
+            this.labelControl4.Text = "LbMaNCC";
             // 
-            // labelControl3
+            // LbTenNV
             // 
-            this.labelControl3.Location = new System.Drawing.Point(655, 228);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(81, 16);
-            this.labelControl3.TabIndex = 52;
-            this.labelControl3.Text = "Tên nhân viên";
+            this.LbTenNV.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbTenNV.Appearance.Options.UseFont = true;
+            this.LbTenNV.Location = new System.Drawing.Point(655, 228);
+            this.LbTenNV.Name = "LbTenNV";
+            this.LbTenNV.Size = new System.Drawing.Size(91, 20);
+            this.LbTenNV.TabIndex = 52;
+            this.LbTenNV.Text = "Tên nhân viên";
             // 
-            // labelControl2
+            // LbMaNV
             // 
-            this.labelControl2.Location = new System.Drawing.Point(655, 184);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(76, 16);
-            this.labelControl2.TabIndex = 51;
-            this.labelControl2.Text = "Mã nhân viên";
+            this.LbMaNV.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbMaNV.Appearance.Options.UseFont = true;
+            this.LbMaNV.Location = new System.Drawing.Point(655, 184);
+            this.LbMaNV.Name = "LbMaNV";
+            this.LbMaNV.Size = new System.Drawing.Size(88, 20);
+            this.LbMaNV.TabIndex = 51;
+            this.LbMaNV.Text = "Mã nhân viên";
             // 
-            // labelControl1
+            // LbMaDonNhap
             // 
-            this.labelControl1.Location = new System.Drawing.Point(37, 181);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(74, 16);
-            this.labelControl1.TabIndex = 50;
-            this.labelControl1.Text = "Mã đơn nhập";
+            this.LbMaDonNhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbMaDonNhap.Appearance.Options.UseFont = true;
+            this.LbMaDonNhap.Location = new System.Drawing.Point(37, 181);
+            this.LbMaDonNhap.Name = "LbMaDonNhap";
+            this.LbMaDonNhap.Size = new System.Drawing.Size(88, 20);
+            this.LbMaDonNhap.TabIndex = 50;
+            this.LbMaDonNhap.Text = "Mã đơn nhập";
+            // 
+            // DeNgaySinh
+            // 
+            this.DeNgaySinh.EditValue = null;
+            this.DeNgaySinh.Location = new System.Drawing.Point(141, 266);
+            this.DeNgaySinh.Margin = new System.Windows.Forms.Padding(4);
+            this.DeNgaySinh.Name = "DeNgaySinh";
+            this.DeNgaySinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DeNgaySinh.Properties.Appearance.Options.UseFont = true;
+            this.DeNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DeNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DeNgaySinh.Size = new System.Drawing.Size(158, 26);
+            this.DeNgaySinh.TabIndex = 68;
             // 
             // UcQLNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DeNgaySinh);
             this.Controls.Add(this.CmbSDTNCC);
             this.Controls.Add(this.CmbTenNCC);
             this.Controls.Add(this.CmbMaNCC);
             this.Controls.Add(this.CmbTenNV);
             this.Controls.Add(this.CmbMaNV);
-            this.Controls.Add(this.DtpThoiGianNhap);
-            this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.LbThoiGian);
             this.Controls.Add(this.TeThanhTien);
             this.Controls.Add(this.TeMaDonNhap);
-            this.Controls.Add(this.labelControl9);
-            this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.LbThanhTien);
+            this.Controls.Add(this.LbSDT);
+            this.Controls.Add(this.LbMaNCC);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.LbTenNV);
+            this.Controls.Add(this.LbMaNV);
+            this.Controls.Add(this.LbMaDonNhap);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.GcQLNhapHang);
-            this.Controls.Add(this.ribbonControl);
+            this.Controls.Add(this.RcQLNhapHang);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcQLNhapHang";
             this.Size = new System.Drawing.Size(934, 758);
             ((System.ComponentModel.ISupportInitialize)(this.GcQLNhapHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RcQLNhapHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeThanhTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeMaDonNhap.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,9 +376,9 @@
         #endregion
         private DevExpress.XtraGrid.GridControl GcQLNhapHang;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonControl RcQLNhapHang;
+        private DevExpress.XtraBars.Ribbon.RibbonPage RpQLNhapHang;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup RpgTacVuNhapHang;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiNew;
@@ -352,16 +390,16 @@
         private System.Windows.Forms.ComboBox CmbMaNCC;
         private System.Windows.Forms.ComboBox CmbTenNV;
         private System.Windows.Forms.ComboBox CmbMaNV;
-        private System.Windows.Forms.DateTimePicker DtpThoiGianNhap;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl LbThoiGian;
         private DevExpress.XtraEditors.TextEdit TeThanhTien;
         private DevExpress.XtraEditors.TextEdit TeMaDonNhap;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl LbThanhTien;
+        private DevExpress.XtraEditors.LabelControl LbSDT;
+        private DevExpress.XtraEditors.LabelControl LbMaNCC;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl LbTenNV;
+        private DevExpress.XtraEditors.LabelControl LbMaNV;
+        private DevExpress.XtraEditors.LabelControl LbMaDonNhap;
+        private DevExpress.XtraEditors.DateEdit DeNgaySinh;
     }
 }

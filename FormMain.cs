@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using market_management.UI;
+using Quản_lý_siêu_thị;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace market_management
         UcSanPham _UcSanPham;
         UcTKKhachHang _UcTKKhachHang;
         UcQLNhapHang _UcQLNhapHang;
+        UcKhachHang _UcKH;
+        UcNhanVien _UcNV;
 
         public FormMain()
         {
@@ -56,6 +59,34 @@ namespace market_management
             }
         }
 
+        private void KH_Click(object sender, EventArgs e)
+        {
+            if (_UcKH == null)
+            {
+                _UcKH = new UcKhachHang();
+                _UcKH.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcKH);
+                _UcKH.BringToFront();
+            }
+            else
+            {
+                _UcKH.BringToFront();
+            }
+        }
+        private void NV_Click(object sender, EventArgs e)
+        {
+            if (_UcNV == null)
+            {
+                _UcNV = new UcNhanVien();
+                _UcNV.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcNV);
+                _UcNV.BringToFront();
+            }
+            else
+            {
+                _UcNV.BringToFront();
+            }
+        }
         private void TKKhachHang_Click(object sender, EventArgs e)
         {
             if (_UcTKKhachHang == null)

@@ -83,6 +83,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\DoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DoanhThu.designer.cs">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UcKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcKhachHang.designer.cs">
+      <DependentUpon>UcKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UcNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcNhanVien.designer.cs">
+      <DependentUpon>UcNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UcLoaiSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +145,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\DoanhThu.resx">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcKhachHang.resx">
+      <DependentUpon>UcKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcNhanVien.resx">
+      <DependentUpon>UcNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UcLoaiSanPham.resx">
       <DependentUpon>UcLoaiSanPham.cs</DependentUpon>
     </EmbeddedResource>

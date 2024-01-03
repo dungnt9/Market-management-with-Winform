@@ -97,11 +97,11 @@
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(138, 98);
+            this.labelControl8.Location = new System.Drawing.Point(271, 113);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(643, 41);
+            this.labelControl8.Size = new System.Drawing.Size(355, 41);
             this.labelControl8.TabIndex = 6;
-            this.labelControl8.Text = "Chào mừng đến với Hệ thống quản lý Siêu thị";
+            this.labelControl8.Text = "Hệ thống quản lý siêu thị";
             // 
             // pictureBox3
             // 
@@ -161,12 +161,14 @@
             this.NV.Name = "NV";
             this.NV.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.NV.Text = "Nhân viên";
+            this.NV.Click += new System.EventHandler(this.NV_Click);
             // 
             // KH
             // 
             this.KH.Name = "KH";
             this.KH.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.KH.Text = "Khách hàng";
+            this.KH.Click += new System.EventHandler(this.KH_Click);
             // 
             // NCC
             // 
@@ -326,7 +328,7 @@
             this.barStaticItem4});
             this.fluentFormDefaultManager1.MaxItemId = 4;
             // 
-            // FrmMain
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -337,7 +339,7 @@
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
-            this.Name = "FrmMain";
+            this.Name = "FormMain";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Hệ thống quản lý siêu thị";
             this.fluentDesignFormContainer1.ResumeLayout(false);
