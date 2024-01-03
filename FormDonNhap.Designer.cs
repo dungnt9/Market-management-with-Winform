@@ -38,6 +38,9 @@
             this.CbeTenNCC = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CbeMaNCC = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -49,12 +52,9 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.BtnTaoHD = new System.Windows.Forms.Button();
+            this.CbeMaSP = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.CbeTenSP = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TeSDT.Properties)).BeginInit();
@@ -65,6 +65,8 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeMaSP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -149,10 +151,10 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.CbeTenSP);
+            this.groupControl2.Controls.Add(this.CbeMaSP);
             this.groupControl2.Controls.Add(this.textBox2);
             this.groupControl2.Controls.Add(this.textBox1);
-            this.groupControl2.Controls.Add(this.comboBox4);
-            this.groupControl2.Controls.Add(this.comboBox3);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Controls.Add(this.labelControl6);
             this.groupControl2.Controls.Add(this.labelControl5);
@@ -162,6 +164,28 @@
             this.groupControl2.Size = new System.Drawing.Size(801, 142);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Thông tin hàng nhập";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(580, 93);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(166, 23);
+            this.textBox2.TabIndex = 13;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(580, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(166, 23);
+            this.textBox1.TabIndex = 12;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(446, 97);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(50, 16);
+            this.labelControl1.TabIndex = 7;
+            this.labelControl1.Text = "Giá nhập";
             // 
             // labelControl6
             // 
@@ -250,44 +274,6 @@
             this.labelControl12.TabIndex = 8;
             this.labelControl12.Text = "labelControl12";
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(446, 97);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(50, 16);
-            this.labelControl1.TabIndex = 7;
-            this.labelControl1.Text = "Giá nhập";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(191, 49);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(166, 24);
-            this.comboBox3.TabIndex = 10;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(191, 94);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(166, 24);
-            this.comboBox4.TabIndex = 11;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(580, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 23);
-            this.textBox1.TabIndex = 12;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(580, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 23);
-            this.textBox2.TabIndex = 13;
-            // 
             // BtnTaoHD
             // 
             this.BtnTaoHD.Location = new System.Drawing.Point(427, 666);
@@ -296,6 +282,24 @@
             this.BtnTaoHD.TabIndex = 9;
             this.BtnTaoHD.Text = "Tạo hóa đơn";
             this.BtnTaoHD.UseVisualStyleBackColor = true;
+            // 
+            // CbeMaSP
+            // 
+            this.CbeMaSP.Location = new System.Drawing.Point(191, 47);
+            this.CbeMaSP.Name = "CbeMaSP";
+            this.CbeMaSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeMaSP.Size = new System.Drawing.Size(166, 22);
+            this.CbeMaSP.TabIndex = 14;
+            // 
+            // CbeTenSP
+            // 
+            this.CbeTenSP.Location = new System.Drawing.Point(191, 94);
+            this.CbeTenSP.Name = "CbeTenSP";
+            this.CbeTenSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeTenSP.Size = new System.Drawing.Size(166, 22);
+            this.CbeTenSP.TabIndex = 15;
             // 
             // FrmDonNhap
             // 
@@ -327,6 +331,8 @@
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeMaSP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,8 +364,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button BtnTaoHD;
+        private DevExpress.XtraEditors.ComboBoxEdit CbeTenSP;
+        private DevExpress.XtraEditors.ComboBoxEdit CbeMaSP;
     }
 }
