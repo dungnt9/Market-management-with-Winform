@@ -65,5 +65,11 @@ namespace market_management.UI
             public string ZipCode { get; set; }
             public string Phone { get; set; }
         }
+
+        private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmDonNhap frmDonNhap = new FrmDonNhap();
+            frmDonNhap.ShowDialog();
+        }
     }
 }

@@ -32,7 +32,7 @@
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
-            this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
+            this.BbiNew = new DevExpress.XtraBars.BarButtonItem();
             this.BbiSua = new DevExpress.XtraBars.BarButtonItem();
             this.BbiXoa = new DevExpress.XtraBars.BarButtonItem();
             this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
@@ -64,13 +64,13 @@
             // 
             // GcQLNhapHang
             // 
-            this.GcQLNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcQLNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.GcQLNhapHang.Location = new System.Drawing.Point(0, 306);
             this.GcQLNhapHang.MainView = this.gridView;
-            this.GcQLNhapHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcQLNhapHang.Margin = new System.Windows.Forms.Padding(4);
             this.GcQLNhapHang.MenuManager = this.ribbonControl;
             this.GcQLNhapHang.Name = "GcQLNhapHang";
-            this.GcQLNhapHang.Size = new System.Drawing.Size(933, 433);
+            this.GcQLNhapHang.Size = new System.Drawing.Size(933, 422);
             this.GcQLNhapHang.TabIndex = 2;
             this.GcQLNhapHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -92,12 +92,12 @@
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
             this.bsiRecordsCount,
-            this.bbiNew,
+            this.BbiNew,
             this.BbiSua,
             this.BbiXoa,
             this.BbiLamMoi});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonControl.MaxItemId = 20;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.OptionsMenuMinWidth = 385;
@@ -115,12 +115,13 @@
             this.bsiRecordsCount.Id = 15;
             this.bsiRecordsCount.Name = "bsiRecordsCount";
             // 
-            // bbiNew
+            // BbiNew
             // 
-            this.bbiNew.Caption = "Tạo hóa đơn nhập";
-            this.bbiNew.Id = 16;
-            this.bbiNew.ImageOptions.ImageUri.Uri = "New";
-            this.bbiNew.Name = "bbiNew";
+            this.BbiNew.Caption = "Tạo hóa đơn nhập";
+            this.BbiNew.Id = 16;
+            this.BbiNew.ImageOptions.ImageUri.Uri = "New";
+            this.BbiNew.Name = "BbiNew";
+            this.BbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiNew_ItemClick);
             // 
             // BbiSua
             // 
@@ -155,7 +156,7 @@
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiNew);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BbiNew);
             this.ribbonPageGroup1.ItemLinks.Add(this.BbiSua);
             this.ribbonPageGroup1.ItemLinks.Add(this.BbiXoa);
             this.ribbonPageGroup1.ItemLinks.Add(this.BbiLamMoi);
@@ -165,7 +166,7 @@
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 725);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(934, 33);
@@ -321,7 +322,7 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.GcQLNhapHang);
             this.Controls.Add(this.ribbonControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcQLNhapHang";
             this.Size = new System.Drawing.Size(934, 758);
             ((System.ComponentModel.ISupportInitialize)(this.GcQLNhapHang)).EndInit();
@@ -342,7 +343,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
-        private DevExpress.XtraBars.BarButtonItem bbiNew;
+        private DevExpress.XtraBars.BarButtonItem BbiNew;
         private DevExpress.XtraBars.BarButtonItem BbiSua;
         private DevExpress.XtraBars.BarButtonItem BbiXoa;
         private DevExpress.XtraBars.BarButtonItem BbiLamMoi;

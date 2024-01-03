@@ -58,7 +58,7 @@
             this.GcSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.GcSanPham.MenuManager = this.ribbonControl;
             this.GcSanPham.Name = "GcSanPham";
-            this.GcSanPham.Size = new System.Drawing.Size(933, 515);
+            this.GcSanPham.Size = new System.Drawing.Size(930, 501);
             this.GcSanPham.TabIndex = 2;
             this.GcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
