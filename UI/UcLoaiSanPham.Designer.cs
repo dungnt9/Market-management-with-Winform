@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GcSLoaiSP = new DevExpress.XtraGrid.GridControl();
-            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.RcDanhMucLoaiSP = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.BbiThem = new DevExpress.XtraBars.BarButtonItem();
@@ -43,35 +41,14 @@
             this.CbeMaLoaiSP = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LbTenLSP = new DevExpress.XtraEditors.LabelControl();
             this.LbMaLSP = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.GcSLoaiSP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            this.GcLoaiSP = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucLoaiSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeTenLoaiSP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeMaLoaiSP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GcLoaiSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // GcSLoaiSP
-            // 
-            this.GcSLoaiSP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.GcSLoaiSP.Location = new System.Drawing.Point(0, 224);
-            this.GcSLoaiSP.MainView = this.gridView;
-            this.GcSLoaiSP.Margin = new System.Windows.Forms.Padding(4);
-            this.GcSLoaiSP.MenuManager = this.RcDanhMucLoaiSP;
-            this.GcSLoaiSP.Name = "GcSLoaiSP";
-            this.GcSLoaiSP.Size = new System.Drawing.Size(930, 501);
-            this.GcSLoaiSP.TabIndex = 2;
-            this.GcSLoaiSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView});
-            // 
-            // gridView
-            // 
-            this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView.DetailHeight = 431;
-            this.gridView.GridControl = this.GcSLoaiSP;
-            this.gridView.Name = "gridView";
-            this.gridView.OptionsBehavior.Editable = false;
-            this.gridView.OptionsBehavior.ReadOnly = true;
-            this.gridView.OptionsEditForm.PopupEditFormWidth = 933;
             // 
             // RcDanhMucLoaiSP
             // 
@@ -204,34 +181,48 @@
             this.LbMaLSP.TabIndex = 19;
             this.LbMaLSP.Text = "Mã loại sản phẩm";
             // 
+            // GcLoaiSP
+            // 
+            this.GcLoaiSP.Location = new System.Drawing.Point(0, 221);
+            this.GcLoaiSP.MainView = this.gridView1;
+            this.GcLoaiSP.MenuManager = this.RcDanhMucLoaiSP;
+            this.GcLoaiSP.Name = "GcLoaiSP";
+            this.GcLoaiSP.Size = new System.Drawing.Size(934, 509);
+            this.GcLoaiSP.TabIndex = 31;
+            this.GcLoaiSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.GcLoaiSP;
+            this.gridView1.Name = "gridView1";
+            // 
             // UcLoaiSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.GcLoaiSP);
             this.Controls.Add(this.CbeTenLoaiSP);
             this.Controls.Add(this.CbeMaLoaiSP);
             this.Controls.Add(this.LbTenLSP);
             this.Controls.Add(this.LbMaLSP);
             this.Controls.Add(this.ribbonStatusBar);
-            this.Controls.Add(this.GcSLoaiSP);
             this.Controls.Add(this.RcDanhMucLoaiSP);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcLoaiSanPham";
             this.Size = new System.Drawing.Size(934, 758);
             this.Load += new System.EventHandler(this.UcLoaiSanPham_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.GcSLoaiSP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucLoaiSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeTenLoaiSP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeMaLoaiSP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GcLoaiSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraGrid.GridControl GcSLoaiSP;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraBars.Ribbon.RibbonControl RcDanhMucLoaiSP;
         private DevExpress.XtraBars.Ribbon.RibbonPage RpDanhMucLSP;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup RpgTacVuLSP;
@@ -245,5 +236,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit CbeMaLoaiSP;
         private DevExpress.XtraEditors.LabelControl LbTenLSP;
         private DevExpress.XtraEditors.LabelControl LbMaLSP;
+        private DevExpress.XtraGrid.GridControl GcLoaiSP;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

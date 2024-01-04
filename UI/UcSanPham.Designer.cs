@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GcSanPham = new DevExpress.XtraGrid.GridControl();
+            this.GcSP = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.RcDanhMucSP = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -42,37 +42,40 @@
             this.CmbMaSP = new System.Windows.Forms.ComboBox();
             this.CmbPhanLoai = new System.Windows.Forms.ComboBox();
             this.TeSoLuong = new DevExpress.XtraEditors.TextEdit();
-            this.TeGia = new DevExpress.XtraEditors.TextEdit();
+            this.TeGiaBanLe = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.GcSanPham)).BeginInit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.TeGiaNhap = new DevExpress.XtraEditors.TextEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.GcSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TeGia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeGiaBanLe.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // GcSanPham
+            // GcSP
             // 
-            this.GcSanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.GcSanPham.Location = new System.Drawing.Point(0, 298);
-            this.GcSanPham.MainView = this.gridView;
-            this.GcSanPham.Margin = new System.Windows.Forms.Padding(4);
-            this.GcSanPham.MenuManager = this.RcDanhMucSP;
-            this.GcSanPham.Name = "GcSanPham";
-            this.GcSanPham.Size = new System.Drawing.Size(933, 428);
-            this.GcSanPham.TabIndex = 2;
-            this.GcSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GcSP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.GcSP.Location = new System.Drawing.Point(0, 298);
+            this.GcSP.MainView = this.gridView;
+            this.GcSP.Margin = new System.Windows.Forms.Padding(4);
+            this.GcSP.MenuManager = this.RcDanhMucSP;
+            this.GcSP.Name = "GcSP";
+            this.GcSP.Size = new System.Drawing.Size(933, 428);
+            this.GcSP.TabIndex = 2;
+            this.GcSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
             // 
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.gridView.DetailHeight = 431;
-            this.gridView.GridControl = this.GcSanPham;
+            this.gridView.GridControl = this.GcSP;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
@@ -160,54 +163,54 @@
             // 
             this.CmbTenSP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbTenSP.FormattingEnabled = true;
-            this.CmbTenSP.Location = new System.Drawing.Point(233, 224);
+            this.CmbTenSP.Location = new System.Drawing.Point(216, 225);
             this.CmbTenSP.Name = "CmbTenSP";
-            this.CmbTenSP.Size = new System.Drawing.Size(147, 28);
+            this.CmbTenSP.Size = new System.Drawing.Size(199, 28);
             this.CmbTenSP.TabIndex = 28;
             // 
             // CmbMaSP
             // 
             this.CmbMaSP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbMaSP.FormattingEnabled = true;
-            this.CmbMaSP.Location = new System.Drawing.Point(233, 183);
+            this.CmbMaSP.Location = new System.Drawing.Point(216, 184);
             this.CmbMaSP.Name = "CmbMaSP";
-            this.CmbMaSP.Size = new System.Drawing.Size(147, 28);
+            this.CmbMaSP.Size = new System.Drawing.Size(199, 28);
             this.CmbMaSP.TabIndex = 27;
             // 
             // CmbPhanLoai
             // 
             this.CmbPhanLoai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbPhanLoai.FormattingEnabled = true;
-            this.CmbPhanLoai.Location = new System.Drawing.Point(233, 267);
+            this.CmbPhanLoai.Location = new System.Drawing.Point(216, 268);
             this.CmbPhanLoai.Name = "CmbPhanLoai";
-            this.CmbPhanLoai.Size = new System.Drawing.Size(147, 28);
+            this.CmbPhanLoai.Size = new System.Drawing.Size(199, 28);
             this.CmbPhanLoai.TabIndex = 26;
             // 
             // TeSoLuong
             // 
-            this.TeSoLuong.Location = new System.Drawing.Point(665, 224);
+            this.TeSoLuong.Location = new System.Drawing.Point(654, 183);
             this.TeSoLuong.MenuManager = this.RcDanhMucSP;
             this.TeSoLuong.Name = "TeSoLuong";
             this.TeSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeSoLuong.Properties.Appearance.Options.UseFont = true;
-            this.TeSoLuong.Size = new System.Drawing.Size(147, 26);
+            this.TeSoLuong.Size = new System.Drawing.Size(199, 26);
             this.TeSoLuong.TabIndex = 25;
             // 
-            // TeGia
+            // TeGiaBanLe
             // 
-            this.TeGia.Location = new System.Drawing.Point(665, 185);
-            this.TeGia.MenuManager = this.RcDanhMucSP;
-            this.TeGia.Name = "TeGia";
-            this.TeGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TeGia.Properties.Appearance.Options.UseFont = true;
-            this.TeGia.Size = new System.Drawing.Size(147, 26);
-            this.TeGia.TabIndex = 24;
+            this.TeGiaBanLe.Location = new System.Drawing.Point(654, 267);
+            this.TeGiaBanLe.MenuManager = this.RcDanhMucSP;
+            this.TeGiaBanLe.Name = "TeGiaBanLe";
+            this.TeGiaBanLe.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeGiaBanLe.Properties.Appearance.Options.UseFont = true;
+            this.TeGiaBanLe.Size = new System.Drawing.Size(199, 26);
+            this.TeGiaBanLe.TabIndex = 24;
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(582, 227);
+            this.labelControl5.Location = new System.Drawing.Point(565, 190);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(60, 20);
             this.labelControl5.TabIndex = 23;
@@ -217,17 +220,17 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(582, 185);
+            this.labelControl4.Location = new System.Drawing.Point(565, 271);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(51, 20);
+            this.labelControl4.Size = new System.Drawing.Size(70, 20);
             this.labelControl4.TabIndex = 22;
-            this.labelControl4.Text = "Giá bán";
+            this.labelControl4.Text = "Giá bán Lẻ";
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(127, 227);
+            this.labelControl3.Location = new System.Drawing.Point(110, 228);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(91, 20);
             this.labelControl3.TabIndex = 21;
@@ -237,7 +240,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(127, 267);
+            this.labelControl2.Location = new System.Drawing.Point(110, 268);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(61, 20);
             this.labelControl2.TabIndex = 20;
@@ -247,44 +250,67 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(127, 185);
+            this.labelControl1.Location = new System.Drawing.Point(110, 186);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(89, 20);
             this.labelControl1.TabIndex = 19;
             this.labelControl1.Text = "Mã sản phẩm";
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(565, 233);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(59, 20);
+            this.labelControl6.TabIndex = 31;
+            this.labelControl6.Text = "Giá nhập";
+            // 
+            // TeGiaNhap
+            // 
+            this.TeGiaNhap.Location = new System.Drawing.Point(654, 224);
+            this.TeGiaNhap.MenuManager = this.RcDanhMucSP;
+            this.TeGiaNhap.Name = "TeGiaNhap";
+            this.TeGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeGiaNhap.Properties.Appearance.Options.UseFont = true;
+            this.TeGiaNhap.Size = new System.Drawing.Size(199, 26);
+            this.TeGiaNhap.TabIndex = 32;
+            // 
             // UcSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TeGiaNhap);
+            this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.CmbTenSP);
             this.Controls.Add(this.CmbMaSP);
             this.Controls.Add(this.CmbPhanLoai);
             this.Controls.Add(this.TeSoLuong);
-            this.Controls.Add(this.TeGia);
+            this.Controls.Add(this.TeGiaBanLe);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.ribbonStatusBar);
-            this.Controls.Add(this.GcSanPham);
+            this.Controls.Add(this.GcSP);
             this.Controls.Add(this.RcDanhMucSP);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcSanPham";
             this.Size = new System.Drawing.Size(934, 758);
-            ((System.ComponentModel.ISupportInitialize)(this.GcSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GcSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TeGia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeGiaBanLe.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraGrid.GridControl GcSanPham;
+        private DevExpress.XtraGrid.GridControl GcSP;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraBars.Ribbon.RibbonControl RcDanhMucSP;
         private DevExpress.XtraBars.Ribbon.RibbonPage RpDanhMucSP;
@@ -298,11 +324,13 @@
         private System.Windows.Forms.ComboBox CmbMaSP;
         private System.Windows.Forms.ComboBox CmbPhanLoai;
         private DevExpress.XtraEditors.TextEdit TeSoLuong;
-        private DevExpress.XtraEditors.TextEdit TeGia;
+        private DevExpress.XtraEditors.TextEdit TeGiaBanLe;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.TextEdit TeGiaNhap;
     }
 }

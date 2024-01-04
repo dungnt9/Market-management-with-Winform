@@ -15,18 +15,19 @@ namespace market_management.UI
 {
     public partial class UcQLNhapHang : DevExpress.XtraEditors.XtraUserControl
     {
+        DataAccess dataAccess = new DataAccess();
+
         public UcQLNhapHang()
         {
             InitializeComponent();
-
+            /*
             BindingList<Customer> dataSource = GetDataSource();
             GcQLNhapHang.DataSource = dataSource;
             bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
+            */
+            LoadData();
         }
-        void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            GcQLNhapHang.ShowRibbonPrintPreview();
-        }
+        /*
         public BindingList<Customer> GetDataSource()
         {
             BindingList<Customer> result = new BindingList<Customer>();
@@ -65,11 +66,18 @@ namespace market_management.UI
             public string ZipCode { get; set; }
             public string Phone { get; set; }
         }
-
+        */
         private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
             FrmDonNhap frmDonNhap = new FrmDonNhap();
             frmDonNhap.ShowDialog();
         }
+        void LoadData()
+        {
+            GcQLNhapHang.DataSource = dataAccess.GetDataTable("SELECT \r\n    HDN.MaHDN AS 'Mã đơn nhập',\r\n    HDN.TongTien AS 'Tổng tiền',\r\n    HDN.ThoiGian AS 'Thời gian',\r\n    HDN.MaNCC AS 'Mã nhà cung cấp',\r\n    NCC.TenNCC AS 'Tên nhà cung cấp',\r\n    NCC.SDT AS 'Số điện thoại NCC',\r\n    HDN.MaNV AS 'Mã nhân viên',\r\n    NV.TenNV AS 'Tên nhân viên'\r\nFROM \r\n    HOA_DON_NHAP HDN\r\n    JOIN NHA_CUNG_CAP NCC ON HDN.MaNCC = NCC.MaNCC\r\n    JOIN NHAN_VIEN NV ON HDN.MaNV = NV.MaNV;");
+        }
+
+
+
     }
 }

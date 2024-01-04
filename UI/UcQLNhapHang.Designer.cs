@@ -67,7 +67,7 @@
             // GcQLNhapHang
             // 
             this.GcQLNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.GcQLNhapHang.Location = new System.Drawing.Point(0, 306);
+            this.GcQLNhapHang.Location = new System.Drawing.Point(4, 306);
             this.GcQLNhapHang.MainView = this.gridView;
             this.GcQLNhapHang.Margin = new System.Windows.Forms.Padding(4);
             this.GcQLNhapHang.MenuManager = this.RcQLNhapHang;
@@ -179,7 +179,7 @@
             // 
             this.CmbSDTNCC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbSDTNCC.FormattingEnabled = true;
-            this.CmbSDTNCC.Location = new System.Drawing.Point(452, 261);
+            this.CmbSDTNCC.Location = new System.Drawing.Point(456, 261);
             this.CmbSDTNCC.Name = "CmbSDTNCC";
             this.CmbSDTNCC.Size = new System.Drawing.Size(152, 28);
             this.CmbSDTNCC.TabIndex = 65;
@@ -188,7 +188,7 @@
             // 
             this.CmbTenNCC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbTenNCC.FormattingEnabled = true;
-            this.CmbTenNCC.Location = new System.Drawing.Point(452, 222);
+            this.CmbTenNCC.Location = new System.Drawing.Point(456, 222);
             this.CmbTenNCC.Name = "CmbTenNCC";
             this.CmbTenNCC.Size = new System.Drawing.Size(152, 28);
             this.CmbTenNCC.TabIndex = 64;
@@ -197,7 +197,7 @@
             // 
             this.CmbMaNCC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbMaNCC.FormattingEnabled = true;
-            this.CmbMaNCC.Location = new System.Drawing.Point(452, 178);
+            this.CmbMaNCC.Location = new System.Drawing.Point(456, 178);
             this.CmbMaNCC.Name = "CmbMaNCC";
             this.CmbMaNCC.Size = new System.Drawing.Size(152, 28);
             this.CmbMaNCC.TabIndex = 63;
@@ -224,7 +224,7 @@
             // 
             this.LbThoiGian.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbThoiGian.Appearance.Options.UseFont = true;
-            this.LbThoiGian.Location = new System.Drawing.Point(37, 268);
+            this.LbThoiGian.Location = new System.Drawing.Point(30, 268);
             this.LbThoiGian.Name = "LbThoiGian";
             this.LbThoiGian.Size = new System.Drawing.Size(62, 20);
             this.LbThoiGian.TabIndex = 59;
@@ -232,7 +232,7 @@
             // 
             // TeThanhTien
             // 
-            this.TeThanhTien.Location = new System.Drawing.Point(141, 219);
+            this.TeThanhTien.Location = new System.Drawing.Point(134, 219);
             this.TeThanhTien.MenuManager = this.RcQLNhapHang;
             this.TeThanhTien.Name = "TeThanhTien";
             this.TeThanhTien.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -242,7 +242,7 @@
             // 
             // TeMaDonNhap
             // 
-            this.TeMaDonNhap.Location = new System.Drawing.Point(141, 178);
+            this.TeMaDonNhap.Location = new System.Drawing.Point(134, 178);
             this.TeMaDonNhap.MenuManager = this.RcQLNhapHang;
             this.TeMaDonNhap.Name = "TeMaDonNhap";
             this.TeMaDonNhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -254,17 +254,17 @@
             // 
             this.LbThanhTien.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbThanhTien.Appearance.Options.UseFont = true;
-            this.LbThanhTien.Location = new System.Drawing.Point(37, 225);
+            this.LbThanhTien.Location = new System.Drawing.Point(30, 225);
             this.LbThanhTien.Name = "LbThanhTien";
-            this.LbThanhTien.Size = new System.Drawing.Size(69, 20);
+            this.LbThanhTien.Size = new System.Drawing.Size(63, 20);
             this.LbThanhTien.TabIndex = 56;
-            this.LbThanhTien.Text = "Thành tiền";
+            this.LbThanhTien.Text = "Tổng tiền";
             // 
             // LbSDT
             // 
             this.LbSDT.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbSDT.Appearance.Options.UseFont = true;
-            this.LbSDT.Location = new System.Drawing.Point(328, 268);
+            this.LbSDT.Location = new System.Drawing.Point(332, 268);
             this.LbSDT.Name = "LbSDT";
             this.LbSDT.Size = new System.Drawing.Size(88, 20);
             this.LbSDT.TabIndex = 55;
@@ -274,7 +274,7 @@
             // 
             this.LbMaNCC.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbMaNCC.Appearance.Options.UseFont = true;
-            this.LbMaNCC.Location = new System.Drawing.Point(328, 225);
+            this.LbMaNCC.Location = new System.Drawing.Point(332, 225);
             this.LbMaNCC.Name = "LbMaNCC";
             this.LbMaNCC.Size = new System.Drawing.Size(115, 20);
             this.LbMaNCC.TabIndex = 54;
@@ -284,11 +284,11 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(328, 181);
+            this.labelControl4.Location = new System.Drawing.Point(332, 181);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(66, 20);
+            this.labelControl4.Size = new System.Drawing.Size(113, 20);
             this.labelControl4.TabIndex = 53;
-            this.labelControl4.Text = "LbMaNCC";
+            this.labelControl4.Text = "Mã nhà cung cấp";
             // 
             // LbTenNV
             // 
@@ -314,7 +314,7 @@
             // 
             this.LbMaDonNhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbMaDonNhap.Appearance.Options.UseFont = true;
-            this.LbMaDonNhap.Location = new System.Drawing.Point(37, 181);
+            this.LbMaDonNhap.Location = new System.Drawing.Point(30, 181);
             this.LbMaDonNhap.Name = "LbMaDonNhap";
             this.LbMaDonNhap.Size = new System.Drawing.Size(88, 20);
             this.LbMaDonNhap.TabIndex = 50;
@@ -323,7 +323,7 @@
             // DeNgaySinh
             // 
             this.DeNgaySinh.EditValue = null;
-            this.DeNgaySinh.Location = new System.Drawing.Point(141, 266);
+            this.DeNgaySinh.Location = new System.Drawing.Point(134, 266);
             this.DeNgaySinh.Margin = new System.Windows.Forms.Padding(4);
             this.DeNgaySinh.Name = "DeNgaySinh";
             this.DeNgaySinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
