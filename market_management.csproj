@@ -50,6 +50,7 @@
     <Reference Include="DevExpress.XtraCharts.v23.2.Wizard, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -92,11 +93,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\DoanhThu.cs">
+    <Compile Include="UI\UcDoanhThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\DoanhThu.designer.cs">
-      <DependentUpon>DoanhThu.cs</DependentUpon>
+    <Compile Include="UI\UcDoanhThu.designer.cs">
+      <DependentUpon>UcDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UcKhachHang.cs">
       <SubType>UserControl</SubType>
@@ -115,6 +116,12 @@
     </Compile>
     <Compile Include="UI\UcLoaiSanPham.Designer.cs">
       <DependentUpon>UcLoaiSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UcQLMaGiamGia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcQLMaGiamGia.Designer.cs">
+      <DependentUpon>UcQLMaGiamGia.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UcQLNhapHang.cs">
       <SubType>UserControl</SubType>
@@ -157,8 +164,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\DoanhThu.resx">
-      <DependentUpon>DoanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UcDoanhThu.resx">
+      <DependentUpon>UcDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcKhachHang.resx">
       <DependentUpon>UcKhachHang.cs</DependentUpon>
@@ -168,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcLoaiSanPham.resx">
       <DependentUpon>UcLoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcQLMaGiamGia.resx">
+      <DependentUpon>UcQLMaGiamGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcQLNhapHang.resx">
       <DependentUpon>UcQLNhapHang.cs</DependentUpon>

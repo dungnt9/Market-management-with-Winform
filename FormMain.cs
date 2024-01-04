@@ -16,12 +16,13 @@ namespace market_management
     {
 
 
-        UcLoaiSanPham _UcLoaiSanPham;
-        UcSanPham _UcSanPham;
+        UcLoaiSanPham _UcLSP;
+        UcSanPham _UcSP;
         UcTKKhachHang _UcTKKhachHang;
         UcQLNhapHang _UcQLNhapHang;
         UcKhachHang _UcKH;
         UcNhanVien _UcNV;
+        UcDoanhThu _UcDT;
 
         public FormMain()
         {
@@ -31,31 +32,31 @@ namespace market_management
 
         private void LoaiSP_Click(object sender, EventArgs e)
         {
-            if (_UcLoaiSanPham == null)
+            if (_UcLSP == null)
             {
-                _UcLoaiSanPham = new UcLoaiSanPham();
-                _UcLoaiSanPham.Dock = DockStyle.Fill;
-                PnlMain.Controls.Add(_UcLoaiSanPham);
-                _UcLoaiSanPham.BringToFront();
+                _UcLSP = new UcLoaiSanPham();
+                _UcLSP.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcLSP);
+                _UcLSP.BringToFront();
             }
             else
             {
-                _UcLoaiSanPham.BringToFront();
+                _UcLSP.BringToFront();
             }
         }
 
         private void SP_Click(object sender, EventArgs e)
         {
-            if (_UcSanPham == null)
+            if (_UcSP == null)
             {
-                _UcSanPham = new UcSanPham();
-                _UcSanPham.Dock = DockStyle.Fill;
-                PnlMain.Controls.Add(_UcSanPham);
-                _UcSanPham.BringToFront();
+                _UcSP = new UcSanPham();
+                _UcSP.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcSP);
+                _UcSP.BringToFront();
             }
             else
             {
-                _UcSanPham.BringToFront();
+                _UcSP.BringToFront();
             }
         }
 
@@ -104,7 +105,17 @@ namespace market_management
 
         private void TKDoanhThu_Click(object sender, EventArgs e)
         {
-
+            if (_UcDT == null)
+            {
+                _UcDT = new UcDoanhThu();
+                _UcDT.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcDT);
+                _UcDT.BringToFront();
+            }
+            else
+            {
+                _UcDT.BringToFront();
+            }
         }
 
         private void TKHangTon_Click(object sender, EventArgs e)

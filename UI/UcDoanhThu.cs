@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quản_lý_siêu_thị
+namespace market_management
 {
-    public partial class DoanhThu : DevExpress.XtraEditors.XtraUserControl
+    public partial class UcDoanhThu : DevExpress.XtraEditors.XtraUserControl
     {
-        public DoanhThu()
+        public UcDoanhThu()
         {
             InitializeComponent();
         }
