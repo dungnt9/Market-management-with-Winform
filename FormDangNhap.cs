@@ -21,5 +21,15 @@ namespace market_management
         {
 
         }
+
+        private void FrmDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TeMatKhau_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

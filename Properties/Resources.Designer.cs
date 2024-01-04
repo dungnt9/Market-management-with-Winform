@@ -93,6 +93,16 @@ namespace market_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap d25000794d527b5ca218ebc85e6484c7 {
+            get {
+                object obj = ResourceManager.GetObject("d25000794d527b5ca218ebc85e6484c7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye2 {
             get {
                 object obj = ResourceManager.GetObject("eye2", resourceCulture);
