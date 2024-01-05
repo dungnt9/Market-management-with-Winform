@@ -79,6 +79,7 @@
             this.bsiRecordsCount.Caption = "RECORDS : 0";
             this.bsiRecordsCount.Id = 15;
             this.bsiRecordsCount.Name = "bsiRecordsCount";
+            this.bsiRecordsCount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bsiRecordsCount_ItemClick);
             // 
             // BbiThem
             // 
@@ -86,6 +87,7 @@
             this.BbiThem.Id = 16;
             this.BbiThem.ImageOptions.ImageUri.Uri = "New";
             this.BbiThem.Name = "BbiThem";
+            this.BbiThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThem_ItemClick);
             // 
             // BbiSua
             // 
@@ -93,6 +95,7 @@
             this.BbiSua.Id = 17;
             this.BbiSua.ImageOptions.ImageUri.Uri = "Edit";
             this.BbiSua.Name = "BbiSua";
+            this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
             // 
             // BbiXoa
             // 
@@ -100,6 +103,7 @@
             this.BbiXoa.Id = 18;
             this.BbiXoa.ImageOptions.ImageUri.Uri = "Delete";
             this.BbiXoa.Name = "BbiXoa";
+            this.BbiXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiXoa_ItemClick);
             // 
             // BbiLamMoi
             // 
@@ -107,6 +111,7 @@
             this.BbiLamMoi.Id = 19;
             this.BbiLamMoi.ImageOptions.ImageUri.Uri = "Refresh";
             this.BbiLamMoi.Name = "BbiLamMoi";
+            this.BbiLamMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiLamMoi_ItemClick);
             // 
             // RpDanhMucLSP
             // 
@@ -139,33 +144,35 @@
             // 
             // CbeTenLoaiSP
             // 
-            this.CbeTenLoaiSP.Location = new System.Drawing.Point(688, 179);
+            this.CbeTenLoaiSP.Location = new System.Drawing.Point(653, 173);
             this.CbeTenLoaiSP.MenuManager = this.RcDanhMucLoaiSP;
             this.CbeTenLoaiSP.Name = "CbeTenLoaiSP";
             this.CbeTenLoaiSP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeTenLoaiSP.Properties.Appearance.Options.UseFont = true;
             this.CbeTenLoaiSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeTenLoaiSP.Size = new System.Drawing.Size(146, 26);
+            this.CbeTenLoaiSP.Properties.Sorted = true;
+            this.CbeTenLoaiSP.Size = new System.Drawing.Size(199, 26);
             this.CbeTenLoaiSP.TabIndex = 22;
             // 
             // CbeMaLoaiSP
             // 
-            this.CbeMaLoaiSP.Location = new System.Drawing.Point(261, 179);
+            this.CbeMaLoaiSP.Location = new System.Drawing.Point(222, 173);
             this.CbeMaLoaiSP.MenuManager = this.RcDanhMucLoaiSP;
             this.CbeMaLoaiSP.Name = "CbeMaLoaiSP";
             this.CbeMaLoaiSP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeMaLoaiSP.Properties.Appearance.Options.UseFont = true;
             this.CbeMaLoaiSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeMaLoaiSP.Size = new System.Drawing.Size(146, 26);
+            this.CbeMaLoaiSP.Properties.Sorted = true;
+            this.CbeMaLoaiSP.Size = new System.Drawing.Size(199, 26);
             this.CbeMaLoaiSP.TabIndex = 21;
             // 
             // LbTenLSP
             // 
             this.LbTenLSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTenLSP.Appearance.Options.UseFont = true;
-            this.LbTenLSP.Location = new System.Drawing.Point(545, 182);
+            this.LbTenLSP.Location = new System.Drawing.Point(518, 176);
             this.LbTenLSP.Name = "LbTenLSP";
             this.LbTenLSP.Size = new System.Drawing.Size(120, 20);
             this.LbTenLSP.TabIndex = 20;
@@ -175,7 +182,7 @@
             // 
             this.LbMaLSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbMaLSP.Appearance.Options.UseFont = true;
-            this.LbMaLSP.Location = new System.Drawing.Point(128, 180);
+            this.LbMaLSP.Location = new System.Drawing.Point(89, 174);
             this.LbMaLSP.Name = "LbMaLSP";
             this.LbMaLSP.Size = new System.Drawing.Size(118, 20);
             this.LbMaLSP.TabIndex = 19;
@@ -183,12 +190,12 @@
             // 
             // GcLoaiSP
             // 
-            this.GcLoaiSP.Location = new System.Drawing.Point(0, 221);
+            this.GcLoaiSP.Location = new System.Drawing.Point(0, 216);
             this.GcLoaiSP.MainView = this.gridView1;
             this.GcLoaiSP.MenuManager = this.RcDanhMucLoaiSP;
             this.GcLoaiSP.Name = "GcLoaiSP";
-            this.GcLoaiSP.Size = new System.Drawing.Size(934, 509);
-            this.GcLoaiSP.TabIndex = 31;
+            this.GcLoaiSP.Size = new System.Drawing.Size(934, 511);
+            this.GcLoaiSP.TabIndex = 37;
             this.GcLoaiSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -196,6 +203,7 @@
             // 
             this.gridView1.GridControl = this.GcLoaiSP;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // UcLoaiSanPham
             // 
