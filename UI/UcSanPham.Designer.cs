@@ -42,7 +42,7 @@
             this.CmbMaSP = new System.Windows.Forms.ComboBox();
             this.CmbPhanLoai = new System.Windows.Forms.ComboBox();
             this.TeSoLuong = new DevExpress.XtraEditors.TextEdit();
-            this.TeGiaBanLe = new DevExpress.XtraEditors.TextEdit();
+            this.TeGiaBan = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -54,7 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TeGiaBanLe.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeGiaBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,7 @@
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
             this.gridView.OptionsEditForm.PopupEditFormWidth = 933;
+            this.gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_FocusedRowChanged_1);
             // 
             // RcDanhMucSP
             // 
@@ -116,6 +117,7 @@
             this.BbiSua.Id = 17;
             this.BbiSua.ImageOptions.ImageUri.Uri = "Edit";
             this.BbiSua.Name = "BbiSua";
+            this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick_1);
             // 
             // BbiXoa
             // 
@@ -123,6 +125,7 @@
             this.BbiXoa.Id = 18;
             this.BbiXoa.ImageOptions.ImageUri.Uri = "Delete";
             this.BbiXoa.Name = "BbiXoa";
+            this.BbiXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiXoa_ItemClick_1);
             // 
             // BbiLamMoi
             // 
@@ -130,6 +133,7 @@
             this.BbiLamMoi.Id = 19;
             this.BbiLamMoi.ImageOptions.ImageUri.Uri = "Refresh";
             this.BbiLamMoi.Name = "BbiLamMoi";
+            this.BbiLamMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiLamMoi_ItemClick_1);
             // 
             // RpDanhMucSP
             // 
@@ -196,15 +200,15 @@
             this.TeSoLuong.Size = new System.Drawing.Size(199, 26);
             this.TeSoLuong.TabIndex = 25;
             // 
-            // TeGiaBanLe
+            // TeGiaBan
             // 
-            this.TeGiaBanLe.Location = new System.Drawing.Point(654, 267);
-            this.TeGiaBanLe.MenuManager = this.RcDanhMucSP;
-            this.TeGiaBanLe.Name = "TeGiaBanLe";
-            this.TeGiaBanLe.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TeGiaBanLe.Properties.Appearance.Options.UseFont = true;
-            this.TeGiaBanLe.Size = new System.Drawing.Size(199, 26);
-            this.TeGiaBanLe.TabIndex = 24;
+            this.TeGiaBan.Location = new System.Drawing.Point(654, 267);
+            this.TeGiaBan.MenuManager = this.RcDanhMucSP;
+            this.TeGiaBan.Name = "TeGiaBan";
+            this.TeGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeGiaBan.Properties.Appearance.Options.UseFont = true;
+            this.TeGiaBan.Size = new System.Drawing.Size(199, 26);
+            this.TeGiaBan.TabIndex = 24;
             // 
             // labelControl5
             // 
@@ -222,9 +226,9 @@
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(565, 271);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(70, 20);
+            this.labelControl4.Size = new System.Drawing.Size(67, 20);
             this.labelControl4.TabIndex = 22;
-            this.labelControl4.Text = "Giá bán Lẻ";
+            this.labelControl4.Text = "Giá bán lẻ";
             // 
             // labelControl3
             // 
@@ -260,7 +264,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(565, 233);
+            this.labelControl6.Location = new System.Drawing.Point(565, 228);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(59, 20);
             this.labelControl6.TabIndex = 31;
@@ -286,7 +290,7 @@
             this.Controls.Add(this.CmbMaSP);
             this.Controls.Add(this.CmbPhanLoai);
             this.Controls.Add(this.TeSoLuong);
-            this.Controls.Add(this.TeGiaBanLe);
+            this.Controls.Add(this.TeGiaBan);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
@@ -302,7 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TeGiaBanLe.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeGiaBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -324,7 +328,7 @@
         private System.Windows.Forms.ComboBox CmbMaSP;
         private System.Windows.Forms.ComboBox CmbPhanLoai;
         private DevExpress.XtraEditors.TextEdit TeSoLuong;
-        private DevExpress.XtraEditors.TextEdit TeGiaBanLe;
+        private DevExpress.XtraEditors.TextEdit TeGiaBan;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;

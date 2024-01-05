@@ -56,9 +56,9 @@
             this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.DangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.BsiChucvu = new DevExpress.XtraBars.BarStaticItem();
+            this.BsiTenNV = new DevExpress.XtraBars.BarStaticItem();
+            this.BsiMaNV = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.fluentDesignFormContainer1.SuspendLayout();
@@ -74,10 +74,10 @@
             // 
             this.fluentDesignFormContainer1.Controls.Add(this.PnlMain);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(223, 31);
-            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 39);
+            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(804, 618);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(938, 760);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // PnlMain
@@ -87,9 +87,9 @@
             this.PnlMain.Controls.Add(this.pictureBox3);
             this.PnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlMain.Location = new System.Drawing.Point(0, 0);
-            this.PnlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PnlMain.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PnlMain.Name = "PnlMain";
-            this.PnlMain.Size = new System.Drawing.Size(804, 618);
+            this.PnlMain.Size = new System.Drawing.Size(938, 760);
             this.PnlMain.TabIndex = 6;
             // 
             // labelControl8
@@ -98,20 +98,20 @@
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(232, 92);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl8.Location = new System.Drawing.Point(271, 113);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(288, 32);
+            this.labelControl8.Size = new System.Drawing.Size(355, 41);
             this.labelControl8.TabIndex = 6;
             this.labelControl8.Text = "Hệ thống quản lý siêu thị";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-21, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(-24, 5);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(825, 582);
+            this.pictureBox3.Size = new System.Drawing.Size(962, 716);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -132,11 +132,11 @@
             this.BaoCaoThongKe,
             this.accordionControlSeparator6,
             this.DangXuat});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
-            this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 39);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(223, 618);
+            this.accordionControl1.Size = new System.Drawing.Size(260, 760);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -277,42 +277,42 @@
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barStaticItem1,
-            this.barStaticItem2,
-            this.barStaticItem3,
+            this.BsiChucvu,
+            this.BsiTenNV,
+            this.BsiMaNV,
             this.barStaticItem4});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
-            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1027, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1198, 39);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem1);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem2);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem3);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.BsiChucvu);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.BsiTenNV);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.BsiMaNV);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem4);
             // 
-            // barStaticItem1
+            // BsiChucvu
             // 
-            this.barStaticItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barStaticItem1.Caption = "Quản lý";
-            this.barStaticItem1.Id = 0;
-            this.barStaticItem1.Name = "barStaticItem1";
+            this.BsiChucvu.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.BsiChucvu.Caption = "Quản lý";
+            this.BsiChucvu.Id = 0;
+            this.BsiChucvu.Name = "BsiChucvu";
             // 
-            // barStaticItem2
+            // BsiTenNV
             // 
-            this.barStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barStaticItem2.Caption = "Nguyễn Văn A";
-            this.barStaticItem2.Id = 1;
-            this.barStaticItem2.Name = "barStaticItem2";
+            this.BsiTenNV.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.BsiTenNV.Caption = "Nguyễn Văn A";
+            this.BsiTenNV.Id = 1;
+            this.BsiTenNV.Name = "BsiTenNV";
             // 
-            // barStaticItem3
+            // BsiMaNV
             // 
-            this.barStaticItem3.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barStaticItem3.Caption = "NV113";
-            this.barStaticItem3.Id = 2;
-            this.barStaticItem3.Name = "barStaticItem3";
+            this.BsiMaNV.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.BsiMaNV.Caption = "NV113";
+            this.BsiMaNV.Id = 2;
+            this.BsiMaNV.Name = "BsiMaNV";
             // 
             // barStaticItem4
             // 
@@ -327,24 +327,24 @@
             // 
             this.fluentFormDefaultManager1.Form = this;
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barStaticItem1,
-            this.barStaticItem2,
-            this.barStaticItem3,
+            this.BsiChucvu,
+            this.BsiTenNV,
+            this.BsiMaNV,
             this.barStaticItem4});
             this.fluentFormDefaultManager1.MaxItemId = 4;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 649);
+            this.ClientSize = new System.Drawing.Size(1198, 799);
             this.ControlContainer = this.fluentDesignFormContainer1;
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "FormMain";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Hệ thống quản lý siêu thị";
@@ -389,9 +389,9 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement TKDoanhThu;
         private DevExpress.XtraBars.Navigation.AccordionControlElement TKHangTon;
         private DevExpress.XtraBars.Navigation.AccordionControlElement TKKhachHang;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem3;
+        private DevExpress.XtraBars.BarStaticItem BsiChucvu;
+        private DevExpress.XtraBars.BarStaticItem BsiTenNV;
+        private DevExpress.XtraBars.BarStaticItem BsiMaNV;
         private DevExpress.XtraBars.BarStaticItem barStaticItem4;
     }
 }

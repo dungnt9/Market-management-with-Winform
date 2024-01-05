@@ -20,7 +20,7 @@ namespace market_management
 
 
         private const string ConnectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
-        private string luuNhanVien;
+        public string luuNhanVien;
 
         private void SbtnDangNhap_Click(object sender, EventArgs e)
         {
@@ -56,11 +56,16 @@ namespace market_management
                         {
                             luuNhanVien = reader["MaNV"].ToString(); // Lưu mã nhân viên
 
-                            MessageBox.Show($"Đăng nhập thành công! Xin chào {reader["TenNV"]}", "Thông báo", 
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);                        }
+                            MessageBox.Show($"Đăng nhập thành công! Xin chào {reader["TenNV"]}", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
+                            this.Hide();
+                            FormMain frmDonNhap = new FormMain();
+                            frmDonNhap.ShowDialog();
+                        }
                         else
                         {
-                            MessageBox.Show("Thông tin đăng nhập không chính xác.", "Lỗi đăng nhập", 
+                            MessageBox.Show("Thông tin đăng nhập không chính xác.", "Lỗi đăng nhập",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
