@@ -99,11 +99,11 @@ namespace market_management.UI
 
             if (string.IsNullOrEmpty(maSP) || string.IsNullOrEmpty(tenSP))
             {
-                XtraMessageBox.Show("Vui lòng chọn loại sản phẩm cần cập nhật và nhập thông tin mới", "Thông báo");
+                XtraMessageBox.Show("Vui lòng chọn sản phẩm cần cập nhật và nhập thông tin mới", "Thông báo");
                 return;
             }
 
-            var sqlUpdate = $"UPDATE SAN_PHAM SET TenSP = N'{tenSP}', PhanLoai = N'{phanLoai}', SoLuong = '{soLuong}', GiaNhap = '{giaNhap}', GiaBan = '{giaBan}' WHERE MaSP = '{maSP}'";
+            var sqlUpdate = $"UPDATE SAN_PHAM \r\nSET TenSP = N'{tenSP}', \r\n    MaLoaiSP = (SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = N'{phanLoai}'), \r\n    SoLuong = '{soLuong}', \r\n    GiaNhap = '{giaNhap}', \r\n    GiaBanLe = '{giaBan}' \r\nWHERE MaSP = '{maSP}';\r\n";
 
             DataAccess dataAccess = new DataAccess();
             try
