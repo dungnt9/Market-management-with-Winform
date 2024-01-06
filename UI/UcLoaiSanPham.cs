@@ -129,37 +129,6 @@ namespace market_management.UI
             
         }
 
-        private void BbiXoa_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var maLoaiSP = CbeMaLoaiSP.Text;
-
-            if (string.IsNullOrEmpty(maLoaiSP))
-            {
-                XtraMessageBox.Show("Vui lòng chọn loại sản phẩm cần xóa", "Thông báo");
-                return;
-            }
-
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa loại sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirmationResult == DialogResult.Yes)
-            {
-                var sqlDelete = $"DELETE FROM LOAI_SAN_PHAM WHERE MaLoaiSP = '{maLoaiSP}'";
-
-                DataAccess dataAccess = new DataAccess();
-                try
-                {
-                    dataAccess.UpdateData(sqlDelete);
-                    XtraMessageBox.Show("Xóa loại sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
-                    
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show($"Lỗi xóa loại sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadData();

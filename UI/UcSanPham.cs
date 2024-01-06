@@ -58,37 +58,6 @@ namespace market_management.UI
             TeGiaBan.Text = "";
         }
 
-        private void BbiXoa_ItemClick_1(object sender, ItemClickEventArgs e)
-        {
-            var maSP = CmbMaSP.Text;
-
-            if (string.IsNullOrEmpty(maSP))
-            {
-                XtraMessageBox.Show("Vui lòng chọn sản phẩm cần xóa", "Thông báo");
-                return;
-            }
-
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirmationResult == DialogResult.Yes)
-            {
-                var sqlDelete = $"DELETE FROM SAN_PHAM WHERE MaSP = '{maSP}'";
-
-                DataAccess dataAccess = new DataAccess();
-                try
-                {
-                    dataAccess.UpdateData(sqlDelete);
-                    XtraMessageBox.Show("Xóa sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
-
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show($"Lỗi xóa sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void BbiSua_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             var maSP = CmbMaSP.Text;

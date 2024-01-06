@@ -32,7 +32,6 @@
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.BbiThem = new DevExpress.XtraBars.BarButtonItem();
             this.BbiSua = new DevExpress.XtraBars.BarButtonItem();
-            this.BbiXoa = new DevExpress.XtraBars.BarButtonItem();
             this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
             this.RpDanhMucLSP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RpgTacVuLSP = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -59,7 +58,6 @@
             this.bsiRecordsCount,
             this.BbiThem,
             this.BbiSua,
-            this.BbiXoa,
             this.BbiLamMoi});
             this.RcDanhMucLoaiSP.Location = new System.Drawing.Point(0, 0);
             this.RcDanhMucLoaiSP.Margin = new System.Windows.Forms.Padding(4);
@@ -97,14 +95,6 @@
             this.BbiSua.Name = "BbiSua";
             this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
             // 
-            // BbiXoa
-            // 
-            this.BbiXoa.Caption = "Xóa";
-            this.BbiXoa.Id = 18;
-            this.BbiXoa.ImageOptions.ImageUri.Uri = "Delete";
-            this.BbiXoa.Name = "BbiXoa";
-            this.BbiXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiXoa_ItemClick);
-            // 
             // BbiLamMoi
             // 
             this.BbiLamMoi.Caption = "Làm mới";
@@ -129,7 +119,6 @@
             this.RpgTacVuLSP.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.RpgTacVuLSP.ItemLinks.Add(this.BbiThem);
             this.RpgTacVuLSP.ItemLinks.Add(this.BbiSua);
-            this.RpgTacVuLSP.ItemLinks.Add(this.BbiXoa);
             this.RpgTacVuLSP.ItemLinks.Add(this.BbiLamMoi);
             this.RpgTacVuLSP.Name = "RpgTacVuLSP";
             // 
@@ -239,7 +228,6 @@
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiThem;
         private DevExpress.XtraBars.BarButtonItem BbiSua;
-        private DevExpress.XtraBars.BarButtonItem BbiXoa;
         private DevExpress.XtraBars.BarButtonItem BbiLamMoi;
         private DevExpress.XtraEditors.ComboBoxEdit CbeTenLoaiSP;
         private DevExpress.XtraEditors.ComboBoxEdit CbeMaLoaiSP;

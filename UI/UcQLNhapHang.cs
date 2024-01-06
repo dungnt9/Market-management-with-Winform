@@ -113,32 +113,5 @@ namespace market_management.UI
                 }
             }
         }
-
-        private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var maDN = LbcMaDN.Text;
-            var tongtien = TeTongtien.Text;
-            var thoiGian = DeThoiGian.Text;
-
-            if (string.IsNullOrEmpty(maDN))
-            {
-                XtraMessageBox.Show("Vui lòng chọn hóa đơn nhập cần cập nhật và nhập thông tin mới", "Thông báo");
-                return;
-            }
-
-            var sqlUpdate = $"UPDATE HOA_DON_NHAP SET ThoiGian = '{thoiGian}', TongTien='{tongtien}' WHERE MaHDN = '{maDN}'";
-
-            DataAccess dataAccess = new DataAccess();
-            try
-            {
-                dataAccess.UpdateData(sqlUpdate);
-                XtraMessageBox.Show("Cập nhật hóa đơn nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadData(); // Gọi lại phương thức để cập nhật GridView
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show($"Lỗi cập nhật hóa đơn nhập: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
     }
 }

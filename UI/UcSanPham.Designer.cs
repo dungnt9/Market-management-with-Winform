@@ -34,8 +34,8 @@
             this.RcDanhMucSP = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.BbiSua = new DevExpress.XtraBars.BarButtonItem();
-            this.BbiXoa = new DevExpress.XtraBars.BarButtonItem();
             this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
+            this.BbiThem = new DevExpress.XtraBars.BarButtonItem();
             this.RpDanhMucSP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RpgTacVuSP = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -51,7 +51,6 @@
             this.TeGiaNhap = new DevExpress.XtraEditors.TextEdit();
             this.CbeTenSP = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CbePhanLoai = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.BbiThem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).BeginInit();
@@ -94,7 +93,6 @@
             this.RcDanhMucSP.ExpandCollapseItem,
             this.bsiRecordsCount,
             this.BbiSua,
-            this.BbiXoa,
             this.BbiLamMoi,
             this.BbiThem});
             this.RcDanhMucSP.Location = new System.Drawing.Point(0, 0);
@@ -124,14 +122,6 @@
             this.BbiSua.Name = "BbiSua";
             this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick_1);
             // 
-            // BbiXoa
-            // 
-            this.BbiXoa.Caption = "Xóa";
-            this.BbiXoa.Id = 18;
-            this.BbiXoa.ImageOptions.ImageUri.Uri = "Delete";
-            this.BbiXoa.Name = "BbiXoa";
-            this.BbiXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiXoa_ItemClick_1);
-            // 
             // BbiLamMoi
             // 
             this.BbiLamMoi.Caption = "Làm mới";
@@ -139,6 +129,15 @@
             this.BbiLamMoi.ImageOptions.ImageUri.Uri = "Refresh";
             this.BbiLamMoi.Name = "BbiLamMoi";
             this.BbiLamMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiLamMoi_ItemClick_1);
+            // 
+            // BbiThem
+            // 
+            this.BbiThem.Caption = "Thêm";
+            this.BbiThem.Id = 20;
+            this.BbiThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BbiThem.ImageOptions.Image")));
+            this.BbiThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BbiThem.ImageOptions.LargeImage")));
+            this.BbiThem.Name = "BbiThem";
+            this.BbiThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThem_ItemClick_1);
             // 
             // RpDanhMucSP
             // 
@@ -156,7 +155,6 @@
             this.RpgTacVuSP.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.RpgTacVuSP.ItemLinks.Add(this.BbiThem);
             this.RpgTacVuSP.ItemLinks.Add(this.BbiSua);
-            this.RpgTacVuSP.ItemLinks.Add(this.BbiXoa);
             this.RpgTacVuSP.ItemLinks.Add(this.BbiLamMoi);
             this.RpgTacVuSP.Name = "RpgTacVuSP";
             // 
@@ -292,15 +290,6 @@
             this.CbePhanLoai.Size = new System.Drawing.Size(213, 28);
             this.CbePhanLoai.TabIndex = 39;
             // 
-            // BbiThem
-            // 
-            this.BbiThem.Caption = "Thêm";
-            this.BbiThem.Id = 20;
-            this.BbiThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.BbiThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.BbiThem.Name = "BbiThem";
-            this.BbiThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThem_ItemClick_1);
-            // 
             // UcSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -346,7 +335,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiSua;
-        private DevExpress.XtraBars.BarButtonItem BbiXoa;
         private DevExpress.XtraBars.BarButtonItem BbiLamMoi;
         private System.Windows.Forms.ComboBox CmbMaSP;
         private DevExpress.XtraEditors.TextEdit TeSoLuong;
