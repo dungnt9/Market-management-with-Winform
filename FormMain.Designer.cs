@@ -272,6 +272,7 @@
             this.DangXuat.Name = "DangXuat";
             this.DangXuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.DangXuat.Text = "Đăng xuất";
+            this.DangXuat.Click += new System.EventHandler(this.DangXuat_Click);
             // 
             // fluentDesignFormControl1
             // 

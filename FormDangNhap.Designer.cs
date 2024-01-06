@@ -196,7 +196,7 @@
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "FrmDangNhap";
-            this.Text = "FormDangNhap";
+            this.Text = "Form Đăng nhập";
             this.Load += new System.EventHandler(this.FrmDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TeTenDangNhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

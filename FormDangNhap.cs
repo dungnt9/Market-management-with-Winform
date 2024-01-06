@@ -13,6 +13,7 @@ namespace market_management
 {
     public partial class FrmDangNhap : DevExpress.XtraEditors.XtraForm
     {
+        public string luuNhanVien;
         public FrmDangNhap()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace market_management
 
 
         private const string ConnectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
-        public string luuNhanVien;
+        
 
         private void SbtnDangNhap_Click(object sender, EventArgs e)
         {
@@ -112,7 +113,6 @@ namespace market_management
 
             }
         }
-
         private void hide_Click(object sender, EventArgs e)
         {
             if (TbMatKhau.PasswordChar == '\0')

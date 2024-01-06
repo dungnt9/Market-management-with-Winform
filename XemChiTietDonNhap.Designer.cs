@@ -35,7 +35,7 @@
             // DgvSP
             // 
             this.DgvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvSP.Location = new System.Drawing.Point(12, 94);
+            this.DgvSP.Location = new System.Drawing.Point(67, 216);
             this.DgvSP.Name = "DgvSP";
             this.DgvSP.RowHeadersWidth = 51;
             this.DgvSP.RowTemplate.Height = 24;
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(916, 711);
             this.Controls.Add(this.DgvSP);
             this.Name = "XemChiTietDonNhap";
             this.Text = "Form Xem chi tiết đơn nhập";

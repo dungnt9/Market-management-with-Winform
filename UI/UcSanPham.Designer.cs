@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcSanPham));
             this.GcSP = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.RcDanhMucSP = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -50,6 +51,7 @@
             this.TeGiaNhap = new DevExpress.XtraEditors.TextEdit();
             this.CbeTenSP = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CbePhanLoai = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.BbiThem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).BeginInit();
@@ -93,10 +95,11 @@
             this.bsiRecordsCount,
             this.BbiSua,
             this.BbiXoa,
-            this.BbiLamMoi});
+            this.BbiLamMoi,
+            this.BbiThem});
             this.RcDanhMucSP.Location = new System.Drawing.Point(0, 0);
             this.RcDanhMucSP.Margin = new System.Windows.Forms.Padding(4);
-            this.RcDanhMucSP.MaxItemId = 20;
+            this.RcDanhMucSP.MaxItemId = 21;
             this.RcDanhMucSP.Name = "RcDanhMucSP";
             this.RcDanhMucSP.OptionsMenuMinWidth = 385;
             this.RcDanhMucSP.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -151,6 +154,7 @@
             // 
             this.RpgTacVuSP.AllowTextClipping = false;
             this.RpgTacVuSP.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.RpgTacVuSP.ItemLinks.Add(this.BbiThem);
             this.RpgTacVuSP.ItemLinks.Add(this.BbiSua);
             this.RpgTacVuSP.ItemLinks.Add(this.BbiXoa);
             this.RpgTacVuSP.ItemLinks.Add(this.BbiLamMoi);
@@ -288,6 +292,15 @@
             this.CbePhanLoai.Size = new System.Drawing.Size(213, 28);
             this.CbePhanLoai.TabIndex = 39;
             // 
+            // BbiThem
+            // 
+            this.BbiThem.Caption = "Thêm";
+            this.BbiThem.Id = 20;
+            this.BbiThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.BbiThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.BbiThem.Name = "BbiThem";
+            this.BbiThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThem_ItemClick_1);
+            // 
             // UcSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -347,5 +360,6 @@
         private DevExpress.XtraEditors.TextEdit TeGiaNhap;
         private DevExpress.XtraEditors.ComboBoxEdit CbeTenSP;
         private DevExpress.XtraEditors.ComboBoxEdit CbePhanLoai;
+        private DevExpress.XtraBars.BarButtonItem BbiThem;
     }
 }

@@ -36,7 +36,7 @@ namespace market_management
             {
                 connection.Open();
 
-                string query = "SELECT MaNV, TenNV, ChucVu FROM NHAN_VIEN";
+                string query = "SELECT MaNV, TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV='{luuNhanVien}'";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -170,6 +170,13 @@ namespace market_management
         private void QLMaGiamGia_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmDangNhap frmDangNhap = new FrmDangNhap();
+            frmDangNhap.ShowDialog();
         }
     }
 }

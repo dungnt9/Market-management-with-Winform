@@ -154,7 +154,6 @@ namespace market_management.UI
             CbeTenSP.Properties.AutoComplete = true;
             CbeTenSP.Properties.CaseSensitiveSearch = false;
         }
-
         private List<string> LayTenLoaiSP()
         {
             List<string> TenLoaiSP = new List<string>();
@@ -187,8 +186,6 @@ namespace market_management.UI
             CbePhanLoai.Properties.AutoComplete = true;
             CbePhanLoai.Properties.CaseSensitiveSearch = false;
         }
-
-
         private List<string> LayMaSP()
         {
             List<string> MaSP = new List<string>();
@@ -223,12 +220,81 @@ namespace market_management.UI
             CmbMaSP.AutoCompleteMode = AutoCompleteMode.Suggest;
             CmbMaSP.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
         private void UcSanPham_Load(object sender, EventArgs e)
         {
             HienThiTenSP();
             HienThiTenLoaiSP();
             HienThiMaSP();
+        }
+
+
+
+
+
+
+        private bool IsMaLoaiSPExists(string maSP)
+        {
+            // Thực hiện truy vấn để lấy danh sách các MaSP từ bảng SAN_PHAM
+            DataTable dataTable = dataAccess.GetDataTable($"SELECT MaSP FROM SAN_PHAM WHERE MaSP = '{maSP}'");
+
+            // Kiểm tra sự tồn tại của maSP trong danh sách
+            return dataTable.Rows.Count > 0;
+        }
+
+        private void BbiThem_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            var maSP = CmbMaSP.Text;
+            var tenSP = CbeTenSP.Text;
+            var phanLoai = CbePhanLoai.Text;
+            var soLuong = TeSoLuong.Text;
+            var giaNhap = TeGiaNhap.Text;
+            var giaBan = TeGiaBan.Text;
+
+            if (string.IsNullOrEmpty(maSP))
+            {
+                XtraMessageBox.Show("Bạn phải nhập mã sản phẩm", "Thông báo");
+                CmbMaSP.Focus();
+                return;
+            }
+
+            var isExist = IsMaLoaiSPExists(maSP);
+
+            if (isExist)
+            {
+                XtraMessageBox.Show($"Mã sản phẩm {maSP} đã tồn tại!", "Thông báo");
+                CmbMaSP.Focus();
+                CmbMaSP.SelectAll();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(tenSP))
+            {
+                XtraMessageBox.Show("Nhập tên sản phẩm", "Thông báo");
+                return;
+            }
+
+            // Thực hiện thêm sản phẩm vào cơ sở dữ liệu
+            var sqlInsert = $"INSERT INTO SAN_PHAM (MaSP, TenSP, GiaBan, GiaNhap, MaLoaiSP, SoLuong) VALUES ('{maSP}', N'{tenSP}', {giaBan}, {giaNhap}, (SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = N'{phanLoai}'), {soLuong})";
+
+            DataAccess dataAccess = new DataAccess();
+            try
+            {
+                dataAccess.UpdateData(sqlInsert);
+
+                XtraMessageBox.Show("Thêm sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                CmbMaSP.Text = "";
+                CbeTenSP.Text = "";
+                CbePhanLoai.Text = "";
+                TeSoLuong.Text = "";
+                TeGiaNhap.Text = "";
+                TeGiaBan.Text = "";
+                LoadData(); // Gọi lại phương thức để cập nhật GridView
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Lỗi thêm sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
