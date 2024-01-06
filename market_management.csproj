@@ -141,6 +141,12 @@
     <Compile Include="UI\UcTKKhachHang.Designer.cs">
       <DependentUpon>UcTKKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="XemChiTietDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemChiTietDonNhap.Designer.cs">
+      <DependentUpon>XemChiTietDonNhap.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormDangKy.resx">
       <DependentUpon>FormDangKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcTKKhachHang.resx">
       <DependentUpon>UcTKKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemChiTietDonNhap.resx">
+      <DependentUpon>XemChiTietDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

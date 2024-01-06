@@ -25,7 +25,7 @@ namespace market_management
         private void SbtnDangNhap_Click(object sender, EventArgs e)
         {
             string tenTaiKhoan = TeTenDangNhap.Text;
-            string matKhau = TeMatKhau.Text;
+            string matKhau = TbMatKhau.Text;
 
             if (string.IsNullOrWhiteSpace(tenTaiKhoan) || string.IsNullOrWhiteSpace(matKhau))
             {
@@ -101,6 +101,25 @@ namespace market_management
         private void TeTenDangNhap_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void eye_Click(object sender, EventArgs e)
+        {
+            if (TbMatKhau.PasswordChar == '*')
+            {
+                hide.BringToFront();
+                TbMatKhau.PasswordChar = '\0';
+
+            }
+        }
+
+        private void hide_Click(object sender, EventArgs e)
+        {
+            if (TbMatKhau.PasswordChar == '\0')
+            {
+                eye.BringToFront();
+                TbMatKhau.PasswordChar = '*';
+            }
         }
     }
 }
