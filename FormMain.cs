@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraBars;
 using market_management.UI;
-using Quản_lý_siêu_thị;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
