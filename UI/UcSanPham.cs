@@ -1,10 +1,12 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Mask.Design;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,56 +21,214 @@ namespace market_management.UI
         public UcSanPham()
         {
             InitializeComponent();
-            /*
-            BindingList<Customer> dataSource = GetDataSource();
-            GcSanPham.DataSource = dataSource;
-            bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
-            */
             LoadData();
         }
-        /*
-        public BindingList<Customer> GetDataSource()
-        {
-            BindingList<Customer> result = new BindingList<Customer>();
-            result.Add(new Customer()
-            {
-                ID = 1,
-                Name = "ACME",
-                Address = "2525 E El Segundo Blvd",
-                City = "El Segundo",
-                State = "CA",
-                ZipCode = "90245",
-                Phone = "(310) 536-0611"
-            });
-            result.Add(new Customer()
-            {
-                ID = 2,
-                Name = "Electronics Depot",
-                Address = "2455 Paces Ferry Road NW",
-                City = "Atlanta",
-                State = "GA",
-                ZipCode = "30339",
-                Phone = "(800) 595-3232"
-            });
-            return result;
-        }
-        public class Customer
-        {
-            [Key, Display(AutoGenerateField = false)]
-            public int ID { get; set; }
-            [Required]
-            public string Name { get; set; }
-            public string Address { get; set; }
-            public string City { get; set; }
-            public string State { get; set; }
-            [Display(Name = "Zip Code")]
-            public string ZipCode { get; set; }
-            public string Phone { get; set; }
-        }
-        */
+        
         void LoadData()
         {
             GcSP.DataSource = dataAccess.GetDataTable("SELECT \r\n    SP.MaSP AS 'Mã sản phẩm',\r\n    SP.TenSP AS 'Tên sản phẩm',\r\n    LSP.TenLoaiSP AS 'Phân loại',\r\n    SP.SoLuong AS 'Số lượng',\r\n    SP.GiaNhap AS 'Giá nhập',\r\n    SP.GiaBanLe AS 'Giá bán lẻ'\r\nFROM \r\n    SAN_PHAM SP\r\nJOIN \r\n    LOAI_SAN_PHAM LSP ON SP.MaLoaiSP = LSP.MaLoaiSP;");
+        }
+
+
+        private void gridView_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            var maSP = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã sản phẩm").ToString();
+            var tenSP = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên sản phẩm").ToString();
+            var phanLoai= gridView.GetRowCellValue(e.FocusedRowHandle, "Phân loại").ToString();
+            var soLuong = gridView.GetRowCellValue(e.FocusedRowHandle, "Số lượng").ToString();
+            var giaNhap = gridView.GetRowCellValue(e.FocusedRowHandle, "Giá nhập").ToString();
+            var giaBan = gridView.GetRowCellValue(e.FocusedRowHandle, "Giá bán lẻ").ToString();
+            CmbMaSP.Text = maSP;
+            CbeTenSP.Text = tenSP;
+            CbePhanLoai.Text = phanLoai;
+            TeSoLuong.Text = soLuong;
+            TeGiaNhap.Text = giaNhap;
+            TeGiaBan.Text = giaBan;
+
+        }
+
+        private void BbiLamMoi_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            LoadData();
+            CmbMaSP.Text = "";
+            CbeTenSP.Text = "";
+            CbePhanLoai.Text = "";
+            TeSoLuong.Text = "";
+            TeGiaNhap.Text = "";
+            TeGiaBan.Text = "";
+        }
+
+        private void BbiXoa_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            var maSP = CmbMaSP.Text;
+
+            if (string.IsNullOrEmpty(maSP))
+            {
+                XtraMessageBox.Show("Vui lòng chọn sản phẩm cần xóa", "Thông báo");
+                return;
+            }
+
+            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationResult == DialogResult.Yes)
+            {
+                var sqlDelete = $"DELETE FROM SAN_PHAM WHERE MaSP = '{maSP}'";
+
+                DataAccess dataAccess = new DataAccess();
+                try
+                {
+                    dataAccess.UpdateData(sqlDelete);
+                    XtraMessageBox.Show("Xóa sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData(); // Gọi lại phương thức để cập nhật GridView
+
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Lỗi xóa sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BbiSua_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            var maSP = CmbMaSP.Text;
+            var tenSP = CbeTenSP.Text;
+            var phanLoai = CbePhanLoai.Text;
+            var soLuong = TeSoLuong.Text;
+            var giaNhap = TeGiaNhap.Text;
+            var giaBan = TeGiaBan.Text;
+
+            if (string.IsNullOrEmpty(maSP) || string.IsNullOrEmpty(tenSP))
+            {
+                XtraMessageBox.Show("Vui lòng chọn sản phẩm cần cập nhật và nhập thông tin mới", "Thông báo");
+                return;
+            }
+
+            var sqlUpdate = $"UPDATE SAN_PHAM \r\nSET TenSP = N'{tenSP}', \r\n    MaLoaiSP = (SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = N'{phanLoai}'), \r\n    SoLuong = '{soLuong}', \r\n    GiaNhap = '{giaNhap}', \r\n    GiaBanLe = '{giaBan}' \r\nWHERE MaSP = '{maSP}';\r\n";
+
+            DataAccess dataAccess = new DataAccess();
+            try
+            {
+                dataAccess.UpdateData(sqlUpdate);
+                XtraMessageBox.Show("Cập nhật sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData(); // Gọi lại phương thức để cập nhật GridView
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Lỗi cập nhật sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+        private List<string> LayTenSP()
+        {
+            List<string> TenSP = new List<string>();
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string query = "SELECT TenSP FROM SAN_PHAM";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TenSP.Add(reader["TenSP"].ToString());
+                        }
+                    }
+                }
+            }
+
+            return TenSP;
+        }
+        private void HienThiTenSP()
+        {
+            List<string> TenSP = LayTenSP();
+            CbeTenSP.Properties.Items.AddRange(TenSP);
+
+            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
+            CbeTenSP.Properties.AutoComplete = true;
+            CbeTenSP.Properties.CaseSensitiveSearch = false;
+        }
+
+        private List<string> LayTenLoaiSP()
+        {
+            List<string> TenLoaiSP = new List<string>();
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string query = "SELECT TenLoaiSP FROM LOAI_SAN_PHAM";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
+                        }
+                    }
+                }
+            }
+
+            return TenLoaiSP;
+        }
+        private void HienThiTenLoaiSP()
+        {
+            List<string> TenLoaiSP = LayTenLoaiSP();
+            CbePhanLoai.Properties.Items.AddRange(TenLoaiSP);
+
+            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
+            CbePhanLoai.Properties.AutoComplete = true;
+            CbePhanLoai.Properties.CaseSensitiveSearch = false;
+        }
+
+
+        private List<string> LayMaSP()
+        {
+            List<string> MaSP = new List<string>();
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string query = "SELECT MaSP FROM SAN_PHAM";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MaSP.Add(reader["MaSP"].ToString());
+                        }
+                    }
+                }
+            }
+
+            return MaSP;
+        }
+        private void HienThiMaSP()
+        {
+            List<string> MaSP = LayMaSP();
+
+            // Assuming CmbMaSP is your ComboBox control
+            CmbMaSP.Items.AddRange(MaSP.ToArray());
+
+            // If you want to enable auto-complete and case-insensitive search
+            CmbMaSP.AutoCompleteMode = AutoCompleteMode.Suggest;
+            CmbMaSP.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+
+        private void UcSanPham_Load(object sender, EventArgs e)
+        {
+            HienThiTenSP();
+            HienThiTenLoaiSP();
+            HienThiMaSP();
         }
     }
 }

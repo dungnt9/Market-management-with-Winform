@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,14 +15,13 @@ namespace market_management
 {
     public partial class FormMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-
-
-        UcLoaiSanPham _UcLoaiSanPham;
-        UcSanPham _UcSanPham;
+        UcLoaiSanPham _UcLSP;
+        UcSanPham _UcSP;
         UcTKKhachHang _UcTKKhachHang;
         UcQLNhapHang _UcQLNhapHang;
         UcKhachHang _UcKH;
         UcNhanVien _UcNV;
+        UcDoanhThu _UcDT;
         UcQLBanHang _UcQLBanHang;
 
         public FormMain()
@@ -29,34 +29,64 @@ namespace market_management
             InitializeComponent();
         }
 
+        private void LoadNhanVienData()
+        {
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True "; 
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT MaNV, TenNV, ChucVu FROM NHAN_VIEN";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Assuming BsiMaNV, BsiTenNV, and BsiChucvu are TextBox controls
+                            BsiMaNV.Caption = reader["MaNV"].ToString();
+                            BsiTenNV.Caption = reader["TenNV"].ToString();
+                            BsiChucvu.Caption = reader["ChucVu"].ToString();
+                        }
+                        else
+                        {
+                            // Handle the case when there is no data
+                            MessageBox.Show("No data found.");
+                        }
+                    }
+                }
+            }
+        }
 
         private void LoaiSP_Click(object sender, EventArgs e)
         {
-            if (_UcLoaiSanPham == null)
+            if (_UcLSP == null)
             {
-                _UcLoaiSanPham = new UcLoaiSanPham();
-                _UcLoaiSanPham.Dock = DockStyle.Fill;
-                PnlMain.Controls.Add(_UcLoaiSanPham);
-                _UcLoaiSanPham.BringToFront();
+                _UcLSP = new UcLoaiSanPham();
+                _UcLSP.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcLSP);
+                _UcLSP.BringToFront();
             }
             else
             {
-                _UcLoaiSanPham.BringToFront();
+                _UcLSP.BringToFront();
             }
         }
 
         private void SP_Click(object sender, EventArgs e)
         {
-            if (_UcSanPham == null)
+            if (_UcSP == null)
             {
-                _UcSanPham = new UcSanPham();
-                _UcSanPham.Dock = DockStyle.Fill;
-                PnlMain.Controls.Add(_UcSanPham);
-                _UcSanPham.BringToFront();
+                _UcSP = new UcSanPham();
+                _UcSP.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcSP);
+                _UcSP.BringToFront();
             }
             else
             {
-                _UcSanPham.BringToFront();
+                _UcSP.BringToFront();
             }
         }
 
@@ -105,7 +135,17 @@ namespace market_management
 
         private void TKDoanhThu_Click(object sender, EventArgs e)
         {
-
+            if (_UcDT == null)
+            {
+                _UcDT = new UcDoanhThu();
+                _UcDT.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcDT);
+                _UcDT.BringToFront();
+            }
+            else
+            {
+                _UcDT.BringToFront();
+            }
         }
 
         private void TKHangTon_Click(object sender, EventArgs e)

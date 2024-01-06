@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quản_lý_siêu_thị
+namespace market_management
 {
-    public partial class DoanhThu : DevExpress.XtraEditors.XtraUserControl
+    public partial class XemChiTietDonNhap : Form
     {
-        public DoanhThu()
+        public XemChiTietDonNhap()
         {
             InitializeComponent();
         }

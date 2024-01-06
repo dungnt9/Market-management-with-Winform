@@ -117,29 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="eye2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bieuTuong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bieuTuong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="acc11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\acc11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="acc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\acc1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="free-key-icon-920-thumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-key-icon-920-thumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nenDangNhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nenDangNhap.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="d25000794d527b5ca218ebc85e6484c7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\d25000794d527b5ca218ebc85e6484c7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

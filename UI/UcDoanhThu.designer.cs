@@ -1,6 +1,6 @@
-﻿namespace Quản_lý_siêu_thị
+﻿namespace market_management
 {
-    partial class DoanhThu
+    partial class UcDoanhThu
     {
         /// <summary> 
         /// Required designer variable.
@@ -49,12 +49,10 @@
             // 
             // GcDoanhThu
             // 
-            this.GcDoanhThu.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.GcDoanhThu.Location = new System.Drawing.Point(4, 214);
+            this.GcDoanhThu.Location = new System.Drawing.Point(3, 174);
             this.GcDoanhThu.MainView = this.gridView;
-            this.GcDoanhThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GcDoanhThu.Name = "GcDoanhThu";
-            this.GcDoanhThu.Size = new System.Drawing.Size(1152, 474);
+            this.GcDoanhThu.Size = new System.Drawing.Size(987, 385);
             this.GcDoanhThu.TabIndex = 3;
             this.GcDoanhThu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -62,12 +60,10 @@
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView.DetailHeight = 431;
             this.gridView.GridControl = this.GcDoanhThu;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
-            this.gridView.OptionsEditForm.PopupEditFormWidth = 933;
             // 
             // chartControl1
             // 
@@ -76,52 +72,48 @@
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.LegendID = -1;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl1.Location = new System.Drawing.Point(755, 30);
-            this.chartControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartControl1.Location = new System.Drawing.Point(647, 24);
             this.chartControl1.Name = "chartControl1";
             series1.Name = "Series 1";
             series1.SeriesID = 0;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControl1.Size = new System.Drawing.Size(357, 197);
+            this.chartControl1.Size = new System.Drawing.Size(306, 160);
             this.chartControl1.TabIndex = 4;
             // 
             // chartControl2
             // 
             this.chartControl2.Legend.LegendID = -1;
-            this.chartControl2.Location = new System.Drawing.Point(320, 30);
-            this.chartControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartControl2.Location = new System.Drawing.Point(274, 24);
             this.chartControl2.Name = "chartControl2";
             series2.Name = "Series 1";
             series2.SeriesID = 0;
             series2.View = pieSeriesView1;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series2};
-            this.chartControl2.Size = new System.Drawing.Size(410, 197);
+            this.chartControl2.Size = new System.Drawing.Size(351, 160);
             this.chartControl2.TabIndex = 5;
             // 
             // LbDoanhThu
             // 
             this.LbDoanhThu.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbDoanhThu.Appearance.Options.UseFont = true;
-            this.LbDoanhThu.Location = new System.Drawing.Point(29, 85);
-            this.LbDoanhThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LbDoanhThu.Location = new System.Drawing.Point(25, 69);
             this.LbDoanhThu.Name = "LbDoanhThu";
-            this.LbDoanhThu.Size = new System.Drawing.Size(281, 41);
+            this.LbDoanhThu.Size = new System.Drawing.Size(229, 32);
             this.LbDoanhThu.TabIndex = 6;
             this.LbDoanhThu.Text = "Thống Kê Doanh Thu";
             // 
             // DoanhThu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.LbDoanhThu);
             this.Controls.Add(this.chartControl2);
             this.Controls.Add(this.chartControl1);
             this.Controls.Add(this.GcDoanhThu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DoanhThu";
-            this.Size = new System.Drawing.Size(1158, 692);
+            this.Size = new System.Drawing.Size(993, 562);
             ((System.ComponentModel.ISupportInitialize)(this.GcDoanhThu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
