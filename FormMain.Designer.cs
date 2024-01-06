@@ -76,6 +76,8 @@
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 39);
             this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(223, 31);
+            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
             this.fluentDesignFormContainer1.Size = new System.Drawing.Size(804, 608);
             this.fluentDesignFormContainer1.TabIndex = 0;
