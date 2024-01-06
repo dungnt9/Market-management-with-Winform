@@ -53,7 +53,7 @@
     <Reference Include="DevExpress.XtraCharts.v23.2.Wizard, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -72,11 +72,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
-    <Compile Include="FormCapNhatTaiKhoan.cs">
+    <Compile Include="FormDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCapNhatTaiKhoan.Designer.cs">
-      <DependentUpon>FormCapNhatTaiKhoan.cs</DependentUpon>
+    <Compile Include="FormDangKy.designer.cs">
+      <DependentUpon>FormDangKy.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
@@ -104,11 +104,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\DoanhThu.cs">
+    <Compile Include="UI\UcDoanhThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\DoanhThu.designer.cs">
-      <DependentUpon>DoanhThu.cs</DependentUpon>
+    <Compile Include="UI\UcDoanhThu.designer.cs">
+      <DependentUpon>UcDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UcKhachHang.cs">
       <SubType>UserControl</SubType>
@@ -128,6 +128,12 @@
     <Compile Include="UI\UcLoaiSanPham.Designer.cs">
       <DependentUpon>UcLoaiSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UcQLMaGiamGia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcQLMaGiamGia.Designer.cs">
+      <DependentUpon>UcQLMaGiamGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UcQLNhapHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,14 +152,14 @@
     <Compile Include="UI\UcTKKhachHang.Designer.cs">
       <DependentUpon>UcTKKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UcQLBanHang.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="XemChiTietDonNhap.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\UcQLBanHang.Designer.cs">
-      <DependentUpon>UcQLBanHang.cs</DependentUpon>
+    <Compile Include="XemChiTietDonNhap.Designer.cs">
+      <DependentUpon>XemChiTietDonNhap.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormCapNhatTaiKhoan.resx">
-      <DependentUpon>FormCapNhatTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="FormDangKy.resx">
+      <DependentUpon>FormDangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
@@ -178,8 +184,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\DoanhThu.resx">
-      <DependentUpon>DoanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UcDoanhThu.resx">
+      <DependentUpon>UcDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcKhachHang.resx">
       <DependentUpon>UcKhachHang.cs</DependentUpon>
@@ -190,8 +196,8 @@
     <EmbeddedResource Include="UI\UcLoaiSanPham.resx">
       <DependentUpon>UcLoaiSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UcQLBanHang.resx">
-      <DependentUpon>UcQLBanHang.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UcQLMaGiamGia.resx">
+      <DependentUpon>UcQLMaGiamGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcQLNhapHang.resx">
       <DependentUpon>UcQLNhapHang.cs</DependentUpon>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcTKKhachHang.resx">
       <DependentUpon>UcTKKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemChiTietDonNhap.resx">
+      <DependentUpon>XemChiTietDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -235,6 +244,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\acc11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d25000794d527b5ca218ebc85e6484c7.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
