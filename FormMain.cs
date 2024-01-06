@@ -26,6 +26,7 @@ namespace market_management
         {
             InitializeComponent();
         }
+        public string MaNV { get; set; }
 
         private void LoadNhanVienData()
         {

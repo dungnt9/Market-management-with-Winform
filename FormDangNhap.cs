@@ -19,10 +19,8 @@ namespace market_management
             InitializeComponent();
         }
 
-
         private const string ConnectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
         
-
         private void SbtnDangNhap_Click(object sender, EventArgs e)
         {
             string tenTaiKhoan = TeTenDangNhap.Text;
@@ -59,9 +57,12 @@ namespace market_management
 
                             MessageBox.Show($"Đăng nhập thành công! Xin chào {reader["TenNV"]}", "Thông báo",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
-                            this.Hide();
+
+                            // Set giá trị maNV vào FormMain
                             FormMain frmDonNhap = new FormMain();
+                            frmDonNhap.MaNV = luuNhanVien;
+
+                            this.Hide();
                             frmDonNhap.ShowDialog();
                         }
                         else
