@@ -22,6 +22,7 @@ namespace market_management
         UcQLNhapHang _UcQLNhapHang;
         UcKhachHang _UcKH;
         UcNhanVien _UcNV;
+        UcQLBanHang _UcQLBanHang;
 
         public FormMain()
         {
@@ -130,6 +131,21 @@ namespace market_management
         private void QLMaGiamGia_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void QLBanHang_Click(object sender, EventArgs e)
+        {
+            if (_UcQLBanHang == null)
+            {
+                _UcQLBanHang = new UcQLBanHang();
+                _UcQLBanHang.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcQLBanHang);
+                _UcQLBanHang.BringToFront();
+            }
+            else
+            {
+                _UcQLBanHang.BringToFront();
+            }
         }
     }
 }

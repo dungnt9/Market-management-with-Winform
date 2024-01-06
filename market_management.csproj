@@ -40,7 +40,10 @@
     <Reference Include="DevExpress.DataAccess.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Images.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v23.2.UI, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -50,7 +53,9 @@
     <Reference Include="DevExpress.XtraCharts.v23.2.Wizard, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -63,14 +68,27 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="FormCapNhatTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCapNhatTaiKhoan.Designer.cs">
+      <DependentUpon>FormCapNhatTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDonBan.Designer.cs">
+      <DependentUpon>FormDonBan.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDonNhap.cs">
       <SubType>Form</SubType>
@@ -128,8 +146,20 @@
     <Compile Include="UI\UcTKKhachHang.Designer.cs">
       <DependentUpon>UcTKKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UcQLBanHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcQLBanHang.Designer.cs">
+      <DependentUpon>UcQLBanHang.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormCapNhatTaiKhoan.resx">
+      <DependentUpon>FormCapNhatTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDonBan.resx">
+      <DependentUpon>FormDonBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDonNhap.resx">
       <DependentUpon>FormDonNhap.cs</DependentUpon>
@@ -159,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcLoaiSanPham.resx">
       <DependentUpon>UcLoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcQLBanHang.resx">
+      <DependentUpon>UcQLBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcQLNhapHang.resx">
       <DependentUpon>UcQLNhapHang.cs</DependentUpon>
