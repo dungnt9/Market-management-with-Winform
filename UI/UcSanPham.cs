@@ -201,7 +201,7 @@ namespace market_management.UI
 
 
 
-        private bool IsMaLoaiSPExists(string maSP)
+        /*private bool IsMaLoaiSPExists(string maSP)
         {
             // Thực hiện truy vấn để lấy danh sách các MaSP từ bảng SAN_PHAM
             DataTable dataTable = dataAccess.GetDataTable($"SELECT MaSP FROM SAN_PHAM WHERE MaSP = '{maSP}'");
@@ -209,7 +209,7 @@ namespace market_management.UI
             // Kiểm tra sự tồn tại của maSP trong danh sách
             return dataTable.Rows.Count > 0;
         }
-
+        */
         private void BbiThem_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             var maSP = CmbMaSP.Text;
@@ -226,7 +226,7 @@ namespace market_management.UI
                 return;
             }
 
-            var isExist = IsMaLoaiSPExists(maSP);
+            /*var isExist = IsMaLoaiSPExists(maSP);
 
             if (isExist)
             {
@@ -235,7 +235,7 @@ namespace market_management.UI
                 CmbMaSP.SelectAll();
                 return;
             }
-
+            */
             if (string.IsNullOrEmpty(tenSP))
             {
                 XtraMessageBox.Show("Nhập tên sản phẩm", "Thông báo");

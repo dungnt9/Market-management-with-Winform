@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    public partial class FrmDonNhap : DevExpress.XtraEditors.XtraForm
+    public partial class FrmTaoDonNhap : DevExpress.XtraEditors.XtraForm
     {
-        public FrmDonNhap()
+        public FrmTaoDonNhap()
         {
             InitializeComponent();
         }

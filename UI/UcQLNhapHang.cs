@@ -19,12 +19,13 @@ namespace market_management.UI
 
         public UcQLNhapHang()
         {
+
             InitializeComponent();
             LoadData();
         }
         private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmDonNhap frmDonNhap = new FrmDonNhap();
+            FrmTaoDonNhap frmDonNhap = new FrmTaoDonNhap();
             frmDonNhap.ShowDialog();
         }
         void LoadData()
@@ -79,7 +80,15 @@ namespace market_management.UI
 
         private void BsiXemChiTiet_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XemChiTietDonNhap xem = new XemChiTietDonNhap();
+            var maDonNhap = LbcMaDN.Text;
+
+            // Kiểm tra xem có đơn nhập nào được chọn không
+            if (string.IsNullOrEmpty(maDonNhap))
+            {
+                XtraMessageBox.Show("Vui lòng chọn đơn nhập cần xem chi tiết", "Thông báo");
+                return;
+            }
+            XemChiTietDonNhap xem = new XemChiTietDonNhap(maDonNhap);
             xem.ShowDialog();
         }
 

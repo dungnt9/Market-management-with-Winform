@@ -12,9 +12,23 @@ namespace market_management
 {
     public partial class XemChiTietDonNhap : Form
     {
-        public XemChiTietDonNhap()
+        DataAccess dataAccess = new DataAccess();
+        public XemChiTietDonNhap(string maDonNhap)
         {
+            this.maDonNhap = maDonNhap;
             InitializeComponent();
+            LoadData();
         }
+        void LoadData()
+        {
+            string query = $"SELECT * FROM CT_HOA_DON_NHAP WHERE MaHDN = '{maDonNhap}'";
+            GcChiTiet.DataSource = dataAccess.GetDataTable(query);
+        }
+
+        private string maDonNhap;
+
+
+
+
     }
 }

@@ -30,7 +30,8 @@ namespace market_management.UI
         {
             GcLoaiSP.DataSource = dataAccess.GetDataTable("SELECT \r\n\tMaLoaiSP as 'Mã loại sản phẩm', \r\n\tTenLoaiSP as 'Tên loại sản phẩm'\r\nfrom LOAI_SAN_PHAM");
         }
-        private bool IsMaLoaiSPExists(string maLoaiSP)
+        
+        /*private bool IsMaLoaiSPExists(string maLoaiSP)
         {
             // Thực hiện truy vấn để lấy danh sách các MaLoaiSP từ bảng LOAI_SAN_PHAM
             DataTable dataTable = dataAccess.GetDataTable($"SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE MaLoaiSP = '{maLoaiSP}'");
@@ -38,6 +39,7 @@ namespace market_management.UI
             // Kiểm tra sự tồn tại của maLoaiSP trong danh sách
             return dataTable.Rows.Count > 0;
         }
+        */
         private void BbiThem_ItemClick(object sender, ItemClickEventArgs e)
         {
             var maLoaiSP = CbeMaLoaiSP.Text;
@@ -50,7 +52,7 @@ namespace market_management.UI
                 return;
             }
 
-            var isExist = IsMaLoaiSPExists(maLoaiSP);
+            /*var isExist = IsMaLoaiSPExists(maLoaiSP);
 
             if (isExist)
             {
@@ -59,7 +61,7 @@ namespace market_management.UI
                 CbeMaLoaiSP.SelectAll();
                 return;
             }
-
+            */
             if (string.IsNullOrEmpty(tenLoaiSP))
             {
                 XtraMessageBox.Show("Nhập tên loại sản phẩm", "Thông báo");

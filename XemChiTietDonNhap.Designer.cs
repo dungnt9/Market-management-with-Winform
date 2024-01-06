@@ -28,35 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvSP = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvSP)).BeginInit();
+            this.GcChiTiet = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ((System.ComponentModel.ISupportInitialize)(this.GcChiTiet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvSP
+            // GcChiTiet
             // 
-            this.DgvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvSP.Location = new System.Drawing.Point(67, 216);
-            this.DgvSP.Name = "DgvSP";
-            this.DgvSP.RowHeadersWidth = 51;
-            this.DgvSP.RowTemplate.Height = 24;
-            this.DgvSP.Size = new System.Drawing.Size(776, 344);
-            this.DgvSP.TabIndex = 0;
+            this.GcChiTiet.Location = new System.Drawing.Point(1, 2);
+            this.GcChiTiet.MainView = this.gridView1;
+            this.GcChiTiet.Name = "GcChiTiet";
+            this.GcChiTiet.Size = new System.Drawing.Size(915, 707);
+            this.GcChiTiet.TabIndex = 0;
+            this.GcChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.GcChiTiet;
+            this.gridView1.Name = "gridView1";
             // 
             // XemChiTietDonNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 711);
-            this.Controls.Add(this.DgvSP);
+            this.Controls.Add(this.GcChiTiet);
             this.Name = "XemChiTietDonNhap";
             this.Text = "Form Xem chi tiết đơn nhập";
-            ((System.ComponentModel.ISupportInitialize)(this.DgvSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GcChiTiet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DgvSP;
+        private DevExpress.XtraGrid.GridControl GcChiTiet;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class FrmDonNhap
+    partial class FrmTaoDonNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,8 @@
             this.CbeTenNCC = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CbeMaNCC = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.CbeTenSP = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.CbeMaSP = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -53,8 +55,6 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.BtnTaoHD = new System.Windows.Forms.Button();
-            this.CbeMaSP = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.CbeTenSP = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TeSDT.Properties)).BeginInit();
@@ -63,10 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.CbeMaNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeMaSP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeMaSP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -164,6 +164,24 @@
             this.groupControl2.Size = new System.Drawing.Size(801, 142);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Thông tin hàng nhập";
+            // 
+            // CbeTenSP
+            // 
+            this.CbeTenSP.Location = new System.Drawing.Point(191, 94);
+            this.CbeTenSP.Name = "CbeTenSP";
+            this.CbeTenSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeTenSP.Size = new System.Drawing.Size(166, 22);
+            this.CbeTenSP.TabIndex = 15;
+            // 
+            // CbeMaSP
+            // 
+            this.CbeMaSP.Location = new System.Drawing.Point(191, 47);
+            this.CbeMaSP.Name = "CbeMaSP";
+            this.CbeMaSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeMaSP.Size = new System.Drawing.Size(166, 22);
+            this.CbeMaSP.TabIndex = 14;
             // 
             // textBox2
             // 
@@ -283,25 +301,7 @@
             this.BtnTaoHD.Text = "Tạo hóa đơn";
             this.BtnTaoHD.UseVisualStyleBackColor = true;
             // 
-            // CbeMaSP
-            // 
-            this.CbeMaSP.Location = new System.Drawing.Point(191, 47);
-            this.CbeMaSP.Name = "CbeMaSP";
-            this.CbeMaSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeMaSP.Size = new System.Drawing.Size(166, 22);
-            this.CbeMaSP.TabIndex = 14;
-            // 
-            // CbeTenSP
-            // 
-            this.CbeTenSP.Location = new System.Drawing.Point(191, 94);
-            this.CbeTenSP.Name = "CbeTenSP";
-            this.CbeTenSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeTenSP.Size = new System.Drawing.Size(166, 22);
-            this.CbeTenSP.TabIndex = 15;
-            // 
-            // FrmDonNhap
+            // FrmTaoDonNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -317,7 +317,7 @@
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
-            this.Name = "FrmDonNhap";
+            this.Name = "FrmTaoDonNhap";
             this.Text = "Form tạo hóa đơn nhập hàng";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -329,10 +329,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeMaSP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeMaSP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
