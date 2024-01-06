@@ -38,9 +38,7 @@
             this.RpDanhMucSP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RpgTacVuSP = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.CmbTenSP = new System.Windows.Forms.ComboBox();
             this.CmbMaSP = new System.Windows.Forms.ComboBox();
-            this.CmbPhanLoai = new System.Windows.Forms.ComboBox();
             this.TeSoLuong = new DevExpress.XtraEditors.TextEdit();
             this.TeGiaBan = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -50,12 +48,16 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.TeGiaNhap = new DevExpress.XtraEditors.TextEdit();
+            this.CbeTenSP = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.CbePhanLoai = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbePhanLoai.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // GcSP
@@ -163,51 +165,33 @@
             this.ribbonStatusBar.Ribbon = this.RcDanhMucSP;
             this.ribbonStatusBar.Size = new System.Drawing.Size(934, 33);
             // 
-            // CmbTenSP
-            // 
-            this.CmbTenSP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.CmbTenSP.FormattingEnabled = true;
-            this.CmbTenSP.Location = new System.Drawing.Point(216, 225);
-            this.CmbTenSP.Name = "CmbTenSP";
-            this.CmbTenSP.Size = new System.Drawing.Size(199, 28);
-            this.CmbTenSP.TabIndex = 28;
-            // 
             // CmbMaSP
             // 
             this.CmbMaSP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CmbMaSP.FormattingEnabled = true;
             this.CmbMaSP.Location = new System.Drawing.Point(216, 184);
             this.CmbMaSP.Name = "CmbMaSP";
-            this.CmbMaSP.Size = new System.Drawing.Size(199, 28);
+            this.CmbMaSP.Size = new System.Drawing.Size(213, 28);
             this.CmbMaSP.TabIndex = 27;
-            // 
-            // CmbPhanLoai
-            // 
-            this.CmbPhanLoai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.CmbPhanLoai.FormattingEnabled = true;
-            this.CmbPhanLoai.Location = new System.Drawing.Point(216, 268);
-            this.CmbPhanLoai.Name = "CmbPhanLoai";
-            this.CmbPhanLoai.Size = new System.Drawing.Size(199, 28);
-            this.CmbPhanLoai.TabIndex = 26;
             // 
             // TeSoLuong
             // 
-            this.TeSoLuong.Location = new System.Drawing.Point(654, 183);
+            this.TeSoLuong.Location = new System.Drawing.Point(645, 183);
             this.TeSoLuong.MenuManager = this.RcDanhMucSP;
             this.TeSoLuong.Name = "TeSoLuong";
             this.TeSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeSoLuong.Properties.Appearance.Options.UseFont = true;
-            this.TeSoLuong.Size = new System.Drawing.Size(199, 26);
+            this.TeSoLuong.Size = new System.Drawing.Size(213, 26);
             this.TeSoLuong.TabIndex = 25;
             // 
             // TeGiaBan
             // 
-            this.TeGiaBan.Location = new System.Drawing.Point(654, 267);
+            this.TeGiaBan.Location = new System.Drawing.Point(645, 267);
             this.TeGiaBan.MenuManager = this.RcDanhMucSP;
             this.TeGiaBan.Name = "TeGiaBan";
             this.TeGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeGiaBan.Properties.Appearance.Options.UseFont = true;
-            this.TeGiaBan.Size = new System.Drawing.Size(199, 26);
+            this.TeGiaBan.Size = new System.Drawing.Size(213, 26);
             this.TeGiaBan.TabIndex = 24;
             // 
             // labelControl5
@@ -272,23 +256,47 @@
             // 
             // TeGiaNhap
             // 
-            this.TeGiaNhap.Location = new System.Drawing.Point(654, 224);
+            this.TeGiaNhap.Location = new System.Drawing.Point(645, 224);
             this.TeGiaNhap.MenuManager = this.RcDanhMucSP;
             this.TeGiaNhap.Name = "TeGiaNhap";
             this.TeGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeGiaNhap.Properties.Appearance.Options.UseFont = true;
-            this.TeGiaNhap.Size = new System.Drawing.Size(199, 26);
+            this.TeGiaNhap.Size = new System.Drawing.Size(213, 26);
             this.TeGiaNhap.TabIndex = 32;
+            // 
+            // CbeTenSP
+            // 
+            this.CbeTenSP.Location = new System.Drawing.Point(216, 223);
+            this.CbeTenSP.MenuManager = this.RcDanhMucSP;
+            this.CbeTenSP.Name = "CbeTenSP";
+            this.CbeTenSP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbeTenSP.Properties.Appearance.Options.UseFont = true;
+            this.CbeTenSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeTenSP.Size = new System.Drawing.Size(213, 28);
+            this.CbeTenSP.TabIndex = 38;
+            // 
+            // CbePhanLoai
+            // 
+            this.CbePhanLoai.Location = new System.Drawing.Point(216, 263);
+            this.CbePhanLoai.MenuManager = this.RcDanhMucSP;
+            this.CbePhanLoai.Name = "CbePhanLoai";
+            this.CbePhanLoai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbePhanLoai.Properties.Appearance.Options.UseFont = true;
+            this.CbePhanLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbePhanLoai.Size = new System.Drawing.Size(213, 28);
+            this.CbePhanLoai.TabIndex = 39;
             // 
             // UcSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.CbePhanLoai);
+            this.Controls.Add(this.CbeTenSP);
             this.Controls.Add(this.TeGiaNhap);
             this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.CmbTenSP);
             this.Controls.Add(this.CmbMaSP);
-            this.Controls.Add(this.CmbPhanLoai);
             this.Controls.Add(this.TeSoLuong);
             this.Controls.Add(this.TeGiaBan);
             this.Controls.Add(this.labelControl5);
@@ -302,12 +310,15 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcSanPham";
             this.Size = new System.Drawing.Size(934, 758);
+            this.Load += new System.EventHandler(this.UcSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GcSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbePhanLoai.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,9 +335,7 @@
         private DevExpress.XtraBars.BarButtonItem BbiSua;
         private DevExpress.XtraBars.BarButtonItem BbiXoa;
         private DevExpress.XtraBars.BarButtonItem BbiLamMoi;
-        private System.Windows.Forms.ComboBox CmbTenSP;
         private System.Windows.Forms.ComboBox CmbMaSP;
-        private System.Windows.Forms.ComboBox CmbPhanLoai;
         private DevExpress.XtraEditors.TextEdit TeSoLuong;
         private DevExpress.XtraEditors.TextEdit TeGiaBan;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -336,5 +345,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit TeGiaNhap;
+        private DevExpress.XtraEditors.ComboBoxEdit CbeTenSP;
+        private DevExpress.XtraEditors.ComboBoxEdit CbePhanLoai;
     }
 }

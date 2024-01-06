@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,8 +39,8 @@ namespace market_management.UI
             var giaNhap = gridView.GetRowCellValue(e.FocusedRowHandle, "Giá nhập").ToString();
             var giaBan = gridView.GetRowCellValue(e.FocusedRowHandle, "Giá bán lẻ").ToString();
             CmbMaSP.Text = maSP;
-            CmbTenSP.Text = tenSP;
-            CmbPhanLoai.Text = phanLoai;
+            CbeTenSP.Text = tenSP;
+            CbePhanLoai.Text = phanLoai;
             TeSoLuong.Text = soLuong;
             TeGiaNhap.Text = giaNhap;
             TeGiaBan.Text = giaBan;
@@ -50,8 +51,8 @@ namespace market_management.UI
         {
             LoadData();
             CmbMaSP.Text = "";
-            CmbTenSP.Text = "";
-            CmbPhanLoai.Text = "";
+            CbeTenSP.Text = "";
+            CbePhanLoai.Text = "";
             TeSoLuong.Text = "";
             TeGiaNhap.Text = "";
             TeGiaBan.Text = "";
@@ -91,8 +92,8 @@ namespace market_management.UI
         private void BbiSua_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             var maSP = CmbMaSP.Text;
-            var tenSP = CmbTenSP.Text;
-            var phanLoai = CmbPhanLoai.Text;
+            var tenSP = CbeTenSP.Text;
+            var phanLoai = CbePhanLoai.Text;
             var soLuong = TeSoLuong.Text;
             var giaNhap = TeGiaNhap.Text;
             var giaBan = TeGiaBan.Text;
@@ -116,6 +117,118 @@ namespace market_management.UI
             {
                 XtraMessageBox.Show($"Lỗi cập nhật sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+
+
+        private List<string> LayTenSP()
+        {
+            List<string> TenSP = new List<string>();
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string query = "SELECT TenSP FROM SAN_PHAM";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TenSP.Add(reader["TenSP"].ToString());
+                        }
+                    }
+                }
+            }
+
+            return TenSP;
+        }
+        private void HienThiTenSP()
+        {
+            List<string> TenSP = LayTenSP();
+            CbeTenSP.Properties.Items.AddRange(TenSP);
+
+            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
+            CbeTenSP.Properties.AutoComplete = true;
+            CbeTenSP.Properties.CaseSensitiveSearch = false;
+        }
+
+        private List<string> LayTenLoaiSP()
+        {
+            List<string> TenLoaiSP = new List<string>();
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string query = "SELECT TenLoaiSP FROM LOAI_SAN_PHAM";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
+                        }
+                    }
+                }
+            }
+
+            return TenLoaiSP;
+        }
+        private void HienThiTenLoaiSP()
+        {
+            List<string> TenLoaiSP = LayTenLoaiSP();
+            CbePhanLoai.Properties.Items.AddRange(TenLoaiSP);
+
+            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
+            CbePhanLoai.Properties.AutoComplete = true;
+            CbePhanLoai.Properties.CaseSensitiveSearch = false;
+        }
+
+
+        private List<string> LayMaSP()
+        {
+            List<string> MaSP = new List<string>();
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string query = "SELECT MaSP FROM SAN_PHAM";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MaSP.Add(reader["MaSP"].ToString());
+                        }
+                    }
+                }
+            }
+
+            return MaSP;
+        }
+        private void HienThiMaSP()
+        {
+            List<string> MaSP = LayMaSP();
+
+            // Assuming CmbMaSP is your ComboBox control
+            CmbMaSP.Items.AddRange(MaSP.ToArray());
+
+            // If you want to enable auto-complete and case-insensitive search
+            CmbMaSP.AutoCompleteMode = AutoCompleteMode.Suggest;
+            CmbMaSP.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+
+        private void UcSanPham_Load(object sender, EventArgs e)
+        {
+            HienThiTenSP();
+            HienThiTenLoaiSP();
+            HienThiMaSP();
         }
     }
 }

@@ -167,6 +167,7 @@
             this.CbeMaLoaiSP.Properties.Sorted = true;
             this.CbeMaLoaiSP.Size = new System.Drawing.Size(199, 26);
             this.CbeMaLoaiSP.TabIndex = 21;
+            this.CbeMaLoaiSP.SelectedIndexChanged += new System.EventHandler(this.CbeMaLoaiSP_SelectedIndexChanged);
             // 
             // LbTenLSP
             // 

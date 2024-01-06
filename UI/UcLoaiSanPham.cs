@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraExport.Helpers;
+using System.Data.SqlClient;
 
 namespace market_management.UI
 {
@@ -86,6 +87,8 @@ namespace market_management.UI
             }
         }
 
+
+
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             
@@ -96,6 +99,8 @@ namespace market_management.UI
             
         }
         
+
+
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
             
@@ -165,16 +170,90 @@ namespace market_management.UI
 
 
 
+        private List<string> LayMaLoaiSP()
+        {
+            List<string> MaLoaiSP = new List<string>();
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string query = "SELECT MaLoaiSP FROM LOAI_SAN_PHAM";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MaLoaiSP.Add(reader["MaLoaiSP"].ToString());
+                        }
+                    }
+                }
+            }
+
+            return MaLoaiSP;
+        }
+        private void HienThiMaLoaiSP()
+        {
+            List<string> MaLoaiSP = LayMaLoaiSP();
+            CbeMaLoaiSP.Properties.Items.AddRange(MaLoaiSP);
+
+            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
+            CbeMaLoaiSP.Properties.AutoComplete = true;
+            CbeMaLoaiSP.Properties.CaseSensitiveSearch = false;
+        }
+
+        private List<string> LayTenLoaiSP()
+        {
+            List<string> TenLoaiSP = new List<string>();
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string query = "SELECT TenLoaiSP FROM LOAI_SAN_PHAM";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
+                        }
+                    }
+                }
+            }
+
+            return TenLoaiSP;
+        }
+        private void HienThiTenLoaiSP()
+        {
+            List<string> TenLoaiSP = LayTenLoaiSP();
+            CbeTenLoaiSP.Properties.Items.AddRange(TenLoaiSP);
+
+            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
+            CbeTenLoaiSP.Properties.AutoComplete = true;
+            CbeTenLoaiSP.Properties.CaseSensitiveSearch = false;
+        }
+
+
+        private void UcLoaiSanPham_Load(object sender, EventArgs e)
+        {
+            HienThiMaLoaiSP();
+            HienThiTenLoaiSP();
+        }
+
+
+
+
 
         private void bsiRecordsCount_ItemClick(object sender, ItemClickEventArgs e)
         {
 
         }
-        private void UcLoaiSanPham_Load(object sender, EventArgs e)
+        private void CbeMaLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-        
     }
 }
