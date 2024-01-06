@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,6 @@ namespace market_management
 {
     public partial class FormMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-
-
         UcLoaiSanPham _UcLSP;
         UcSanPham _UcSP;
         UcTKKhachHang _UcTKKhachHang;
@@ -28,6 +27,36 @@ namespace market_management
             InitializeComponent();
         }
 
+        private void LoadNhanVienData()
+        {
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True "; 
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT MaNV, TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV='{luuNhanVien}'";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Assuming BsiMaNV, BsiTenNV, and BsiChucvu are TextBox controls
+                            BsiMaNV.Caption = reader["MaNV"].ToString();
+                            BsiTenNV.Caption = reader["TenNV"].ToString();
+                            BsiChucvu.Caption = reader["ChucVu"].ToString();
+                        }
+                        else
+                        {
+                            // Handle the case when there is no data
+                            MessageBox.Show("No data found.");
+                        }
+                    }
+                }
+            }
+        }
 
         private void LoaiSP_Click(object sender, EventArgs e)
         {
@@ -140,6 +169,13 @@ namespace market_management
         private void QLMaGiamGia_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmDangNhap frmDangNhap = new FrmDangNhap();
+            frmDangNhap.ShowDialog();
         }
     }
 }

@@ -20,53 +20,8 @@ namespace market_management.UI
         public UcQLNhapHang()
         {
             InitializeComponent();
-            /*
-            BindingList<Customer> dataSource = GetDataSource();
-            GcQLNhapHang.DataSource = dataSource;
-            bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
-            */
             LoadData();
         }
-        /*
-        public BindingList<Customer> GetDataSource()
-        {
-            BindingList<Customer> result = new BindingList<Customer>();
-            result.Add(new Customer()
-            {
-                ID = 1,
-                Name = "ACME",
-                Address = "2525 E El Segundo Blvd",
-                City = "El Segundo",
-                State = "CA",
-                ZipCode = "90245",
-                Phone = "(310) 536-0611"
-            });
-            result.Add(new Customer()
-            {
-                ID = 2,
-                Name = "Electronics Depot",
-                Address = "2455 Paces Ferry Road NW",
-                City = "Atlanta",
-                State = "GA",
-                ZipCode = "30339",
-                Phone = "(800) 595-3232"
-            });
-            return result;
-        }
-        public class Customer
-        {
-            [Key, Display(AutoGenerateField = false)]
-            public int ID { get; set; }
-            [Required]
-            public string Name { get; set; }
-            public string Address { get; set; }
-            public string City { get; set; }
-            public string State { get; set; }
-            [Display(Name = "Zip Code")]
-            public string ZipCode { get; set; }
-            public string Phone { get; set; }
-        }
-        */
         private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
             FrmDonNhap frmDonNhap = new FrmDonNhap();
@@ -74,10 +29,116 @@ namespace market_management.UI
         }
         void LoadData()
         {
-            GcQLNhapHang.DataSource = dataAccess.GetDataTable("SELECT \r\n    HDN.MaHDN AS 'Mã đơn nhập',\r\n    HDN.TongTien AS 'Tổng tiền',\r\n    HDN.ThoiGian AS 'Thời gian',\r\n    HDN.MaNCC AS 'Mã nhà cung cấp',\r\n    NCC.TenNCC AS 'Tên nhà cung cấp',\r\n    NCC.SDT AS 'Số điện thoại NCC',\r\n    HDN.MaNV AS 'Mã nhân viên',\r\n    NV.TenNV AS 'Tên nhân viên'\r\nFROM \r\n    HOA_DON_NHAP HDN\r\n    JOIN NHA_CUNG_CAP NCC ON HDN.MaNCC = NCC.MaNCC\r\n    JOIN NHAN_VIEN NV ON HDN.MaNV = NV.MaNV;");
+            GcQLNhapHang.DataSource = dataAccess.GetDataTable("SELECT \r\n" +
+                "    HDN.MaHDN AS 'Mã đơn nhập',\r\n" +
+                "    NCC.TenNCC AS 'Tên nhà cung cấp',\r\n" +
+                "    NCC.SDT AS 'Số điện thoại NCC',\r\n" +
+                "    HDN.TongTien AS 'Tổng tiền',\r\n" +
+                "    HDN.ThoiGian AS 'Thời gian',\r\n" +
+                "    NV.TenNV AS 'Tên nhân viên'\r\n" +
+                "FROM \r\n" +
+                "    HOA_DON_NHAP HDN\r\n" +
+                "    JOIN NHA_CUNG_CAP NCC ON HDN.MaNCC = NCC.MaNCC\r\n" +
+                "    JOIN NHAN_VIEN NV ON HDN.MaNV = NV.MaNV;");
         }
 
 
 
+
+
+
+        private void UcQLNhapHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            
+            var maDonNhap = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã đơn nhập").ToString();
+            var tongtien = gridView.GetRowCellValue(e.FocusedRowHandle, "Tổng tiền").ToString();
+            var thoiGian = gridView.GetRowCellValue(e.FocusedRowHandle, "Thời gian").ToString();
+            var tenNCC = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên nhà cung cấp").ToString();
+            var tenNV = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên nhân viên").ToString();
+            LbcMaDN.Text = maDonNhap;
+            TeTongtien.Text = tongtien;
+            DeThoiGian.Text = thoiGian;
+            CmbTenNCC.Text = tenNCC;
+            CmbTenNV.Text = tenNV;
+        }
+
+        private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            LoadData();
+            LbcMaDN.Text = "";
+            TeTongtien.Text = "";
+            DeThoiGian.Text = "";
+            CmbTenNCC.Text = "";
+            CmbTenNV.Text = "";
+        }
+
+        private void BsiXemChiTiet_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XemChiTietDonNhap xem = new XemChiTietDonNhap();
+            xem.ShowDialog();
+        }
+
+        private void BbiXoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var maDN = LbcMaDN.Text;
+
+            if (string.IsNullOrEmpty(maDN))
+            {
+                XtraMessageBox.Show("Vui lòng chọn hóa đơn nhập cần xóa", "Thông báo");
+                return;
+            }
+
+            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn nhập này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationResult == DialogResult.Yes)
+            {
+                var sqlDelete = $"DELETE FROM HOA_DON_NHAP WHERE MaHDN = '{maDN}'";
+
+                DataAccess dataAccess = new DataAccess();
+                try
+                {
+                    dataAccess.UpdateData(sqlDelete);
+                    XtraMessageBox.Show("Xóa hóa đơn nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData(); // Gọi lại phương thức để cập nhật GridView
+
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Lỗi xóa hóa đơn nhập: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var maDN = LbcMaDN.Text;
+            var tongtien = TeTongtien.Text;
+            var thoiGian = DeThoiGian.Text;
+
+            if (string.IsNullOrEmpty(maDN))
+            {
+                XtraMessageBox.Show("Vui lòng chọn hóa đơn nhập cần cập nhật và nhập thông tin mới", "Thông báo");
+                return;
+            }
+
+            var sqlUpdate = $"UPDATE HOA_DON_NHAP SET ThoiGian = '{thoiGian}', TongTien='{tongtien}' WHERE MaHDN = '{maDN}'";
+
+            DataAccess dataAccess = new DataAccess();
+            try
+            {
+                dataAccess.UpdateData(sqlUpdate);
+                XtraMessageBox.Show("Cập nhật hóa đơn nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData(); // Gọi lại phương thức để cập nhật GridView
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Lỗi cập nhật hóa đơn nhập: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
