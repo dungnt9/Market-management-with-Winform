@@ -335,6 +335,7 @@
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Hệ thống quản lý siêu thị";

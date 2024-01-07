@@ -30,17 +30,20 @@ namespace market_management
 
         public void LoadNhanVienData()
         {
-
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True "; 
+            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string query = "SELECT TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV='{luuNhanVien}'";
+                // Use parameterized query to avoid SQL injection
+                string query = "SELECT TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV = @MaNV";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    // Add parameter for MaNV
+                    command.Parameters.AddWithValue("@MaNV", MaNV);
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
@@ -57,6 +60,7 @@ namespace market_management
                 }
             }
         }
+
 
         private void LoaiSP_Click(object sender, EventArgs e)
         {

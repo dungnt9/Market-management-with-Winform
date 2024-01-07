@@ -21,7 +21,6 @@ namespace market_management
 
         private const string ConnectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
 
-
         private void SbtnDangNhap_Click(object sender, EventArgs e)
         {
             string tenTaiKhoan = TeTenDangNhap.Text;
@@ -58,12 +57,20 @@ namespace market_management
                             if (int.TryParse(reader["MaNV"].ToString(), out int maNV))
                             {
                                 luuNhanVien = maNV;
+
+                                // Open FormMain when credentials are correct
+                                OpenFormMain();
                             }
                             else
                             {
                                 MessageBox.Show("Lỗi chuyển đổi giá trị mã nhân viên sang kiểu int.", "Lỗi đăng nhập",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng kiểm tra và thử lại.", "Lỗi đăng nhập",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -75,8 +82,15 @@ namespace market_management
             }
         }
 
-
-
+        private void OpenFormMain()
+        {
+            // Open FormMain
+            FormMain frmMain = new FormMain();
+            frmMain.MaNV = luuNhanVien;
+            frmMain.LoadNhanVienData();
+            frmMain.Show();
+            this.Hide();
+        }
 
 
 
@@ -113,6 +127,14 @@ namespace market_management
             {
                 eye.BringToFront();
                 TbMatKhau.PasswordChar = '*';
+            }
+        }
+
+        private void SbtnDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SbtnDangNhap.PerformClick();
             }
         }
     }

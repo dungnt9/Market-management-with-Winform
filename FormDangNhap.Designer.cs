@@ -62,6 +62,7 @@
             this.SbtnDangNhap.TabIndex = 20;
             this.SbtnDangNhap.Text = "Đăng nhập";
             this.SbtnDangNhap.Click += new System.EventHandler(this.SbtnDangNhap_Click);
+            this.SbtnDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SbtnDangNhap_KeyDown);
             // 
             // labelControl3
             // 
@@ -195,6 +196,7 @@
             this.Controls.Add(this.TeTenDangNhap);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MaximizeBox = false;
             this.Name = "FrmDangNhap";
             this.Text = "Form Đăng nhập";
             this.Load += new System.EventHandler(this.FrmDangNhap_Load);
