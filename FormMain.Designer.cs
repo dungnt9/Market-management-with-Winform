@@ -55,6 +55,7 @@
             this.TKKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.DangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.DangKy = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.BsiChucvu = new DevExpress.XtraBars.BarStaticItem();
             this.BsiTenNV = new DevExpress.XtraBars.BarStaticItem();
@@ -130,7 +131,8 @@
             this.accordionControlSeparator5,
             this.BaoCaoThongKe,
             this.accordionControlSeparator6,
-            this.DangXuat});
+            this.DangXuat,
+            this.DangKy});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.accordionControl1.Name = "accordionControl1";
@@ -147,7 +149,6 @@
             this.KH,
             this.NCC,
             this.LoaiSP});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Quản lý thông tin danh mục";
@@ -235,7 +236,6 @@
             this.TKDoanhThu,
             this.TKHangTon,
             this.TKKhachHang});
-            this.BaoCaoThongKe.Expanded = true;
             this.BaoCaoThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BaoCaoThongKe.ImageOptions.Image")));
             this.BaoCaoThongKe.Name = "BaoCaoThongKe";
             this.BaoCaoThongKe.Text = "Báo cáo thống kê";
@@ -272,6 +272,14 @@
             this.DangXuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.DangXuat.Text = "Đăng xuất";
             this.DangXuat.Click += new System.EventHandler(this.DangXuat_Click);
+            // 
+            // DangKy
+            // 
+            this.DangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DangKy.ImageOptions.Image")));
+            this.DangKy.Name = "DangKy";
+            this.DangKy.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.DangKy.Text = "Đăng ký tài khoản cho nhân viên";
+            this.DangKy.Click += new System.EventHandler(this.DangKy_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -383,5 +391,6 @@
         private DevExpress.XtraBars.BarStaticItem BsiChucvu;
         private DevExpress.XtraBars.BarStaticItem BsiTenNV;
         private DevExpress.XtraBars.BarStaticItem barStaticItem4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement DangKy;
     }
 }

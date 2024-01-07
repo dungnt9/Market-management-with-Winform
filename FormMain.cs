@@ -180,6 +180,13 @@ namespace market_management
             this.Hide();
             FrmDangNhap frmDangNhap = new FrmDangNhap();
             frmDangNhap.ShowDialog();
+            
+        }
+
+        private void DangKy_Click(object sender, EventArgs e)
+        {
+            FrmDangKy frmDangKy = new FrmDangKy();
+            frmDangKy.ShowDialog();
         }
     }
 }
