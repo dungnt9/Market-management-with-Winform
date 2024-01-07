@@ -35,7 +35,7 @@ namespace market_management.UI
                 "CASE " +
                 "   WHEN TrangThai = 1 THEN 'Đang kinh doanh'" +
                 "   WHEN TrangThai = 0 THEN 'Không còn kinh doanh'" +
-                "   ELSE 'Null'" +
+                "   ELSE 'NULL'" +
                 "END AS 'Trạng thái'" +
                 " FROM LOAI_SAN_PHAM;");
         }
@@ -135,10 +135,10 @@ namespace market_management.UI
             }
             else
             {
-                sqlUpdate += "TrangThai"; 
+                sqlUpdate += "NULL"; 
             }
 
-            sqlUpdate += $"\r\nWHERE MaLoaiSP = '{maLoaiSP}';";
+            sqlUpdate += $"\r\nWHERE MaLoaiSP = '{maLoaiSP}'";
 
 
             try
