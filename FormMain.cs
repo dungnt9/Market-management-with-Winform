@@ -26,17 +26,18 @@ namespace market_management
         {
             InitializeComponent();
         }
-        public string MaNV { get; set; }
+        public int MaNV { get; set; }
 
-        private void LoadNhanVienData()
+        public void LoadNhanVienData()
         {
+
             string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True "; 
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string query = "SELECT MaNV, TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV='{luuNhanVien}'";
+                string query = "SELECT TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV='{luuNhanVien}'";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -44,8 +45,6 @@ namespace market_management
                     {
                         if (reader.Read())
                         {
-                            // Assuming BsiMaNV, BsiTenNV, and BsiChucvu are TextBox controls
-                            BsiMaNV.Caption = reader["MaNV"].ToString();
                             BsiTenNV.Caption = reader["TenNV"].ToString();
                             BsiChucvu.Caption = reader["ChucVu"].ToString();
                         }

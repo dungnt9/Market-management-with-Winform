@@ -58,7 +58,6 @@
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.BsiChucvu = new DevExpress.XtraBars.BarStaticItem();
             this.BsiTenNV = new DevExpress.XtraBars.BarStaticItem();
-            this.BsiMaNV = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.fluentDesignFormContainer1.SuspendLayout();
@@ -280,7 +279,6 @@
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.BsiChucvu,
             this.BsiTenNV,
-            this.BsiMaNV,
             this.barStaticItem4});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
@@ -291,29 +289,21 @@
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.BsiChucvu);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.BsiTenNV);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.BsiMaNV);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem4);
             // 
             // BsiChucvu
             // 
             this.BsiChucvu.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.BsiChucvu.Caption = "Quản lý";
+            this.BsiChucvu.Caption = "Chức vụ";
             this.BsiChucvu.Id = 0;
             this.BsiChucvu.Name = "BsiChucvu";
             // 
             // BsiTenNV
             // 
             this.BsiTenNV.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.BsiTenNV.Caption = "Nguyễn Văn A";
+            this.BsiTenNV.Caption = "Tên nhân viên";
             this.BsiTenNV.Id = 1;
             this.BsiTenNV.Name = "BsiTenNV";
-            // 
-            // BsiMaNV
-            // 
-            this.BsiMaNV.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.BsiMaNV.Caption = "NV113";
-            this.BsiMaNV.Id = 2;
-            this.BsiMaNV.Name = "BsiMaNV";
             // 
             // barStaticItem4
             // 
@@ -330,7 +320,6 @@
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.BsiChucvu,
             this.BsiTenNV,
-            this.BsiMaNV,
             this.barStaticItem4});
             this.fluentFormDefaultManager1.MaxItemId = 4;
             // 
@@ -392,7 +381,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement TKKhachHang;
         private DevExpress.XtraBars.BarStaticItem BsiChucvu;
         private DevExpress.XtraBars.BarStaticItem BsiTenNV;
-        private DevExpress.XtraBars.BarStaticItem BsiMaNV;
         private DevExpress.XtraBars.BarStaticItem barStaticItem4;
     }
 }

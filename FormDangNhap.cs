@@ -13,14 +13,15 @@ namespace market_management
 {
     public partial class FrmDangNhap : DevExpress.XtraEditors.XtraForm
     {
-        public string luuNhanVien;
+        public int luuNhanVien;
         public FrmDangNhap()
         {
             InitializeComponent();
         }
 
         private const string ConnectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
-        
+
+
         private void SbtnDangNhap_Click(object sender, EventArgs e)
         {
             string tenTaiKhoan = TeTenDangNhap.Text;
@@ -28,7 +29,7 @@ namespace market_management
 
             if (string.IsNullOrWhiteSpace(tenTaiKhoan) || string.IsNullOrWhiteSpace(matKhau))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi đăng nhập", 
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi đăng nhập",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -40,9 +41,9 @@ namespace market_management
                     connection.Open();
 
                     string query = "SELECT TAI_KHOAN.MaNV, NHAN_VIEN.TenNV " +
-                                   "FROM TAI_KHOAN " +
-                                   "INNER JOIN NHAN_VIEN ON TAI_KHOAN.MaNV = NHAN_VIEN.MaNV " +
-                                   "WHERE TAI_KHOAN.TenTaiKhoan = @TenTaiKhoan AND TAI_KHOAN.MatKhau = @MatKhau";
+                                    "FROM TAI_KHOAN " +
+                                    "INNER JOIN NHAN_VIEN ON TAI_KHOAN.MaNV = NHAN_VIEN.MaNV " +
+                                    "WHERE TAI_KHOAN.TenTaiKhoan = @TenTaiKhoan AND TAI_KHOAN.MatKhau = @MatKhau";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -53,31 +54,23 @@ namespace market_management
 
                         if (reader.Read())
                         {
-                            luuNhanVien = reader["MaNV"].ToString(); // Lưu mã nhân viên
-
-                            MessageBox.Show($"Đăng nhập thành công! Xin chào {reader["TenNV"]}", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Set giá trị maNV vào FormMain
-                            FormMain frmDonNhap = new FormMain();
-                            frmDonNhap.MaNV = luuNhanVien;
-
-                            this.Hide();
-                            frmDonNhap.ShowDialog();
+                            // Ensure that the value can be converted to int
+                            if (int.TryParse(reader["MaNV"].ToString(), out int maNV))
+                            {
+                                luuNhanVien = maNV;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Lỗi chuyển đổi giá trị mã nhân viên sang kiểu int.", "Lỗi đăng nhập",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("Thông tin đăng nhập không chính xác.", "Lỗi đăng nhập",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-                        reader.Close();
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi khi đăng nhập: " + ex.Message, "Lỗi", MessageBoxButtons.OK, 
+                MessageBox.Show("Đã xảy ra lỗi khi đăng nhập: " + ex.Message, "Lỗi", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
