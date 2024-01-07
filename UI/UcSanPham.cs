@@ -52,7 +52,7 @@ namespace market_management.UI
             var giaBan = gridView.GetRowCellValue(e.FocusedRowHandle, "Giá bán lẻ").ToString();
             var trangThai = gridView.GetRowCellValue(e.FocusedRowHandle, "Trạng thái").ToString();
             LbcMaSP.Text = maSP;
-            CbeTenSP.Text = tenSP;
+            TeTenSP.Text = tenSP;
             CbePhanLoai.Text = phanLoai;
             TeSoLuong.Text = soLuong;
             TeGiaNhap.Text = giaNhap;
@@ -64,7 +64,7 @@ namespace market_management.UI
         {
             LoadData();
             LbcMaSP.Text = "";
-            CbeTenSP.Text = "";
+            TeTenSP.Text = "";
             CbePhanLoai.Text = "";
             TeSoLuong.Text = "";
             TeGiaNhap.Text = "";
@@ -75,7 +75,7 @@ namespace market_management.UI
         private void BbiSua_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             var maSP = LbcMaSP.Text;
-            var tenSP = CbeTenSP.Text;
+            var tenSP = TeTenSP.Text;
             var phanLoai = CbePhanLoai.Text;
             var soLuong = TeSoLuong.Text;
             var giaNhap = TeGiaNhap.Text;
@@ -126,41 +126,6 @@ namespace market_management.UI
             }
         }
 
-
-
-
-        private List<string> LayTenSP()
-        {
-            List<string> TenSP = new List<string>();
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
-            string query = "SELECT TenSP FROM SAN_PHAM";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            TenSP.Add(reader["TenSP"].ToString());
-                        }
-                    }
-                }
-            }
-
-            return TenSP;
-        }
-        private void HienThiTenSP()
-        {
-            List<string> TenSP = LayTenSP();
-            CbeTenSP.Properties.Items.AddRange(TenSP);
-
-            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
-            CbeTenSP.Properties.AutoComplete = true;
-            CbeTenSP.Properties.CaseSensitiveSearch = false;
-        }
         private List<string> LayTenLoaiSP()
         {
             List<string> TenLoaiSP = new List<string>();
@@ -195,7 +160,6 @@ namespace market_management.UI
         }
         private void UcSanPham_Load(object sender, EventArgs e)
         {
-            HienThiTenSP();
             HienThiTenLoaiSP();
         }
 
@@ -208,7 +172,7 @@ namespace market_management.UI
         private void BbiThem_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             var maSP = LbcMaSP.Text;
-            var tenSP = CbeTenSP.Text;
+            var tenSP = TeTenSP.Text;
             var phanLoai = CbePhanLoai.Text;
             var soLuong = TeSoLuong.Text;
             var giaNhap = TeGiaNhap.Text;
@@ -268,7 +232,7 @@ namespace market_management.UI
                 XtraMessageBox.Show("Thêm sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LbcMaSP.Text = "";
-                CbeTenSP.Text = "";
+                TeTenSP.Text = "";
                 CbePhanLoai.Text = "";
                 TeSoLuong.Text = "";
                 TeGiaNhap.Text = "";

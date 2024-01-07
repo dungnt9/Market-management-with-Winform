@@ -48,19 +48,19 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.TeGiaNhap = new DevExpress.XtraEditors.TextEdit();
-            this.CbeTenSP = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CbePhanLoai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LbcMaSP = new DevExpress.XtraEditors.LabelControl();
             this.CmbTrangThai = new System.Windows.Forms.ComboBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.TeTenSP = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanLoai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeTenSP.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // GcSP
@@ -259,18 +259,6 @@
             this.TeGiaNhap.Size = new System.Drawing.Size(213, 26);
             this.TeGiaNhap.TabIndex = 32;
             // 
-            // CbeTenSP
-            // 
-            this.CbeTenSP.Location = new System.Drawing.Point(216, 223);
-            this.CbeTenSP.MenuManager = this.RcDanhMucSP;
-            this.CbeTenSP.Name = "CbeTenSP";
-            this.CbeTenSP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbeTenSP.Properties.Appearance.Options.UseFont = true;
-            this.CbeTenSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeTenSP.Size = new System.Drawing.Size(213, 28);
-            this.CbeTenSP.TabIndex = 38;
-            // 
             // CbePhanLoai
             // 
             this.CbePhanLoai.Location = new System.Drawing.Point(216, 263);
@@ -289,9 +277,9 @@
             this.LbcMaSP.Appearance.Options.UseFont = true;
             this.LbcMaSP.Location = new System.Drawing.Point(216, 188);
             this.LbcMaSP.Name = "LbcMaSP";
-            this.LbcMaSP.Size = new System.Drawing.Size(81, 18);
+            this.LbcMaSP.Size = new System.Drawing.Size(25, 18);
             this.LbcMaSP.TabIndex = 42;
-            this.LbcMaSP.Text = "labelControl7";
+            this.LbcMaSP.Text = "Mã ";
             // 
             // CmbTrangThai
             // 
@@ -315,15 +303,25 @@
             this.labelControl7.TabIndex = 47;
             this.labelControl7.Text = "Trạng thái";
             // 
+            // TeTenSP
+            // 
+            this.TeTenSP.Location = new System.Drawing.Point(216, 222);
+            this.TeTenSP.MenuManager = this.RcDanhMucSP;
+            this.TeTenSP.Name = "TeTenSP";
+            this.TeTenSP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeTenSP.Properties.Appearance.Options.UseFont = true;
+            this.TeTenSP.Size = new System.Drawing.Size(213, 24);
+            this.TeTenSP.TabIndex = 51;
+            // 
             // UcSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TeTenSP);
             this.Controls.Add(this.CmbTrangThai);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.LbcMaSP);
             this.Controls.Add(this.CbePhanLoai);
-            this.Controls.Add(this.CbeTenSP);
             this.Controls.Add(this.TeGiaNhap);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.TeSoLuong);
@@ -346,8 +344,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanLoai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeTenSP.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,11 +370,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit TeGiaNhap;
-        private DevExpress.XtraEditors.ComboBoxEdit CbeTenSP;
         private DevExpress.XtraEditors.ComboBoxEdit CbePhanLoai;
         private DevExpress.XtraBars.BarButtonItem BbiThem;
         private DevExpress.XtraEditors.LabelControl LbcMaSP;
         private System.Windows.Forms.ComboBox CmbTrangThai;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit TeTenSP;
     }
 }

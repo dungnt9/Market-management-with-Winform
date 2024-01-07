@@ -19,7 +19,6 @@ namespace market_management.UI
 
         public UcQLNhapHang()
         {
-
             InitializeComponent();
             LoadData();
         }
@@ -57,25 +56,13 @@ namespace market_management.UI
         {
             
             var maDonNhap = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã đơn nhập").ToString();
-            var tongtien = gridView.GetRowCellValue(e.FocusedRowHandle, "Tổng tiền").ToString();
-            var thoiGian = gridView.GetRowCellValue(e.FocusedRowHandle, "Thời gian").ToString();
-            var tenNCC = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên nhà cung cấp").ToString();
-            var tenNV = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên nhân viên").ToString();
             LbcMaDN.Text = maDonNhap;
-            TeTongtien.Text = tongtien;
-            DeThoiGian.Text = thoiGian;
-            CmbTenNCC.Text = tenNCC;
-            CmbTenNV.Text = tenNV;
         }
 
         private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadData();
             LbcMaDN.Text = "";
-            TeTongtien.Text = "";
-            DeThoiGian.Text = "";
-            CmbTenNCC.Text = "";
-            CmbTenNV.Text = "";
         }
 
         private void BsiXemChiTiet_ItemClick(object sender, ItemClickEventArgs e)
@@ -106,15 +93,16 @@ namespace market_management.UI
 
             if (confirmationResult == DialogResult.Yes)
             {
+                var sqlDelete1 = $"DELETE FROM CT_HOA_DON_NHAP WHERE MaHDN = '{maDN}'";
                 var sqlDelete = $"DELETE FROM HOA_DON_NHAP WHERE MaHDN = '{maDN}'";
-
                 DataAccess dataAccess = new DataAccess();
                 try
                 {
+                    dataAccess.UpdateData(sqlDelete1);
                     dataAccess.UpdateData(sqlDelete);
                     XtraMessageBox.Show("Xóa hóa đơn nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
-
+                    LoadData();
+                    LbcMaDN.Text = "";
                 }
                 catch (Exception ex)
                 {

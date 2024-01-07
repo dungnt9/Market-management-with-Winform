@@ -178,9 +178,9 @@
             this.LbcMaLoaiSP.Appearance.Options.UseFont = true;
             this.LbcMaLoaiSP.Location = new System.Drawing.Point(217, 177);
             this.LbcMaLoaiSP.Name = "LbcMaLoaiSP";
-            this.LbcMaLoaiSP.Size = new System.Drawing.Size(81, 18);
+            this.LbcMaLoaiSP.Size = new System.Drawing.Size(20, 18);
             this.LbcMaLoaiSP.TabIndex = 41;
-            this.LbcMaLoaiSP.Text = "labelControl2";
+            this.LbcMaLoaiSP.Text = "Mã";
             // 
             // labelControl1
             // 
