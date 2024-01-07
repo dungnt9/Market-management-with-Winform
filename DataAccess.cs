@@ -10,7 +10,7 @@ namespace market_management
 {
     internal class DataAccess
     {
-        SqlConnection objConnection = new SqlConnection();
+        public SqlConnection objConnection { get; private set; }
         public DataAccess()
         {
             string strConnection = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";

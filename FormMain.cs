@@ -14,6 +14,8 @@ namespace market_management
 {
     public partial class FormMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+        DataAccess dataAccess = new DataAccess();
+
         UcLoaiSanPham _UcLSP;
         UcSanPham _UcSP;
         UcTKKhachHang _UcTKKhachHang;
@@ -28,34 +30,27 @@ namespace market_management
         }
         public int MaNV { get; set; }
 
+
         public void LoadNhanVienData()
         {
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string query = "SELECT TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV = @MaNV";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
-                connection.Open();
+                dataAccess.objConnection.Open();
 
-                // Use parameterized query to avoid SQL injection
-                string query = "SELECT TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV = @MaNV";
+                cmd.Parameters.AddWithValue("@MaNV", MaNV);
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    // Add parameter for MaNV
-                    command.Parameters.AddWithValue("@MaNV", MaNV);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    if (reader.Read())
                     {
-                        if (reader.Read())
-                        {
-                            BsiTenNV.Caption = reader["TenNV"].ToString();
-                            BsiChucvu.Caption = reader["ChucVu"].ToString();
-                        }
-                        else
-                        {
-                            // Handle the case when there is no data
-                            MessageBox.Show("No data found.");
-                        }
+                        BsiTenNV.Caption = reader["TenNV"].ToString();
+                        BsiChucvu.Caption = reader["ChucVu"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found.");
                     }
                 }
             }
@@ -180,7 +175,7 @@ namespace market_management
             this.Hide();
             FrmDangNhap frmDangNhap = new FrmDangNhap();
             frmDangNhap.ShowDialog();
-            
+
         }
 
         private void DangKy_Click(object sender, EventArgs e)
