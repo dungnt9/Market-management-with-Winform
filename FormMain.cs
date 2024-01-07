@@ -26,6 +26,11 @@ namespace market_management
         public FormMain()
         {
             InitializeComponent();
+
+            if(BsiChucvu.Caption == "Quản lý")
+            {
+                DangKy.Visible = true;
+            }
         }
 
         private void LoadNhanVienData()
@@ -194,5 +199,6 @@ namespace market_management
             FrmDangKy f = new FrmDangKy();
             f.ShowDialog();
         }
+        
     }
 }
