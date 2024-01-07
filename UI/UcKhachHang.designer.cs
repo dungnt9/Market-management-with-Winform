@@ -31,15 +31,13 @@
             this.GcDanhMucKH = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.RcDanhMucKH = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
-            this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.BbiThemMoi = new DevExpress.XtraBars.BarButtonItem();
             this.BbiSua = new DevExpress.XtraBars.BarButtonItem();
             this.BbiXoa = new DevExpress.XtraBars.BarButtonItem();
             this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
             this.RpDanhMucKH = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RbgTacVuKH = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.TeDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.LbDiaChi = new DevExpress.XtraEditors.LabelControl();
             this.TeSDT = new DevExpress.XtraEditors.TextEdit();
@@ -91,8 +89,6 @@
             this.RcDanhMucKH.ExpandCollapseItem.Id = 0;
             this.RcDanhMucKH.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.RcDanhMucKH.ExpandCollapseItem,
-            this.bbiPrintPreview,
-            this.bsiRecordsCount,
             this.BbiThemMoi,
             this.BbiSua,
             this.BbiXoa,
@@ -105,19 +101,7 @@
             this.RcDanhMucKH.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.RcDanhMucKH.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.RcDanhMucKH.Size = new System.Drawing.Size(800, 126);
-            this.RcDanhMucKH.StatusBar = this.ribbonStatusBar;
             this.RcDanhMucKH.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
-            // 
-            // bbiPrintPreview
-            // 
-            this.bbiPrintPreview.Id = 20;
-            this.bbiPrintPreview.Name = "bbiPrintPreview";
-            // 
-            // bsiRecordsCount
-            // 
-            this.bsiRecordsCount.Caption = "RECORDS : 0";
-            this.bsiRecordsCount.Id = 15;
-            this.bsiRecordsCount.Name = "bsiRecordsCount";
             // 
             // BbiThemMoi
             // 
@@ -170,13 +154,10 @@
             this.RbgTacVuKH.ItemLinks.Add(this.BbiLamMoi);
             this.RbgTacVuKH.Name = "RbgTacVuKH";
             // 
-            // ribbonStatusBar
+            // bbiPrintPreview
             // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 573);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.RcDanhMucKH;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(800, 27);
+            this.bbiPrintPreview.Id = 20;
+            this.bbiPrintPreview.Name = "bbiPrintPreview";
             // 
             // TeDiaChi
             // 
@@ -338,7 +319,6 @@
             this.Controls.Add(this.LbTenKH);
             this.Controls.Add(this.TeMaKH);
             this.Controls.Add(this.LbMaKH);
-            this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.GcDanhMucKH);
             this.Controls.Add(this.RcDanhMucKH);
             this.Name = "UcKhachHang";
@@ -366,8 +346,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage RpDanhMucKH;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup RbgTacVuKH;
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiThemMoi;
         private DevExpress.XtraBars.BarButtonItem BbiSua;
         private DevExpress.XtraBars.BarButtonItem BbiXoa;
