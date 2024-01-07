@@ -15,22 +15,30 @@ namespace market_management.UI
 {
     public partial class UcQLMaGiamGia : DevExpress.XtraEditors.XtraUserControl
     {
+        DataAccess dataAccess = new DataAccess();
         public UcQLMaGiamGia()
         {
             InitializeComponent();
+            LoadData();
+            
+        }
+        void LoadData()
+        {
+            GcMaGiamGia.DataSource = dataAccess.GetDataTable("select MaGiamGia as 'Mã Giảm Giá', " +
+                                                                    "TenChuongTrinh as 'Tên Chuong Trinh'," +
+                                                                    "PhanTram as 'Phần Trăm'," +
+                                                                    "NgayTao as 'Ngày Tạo', " +
+                                                                    "TrangThai as 'Trạng Thái'," +
+                                                                    "MoTa as 'Mô Tả'" +
+                                                                    "from MA_GIAM_GIA");
+        }
 
-            BindingList<Customer> dataSource = GetDataSource();
-            GcMaGiamGia.DataSource = dataSource;
-            bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
-        }
-        public BindingList<Customer> GetDataSource()
+        private void BbiThemMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            BindingList<Customer> result = new BindingList<Customer>();
-            result.Add(new Customer());
-            return result;
-        }
-        public class Customer
-        {
+            string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia,TenChuongTrinh,NgayTao, TrangThai, MoTa, PhanTram) VALUES" + "('{0}',N'{1}','{2}','{3}',N'{4}','{5}')", TeMaGiamGia.Text, TeTenChuongTrinh.Text, DeNgayTao.Text, CbeTrangThai.Text, TeMoTa.Text, CbePhanTram.Text);
+            MessageBox.Show("Thêm thành công");
+            GcMaGiamGia.DataSource = dataAccess.GetDataTable(s);
+            LoadData();
         }
     }
 }

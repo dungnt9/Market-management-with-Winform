@@ -22,6 +22,7 @@ namespace market_management
         UcKhachHang _UcKH;
         UcNhanVien _UcNV;
         UcDoanhThu _UcDT;
+        UcQLMaGiamGia _UcMGG;
 
         public FormMain()
         {
@@ -169,7 +170,17 @@ namespace market_management
 
         private void QLMaGiamGia_Click(object sender, EventArgs e)
         {
-
+            if (_UcMGG == null)
+            {
+                _UcMGG = new UcQLMaGiamGia();
+                _UcMGG.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcMGG);
+                _UcMGG.BringToFront();
+            }
+            else
+            {
+                _UcMGG.BringToFront();
+            }
         }
 
         private void DangXuat_Click(object sender, EventArgs e)

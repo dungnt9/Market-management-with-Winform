@@ -15,32 +15,36 @@ namespace Quản_lý_siêu_thị
 {
     public partial class UcKhachHang : DevExpress.XtraEditors.XtraUserControl
     {
+        DataAccess dataAccess = new DataAccess();
+
         public UcKhachHang()
         {
             InitializeComponent();
+            LoadData();
 
-            BindingList<Customer> dataSource = GetDataSource();
-            GcDanhMucKH.DataSource = dataSource;
-            bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
-        }
-        void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            GcDanhMucKH.ShowRibbonPrintPreview();
-        }
-        public BindingList<Customer> GetDataSource()
-        {
-            BindingList<Customer> result = new BindingList<Customer>();
-            result.Add(new Customer());
-            return result;
-        }
-        public class Customer
-        {
-
+            CbeGioiTinh.Properties.Items.Add("Nam");
+            CbeGioiTinh.Properties.Items.Add("Nữ");
+            CbeGioiTinh.Properties.Items.Add("Khác");
         }
 
-        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        void LoadData()
         {
+            GcDanhMucKH.DataSource = dataAccess.GetDataTable("select MaKH as 'Mã Khách Hàng', " +
+                                                                    "TenKH as 'Tên Khách Hàng',   " +
+                                                                    "NgaySinh as 'Ngày Sinh'," +
+                                                                    "GioiTinh as 'Giới Tính', " +
+                                                                    "SDT as 'Số Điện Thoại'," +
+                                                                    "DiaChi as 'Địa Chỉ', " +
+                                                                    "MaGiamGia as 'Mã Giảm Giá'" +
+                                                                    "from KHACH_HANG");
+        }
 
+        private void BbiThemMoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string s = string.Format("INSERT INTO KHACH_HANG (MaKH,TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh) VALUES" + "('{0}',N'{1}',N'{2}','{3}',N'{4}','{5}','{6}')", TeMaKH.Text, TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text, DeNgaySinh.Text);
+            MessageBox.Show("Thêm thành công");
+            GcDanhMucKH.DataSource = dataAccess.GetDataTable(s);
+            LoadData();
         }
     }
 }

@@ -86,7 +86,6 @@
             this.GcDanhMucNV.TabIndex = 2;
             this.GcDanhMucNV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
-            this.GcDanhMucNV.Click += new System.EventHandler(this.gridControl_Click);
             // 
             // gridView
             // 
@@ -143,6 +142,7 @@
             this.BbiThemMoi.Id = 16;
             this.BbiThemMoi.ImageOptions.ImageUri.Uri = "New";
             this.BbiThemMoi.Name = "BbiThemMoi";
+            this.BbiThemMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThemMoi_ItemClick);
             // 
             // BbiSua
             // 
@@ -419,7 +419,8 @@
             this.Controls.Add(this.RcDanhMucNV);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UcNhanVien";
-            this.Size = new System.Drawing.Size(933, 738);
+            this.Size = new System.Drawing.Size(800, 600);
+            this.Load += new System.EventHandler(this.UcNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GcDanhMucNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucNV)).EndInit();

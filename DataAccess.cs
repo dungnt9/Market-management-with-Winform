@@ -13,7 +13,7 @@ namespace market_management
         SqlConnection objConnection = new SqlConnection();
         public DataAccess()
         {
-            string strConnection = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string strConnection = @"Data Source= LAPTOP-MSGIJ51R\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
 
             objConnection = new SqlConnection(strConnection);
 
