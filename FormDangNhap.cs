@@ -13,13 +13,12 @@ namespace market_management
 {
     public partial class FrmDangNhap : DevExpress.XtraEditors.XtraForm
     {
+        DataAccess dataAccess = new DataAccess();
         public int luuNhanVien;
         public FrmDangNhap()
         {
             InitializeComponent();
         }
-
-        private const string ConnectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
 
         private void SbtnDangNhap_Click(object sender, EventArgs e)
         {
@@ -35,43 +34,39 @@ namespace market_management
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(ConnectionString))
-                {
-                    connection.Open();
-
-                    string query = "SELECT TAI_KHOAN.MaNV, NHAN_VIEN.TenNV " +
+                string query = "SELECT TAI_KHOAN.MaNV, NHAN_VIEN.TenNV " +
                                     "FROM TAI_KHOAN " +
                                     "INNER JOIN NHAN_VIEN ON TAI_KHOAN.MaNV = NHAN_VIEN.MaNV " +
                                     "WHERE TAI_KHOAN.TenTaiKhoan = @TenTaiKhoan AND TAI_KHOAN.MatKhau = @MatKhau";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, dataAccess.objConnection))
+                {
+                    dataAccess.objConnection.Open();
+                    command.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
+                    command.Parameters.AddWithValue("@MatKhau", matKhau);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
                     {
-                        command.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
-                        command.Parameters.AddWithValue("@MatKhau", matKhau);
-
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if (reader.Read())
+                        // Ensure that the value can be converted to int
+                        if (int.TryParse(reader["MaNV"].ToString(), out int maNV))
                         {
-                            // Ensure that the value can be converted to int
-                            if (int.TryParse(reader["MaNV"].ToString(), out int maNV))
-                            {
-                                luuNhanVien = maNV;
+                            luuNhanVien = maNV;
 
-                                // Open FormMain when credentials are correct
-                                OpenFormMain();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Lỗi chuyển đổi giá trị mã nhân viên sang kiểu int.", "Lỗi đăng nhập",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            // Open FormMain when credentials are correct
+                            OpenFormMain();
                         }
                         else
                         {
-                            MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng kiểm tra và thử lại.", "Lỗi đăng nhập",
+                            MessageBox.Show("Lỗi chuyển đổi giá trị mã nhân viên sang kiểu int.", "Lỗi đăng nhập",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng kiểm tra và thử lại.", "Lỗi đăng nhập",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
