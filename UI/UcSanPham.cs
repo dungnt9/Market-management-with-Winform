@@ -129,32 +129,28 @@ namespace market_management.UI
         private List<string> LayTenLoaiSP()
         {
             List<string> TenLoaiSP = new List<string>();
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
             string query = "SELECT TenLoaiSP FROM LOAI_SAN_PHAM";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
+                dataAccess.objConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
-                        }
+                        TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
                     }
                 }
             }
-
             return TenLoaiSP;
         }
+
         private void HienThiTenLoaiSP()
         {
             List<string> TenLoaiSP = LayTenLoaiSP();
             CbePhanLoai.Properties.Items.AddRange(TenLoaiSP);
 
-            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
             CbePhanLoai.Properties.AutoComplete = true;
             CbePhanLoai.Properties.CaseSensitiveSearch = false;
         }
