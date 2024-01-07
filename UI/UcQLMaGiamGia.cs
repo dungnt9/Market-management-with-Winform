@@ -20,7 +20,16 @@ namespace market_management.UI
         {
             InitializeComponent();
             LoadData();
-            
+
+            CbePhanTram.Properties.Items.Add("5");
+            CbePhanTram.Properties.Items.Add("10");
+            CbePhanTram.Properties.Items.Add("15");
+            CbePhanTram.Properties.Items.Add("20");
+            CbePhanTram.Properties.Items.Add("25");
+            CbePhanTram.Properties.Items.Add("30");
+            CbePhanTram.Properties.Items.Add("40");
+            CbePhanTram.Properties.Items.Add("50");
+
         }
         void LoadData()
         {
@@ -35,9 +44,31 @@ namespace market_management.UI
 
         private void BbiThemMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia,TenChuongTrinh,NgayTao, TrangThai, MoTa, PhanTram) VALUES" + "('{0}',N'{1}','{2}','{3}',N'{4}','{5}')", TeMaGiamGia.Text, TeTenChuongTrinh.Text, DeNgayTao.Text, CbeTrangThai.Text, TeMoTa.Text, CbePhanTram.Text);
-            MessageBox.Show("Thêm thành công");
-            GcMaGiamGia.DataSource = dataAccess.GetDataTable(s);
+            int TrangThai = 1;
+            if (RbConHieuLuc.Checked)
+            {
+                TrangThai = 1;
+            }
+            if (RbHetHan.Checked)
+            {
+                TrangThai = 0;
+            }
+            if(TeTenChuongTrinh.Text != "")
+            {
+                string s = string.Format("INSERT INTO MA_GIAM_GIA (TenChuongTrinh,NgayTao, TrangThai, MoTa, PhanTram) VALUES" + "(N'{0}','{1}','{2}',N'{3}','{4}')", TeTenChuongTrinh.Text, DeNgayTao.Text, TrangThai, TeMoTa.Text, CbePhanTram.Text);
+                MessageBox.Show("Thêm thành công");
+                GcMaGiamGia.DataSource = dataAccess.GetDataTable(s);
+                LoadData();
+            }
+        }
+
+        private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
             LoadData();
         }
     }

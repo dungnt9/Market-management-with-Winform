@@ -98,9 +98,7 @@ namespace market_management.UI
             CbeTenLoaiSP.Text = tenLoaiSP;
             
         }
-        
-
-
+       
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
             
@@ -166,9 +164,6 @@ namespace market_management.UI
             CbeMaLoaiSP.Text = "";
             CbeTenLoaiSP.Text = "";
         }
-
-
-
 
         private List<string> LayMaLoaiSP()
         {
@@ -242,10 +237,6 @@ namespace market_management.UI
             HienThiMaLoaiSP();
             HienThiTenLoaiSP();
         }
-
-
-
-
 
         private void bsiRecordsCount_ItemClick(object sender, ItemClickEventArgs e)
         {

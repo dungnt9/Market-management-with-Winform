@@ -1,4 +1,4 @@
-﻿namespace Quản_lý_siêu_thị
+﻿namespace market_management
 {
     partial class UcKhachHang
     {
@@ -133,6 +133,7 @@
             this.BbiSua.Id = 17;
             this.BbiSua.ImageOptions.ImageUri.Uri = "Edit";
             this.BbiSua.Name = "BbiSua";
+            this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
             // 
             // BbiXoa
             // 
@@ -140,6 +141,7 @@
             this.BbiXoa.Id = 18;
             this.BbiXoa.ImageOptions.ImageUri.Uri = "Delete";
             this.BbiXoa.Name = "BbiXoa";
+            this.BbiXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiXoa_ItemClick);
             // 
             // BbiLamMoi
             // 

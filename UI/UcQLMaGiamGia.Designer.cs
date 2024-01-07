@@ -51,7 +51,8 @@
             this.TeMoTa = new DevExpress.XtraEditors.TextEdit();
             this.LbMoTa = new DevExpress.XtraEditors.LabelControl();
             this.LbTrangThai = new DevExpress.XtraEditors.LabelControl();
-            this.CbeTrangThai = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.RbConHieuLuc = new System.Windows.Forms.RadioButton();
+            this.RbHetHan = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.GcMaGiamGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcMGG)).BeginInit();
@@ -61,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeMoTa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeTrangThai.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // GcMaGiamGia
@@ -130,6 +130,7 @@
             this.BbiSua.Id = 17;
             this.BbiSua.ImageOptions.ImageUri.Uri = "Edit";
             this.BbiSua.Name = "BbiSua";
+            this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
             // 
             // bbiDelete
             // 
@@ -144,6 +145,7 @@
             this.BbiLamMoi.Id = 19;
             this.BbiLamMoi.ImageOptions.ImageUri.Uri = "Refresh";
             this.BbiLamMoi.Name = "BbiLamMoi";
+            this.BbiLamMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiLamMoi_ItemClick);
             // 
             // RpQLMaGiamGia
             // 
@@ -254,11 +256,11 @@
             // 
             // TeMoTa
             // 
-            this.TeMoTa.Location = new System.Drawing.Point(644, 208);
+            this.TeMoTa.Location = new System.Drawing.Point(608, 208);
             this.TeMoTa.Name = "TeMoTa";
             this.TeMoTa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeMoTa.Properties.Appearance.Options.UseFont = true;
-            this.TeMoTa.Size = new System.Drawing.Size(128, 22);
+            this.TeMoTa.Size = new System.Drawing.Size(164, 22);
             this.TeMoTa.TabIndex = 57;
             // 
             // LbMoTa
@@ -281,22 +283,34 @@
             this.LbTrangThai.TabIndex = 54;
             this.LbTrangThai.Text = "Trạng Thái";
             // 
-            // CbeTrangThai
+            // RbConHieuLuc
             // 
-            this.CbeTrangThai.Location = new System.Drawing.Point(644, 152);
-            this.CbeTrangThai.Name = "CbeTrangThai";
-            this.CbeTrangThai.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbeTrangThai.Properties.Appearance.Options.UseFont = true;
-            this.CbeTrangThai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeTrangThai.Size = new System.Drawing.Size(128, 22);
-            this.CbeTrangThai.TabIndex = 58;
+            this.RbConHieuLuc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbConHieuLuc.Location = new System.Drawing.Point(608, 150);
+            this.RbConHieuLuc.Name = "RbConHieuLuc";
+            this.RbConHieuLuc.Size = new System.Drawing.Size(101, 22);
+            this.RbConHieuLuc.TabIndex = 61;
+            this.RbConHieuLuc.TabStop = true;
+            this.RbConHieuLuc.Text = "Còn hiệu lực";
+            this.RbConHieuLuc.UseVisualStyleBackColor = true;
+            // 
+            // RbHetHan
+            // 
+            this.RbHetHan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbHetHan.Location = new System.Drawing.Point(703, 151);
+            this.RbHetHan.Name = "RbHetHan";
+            this.RbHetHan.Size = new System.Drawing.Size(83, 20);
+            this.RbHetHan.TabIndex = 62;
+            this.RbHetHan.TabStop = true;
+            this.RbHetHan.Text = "Hết hạn";
+            this.RbHetHan.UseVisualStyleBackColor = true;
             // 
             // UcQLMaGiamGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.CbeTrangThai);
+            this.Controls.Add(this.RbHetHan);
+            this.Controls.Add(this.RbConHieuLuc);
             this.Controls.Add(this.TeMoTa);
             this.Controls.Add(this.LbMoTa);
             this.Controls.Add(this.LbTrangThai);
@@ -322,7 +336,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeMoTa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeTrangThai.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,6 +366,7 @@
         private DevExpress.XtraEditors.TextEdit TeMoTa;
         private DevExpress.XtraEditors.LabelControl LbMoTa;
         private DevExpress.XtraEditors.LabelControl LbTrangThai;
-        private DevExpress.XtraEditors.ComboBoxEdit CbeTrangThai;
+        private System.Windows.Forms.RadioButton RbConHieuLuc;
+        private System.Windows.Forms.RadioButton RbHetHan;
     }
 }

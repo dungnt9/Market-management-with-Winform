@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraBars;
 using market_management.UI;
-using Quản_lý_siêu_thị;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +30,7 @@ namespace market_management
 
         private void LoadNhanVienData()
         {
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True "; 
+            string connectionString = @"Data Source= LAPTOP-MSGIJ51R\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True "; 
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
