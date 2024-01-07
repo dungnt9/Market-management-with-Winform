@@ -31,6 +31,7 @@ namespace market_management.UI
             CbePhanTram.Properties.Items.Add("50");
 
         }
+        //Lất data từ CSDL
         void LoadData()
         {
             GcMaGiamGia.DataSource = dataAccess.GetDataTable("select MaGiamGia as 'Mã Giảm Giá', " +

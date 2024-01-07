@@ -188,5 +188,11 @@ namespace market_management
             FrmDangNhap frmDangNhap = new FrmDangNhap();
             frmDangNhap.ShowDialog();
         }
+
+        private void DangKy_Click(object sender, EventArgs e)
+        {
+            FrmDangKy f = new FrmDangKy();
+            f.ShowDialog();
+        }
     }
 }

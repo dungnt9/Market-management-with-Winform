@@ -27,7 +27,7 @@ namespace market_management
             CbeGioiTinh.Properties.Items.Add("Nữ");
             CbeGioiTinh.Properties.Items.Add("Khác");
         }
-
+        //Lấy data từ CSDL
         void LoadData()
         {
             GcDanhMucKH.DataSource = dataAccess.GetDataTable("select MaKH as 'Mã Khách Hàng', " +

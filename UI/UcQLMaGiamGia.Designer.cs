@@ -330,7 +330,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage RpQLMaGiamGia;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup RpgTacVuMGG;
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiThemMoi;
         private DevExpress.XtraBars.BarButtonItem BbiSua;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;

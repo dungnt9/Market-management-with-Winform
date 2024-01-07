@@ -32,7 +32,7 @@ namespace market_management
             CbeChucVu.Properties.Items.Add("Quản lý");
             CbeChucVu.Properties.Items.Add("Nhân Viên");
         }
-
+        //Lất data từ CSDL
         void LoadData()
         {
             GcDanhMucNV.DataSource = dataAccess.GetDataTable("select MaNV as 'Mã Nhân VIên', " +

@@ -121,6 +121,9 @@
   <data name="eye2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="d25000794d527b5ca218ebc85e6484c7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\d25000794d527b5ca218ebc85e6484c7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bieuTuong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bieuTuong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,8 +141,5 @@
   </data>
   <data name="eye22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="d25000794d527b5ca218ebc85e6484c7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\d25000794d527b5ca218ebc85e6484c7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

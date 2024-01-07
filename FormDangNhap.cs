@@ -81,29 +81,6 @@ namespace market_management
             }
         }
 
-
-
-
-
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void FrmDangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void TeMatKhau_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void TeTenDangNhap_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void eye_Click(object sender, EventArgs e)
         {
             if (TbMatKhau.PasswordChar == '*')
