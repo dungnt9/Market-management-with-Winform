@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.CbeSDT = new DevExpress.XtraEditors.ComboBoxEdit();
             this.TeDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.CbeGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
             this.DeNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.TeSDT = new DevExpress.XtraEditors.TextEdit();
             this.TeTenKH = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.GcSP_HDB = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnThemSP = new System.Windows.Forms.Button();
             this.TeSoLuong = new DevExpress.XtraEditors.TextEdit();
             this.CbeTenSP = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -53,30 +53,32 @@
             this.LbThoiGian = new DevExpress.XtraEditors.LabelControl();
             this.LbTongTien = new DevExpress.XtraEditors.LabelControl();
             this.BtnTaoHoaDon = new System.Windows.Forms.Button();
-            this.btnThemSP = new System.Windows.Forms.Button();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.LbMaHDB = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TeSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP_HDB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.CbeSDT);
             this.groupControl1.Controls.Add(this.TeDiaChi);
             this.groupControl1.Controls.Add(this.CbeGioiTinh);
             this.groupControl1.Controls.Add(this.DeNgaySinh);
             this.groupControl1.Controls.Add(this.labelControl10);
-            this.groupControl1.Controls.Add(this.TeSDT);
             this.groupControl1.Controls.Add(this.TeTenKH);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl5);
@@ -87,6 +89,16 @@
             this.groupControl1.Size = new System.Drawing.Size(602, 164);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin Khách Hàng";
+            // 
+            // CbeSDT
+            // 
+            this.CbeSDT.Location = new System.Drawing.Point(425, 35);
+            this.CbeSDT.Name = "CbeSDT";
+            this.CbeSDT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeSDT.Size = new System.Drawing.Size(100, 20);
+            this.CbeSDT.TabIndex = 10;
+            this.CbeSDT.EditValueChanged += new System.EventHandler(this.CbeSDT_EditValueChanged);
             // 
             // TeDiaChi
             // 
@@ -101,6 +113,9 @@
             this.CbeGioiTinh.Name = "CbeGioiTinh";
             this.CbeGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeGioiTinh.Properties.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.CbeGioiTinh.Size = new System.Drawing.Size(100, 20);
             this.CbeGioiTinh.TabIndex = 8;
             // 
@@ -123,13 +138,6 @@
             this.labelControl10.Size = new System.Drawing.Size(40, 13);
             this.labelControl10.TabIndex = 6;
             this.labelControl10.Text = "Giới Tính";
-            // 
-            // TeSDT
-            // 
-            this.TeSDT.Location = new System.Drawing.Point(425, 27);
-            this.TeSDT.Name = "TeSDT";
-            this.TeSDT.Size = new System.Drawing.Size(100, 20);
-            this.TeSDT.TabIndex = 5;
             // 
             // TeTenKH
             // 
@@ -180,11 +188,6 @@
             this.GcSP_HDB.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.GcSP_HDB;
-            this.gridView1.Name = "gridView1";
-            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.btnThemSP);
@@ -198,25 +201,35 @@
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Sản Phẩm";
             // 
+            // btnThemSP
+            // 
+            this.btnThemSP.Location = new System.Drawing.Point(467, 88);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(108, 23);
+            this.btnThemSP.TabIndex = 4;
+            this.btnThemSP.Text = "Thêm";
+            this.btnThemSP.UseVisualStyleBackColor = true;
+            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
+            // 
             // TeSoLuong
             // 
-            this.TeSoLuong.Location = new System.Drawing.Point(450, 46);
+            this.TeSoLuong.Location = new System.Drawing.Point(109, 68);
             this.TeSoLuong.Name = "TeSoLuong";
             this.TeSoLuong.Size = new System.Drawing.Size(100, 20);
             this.TeSoLuong.TabIndex = 3;
             // 
             // CbeTenSP
             // 
-            this.CbeTenSP.Location = new System.Drawing.Point(109, 46);
+            this.CbeTenSP.Location = new System.Drawing.Point(109, 34);
             this.CbeTenSP.Name = "CbeTenSP";
             this.CbeTenSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeTenSP.Size = new System.Drawing.Size(100, 20);
+            this.CbeTenSP.Size = new System.Drawing.Size(466, 20);
             this.CbeTenSP.TabIndex = 2;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(357, 46);
+            this.labelControl2.Location = new System.Drawing.Point(23, 71);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(45, 13);
             this.labelControl2.TabIndex = 1;
@@ -224,7 +237,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(23, 46);
+            this.labelControl1.Location = new System.Drawing.Point(23, 37);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(68, 13);
             this.labelControl1.TabIndex = 0;
@@ -288,21 +301,34 @@
             this.BtnTaoHoaDon.UseVisualStyleBackColor = true;
             this.BtnTaoHoaDon.Click += new System.EventHandler(this.BtnTaoHoaDon_Click);
             // 
-            // btnThemSP
+            // gridView1
             // 
-            this.btnThemSP.Location = new System.Drawing.Point(248, 74);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(108, 23);
-            this.btnThemSP.TabIndex = 4;
-            this.btnThemSP.Text = "Thêm";
-            this.btnThemSP.UseVisualStyleBackColor = true;
-            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
+            this.gridView1.GridControl = this.GcSP_HDB;
+            this.gridView1.Name = "gridView1";
+            // 
+            // LbMaHDB
+            // 
+            this.LbMaHDB.Location = new System.Drawing.Point(128, 594);
+            this.LbMaHDB.Name = "LbMaHDB";
+            this.LbMaHDB.Size = new System.Drawing.Size(30, 13);
+            this.LbMaHDB.TabIndex = 12;
+            this.LbMaHDB.Text = "00000";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(36, 594);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(80, 13);
+            this.labelControl12.TabIndex = 11;
+            this.labelControl12.Text = "Mã Hóa Đơn Bán";
             // 
             // FormDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 643);
+            this.Controls.Add(this.LbMaHDB);
+            this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.BtnTaoHoaDon);
             this.Controls.Add(this.LbTongTien);
             this.Controls.Add(this.LbThoiGian);
@@ -318,19 +344,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TeSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP_HDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,11 +366,9 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl GcSP_HDB;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit TeSDT;
         private DevExpress.XtraEditors.TextEdit TeTenKH;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -364,5 +388,9 @@
         private DevExpress.XtraEditors.LabelControl LbTongTien;
         private System.Windows.Forms.Button BtnTaoHoaDon;
         private System.Windows.Forms.Button btnThemSP;
+        private DevExpress.XtraEditors.ComboBoxEdit CbeSDT;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.LabelControl LbMaHDB;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
     }
 }

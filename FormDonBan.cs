@@ -1,4 +1,6 @@
-﻿using DevExpress.Xpo.DB.Helpers;
+﻿using DevExpress.DataAccess.Native.Data;
+using DevExpress.Xpo.DB.Helpers;
+using DevExpress.XtraGrid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,27 +17,42 @@ namespace market_management
     public partial class FormDonBan : Form
     {
         DataAccess dataAccess = new DataAccess();
-        DataTable sanphamDataTable;
+        System.Data.DataTable dataTable;
 
         public FormDonBan()
         {
             InitializeComponent();
-            sanphamDataTable = new DataTable();
+            HienThiTenSP();
+            HienThiSoDienThoai();
+
+            string maHDB = GenerateRandomString(8);
+
+            dataTable = new System.Data.DataTable();
+            // ... Khởi tạo cấu trúc của DataTable, ví dụ: 
+            dataTable.Columns.Add("Mã Sản Phẩm", typeof(int));
+            dataTable.Columns.Add("Tên Sản Phẩm", typeof(string));
+            dataTable.Columns.Add("Số Lượng", typeof(int));
+            dataTable.Columns.Add("Giá Bán Lẻ", typeof(decimal));
+
+            GcSP_HDB.DataSource = dataTable;
+
+            DateTime currentTime = DateTime.Now;
+            LbThoiGian.Text = currentTime.ToShortDateString();
+
+            
         }
 
         private bool KiemTraKhachHangCu()
         {
-            string customerNameToCheck = TeTenKH.Text;
+            string sdtCheck = CbeSDT.Text;
 
             // Tạo câu truy vấn SQL để kiểm tra sự tồn tại của tên khách hàng
-            string query = "SELECT COUNT(*) FROM TenBang WHERE TenKhachHang = @CustomerName"; // Thay TenBang và TenKhachHang bằng tên bảng và tên cột trong cơ sở dữ liệu của bạn
+            string query = $"SELECT COUNT(*) FROM KHACH_HANG WHERE SDT = '{sdtCheck}'"; // Thay TenBang và TenKhachHang bằng tên bảng và tên cột trong cơ sở dữ liệu của bạn
 
-            // Tạo tham số
-            SqlParameter parameter = new SqlParameter("@CustomerName", SqlDbType.NVarChar);
-            parameter.Value = customerNameToCheck;
+           
 
             // Kiểm tra sự tồn tại của tên khách hàng
-            int count = Convert.ToInt32(dataAccess.GetScalar(query, parameter));
+            int count = Convert.ToInt32(dataAccess.GetScalar(query));
 
             if (count > 0)
             {
@@ -54,35 +71,30 @@ namespace market_management
             return;
         }
 
-        private void LayThongTinKhachHangCu(string TenKH)
+        private void LayThongTinKhachHangCu(string sdt)
         {
-            string customerNameToCheck = TenKH;
+            string sdtKH = sdt;
 
             // Tạo câu truy vấn SQL để lấy thông tin của khách hàng
-            string query = "SELECT * FROM KHACH_HANG WHERE TenKH = @CustomerName"; // Thay TenBang và TenKhachHang bằng tên bảng và tên cột trong cơ sở dữ liệu của bạn
-
-            // Tạo tham số
-            SqlParameter parameter = new SqlParameter("@CustomerName", SqlDbType.NVarChar);
-            parameter.Value = customerNameToCheck;
+            string query = $"SELECT * FROM KHACH_HANG WHERE SDT = '{sdt}'"; // Thay TenBang và TenKhachHang bằng tên bảng và tên cột trong cơ sở dữ liệu của bạn
 
             // Lấy dữ liệu từ cơ sở dữ liệu
-            DataTable customerData = dataAccess.GetDataTable(query);
+            System.Data.DataTable customerData = dataAccess.GetDataTable(query);
 
-            TeTenKH.Text = Convert.ToString(customerData.Rows[0]["MaKhachHang"]);
-            TeSDT.Text = Convert.ToString(customerData.Rows[0]["SoDienThoai"]);
+            TeTenKH.Text = Convert.ToString(customerData.Rows[0]["TenKH"]);
             TeDiaChi.Text = Convert.ToString(customerData.Rows[0]["DiaChi"]);
-            DeNgaySinh.DateTime = Convert.ToDateTime(customerData.Rows[0]["NgaySinh"]);
+            DeNgaySinh.Text = Convert.ToString(customerData.Rows[0]["NgaySinh"]);
             CbeGioiTinh.Text = Convert.ToString(customerData.Rows[0]["GioiTinh"]);
 
         }
 
         private void XuLyKhachHang()
         {
-            string tenKH = TeTenKH.Text;
+            string sdt = CbeSDT.Text;
             bool is_KHcu = KiemTraKhachHangCu();
             if(is_KHcu == true)
             {
-                LayThongTinKhachHangCu(tenKH);
+                LayThongTinKhachHangCu(sdt);
             }    
             else
             {
@@ -96,34 +108,98 @@ namespace market_management
 
         }
 
+        private void LuuHoaDon()
+        {
+            string maHDB = "";
+            dataAccess.UpdateData($"INSERT INTO HOA_DON_BAN (MaHDB, MaKH, MaNV, TongTien, ThoiGian) VALUES ()");
+        }
+
         private void btnThemSP_Click(object sender, EventArgs e)
         {
             string tenSP = CbeTenSP.Text;
 
             // Tạo câu truy vấn SQL để lấy thông tin của khách hàng
-            string query = "SELECT * FROM KHACH_HANG WHERE TenKH = @TenSP"; // Thay TenBang và TenKhachHang bằng tên bảng và tên cột trong cơ sở dữ liệu của bạn
-
-            // Tạo tham số
-            SqlParameter parameter = new SqlParameter("@TenSP", SqlDbType.NVarChar);
-            parameter.Value = tenSP;
+            string query = $"SELECT MaSP AS 'Mã Sản Phẩm', TenSP AS 'Tên Sản Phẩm', GiaBanLe AS 'Giá Bán Lẻ', SoLuong AS 'Số Lượng' FROM SAN_PHAM WHERE TenSP = '{tenSP}'"; // Thay TenBang và TenKhachHang bằng tên bảng và tên cột trong cơ sở dữ liệu của bạn
 
             // Lấy dữ liệu từ cơ sở dữ liệu
-            DataTable sanpham = dataAccess.GetDataTable(query);
+            System.Data.DataTable sanpham = dataAccess.GetDataTable(query);
 
             if (sanpham.Rows.Count > 0)
             {
                 // Thêm dòng vào DataTable
-                DataRow newRow = sanpham.NewRow();
-                newRow["MaSP"] = sanpham.Rows[0]["MaSP"];
-                newRow["Tên Sản Phẩm"] = sanpham.Rows[0]["TenSP"];
-                newRow["DiaChi"] = sanpham.Rows[0]["DiaChi"];
-                newRow["SoDienThoai"] = sanpham.Rows[0]["SoDienThoai"];
-                newRow["NgaySinh"] = sanpham.Rows[0]["NgaySinh"];
-                newRow["TrangThai"] = sanpham.Rows[0]["TrangThai"];
+                DataRow newRow = dataTable.NewRow();
+                newRow["Mã Sản Phẩm"] = sanpham.Rows[0]["Mã Sản Phẩm"];
+                newRow["Tên Sản Phẩm"] = sanpham.Rows[0]["Tên Sản Phẩm"];
+                newRow["Giá Bán Lẻ"] = sanpham.Rows[0]["Giá Bán Lẻ"];
                 newRow["Số Lượng"] = TeSoLuong.Text;
 
-                sanphamDataTable.Rows.Add(newRow);
+                dataTable.Rows.Add(newRow);
             }
+
+            LbTongTien.Text = TinhTongTien().ToString();
+        }
+
+        private List<string> LayTenSP()
+        {
+            List<string> TenSP = new List<string>();
+            string query = "SELECT TenSP FROM SAN_PHAM";
+
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
+            {
+                dataAccess.objConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        TenSP.Add(reader["TenSP"].ToString());
+                    }
+                }
+
+                dataAccess.objConnection.Close();
+
+            }
+            return TenSP;
+        }
+
+        private void HienThiTenSP()
+        {
+            List<string> TenLoaiSP = LayTenSP();
+            CbeTenSP.Properties.Items.AddRange(TenLoaiSP);
+
+            CbeTenSP.Properties.AutoComplete = true;
+            CbeTenSP.Properties.CaseSensitiveSearch = false;
+        }
+
+        private List<string> LaySDT()
+        {
+            List<string> SDT = new List<string>();
+            string query = "SELECT SDT FROM KHACH_HANG";
+
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
+            {
+                dataAccess.objConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        SDT.Add(reader["SDT"].ToString());
+                    }
+                }
+
+                dataAccess.objConnection.Close();
+            }
+            return SDT;
+        }
+
+        private void HienThiSoDienThoai()
+        {
+            List<string> SoDienThoai = LaySDT();
+            CbeSDT.Properties.Items.AddRange(SoDienThoai);
+
+            CbeSDT.Properties.AutoComplete = true;
+            CbeSDT.Properties.CaseSensitiveSearch = false;
         }
 
         private double TinhTongTien()
@@ -131,11 +207,11 @@ namespace market_management
             double totalIncome = 0;
 
             // Duyệt qua tất cả các dòng trong DataTable và tính tổng thu nhập
-            foreach (DataRow row in sanphamDataTable.Rows)
+            foreach (DataRow row in dataTable.Rows)
             {
-                if (row["GiaBan"] != DBNull.Value)
+                if (row["Giá Bán Lẻ"] != DBNull.Value)
                 {
-                    totalIncome += Convert.ToDouble(row["GiaBan"]) * Convert.ToDouble(row["SoLuong"]);
+                    totalIncome += Convert.ToDouble(row["Giá Bán Lẻ"]) * Convert.ToDouble(row["Số Lượng"]);
                 }
             }
 
@@ -144,7 +220,43 @@ namespace market_management
 
         private void CapNhatSanPham()
         {
-            dataAccess.UpdateData(string.Format("update TAI_KHOAN set TenDangNhap = N'{1}', MatKhau = N'{2}' where MaNV = '{0}'"));
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int maSP = Convert.ToInt32(row["Mã Sản Phẩm"]);
+                int soluongBan = Convert.ToInt32(row["Số Lượng"]); 
+                dataAccess.UpdateData(string.Format($"UPDATE SAN_PHAM SET SoLuong = SoLuong - {soluongBan} where MaSP = {maSP}"));
+            }
         }
+
+        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            LbTongTien.Text = TinhTongTien().ToString();
+        }
+
+        private void gridView1_RowCountChanged(object sender, EventArgs e)
+        {
+            LbTongTien.Text = TinhTongTien().ToString();
+        }
+
+        private void CbeSDT_EditValueChanged(object sender, EventArgs e)
+        {
+            XuLyKhachHang();
+        }
+
+        static string GenerateRandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random random = new Random();
+            char[] randomArray = new char[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                randomArray[i] = chars[random.Next(chars.Length)];
+            }
+
+            return new string(randomArray);
+        }
+
+
     }
 }

@@ -54,7 +54,6 @@ namespace market_management.UI
 
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-
             maHDB = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã Hóa Đơn Bán").ToString();
         }
 

@@ -25,7 +25,7 @@ namespace market_management
             CbeGioiTinh.Properties.Items.Add("Nữ");
             CbeGioiTinh.Properties.Items.Add("Khác");
 
-            CbeChucVu.DataBindings.Add();
+            //CbeChucVu.DataBindings.Add();
         }
 
         void LoadData()
