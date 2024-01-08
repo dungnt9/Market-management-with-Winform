@@ -72,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="FormChiTietDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChiTietDonBan.Designer.cs">
+      <DependentUpon>FormChiTietDonBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhaCungCap.Designer.cs">
+      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,11 +164,23 @@
     <Compile Include="UI\UcSanPham.Designer.cs">
       <DependentUpon>UcSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UcTKHangTonKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcTKHangTonKho.Designer.cs">
+      <DependentUpon>UcTKHangTonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UcTKKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\UcTKKhachHang.Designer.cs">
       <DependentUpon>UcTKKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UcNhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcNhaCungCap.Designer.cs">
+      <DependentUpon>UcNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="XemChiTietDonNhap.cs">
       <SubType>Form</SubType>
@@ -164,6 +188,9 @@
     <Compile Include="XemChiTietDonNhap.Designer.cs">
       <DependentUpon>XemChiTietDonNhap.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormChiTietDonBan.resx">
+      <DependentUpon>FormChiTietDonBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangKy.resx">
       <DependentUpon>FormDangKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +215,9 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNhaCungCap.resx">
+      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcKhachHang.resx">
       <DependentUpon>UcKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcNhaCungCap.resx">
+      <DependentUpon>UcNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcNhanVien.resx">
       <DependentUpon>UcNhanVien.cs</DependentUpon>
@@ -222,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcSanPham.resx">
       <DependentUpon>UcSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcTKHangTonKho.resx">
+      <DependentUpon>UcTKHangTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcTKKhachHang.resx">
       <DependentUpon>UcTKKhachHang.cs</DependentUpon>

@@ -33,7 +33,7 @@ namespace market_management
 
         private void BtnCapNhat_Click(object sender, EventArgs e)
         {
-            string MaNV = LbMaNhanVien.Text;
+            string MaNV = LbTenNhanVien.Text;
             string TenDangNhapMoi = TeTenDangNhap.Text;
             string MatKhauMoi = TeMatKhau.Text;
             string NhapLaiMatKhauMoi = TeNhapLaiMatKhau.Text;

@@ -13,7 +13,7 @@ namespace market_management
         SqlConnection objConnection = new SqlConnection();
         public DataAccess()
         {
-            string strConnection = @"Data Source=.\SQLEXPRESS01;Initial Catalog=QLBH;Integrated Security=True";
+            string strConnection = @"Data Source=.\SQLEXPRESS01;Initial Catalog=QLST;Integrated Security=True";
 
             objConnection = new SqlConnection(strConnection);
 
@@ -68,6 +68,31 @@ namespace market_management
             }
 
             return dt;
+        }
+        public object GetScalar(string query, SqlParameter parameter = null)
+        {
+            try
+            {
+                objConnection.Open();
+                Console.WriteLine("Connection succeeded");
+
+                using (SqlCommand cmd = new SqlCommand(query, objConnection))
+                {
+                    if (parameter != null)
+                        cmd.Parameters.Add(parameter);
+
+                    return cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+            finally
+            {
+                objConnection.Close();
+            }
         }
     }
 }

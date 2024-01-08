@@ -74,8 +74,6 @@
             // 
             this.fluentDesignFormContainer1.Controls.Add(this.PnlMain);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 39);
-            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.fluentDesignFormContainer1.Location = new System.Drawing.Point(223, 31);
             this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
@@ -134,7 +132,7 @@
             this.BaoCaoThongKe,
             this.accordionControlSeparator6,
             this.DangXuat});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 39);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
@@ -181,6 +179,7 @@
             this.NCC.Name = "NCC";
             this.NCC.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.NCC.Text = "Nhà cung cấp";
+            this.NCC.Click += new System.EventHandler(this.NCC_Click);
             // 
             // LoaiSP
             // 

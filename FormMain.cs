@@ -21,8 +21,10 @@ namespace market_management
         UcQLNhapHang _UcQLNhapHang;
         UcKhachHang _UcKH;
         UcNhanVien _UcNV;
+        UcNhaCungCap _UcNhaCungCap;
         UcDoanhThu _UcDT;
         UcQLBanHang _UcQLBanHang;
+        UcTKHangTonKho _UcTKHangTonKho;
 
         public FormMain()
         {
@@ -150,7 +152,17 @@ namespace market_management
 
         private void TKHangTon_Click(object sender, EventArgs e)
         {
-
+            if (_UcTKHangTonKho == null)
+            {
+                _UcTKHangTonKho = new UcTKHangTonKho();
+                _UcTKHangTonKho.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcTKHangTonKho);
+                _UcTKHangTonKho.BringToFront();
+            }
+            else
+            {
+                _UcTKHangTonKho.BringToFront();
+            }
         }
 
         private void QLNhapHang_Click(object sender, EventArgs e)
@@ -185,6 +197,21 @@ namespace market_management
             else
             {
                 _UcQLBanHang.BringToFront();
+            }
+        }
+
+        private void NCC_Click(object sender, EventArgs e)
+        {
+            if (_UcNhaCungCap == null)
+            {
+                _UcNhaCungCap = new UcNhaCungCap();
+                _UcNhaCungCap.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcNhaCungCap);
+                _UcNhaCungCap.BringToFront();
+            }
+            else
+            {
+                _UcNhaCungCap.BringToFront();
             }
         }
     }

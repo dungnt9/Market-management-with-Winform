@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhatTaiKhoan));
             this.LbThongTinTaiKhoan = new System.Windows.Forms.Label();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
-            this.LbMaNhanVien = new System.Windows.Forms.Label();
+            this.LbTenNhanVien = new System.Windows.Forms.Label();
             this.LbTenDangNhap = new System.Windows.Forms.Label();
             this.LbMatKhau = new System.Windows.Forms.Label();
             this.LbNhapLaiNhapKhau = new System.Windows.Forms.Label();
@@ -64,14 +64,14 @@
             this.svgImageBox1.TabIndex = 1;
             this.svgImageBox1.Text = "svgImageBox1";
             // 
-            // LbMaNhanVien
+            // LbTenNhanVien
             // 
-            this.LbMaNhanVien.AutoSize = true;
-            this.LbMaNhanVien.Location = new System.Drawing.Point(81, 237);
-            this.LbMaNhanVien.Name = "LbMaNhanVien";
-            this.LbMaNhanVien.Size = new System.Drawing.Size(71, 13);
-            this.LbMaNhanVien.TabIndex = 2;
-            this.LbMaNhanVien.Text = "Mã nhân viên";
+            this.LbTenNhanVien.AutoSize = true;
+            this.LbTenNhanVien.Location = new System.Drawing.Point(81, 237);
+            this.LbTenNhanVien.Name = "LbTenNhanVien";
+            this.LbTenNhanVien.Size = new System.Drawing.Size(76, 13);
+            this.LbTenNhanVien.TabIndex = 2;
+            this.LbTenNhanVien.Text = "Tên Nhân Viên";
             // 
             // LbTenDangNhap
             // 
@@ -153,7 +153,7 @@
             this.Controls.Add(this.LbNhapLaiNhapKhau);
             this.Controls.Add(this.LbMatKhau);
             this.Controls.Add(this.LbTenDangNhap);
-            this.Controls.Add(this.LbMaNhanVien);
+            this.Controls.Add(this.LbTenNhanVien);
             this.Controls.Add(this.svgImageBox1);
             this.Controls.Add(this.LbThongTinTaiKhoan);
             this.Name = "FormCapNhatTaiKhoan";
@@ -171,7 +171,7 @@
 
         private System.Windows.Forms.Label LbThongTinTaiKhoan;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
-        private System.Windows.Forms.Label LbMaNhanVien;
+        private System.Windows.Forms.Label LbTenNhanVien;
         private System.Windows.Forms.Label LbTenDangNhap;
         private System.Windows.Forms.Label LbMatKhau;
         private System.Windows.Forms.Label LbNhapLaiNhapKhau;
