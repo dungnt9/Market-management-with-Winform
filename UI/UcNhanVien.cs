@@ -11,31 +11,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quản_lý_siêu_thị
+namespace market_management
 {
     public partial class UcNhanVien : DevExpress.XtraEditors.XtraUserControl
     {
+        DataAccess dataAccess = new DataAccess();
         public UcNhanVien()
         {
             InitializeComponent();
+            LoadData();
 
-            BindingList<Customer> dataSource = GetDataSource();
-            GcDanhMucNV.DataSource = dataSource;
-            bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
-        }
-        void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            GcDanhMucNV.ShowRibbonPrintPreview();
-        }
-        public BindingList<Customer> GetDataSource()
-        {
-            BindingList<Customer> result = new BindingList<Customer>();
-            result.Add(new Customer());
-            return result;
-        }
-        public class Customer
-        {
+            CbeGioiTinh.Properties.Items.Add("Nam");
+            CbeGioiTinh.Properties.Items.Add("Nữ");
+            CbeGioiTinh.Properties.Items.Add("Khác");
 
+            CbeChucVu.DataBindings.Add();
+        }
+
+        void LoadData()
+        {
+            GcDanhMucNV.DataSource = dataAccess.GetDataTable("select * from NHAN_VIEN");
         }
 
         private void gridControl_Click(object sender, EventArgs e)

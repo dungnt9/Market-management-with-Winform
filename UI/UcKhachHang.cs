@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quản_lý_siêu_thị
+namespace market_management
 {
     public partial class UcKhachHang : DevExpress.XtraEditors.XtraUserControl
     {

@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.DataAccess.Sql;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Mask.Design;
 using System;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.Utils.Drawing.Helpers.NativeMethods;
 
 namespace market_management.UI
 {
@@ -23,10 +25,20 @@ namespace market_management.UI
             InitializeComponent();
             LoadData();
         }
-        
         void LoadData()
         {
-            GcSP.DataSource = dataAccess.GetDataTable("SELECT \r\n    SP.MaSP AS 'Mã sản phẩm',\r\n    SP.TenSP AS 'Tên sản phẩm',\r\n    LSP.TenLoaiSP AS 'Phân loại',\r\n    SP.SoLuong AS 'Số lượng',\r\n    SP.GiaNhap AS 'Giá nhập',\r\n    SP.GiaBanLe AS 'Giá bán lẻ'\r\nFROM \r\n    SAN_PHAM SP\r\nJOIN \r\n    LOAI_SAN_PHAM LSP ON SP.MaLoaiSP = LSP.MaLoaiSP;");
+            GcSP.DataSource = dataAccess.GetDataTable(
+                "SELECT SP.MaSP AS 'Mã sản phẩm'," +
+                "SP.TenSP AS 'Tên sản phẩm'," +
+                "LSP.TenLoaiSP AS 'Phân loại'," +
+                "SP.SoLuong AS 'Số lượng'," +
+                "SP.GiaNhap AS 'Giá nhập'," +
+                "SP.GiaBanLe AS 'Giá bán lẻ'," +
+                "CASE " +
+                "   WHEN SP.TrangThai = 1 THEN 'Đang kinh doanh'" +
+                "   WHEN SP.TrangThai = 0 THEN 'Không còn kinh doanh'" +
+                "   ELSE 'NULL' END AS 'Trạng thái'" +
+                " FROM SAN_PHAM SP JOIN LOAI_SAN_PHAM LSP ON SP.MaLoaiSP = LSP.MaLoaiSP;");
         }
 
 
@@ -38,65 +50,37 @@ namespace market_management.UI
             var soLuong = gridView.GetRowCellValue(e.FocusedRowHandle, "Số lượng").ToString();
             var giaNhap = gridView.GetRowCellValue(e.FocusedRowHandle, "Giá nhập").ToString();
             var giaBan = gridView.GetRowCellValue(e.FocusedRowHandle, "Giá bán lẻ").ToString();
-            CmbMaSP.Text = maSP;
-            CbeTenSP.Text = tenSP;
+            var trangThai = gridView.GetRowCellValue(e.FocusedRowHandle, "Trạng thái").ToString();
+            LbcMaSP.Text = maSP;
+            TeTenSP.Text = tenSP;
             CbePhanLoai.Text = phanLoai;
             TeSoLuong.Text = soLuong;
             TeGiaNhap.Text = giaNhap;
             TeGiaBan.Text = giaBan;
-
+            CmbTrangThai.Text = trangThai;
         }
 
         private void BbiLamMoi_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             LoadData();
-            CmbMaSP.Text = "";
-            CbeTenSP.Text = "";
+            LbcMaSP.Text = "";
+            TeTenSP.Text = "";
             CbePhanLoai.Text = "";
             TeSoLuong.Text = "";
             TeGiaNhap.Text = "";
             TeGiaBan.Text = "";
-        }
-
-        private void BbiXoa_ItemClick_1(object sender, ItemClickEventArgs e)
-        {
-            var maSP = CmbMaSP.Text;
-
-            if (string.IsNullOrEmpty(maSP))
-            {
-                XtraMessageBox.Show("Vui lòng chọn sản phẩm cần xóa", "Thông báo");
-                return;
-            }
-
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirmationResult == DialogResult.Yes)
-            {
-                var sqlDelete = $"DELETE FROM SAN_PHAM WHERE MaSP = '{maSP}'";
-
-                DataAccess dataAccess = new DataAccess();
-                try
-                {
-                    dataAccess.UpdateData(sqlDelete);
-                    XtraMessageBox.Show("Xóa sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
-
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show($"Lỗi xóa sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            CmbTrangThai.Text = "";
         }
 
         private void BbiSua_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            var maSP = CmbMaSP.Text;
-            var tenSP = CbeTenSP.Text;
+            var maSP = LbcMaSP.Text;
+            var tenSP = TeTenSP.Text;
             var phanLoai = CbePhanLoai.Text;
             var soLuong = TeSoLuong.Text;
             var giaNhap = TeGiaNhap.Text;
             var giaBan = TeGiaBan.Text;
+            var trangThai = CmbTrangThai.Text;
 
             if (string.IsNullOrEmpty(maSP) || string.IsNullOrEmpty(tenSP))
             {
@@ -104,7 +88,30 @@ namespace market_management.UI
                 return;
             }
 
-            var sqlUpdate = $"UPDATE SAN_PHAM \r\nSET TenSP = N'{tenSP}', \r\n    MaLoaiSP = (SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = N'{phanLoai}'), \r\n    SoLuong = '{soLuong}', \r\n    GiaNhap = '{giaNhap}', \r\n    GiaBanLe = '{giaBan}' \r\nWHERE MaSP = '{maSP}';\r\n";
+            var sqlUpdate = $"UPDATE SAN_PHAM SET " +
+                            $"TenSP = N'{tenSP}', " +
+                            $"MaLoaiSP = (SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = N'{phanLoai}'), " +
+                            $"SoLuong = {soLuong}, " +
+                            $"GiaNhap = {giaNhap}, " +
+                            $"GiaBanLe = {giaBan}, " +
+                            $"TrangThai = ";
+
+            if (trangThai == "Đang kinh doanh")
+            {
+                sqlUpdate += "1";
+            }
+            else if (trangThai == "Không còn kinh doanh")
+            {
+                sqlUpdate += "0";
+            }
+            else
+            {
+                sqlUpdate += "NULL";
+            }
+            sqlUpdate += $" WHERE MaSP = '{maSP}'";
+
+
+
 
             DataAccess dataAccess = new DataAccess();
             try
@@ -119,116 +126,121 @@ namespace market_management.UI
             }
         }
 
-
-
-
-        private List<string> LayTenSP()
-        {
-            List<string> TenSP = new List<string>();
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
-            string query = "SELECT TenSP FROM SAN_PHAM";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            TenSP.Add(reader["TenSP"].ToString());
-                        }
-                    }
-                }
-            }
-
-            return TenSP;
-        }
-        private void HienThiTenSP()
-        {
-            List<string> TenSP = LayTenSP();
-            CbeTenSP.Properties.Items.AddRange(TenSP);
-
-            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
-            CbeTenSP.Properties.AutoComplete = true;
-            CbeTenSP.Properties.CaseSensitiveSearch = false;
-        }
-
         private List<string> LayTenLoaiSP()
         {
             List<string> TenLoaiSP = new List<string>();
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
             string query = "SELECT TenLoaiSP FROM LOAI_SAN_PHAM";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
+                dataAccess.objConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
-                        }
+                        TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
                     }
                 }
             }
-
             return TenLoaiSP;
         }
+
         private void HienThiTenLoaiSP()
         {
             List<string> TenLoaiSP = LayTenLoaiSP();
             CbePhanLoai.Properties.Items.AddRange(TenLoaiSP);
 
-            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
             CbePhanLoai.Properties.AutoComplete = true;
             CbePhanLoai.Properties.CaseSensitiveSearch = false;
         }
-
-
-        private List<string> LayMaSP()
-        {
-            List<string> MaSP = new List<string>();
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
-            string query = "SELECT MaSP FROM SAN_PHAM";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            MaSP.Add(reader["MaSP"].ToString());
-                        }
-                    }
-                }
-            }
-
-            return MaSP;
-        }
-        private void HienThiMaSP()
-        {
-            List<string> MaSP = LayMaSP();
-
-            // Assuming CmbMaSP is your ComboBox control
-            CmbMaSP.Items.AddRange(MaSP.ToArray());
-
-            // If you want to enable auto-complete and case-insensitive search
-            CmbMaSP.AutoCompleteMode = AutoCompleteMode.Suggest;
-            CmbMaSP.AutoCompleteSource = AutoCompleteSource.ListItems;
-        }
-
         private void UcSanPham_Load(object sender, EventArgs e)
         {
-            HienThiTenSP();
             HienThiTenLoaiSP();
-            HienThiMaSP();
+        }
+
+
+        private bool IsTenSPExists(string tenSP)
+        {
+            DataTable dataTable = dataAccess.GetDataTable($"SELECT TenSP FROM SAN_PHAM WHERE TenSP = N'{tenSP}'");
+            return dataTable.Rows.Count > 0;
+        }
+        private void BbiThem_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            var maSP = LbcMaSP.Text;
+            var tenSP = TeTenSP.Text;
+            var phanLoai = CbePhanLoai.Text;
+            var soLuong = TeSoLuong.Text;
+            var giaNhap = TeGiaNhap.Text;
+            var giaBan = TeGiaBan.Text;
+            var trangThai = CmbTrangThai.Text;
+
+            var isExist = IsTenSPExists(tenSP);
+
+            if (isExist)
+            {
+                XtraMessageBox.Show($"Sản phẩm đã tồn tại!", "Thông báo");
+                return;
+            }
+            
+
+            if (string.IsNullOrEmpty(tenSP)|| string.IsNullOrEmpty(phanLoai) || string.IsNullOrEmpty(soLuong) || string.IsNullOrEmpty(giaNhap) || string.IsNullOrEmpty(giaBan) || string.IsNullOrEmpty(trangThai))
+            {
+                XtraMessageBox.Show("Nhập đầy đủ thông tin sản phẩm", "Thông báo");
+                return;
+            }
+
+
+            var sqlInsert = $"INSERT INTO SAN_PHAM (TenSP, MaLoaiSP, SoLuong, GiaNhap, GiaBanLe, TrangThai) " +
+                            $"VALUES (N'{tenSP}', " +
+                            $"(SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = N'{phanLoai}'), {soLuong}, {giaNhap}, {giaBan},";
+            if (trangThai == "Đang kinh doanh")
+            {
+                sqlInsert += "1";
+            }
+            else if (trangThai == "Không còn kinh doanh")
+            {
+                sqlInsert += "0";
+            }
+            else
+            {
+                sqlInsert += "NULL";
+            }
+            sqlInsert += ")";
+
+
+
+
+
+
+
+
+
+
+
+
+
+            DataAccess dataAccess = new DataAccess();
+            try
+            {
+                dataAccess.UpdateData(sqlInsert);
+
+                XtraMessageBox.Show("Thêm sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LbcMaSP.Text = "";
+                TeTenSP.Text = "";
+                CbePhanLoai.Text = "";
+                TeSoLuong.Text = "";
+                TeGiaNhap.Text = "";
+                TeGiaBan.Text = "";
+                CmbTrangThai.Text = "";
+
+                LoadData(); // Gọi lại phương thức để cập nhật GridView
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Lỗi thêm sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

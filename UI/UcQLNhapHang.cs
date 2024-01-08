@@ -24,7 +24,7 @@ namespace market_management.UI
         }
         private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmDonNhap frmDonNhap = new FrmDonNhap();
+            FrmTaoDonNhap frmDonNhap = new FrmTaoDonNhap();
             frmDonNhap.ShowDialog();
         }
         void LoadData()
@@ -56,30 +56,26 @@ namespace market_management.UI
         {
             
             var maDonNhap = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã đơn nhập").ToString();
-            var tongtien = gridView.GetRowCellValue(e.FocusedRowHandle, "Tổng tiền").ToString();
-            var thoiGian = gridView.GetRowCellValue(e.FocusedRowHandle, "Thời gian").ToString();
-            var tenNCC = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên nhà cung cấp").ToString();
-            var tenNV = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên nhân viên").ToString();
             LbcMaDN.Text = maDonNhap;
-            TeTongtien.Text = tongtien;
-            DeThoiGian.Text = thoiGian;
-            CmbTenNCC.Text = tenNCC;
-            CmbTenNV.Text = tenNV;
         }
 
         private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadData();
             LbcMaDN.Text = "";
-            TeTongtien.Text = "";
-            DeThoiGian.Text = "";
-            CmbTenNCC.Text = "";
-            CmbTenNV.Text = "";
         }
 
         private void BsiXemChiTiet_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XemChiTietDonNhap xem = new XemChiTietDonNhap();
+            var maDonNhap = LbcMaDN.Text;
+
+            // Kiểm tra xem có đơn nhập nào được chọn không
+            if (string.IsNullOrEmpty(maDonNhap))
+            {
+                XtraMessageBox.Show("Vui lòng chọn đơn nhập cần xem chi tiết", "Thông báo");
+                return;
+            }
+            XemChiTietDonNhap xem = new XemChiTietDonNhap(maDonNhap);
             xem.ShowDialog();
         }
 
@@ -97,47 +93,21 @@ namespace market_management.UI
 
             if (confirmationResult == DialogResult.Yes)
             {
+                var sqlDelete1 = $"DELETE FROM CT_HOA_DON_NHAP WHERE MaHDN = '{maDN}'";
                 var sqlDelete = $"DELETE FROM HOA_DON_NHAP WHERE MaHDN = '{maDN}'";
-
                 DataAccess dataAccess = new DataAccess();
                 try
                 {
+                    dataAccess.UpdateData(sqlDelete1);
                     dataAccess.UpdateData(sqlDelete);
                     XtraMessageBox.Show("Xóa hóa đơn nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
-
+                    LoadData();
+                    LbcMaDN.Text = "";
                 }
                 catch (Exception ex)
                 {
                     XtraMessageBox.Show($"Lỗi xóa hóa đơn nhập: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-        }
-
-        private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var maDN = LbcMaDN.Text;
-            var tongtien = TeTongtien.Text;
-            var thoiGian = DeThoiGian.Text;
-
-            if (string.IsNullOrEmpty(maDN))
-            {
-                XtraMessageBox.Show("Vui lòng chọn hóa đơn nhập cần cập nhật và nhập thông tin mới", "Thông báo");
-                return;
-            }
-
-            var sqlUpdate = $"UPDATE HOA_DON_NHAP SET ThoiGian = '{thoiGian}', TongTien='{tongtien}' WHERE MaHDN = '{maDN}'";
-
-            DataAccess dataAccess = new DataAccess();
-            try
-            {
-                dataAccess.UpdateData(sqlUpdate);
-                XtraMessageBox.Show("Cập nhật hóa đơn nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadData(); // Gọi lại phương thức để cập nhật GridView
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show($"Lỗi cập nhật hóa đơn nhập: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
