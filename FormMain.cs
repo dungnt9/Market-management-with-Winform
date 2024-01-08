@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraBars;
 using market_management.UI;
-using Quản_lý_siêu_thị;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +14,8 @@ namespace market_management
 {
     public partial class FormMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+        DataAccess dataAccess = new DataAccess();
+
         UcLoaiSanPham _UcLSP;
         UcSanPham _UcSP;
         UcTKKhachHang _UcTKKhachHang;
@@ -30,37 +31,34 @@ namespace market_management
         {
             InitializeComponent();
         }
+        public int MaNV { get; set; }
 
-        private void LoadNhanVienData()
+
+        public void LoadNhanVienData()
         {
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True "; 
+            string query = "SELECT TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV = @MaNV";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
-                connection.Open();
+                dataAccess.objConnection.Open();
 
-                string query = "SELECT MaNV, TenNV, ChucVu FROM NHAN_VIEN";
+                cmd.Parameters.AddWithValue("@MaNV", MaNV);
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    if (reader.Read())
                     {
-                        if (reader.Read())
-                        {
-                            // Assuming BsiMaNV, BsiTenNV, and BsiChucvu are TextBox controls
-                            BsiMaNV.Caption = reader["MaNV"].ToString();
-                            BsiTenNV.Caption = reader["TenNV"].ToString();
-                            BsiChucvu.Caption = reader["ChucVu"].ToString();
-                        }
-                        else
-                        {
-                            // Handle the case when there is no data
-                            MessageBox.Show("No data found.");
-                        }
+                        BsiTenNV.Caption = reader["TenNV"].ToString();
+                        BsiChucvu.Caption = reader["ChucVu"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found.");
                     }
                 }
             }
         }
+
 
         private void LoaiSP_Click(object sender, EventArgs e)
         {
@@ -183,6 +181,20 @@ namespace market_management
         private void QLMaGiamGia_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmDangNhap frmDangNhap = new FrmDangNhap();
+            frmDangNhap.ShowDialog();
+
+        }
+
+        private void DangKy_Click(object sender, EventArgs e)
+        {
+            FrmDangKy frmDangKy = new FrmDangKy();
+            frmDangKy.ShowDialog();
         }
 
         private void QLBanHang_Click(object sender, EventArgs e)

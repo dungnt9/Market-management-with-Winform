@@ -1,4 +1,4 @@
-﻿namespace Quản_lý_siêu_thị
+﻿namespace market_management
 {
     partial class UcKhachHang
     {

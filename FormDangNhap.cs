@@ -13,14 +13,12 @@ namespace market_management
 {
     public partial class FrmDangNhap : DevExpress.XtraEditors.XtraForm
     {
+        DataAccess dataAccess = new DataAccess();
+        public int luuNhanVien;
         public FrmDangNhap()
         {
             InitializeComponent();
         }
-
-
-        private const string ConnectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
-        public string luuNhanVien;
 
         private void SbtnDangNhap_Click(object sender, EventArgs e)
         {
@@ -29,59 +27,65 @@ namespace market_management
 
             if (string.IsNullOrWhiteSpace(tenTaiKhoan) || string.IsNullOrWhiteSpace(matKhau))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi đăng nhập", 
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi đăng nhập",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                string query = "SELECT TAI_KHOAN.MaNV, NHAN_VIEN.TenNV " +
+                                    "FROM TAI_KHOAN " +
+                                    "INNER JOIN NHAN_VIEN ON TAI_KHOAN.MaNV = NHAN_VIEN.MaNV " +
+                                    "WHERE TAI_KHOAN.TenTaiKhoan = @TenTaiKhoan AND TAI_KHOAN.MatKhau = @MatKhau";
+
+                using (SqlCommand command = new SqlCommand(query, dataAccess.objConnection))
                 {
-                    connection.Open();
+                    dataAccess.objConnection.Open();
+                    command.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
+                    command.Parameters.AddWithValue("@MatKhau", matKhau);
 
-                    string query = "SELECT TAI_KHOAN.MaNV, NHAN_VIEN.TenNV " +
-                                   "FROM TAI_KHOAN " +
-                                   "INNER JOIN NHAN_VIEN ON TAI_KHOAN.MaNV = NHAN_VIEN.MaNV " +
-                                   "WHERE TAI_KHOAN.TenTaiKhoan = @TenTaiKhoan AND TAI_KHOAN.MatKhau = @MatKhau";
+                    SqlDataReader reader = command.ExecuteReader();
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    if (reader.Read())
                     {
-                        command.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
-                        command.Parameters.AddWithValue("@MatKhau", matKhau);
-
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if (reader.Read())
+                        // Ensure that the value can be converted to int
+                        if (int.TryParse(reader["MaNV"].ToString(), out int maNV))
                         {
-                            luuNhanVien = reader["MaNV"].ToString(); // Lưu mã nhân viên
+                            luuNhanVien = maNV;
 
-                            MessageBox.Show($"Đăng nhập thành công! Xin chào {reader["TenNV"]}", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
-                            this.Hide();
-                            FormMain frmDonNhap = new FormMain();
-                            frmDonNhap.ShowDialog();
+                            // Open FormMain when credentials are correct
+                            OpenFormMain();
                         }
                         else
                         {
-                            MessageBox.Show("Thông tin đăng nhập không chính xác.", "Lỗi đăng nhập",
+                            MessageBox.Show("Lỗi chuyển đổi giá trị mã nhân viên sang kiểu int.", "Lỗi đăng nhập",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
-                        reader.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng kiểm tra và thử lại.", "Lỗi đăng nhập",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi khi đăng nhập: " + ex.Message, "Lỗi", MessageBoxButtons.OK, 
+                MessageBox.Show("Đã xảy ra lỗi khi đăng nhập: " + ex.Message, "Lỗi", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
 
-
-
+        private void OpenFormMain()
+        {
+            // Open FormMain
+            FormMain frmMain = new FormMain();
+            frmMain.MaNV = luuNhanVien;
+            frmMain.LoadNhanVienData();
+            frmMain.Show();
+            this.Hide();
+        }
 
 
 
@@ -112,13 +116,20 @@ namespace market_management
 
             }
         }
-
         private void hide_Click(object sender, EventArgs e)
         {
             if (TbMatKhau.PasswordChar == '\0')
             {
                 eye.BringToFront();
                 TbMatKhau.PasswordChar = '*';
+            }
+        }
+
+        private void SbtnDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SbtnDangNhap.PerformClick();
             }
         }
     }

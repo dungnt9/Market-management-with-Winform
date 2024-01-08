@@ -96,6 +96,7 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTaoDonNhap.cs">
     <Compile Include="FormDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +106,8 @@
     <Compile Include="FormDonNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDonNhap.Designer.cs">
-      <DependentUpon>FormDonNhap.cs</DependentUpon>
+    <Compile Include="FormTaoDonNhap.Designer.cs">
+      <DependentUpon>FormTaoDonNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -206,6 +207,8 @@
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoDonNhap.resx">
+      <DependentUpon>FormTaoDonNhap.cs</DependentUpon>
     <EmbeddedResource Include="FormDonBan.resx">
       <DependentUpon>FormDonBan.cs</DependentUpon>
     </EmbeddedResource>
