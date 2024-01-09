@@ -332,6 +332,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeThoiGian.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTongtien.Properties)).EndInit();
             this.ResumeLayout(false);
+<<<<<<< Updated upstream
+=======
+        }
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
+>>>>>>> Stashed changes
             this.PerformLayout();
 
         }
