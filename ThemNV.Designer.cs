@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class UcNhanVien
+    partial class FrmThemNV
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GcDanhMucNV = new DevExpress.XtraGrid.GridControl();
-            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.RcDanhMucNV = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
-            this.BbiThemMoi = new DevExpress.XtraBars.BarButtonItem();
-            this.BbiSua = new DevExpress.XtraBars.BarButtonItem();
-            this.BbiXoa = new DevExpress.XtraBars.BarButtonItem();
-            this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
-            this.RpDanhMucNV = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.RpgTacVu = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.LbThemNV = new DevExpress.XtraEditors.LabelControl();
+            this.GrbDangKy = new DevExpress.XtraEditors.GroupControl();
+            this.BtnThem = new DevExpress.XtraEditors.SimpleButton();
             this.DeNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.CbeChucVu = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CbeGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -56,9 +49,9 @@
             this.LbTenNV = new DevExpress.XtraEditors.LabelControl();
             this.TeMaNV = new DevExpress.XtraEditors.TextEdit();
             this.LbMaNV = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.GcDanhMucNV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucNV)).BeginInit();
+            this.BtnXoaThongTin = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).BeginInit();
+            this.GrbDangKy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeChucVu.Properties)).BeginInit();
@@ -71,108 +64,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.TeMaNV.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // GcDanhMucNV
+            // LbThemNV
             // 
-            this.GcDanhMucNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.GcDanhMucNV.Location = new System.Drawing.Point(0, 281);
-            this.GcDanhMucNV.MainView = this.gridView;
-            this.GcDanhMucNV.MenuManager = this.RcDanhMucNV;
-            this.GcDanhMucNV.Name = "GcDanhMucNV";
-            this.GcDanhMucNV.Size = new System.Drawing.Size(800, 311);
-            this.GcDanhMucNV.TabIndex = 2;
-            this.GcDanhMucNV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView});
+            this.LbThemNV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LbThemNV.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.LbThemNV.Appearance.Font = new System.Drawing.Font("Segoe UI", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbThemNV.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.LbThemNV.Appearance.Options.UseBackColor = true;
+            this.LbThemNV.Appearance.Options.UseFont = true;
+            this.LbThemNV.Appearance.Options.UseForeColor = true;
+            this.LbThemNV.Location = new System.Drawing.Point(387, 50);
+            this.LbThemNV.Name = "LbThemNV";
+            this.LbThemNV.Size = new System.Drawing.Size(162, 31);
+            this.LbThemNV.TabIndex = 5;
+            this.LbThemNV.Text = "Thêm nhân viên";
             // 
-            // gridView
+            // GrbDangKy
             // 
-            this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView.GridControl = this.GcDanhMucNV;
-            this.gridView.Name = "gridView";
-            this.gridView.OptionsBehavior.Editable = false;
-            this.gridView.OptionsBehavior.ReadOnly = true;
-            this.gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_FocusedRowChanged);
+            this.GrbDangKy.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.GrbDangKy.Appearance.BackColor = System.Drawing.Color.Wheat;
+            this.GrbDangKy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.GrbDangKy.Appearance.Options.UseBackColor = true;
+            this.GrbDangKy.Appearance.Options.UseFont = true;
+            this.GrbDangKy.Controls.Add(this.BtnXoaThongTin);
+            this.GrbDangKy.Controls.Add(this.BtnThem);
+            this.GrbDangKy.Location = new System.Drawing.Point(56, 109);
+            this.GrbDangKy.Name = "GrbDangKy";
+            this.GrbDangKy.Size = new System.Drawing.Size(832, 313);
+            this.GrbDangKy.TabIndex = 4;
+            this.GrbDangKy.Text = "Thông tin nhân viên";
             // 
-            // RcDanhMucNV
+            // BtnThem
             // 
-            this.RcDanhMucNV.ExpandCollapseItem.Id = 0;
-            this.RcDanhMucNV.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.RcDanhMucNV.ExpandCollapseItem,
-            this.bbiPrintPreview,
-            this.BbiThemMoi,
-            this.BbiSua,
-            this.BbiXoa,
-            this.BbiLamMoi});
-            this.RcDanhMucNV.Location = new System.Drawing.Point(0, 0);
-            this.RcDanhMucNV.MaxItemId = 21;
-            this.RcDanhMucNV.Name = "RcDanhMucNV";
-            this.RcDanhMucNV.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.RpDanhMucNV});
-            this.RcDanhMucNV.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.RcDanhMucNV.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.RcDanhMucNV.Size = new System.Drawing.Size(802, 126);
-            this.RcDanhMucNV.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
-            // 
-            // bbiPrintPreview
-            // 
-            this.bbiPrintPreview.Id = 20;
-            this.bbiPrintPreview.Name = "bbiPrintPreview";
-            // 
-            // BbiThemMoi
-            // 
-            this.BbiThemMoi.Caption = "Thêm mới";
-            this.BbiThemMoi.Id = 16;
-            this.BbiThemMoi.ImageOptions.ImageUri.Uri = "New";
-            this.BbiThemMoi.Name = "BbiThemMoi";
-            this.BbiThemMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThemMoi_ItemClick);
-            // 
-            // BbiSua
-            // 
-            this.BbiSua.Caption = "Sửa";
-            this.BbiSua.Id = 17;
-            this.BbiSua.ImageOptions.ImageUri.Uri = "Edit";
-            this.BbiSua.Name = "BbiSua";
-            this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
-            // 
-            // BbiXoa
-            // 
-            this.BbiXoa.Caption = "Xoá";
-            this.BbiXoa.Id = 18;
-            this.BbiXoa.ImageOptions.ImageUri.Uri = "Delete";
-            this.BbiXoa.Name = "BbiXoa";
-            this.BbiXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiXoa_ItemClick);
-            // 
-            // BbiLamMoi
-            // 
-            this.BbiLamMoi.Caption = "Làm mới";
-            this.BbiLamMoi.Id = 19;
-            this.BbiLamMoi.ImageOptions.ImageUri.Uri = "Refresh";
-            this.BbiLamMoi.Name = "BbiLamMoi";
-            this.BbiLamMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiLamMoi_ItemClick);
-            // 
-            // RpDanhMucNV
-            // 
-            this.RpDanhMucNV.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F);
-            this.RpDanhMucNV.Appearance.Options.UseFont = true;
-            this.RpDanhMucNV.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.RpgTacVu});
-            this.RpDanhMucNV.MergeOrder = 0;
-            this.RpDanhMucNV.Name = "RpDanhMucNV";
-            this.RpDanhMucNV.Text = "Danh mục nhân viên";
-            // 
-            // RpgTacVu
-            // 
-            this.RpgTacVu.AllowTextClipping = false;
-            this.RpgTacVu.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.RpgTacVu.ItemLinks.Add(this.BbiThemMoi);
-            this.RpgTacVu.ItemLinks.Add(this.BbiSua);
-            this.RpgTacVu.ItemLinks.Add(this.BbiXoa);
-            this.RpgTacVu.ItemLinks.Add(this.BbiLamMoi);
-            this.RpgTacVu.Name = "RpgTacVu";
+            this.BtnThem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnThem.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnThem.Appearance.Options.UseFont = true;
+            this.BtnThem.Location = new System.Drawing.Point(365, 270);
+            this.BtnThem.Name = "BtnThem";
+            this.BtnThem.Size = new System.Drawing.Size(122, 23);
+            this.BtnThem.TabIndex = 13;
+            this.BtnThem.Text = "Thêm";
             // 
             // DeNgaySinh
             // 
             this.DeNgaySinh.EditValue = null;
-            this.DeNgaySinh.Location = new System.Drawing.Point(110, 251);
+            this.DeNgaySinh.Location = new System.Drawing.Point(183, 277);
             this.DeNgaySinh.Name = "DeNgaySinh";
             this.DeNgaySinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeNgaySinh.Properties.Appearance.Options.UseFont = true;
@@ -181,178 +117,191 @@
             this.DeNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DeNgaySinh.Size = new System.Drawing.Size(128, 22);
-            this.DeNgaySinh.TabIndex = 38;
+            this.DeNgaySinh.TabIndex = 56;
             // 
             // CbeChucVu
             // 
-            this.CbeChucVu.Location = new System.Drawing.Point(615, 251);
+            this.CbeChucVu.Location = new System.Drawing.Point(688, 277);
             this.CbeChucVu.Name = "CbeChucVu";
             this.CbeChucVu.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeChucVu.Properties.Appearance.Options.UseFont = true;
             this.CbeChucVu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbeChucVu.Size = new System.Drawing.Size(144, 22);
-            this.CbeChucVu.TabIndex = 37;
+            this.CbeChucVu.TabIndex = 55;
             // 
             // CbeGioiTinh
             // 
-            this.CbeGioiTinh.Location = new System.Drawing.Point(348, 143);
+            this.CbeGioiTinh.Location = new System.Drawing.Point(421, 169);
             this.CbeGioiTinh.Name = "CbeGioiTinh";
             this.CbeGioiTinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeGioiTinh.Properties.Appearance.Options.UseFont = true;
             this.CbeGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbeGioiTinh.Size = new System.Drawing.Size(122, 22);
-            this.CbeGioiTinh.TabIndex = 36;
+            this.CbeGioiTinh.TabIndex = 54;
             // 
             // LbChucVu
             // 
             this.LbChucVu.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbChucVu.Appearance.Options.UseFont = true;
-            this.LbChucVu.Location = new System.Drawing.Point(496, 252);
+            this.LbChucVu.Location = new System.Drawing.Point(569, 278);
             this.LbChucVu.Name = "LbChucVu";
             this.LbChucVu.Size = new System.Drawing.Size(45, 15);
-            this.LbChucVu.TabIndex = 35;
+            this.LbChucVu.TabIndex = 53;
             this.LbChucVu.Text = "Chức Vụ";
             // 
             // TeCCCD
             // 
-            this.TeCCCD.Location = new System.Drawing.Point(615, 197);
+            this.TeCCCD.Location = new System.Drawing.Point(688, 223);
             this.TeCCCD.Name = "TeCCCD";
             this.TeCCCD.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeCCCD.Properties.Appearance.Options.UseFont = true;
             this.TeCCCD.Size = new System.Drawing.Size(144, 22);
-            this.TeCCCD.TabIndex = 34;
+            this.TeCCCD.TabIndex = 52;
             // 
             // LbCCCD
             // 
             this.LbCCCD.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbCCCD.Appearance.Options.UseFont = true;
-            this.LbCCCD.Location = new System.Drawing.Point(496, 200);
+            this.LbCCCD.Location = new System.Drawing.Point(569, 226);
             this.LbCCCD.Name = "LbCCCD";
             this.LbCCCD.Size = new System.Drawing.Size(103, 15);
-            this.LbCCCD.TabIndex = 33;
+            this.LbCCCD.TabIndex = 51;
             this.LbCCCD.Text = "Căn cước công dân";
             // 
             // TeDiaChi
             // 
-            this.TeDiaChi.Location = new System.Drawing.Point(615, 141);
+            this.TeDiaChi.Location = new System.Drawing.Point(688, 167);
             this.TeDiaChi.Name = "TeDiaChi";
             this.TeDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeDiaChi.Properties.Appearance.Options.UseFont = true;
             this.TeDiaChi.Size = new System.Drawing.Size(144, 22);
-            this.TeDiaChi.TabIndex = 32;
+            this.TeDiaChi.TabIndex = 50;
             // 
             // LbDiaChi
             // 
             this.LbDiaChi.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbDiaChi.Appearance.Options.UseFont = true;
-            this.LbDiaChi.Location = new System.Drawing.Point(496, 144);
+            this.LbDiaChi.Location = new System.Drawing.Point(569, 170);
             this.LbDiaChi.Name = "LbDiaChi";
             this.LbDiaChi.Size = new System.Drawing.Size(36, 15);
-            this.LbDiaChi.TabIndex = 31;
+            this.LbDiaChi.TabIndex = 49;
             this.LbDiaChi.Text = "Địa chỉ";
             // 
             // TeEmail
             // 
-            this.TeEmail.Location = new System.Drawing.Point(348, 249);
+            this.TeEmail.Location = new System.Drawing.Point(421, 275);
             this.TeEmail.Name = "TeEmail";
             this.TeEmail.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeEmail.Properties.Appearance.Options.UseFont = true;
             this.TeEmail.Size = new System.Drawing.Size(122, 22);
-            this.TeEmail.TabIndex = 30;
+            this.TeEmail.TabIndex = 48;
             // 
             // LbEmail
             // 
             this.LbEmail.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbEmail.Appearance.Options.UseFont = true;
-            this.LbEmail.Location = new System.Drawing.Point(263, 252);
+            this.LbEmail.Location = new System.Drawing.Point(336, 278);
             this.LbEmail.Name = "LbEmail";
             this.LbEmail.Size = new System.Drawing.Size(29, 15);
-            this.LbEmail.TabIndex = 29;
+            this.LbEmail.TabIndex = 47;
             this.LbEmail.Text = "Email";
             // 
             // TeSDT
             // 
-            this.TeSDT.Location = new System.Drawing.Point(348, 197);
+            this.TeSDT.Location = new System.Drawing.Point(421, 223);
             this.TeSDT.Name = "TeSDT";
             this.TeSDT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeSDT.Properties.Appearance.Options.UseFont = true;
             this.TeSDT.Size = new System.Drawing.Size(122, 22);
-            this.TeSDT.TabIndex = 28;
+            this.TeSDT.TabIndex = 46;
             // 
             // LbSDT
             // 
             this.LbSDT.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbSDT.Appearance.Options.UseFont = true;
-            this.LbSDT.Location = new System.Drawing.Point(263, 200);
+            this.LbSDT.Location = new System.Drawing.Point(336, 226);
             this.LbSDT.Name = "LbSDT";
             this.LbSDT.Size = new System.Drawing.Size(69, 15);
-            this.LbSDT.TabIndex = 27;
+            this.LbSDT.TabIndex = 45;
             this.LbSDT.Text = "Số điện thoại";
             // 
             // LbGioiTInh
             // 
             this.LbGioiTInh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbGioiTInh.Appearance.Options.UseFont = true;
-            this.LbGioiTInh.Location = new System.Drawing.Point(263, 144);
+            this.LbGioiTInh.Location = new System.Drawing.Point(336, 170);
             this.LbGioiTInh.Name = "LbGioiTInh";
             this.LbGioiTInh.Size = new System.Drawing.Size(45, 15);
-            this.LbGioiTInh.TabIndex = 26;
+            this.LbGioiTInh.TabIndex = 44;
             this.LbGioiTInh.Text = "Giới tính";
             // 
             // LbNgaySinh
             // 
             this.LbNgaySinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNgaySinh.Appearance.Options.UseFont = true;
-            this.LbNgaySinh.Location = new System.Drawing.Point(14, 252);
+            this.LbNgaySinh.Location = new System.Drawing.Point(87, 278);
             this.LbNgaySinh.Name = "LbNgaySinh";
             this.LbNgaySinh.Size = new System.Drawing.Size(54, 15);
-            this.LbNgaySinh.TabIndex = 25;
+            this.LbNgaySinh.TabIndex = 43;
             this.LbNgaySinh.Text = "Ngày Sinh";
             // 
             // TeTenNV
             // 
-            this.TeTenNV.Location = new System.Drawing.Point(110, 199);
+            this.TeTenNV.Location = new System.Drawing.Point(183, 225);
             this.TeTenNV.Name = "TeTenNV";
             this.TeTenNV.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeTenNV.Properties.Appearance.Options.UseFont = true;
             this.TeTenNV.Size = new System.Drawing.Size(128, 22);
-            this.TeTenNV.TabIndex = 24;
+            this.TeTenNV.TabIndex = 42;
             // 
             // LbTenNV
             // 
             this.LbTenNV.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTenNV.Appearance.Options.UseFont = true;
-            this.LbTenNV.Location = new System.Drawing.Point(14, 200);
+            this.LbTenNV.Location = new System.Drawing.Point(87, 226);
             this.LbTenNV.Name = "LbTenNV";
             this.LbTenNV.Size = new System.Drawing.Size(77, 15);
-            this.LbTenNV.TabIndex = 23;
+            this.LbTenNV.TabIndex = 41;
             this.LbTenNV.Text = "Tên Nhân Viên";
             // 
             // TeMaNV
             // 
-            this.TeMaNV.Location = new System.Drawing.Point(110, 143);
+            this.TeMaNV.Location = new System.Drawing.Point(183, 169);
             this.TeMaNV.Name = "TeMaNV";
             this.TeMaNV.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeMaNV.Properties.Appearance.Options.UseFont = true;
             this.TeMaNV.Size = new System.Drawing.Size(128, 22);
-            this.TeMaNV.TabIndex = 22;
+            this.TeMaNV.TabIndex = 40;
             // 
             // LbMaNV
             // 
             this.LbMaNV.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbMaNV.Appearance.Options.UseFont = true;
-            this.LbMaNV.Location = new System.Drawing.Point(14, 144);
+            this.LbMaNV.Location = new System.Drawing.Point(87, 170);
             this.LbMaNV.Name = "LbMaNV";
             this.LbMaNV.Size = new System.Drawing.Size(75, 15);
-            this.LbMaNV.TabIndex = 21;
+            this.LbMaNV.TabIndex = 39;
             this.LbMaNV.Text = "Mã Nhân Viên";
             // 
-            // UcNhanVien
+            // BtnXoaThongTin
+            // 
+            this.BtnXoaThongTin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnXoaThongTin.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnXoaThongTin.Appearance.Options.UseFont = true;
+            this.BtnXoaThongTin.Location = new System.Drawing.Point(87, 270);
+            this.BtnXoaThongTin.Name = "BtnXoaThongTin";
+            this.BtnXoaThongTin.Size = new System.Drawing.Size(137, 23);
+            this.BtnXoaThongTin.TabIndex = 14;
+            this.BtnXoaThongTin.Text = "Xoá hết thông tin";
+            this.BtnXoaThongTin.Click += new System.EventHandler(this.BtnXoaThongTin_Click);
+            // 
+            // FrmThemNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(919, 467);
             this.Controls.Add(this.DeNgaySinh);
             this.Controls.Add(this.CbeChucVu);
             this.Controls.Add(this.CbeGioiTinh);
@@ -371,13 +320,13 @@
             this.Controls.Add(this.LbTenNV);
             this.Controls.Add(this.TeMaNV);
             this.Controls.Add(this.LbMaNV);
-            this.Controls.Add(this.GcDanhMucNV);
-            this.Controls.Add(this.RcDanhMucNV);
-            this.Name = "UcNhanVien";
-            this.Size = new System.Drawing.Size(802, 608);
-            ((System.ComponentModel.ISupportInitialize)(this.GcDanhMucNV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucNV)).EndInit();
+            this.Controls.Add(this.LbThemNV);
+            this.Controls.Add(this.GrbDangKy);
+            this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.Name = "FrmThemNV";
+            this.Text = "Thêm Nhân Viên";
+            ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).EndInit();
+            this.GrbDangKy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeChucVu.Properties)).EndInit();
@@ -394,16 +343,10 @@
         }
 
         #endregion
-        private DevExpress.XtraGrid.GridControl GcDanhMucNV;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
-        private DevExpress.XtraBars.Ribbon.RibbonControl RcDanhMucNV;
-        private DevExpress.XtraBars.Ribbon.RibbonPage RpDanhMucNV;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup RpgTacVu;
-        private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.BarButtonItem BbiThemMoi;
-        private DevExpress.XtraBars.BarButtonItem BbiSua;
-        private DevExpress.XtraBars.BarButtonItem BbiXoa;
-        private DevExpress.XtraBars.BarButtonItem BbiLamMoi;
+
+        private DevExpress.XtraEditors.LabelControl LbThemNV;
+        private DevExpress.XtraEditors.GroupControl GrbDangKy;
+        private DevExpress.XtraEditors.SimpleButton BtnThem;
         private DevExpress.XtraEditors.DateEdit DeNgaySinh;
         private DevExpress.XtraEditors.ComboBoxEdit CbeChucVu;
         private DevExpress.XtraEditors.ComboBoxEdit CbeGioiTinh;
@@ -422,5 +365,6 @@
         private DevExpress.XtraEditors.LabelControl LbTenNV;
         private DevExpress.XtraEditors.TextEdit TeMaNV;
         private DevExpress.XtraEditors.LabelControl LbMaNV;
+        private DevExpress.XtraEditors.SimpleButton BtnXoaThongTin;
     }
 }

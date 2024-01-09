@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,9 +24,8 @@ namespace market_management
             InitializeComponent();
             LoadData();
 
-            CbeGioiTinh.Properties.Items.Add("Nam");
-            CbeGioiTinh.Properties.Items.Add("Nữ");
-            CbeGioiTinh.Properties.Items.Add("Khác");
+            HienThiGioiTinh();
+            HienThiMaGiamGia();
         }
         //Lấy data từ CSDL
         void LoadData()
@@ -42,41 +42,108 @@ namespace market_management
 
         private void BbiThemMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (TeMaKH.Text != "" & TeTenKH.Text != "")
-            {
-                string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}')", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text, DeNgaySinh.Text);
-                MessageBox.Show("Thêm thành công");
-                GcDanhMucKH.DataSource = dataAccess.GetDataTable(s);
-                LoadData();
-            }
-            else
-            {
-                MessageBox.Show("Không được để trống các trường sau \n - Tên Khách Hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-}
-
-        private void BbiXoa_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Xác nhận xoá?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
-            if (true)
-            {
-                GridView currentView = (GridView)GcDanhMucKH.FocusedView;
-
-                string _MaKH = currentView.GetRowCellValue(currentView.FocusedRowHandle, currentView.Columns[0]).ToString();
-
-                dataAccess.UpdateData(string.Format("delete from KHACH_HANG where MaKH = {0}", _MaKH));
-                LoadData();
-            }
+            FrmThemKH frmKH = new FrmThemKH();
+            frmKH.ShowDialog();
+            frmKH.BringToFront();
         }
 
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string s = string.Format("UPDATE NHAN_VIEN SET " + "TenKH = N'{1}' where MaKH = {0} )", TeMaKH.Text, TeMaKH.Text);
-            MessageBox.Show("Sửa thành công!");
-            GcDanhMucKH.DataSource = dataAccess.GetDataTable(s);
+            if (string.IsNullOrEmpty(TeMaKH.Text))
+            {
+                XtraMessageBox.Show("Vui lòng chọn khách hàng cần sửa", "Thông báo");
+                return;
+            }
+
+            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn sửa thông tin khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationResult == DialogResult.Yes)
+            {
+                try
+                {
+                    string s = string.Format("UPDATE KHACH_HANG SET " + "TenKH = N'{1}' where MaKH = {0} )", TeMaKH.Text, TeMaKH.Text);
+                    dataAccess.UpdateData(s);
+                    XtraMessageBox.Show("Cập nhật khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData(); // Gọi lại phương thức để cập nhật GridView
+
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Lỗi cập nhật nhà cung cấp: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
             LoadData();
+            TeMaKH.Text = "";
+            TeTenKH.Text = "";
+            CbeGioiTinh.Text = "";
+            DeNgaySinh.Text = "";
+            TeSDT.Text = "";
+            CbeMaGiamGia.Text = "";
+            TeDiaChi.Text = "";
+        }
+        private List<string> LayGioiTinh()
+        {
+            List<string> GioiTinh = new List<string>();
+            string query = "SELECT DISTINCT GioiTinh FROM KHACH_HANG";
+
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
+            {
+                dataAccess.objConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        GioiTinh.Add(reader["GioiTinh"].ToString());
+                    }
+                }
+
+                dataAccess.objConnection.Close();
+
+            }
+            return GioiTinh;
+        }
+        
+        private List<string> LayMaGiamGia()
+        {
+            List<string> MaGiamGia = new List<string>();
+            string query = "SELECT MaGiamGia FROM MA_GIAM_GIA";
+
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
+            {
+                dataAccess.objConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        MaGiamGia.Add(reader["MaGiamGia"].ToString());
+                    }
+                }
+
+                dataAccess.objConnection.Close();
+
+            }
+            return MaGiamGia;
+        }
+        private void HienThiGioiTinh()
+        {
+            List<string> GioiTinh = LayGioiTinh();
+            CbeGioiTinh.Properties.Items.AddRange(GioiTinh);
+
+            CbeGioiTinh.Properties.AutoComplete = true;
+            CbeGioiTinh.Properties.CaseSensitiveSearch = false;
+        }
+        private void HienThiMaGiamGia()
+        {
+            List<string> MaGiamGia = LayMaGiamGia();
+            CbeMaGiamGia.Properties.Items.AddRange(MaGiamGia);
+
+            CbeMaGiamGia.Properties.AutoComplete = true;
+            CbeMaGiamGia.Properties.CaseSensitiveSearch = false;
         }
     }
 }

@@ -125,7 +125,7 @@ namespace market_management.UI
         private List<string> LayTenSP()
         {
             List<string> TenSP = new List<string>();
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string connectionString = @"Data Source= LAPTOP-MSGIJ51R\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
             string query = "SELECT TenSP FROM SAN_PHAM";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -157,7 +157,7 @@ namespace market_management.UI
         private List<string> LayTenLoaiSP()
         {
             List<string> TenLoaiSP = new List<string>();
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string connectionString = @"Data Source= LAPTOP-MSGIJ51R\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
             string query = "SELECT TenLoaiSP FROM LOAI_SAN_PHAM";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -189,7 +189,7 @@ namespace market_management.UI
         private List<string> LayMaSP()
         {
             List<string> MaSP = new List<string>();
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
+            string connectionString = @"Data Source= LAPTOP-MSGIJ51R\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
             string query = "SELECT MaSP FROM SAN_PHAM";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -226,11 +226,6 @@ namespace market_management.UI
             HienThiTenLoaiSP();
             HienThiMaSP();
         }
-
-
-
-
-
 
         private bool IsMaLoaiSPExists(string maSP)
         {

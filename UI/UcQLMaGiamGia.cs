@@ -45,32 +45,62 @@ namespace market_management.UI
 
         private void BbiThemMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            int TrangThai = 1;
-            if (RbConHieuLuc.Checked)
-            {
-                TrangThai = 1;
-            }
-            if (RbHetHan.Checked)
-            {
-                TrangThai = 0;
-            }
-            if(TeTenChuongTrinh.Text != "")
-            {
-                string s = string.Format("INSERT INTO MA_GIAM_GIA (TenChuongTrinh,NgayTao, TrangThai, MoTa, PhanTram) VALUES" + "(N'{0}','{1}','{2}',N'{3}','{4}')", TeTenChuongTrinh.Text, DeNgayTao.Text, TrangThai, TeMoTa.Text, CbePhanTram.Text);
-                MessageBox.Show("Thêm thành công");
-                GcMaGiamGia.DataSource = dataAccess.GetDataTable(s);
-                LoadData();
-            }
+            FrmThemMGG f = new FrmThemMGG();
+            f.ShowDialog();
         }
 
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (string.IsNullOrEmpty(TeMaGiamGia.Text))
+            {
+                XtraMessageBox.Show("Vui lòng chọn mã giảm giá cần sửa", "Thông báo");
+                return;
+            }
 
+            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn sửa mã giảm giá này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationResult == DialogResult.Yes)
+            {
+                try
+                {
+                    string s = string.Format("UPDATE MA_GIAM_GIA SET " + "TenNV = N'{1}' where MaNV = N'{0}' )", TeMaGiamGia.Text, TeTenChuongTrinh.Text);
+                    dataAccess.UpdateData(s);
+                    XtraMessageBox.Show("Cập nhật nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData(); // Gọi lại phương thức để cập nhật GridView
+
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Lỗi cập nhật nhà cung cấp: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadData();
+            TeMaGiamGia.Text = "";
+            TeTenChuongTrinh.Text = "";
+            CbePhanTram.Text = "";
+            DeNgayTao.Text = "";
+            TeMoTa.Text = "";
+            RbConHieuLuc.Checked = false;
+            RbHetHan.Checked = false;
+        }
+
+        private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            var MaGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã Nhân Viên").ToString();
+            var TenChuongTrinh = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên Nhân Viên").ToString();
+            var NgayTao = gridView.GetRowCellValue(e.FocusedRowHandle, "Ngày Sinh").ToString();
+            var PhanTram = gridView.GetRowCellValue(e.FocusedRowHandle, "Giới Tính").ToString();
+            var MoTa = gridView.GetRowCellValue(e.FocusedRowHandle, "Email").ToString();
+            TeMaGiamGia.Text = MaGiamGia;
+            TeTenChuongTrinh.Text = TenChuongTrinh;
+            DeNgayTao.Text = NgayTao;
+            CbePhanTram.Text = PhanTram;
+            TeMoTa.Text = MoTa;
+            
         }
     }
 }

@@ -87,8 +87,6 @@ namespace market_management.UI
             }
         }
 
-
-
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             

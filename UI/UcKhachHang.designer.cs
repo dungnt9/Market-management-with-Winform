@@ -33,7 +33,6 @@
             this.RcDanhMucKH = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.BbiThemMoi = new DevExpress.XtraBars.BarButtonItem();
             this.BbiSua = new DevExpress.XtraBars.BarButtonItem();
-            this.BbiXoa = new DevExpress.XtraBars.BarButtonItem();
             this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
             this.RpDanhMucKH = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RbgTacVuKH = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -91,7 +90,6 @@
             this.RcDanhMucKH.ExpandCollapseItem,
             this.BbiThemMoi,
             this.BbiSua,
-            this.BbiXoa,
             this.BbiLamMoi});
             this.RcDanhMucKH.Location = new System.Drawing.Point(0, 0);
             this.RcDanhMucKH.MaxItemId = 21;
@@ -119,20 +117,13 @@
             this.BbiSua.Name = "BbiSua";
             this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
             // 
-            // BbiXoa
-            // 
-            this.BbiXoa.Caption = "Xoá";
-            this.BbiXoa.Id = 18;
-            this.BbiXoa.ImageOptions.ImageUri.Uri = "Delete";
-            this.BbiXoa.Name = "BbiXoa";
-            this.BbiXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiXoa_ItemClick);
-            // 
             // BbiLamMoi
             // 
             this.BbiLamMoi.Caption = "Làm mới";
             this.BbiLamMoi.Id = 19;
             this.BbiLamMoi.ImageOptions.ImageUri.Uri = "Refresh";
             this.BbiLamMoi.Name = "BbiLamMoi";
+            this.BbiLamMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiLamMoi_ItemClick);
             // 
             // RpDanhMucKH
             // 
@@ -150,7 +141,6 @@
             this.RbgTacVuKH.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.RbgTacVuKH.ItemLinks.Add(this.BbiThemMoi);
             this.RbgTacVuKH.ItemLinks.Add(this.BbiSua);
-            this.RbgTacVuKH.ItemLinks.Add(this.BbiXoa);
             this.RbgTacVuKH.ItemLinks.Add(this.BbiLamMoi);
             this.RbgTacVuKH.Name = "RbgTacVuKH";
             // 
@@ -348,7 +338,6 @@
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
         private DevExpress.XtraBars.BarButtonItem BbiThemMoi;
         private DevExpress.XtraBars.BarButtonItem BbiSua;
-        private DevExpress.XtraBars.BarButtonItem BbiXoa;
         private DevExpress.XtraBars.BarButtonItem BbiLamMoi;
         private DevExpress.XtraEditors.TextEdit TeDiaChi;
         private DevExpress.XtraEditors.LabelControl LbDiaChi;
