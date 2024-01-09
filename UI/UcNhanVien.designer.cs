@@ -91,6 +91,7 @@
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
             this.gridView.OptionsEditForm.PopupEditFormWidth = 933;
+            this.gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_FocusedRowChanged);
             // 
             // RcDanhMucNV
             // 
@@ -181,7 +182,7 @@
             this.DeNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DeNgaySinh.Size = new System.Drawing.Size(128, 22);
-            this.DeNgaySinh.TabIndex = 38;
+            this.DeNgaySinh.TabIndex = 24;
             // 
             // CbeChucVu
             // 
@@ -192,7 +193,7 @@
             this.CbeChucVu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbeChucVu.Size = new System.Drawing.Size(144, 22);
-            this.CbeChucVu.TabIndex = 37;
+            this.CbeChucVu.TabIndex = 30;
             // 
             // CbeGioiTinh
             // 
@@ -203,7 +204,7 @@
             this.CbeGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbeGioiTinh.Size = new System.Drawing.Size(122, 22);
-            this.CbeGioiTinh.TabIndex = 36;
+            this.CbeGioiTinh.TabIndex = 25;
             // 
             // LbChucVu
             // 
@@ -222,7 +223,7 @@
             this.TeCCCD.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeCCCD.Properties.Appearance.Options.UseFont = true;
             this.TeCCCD.Size = new System.Drawing.Size(144, 22);
-            this.TeCCCD.TabIndex = 34;
+            this.TeCCCD.TabIndex = 29;
             // 
             // LbCCCD
             // 
@@ -241,7 +242,7 @@
             this.TeDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeDiaChi.Properties.Appearance.Options.UseFont = true;
             this.TeDiaChi.Size = new System.Drawing.Size(144, 22);
-            this.TeDiaChi.TabIndex = 32;
+            this.TeDiaChi.TabIndex = 28;
             // 
             // LbDiaChi
             // 
@@ -260,7 +261,7 @@
             this.TeEmail.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeEmail.Properties.Appearance.Options.UseFont = true;
             this.TeEmail.Size = new System.Drawing.Size(122, 22);
-            this.TeEmail.TabIndex = 30;
+            this.TeEmail.TabIndex = 27;
             // 
             // LbEmail
             // 
@@ -279,7 +280,7 @@
             this.TeSDT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeSDT.Properties.Appearance.Options.UseFont = true;
             this.TeSDT.Size = new System.Drawing.Size(122, 22);
-            this.TeSDT.TabIndex = 28;
+            this.TeSDT.TabIndex = 26;
             // 
             // LbSDT
             // 
@@ -318,7 +319,7 @@
             this.TeTenNV.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeTenNV.Properties.Appearance.Options.UseFont = true;
             this.TeTenNV.Size = new System.Drawing.Size(128, 22);
-            this.TeTenNV.TabIndex = 24;
+            this.TeTenNV.TabIndex = 23;
             // 
             // LbTenNV
             // 

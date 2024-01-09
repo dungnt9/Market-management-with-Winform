@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class FormMain
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.PnlMain = new DevExpress.XtraEditors.PanelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -52,14 +52,13 @@
             this.BaoCaoThongKe = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TKDoanhThu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TKHangTon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.TKKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.TKBanHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.DangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DangKy = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.BsiChucvu = new DevExpress.XtraBars.BarStaticItem();
             this.BsiTenNV = new DevExpress.XtraBars.BarStaticItem();
-            this.BsiMaNV = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.fluentDesignFormContainer1.SuspendLayout();
@@ -150,9 +149,11 @@
             this.KH,
             this.NCC,
             this.LoaiSP});
+            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
-            this.accordionControlElement1.Text = "Quản lý thông tin danh mục";
+            this.accordionControlElement1.Text = "Đăng ký tài khoản cho nhân viên";
+            this.accordionControlElement1.Click += new System.EventHandler(this.accordionControlElement1_Click);
             // 
             // SP
             // 
@@ -236,7 +237,8 @@
             this.BaoCaoThongKe.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.TKDoanhThu,
             this.TKHangTon,
-            this.TKKhachHang});
+            this.TKBanHang});
+            this.BaoCaoThongKe.Expanded = true;
             this.BaoCaoThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BaoCaoThongKe.ImageOptions.Image")));
             this.BaoCaoThongKe.Name = "BaoCaoThongKe";
             this.BaoCaoThongKe.Text = "Báo cáo thống kê";
@@ -255,12 +257,12 @@
             this.TKHangTon.Text = "Thống kê hàng tồn kho";
             this.TKHangTon.Click += new System.EventHandler(this.TKHangTon_Click);
             // 
-            // TKKhachHang
+            // TKBanHang
             // 
-            this.TKKhachHang.Name = "TKKhachHang";
-            this.TKKhachHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.TKKhachHang.Text = "Thống kê khách hàng";
-            this.TKKhachHang.Click += new System.EventHandler(this.TKKhachHang_Click);
+            this.TKBanHang.Name = "TKBanHang";
+            this.TKBanHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.TKBanHang.Text = "Thống kê bán hàng";
+            this.TKBanHang.Click += new System.EventHandler(this.TKBanHang_Click);
             // 
             // accordionControlSeparator6
             // 
@@ -276,7 +278,6 @@
             // 
             // DangKy
             // 
-            this.DangKy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("DangKy.ImageOptions.SvgImage")));
             this.DangKy.Name = "DangKy";
             this.DangKy.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.DangKy.Text = "Tạo tài khoản nhân viên";
@@ -289,7 +290,6 @@
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.BsiChucvu,
             this.BsiTenNV,
-            this.BsiMaNV,
             this.barStaticItem4});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
@@ -300,29 +300,21 @@
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.BsiChucvu);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.BsiTenNV);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.BsiMaNV);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem4);
             // 
             // BsiChucvu
             // 
             this.BsiChucvu.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.BsiChucvu.Caption = "Quản lý";
+            this.BsiChucvu.Caption = "Chức vụ";
             this.BsiChucvu.Id = 0;
             this.BsiChucvu.Name = "BsiChucvu";
             // 
             // BsiTenNV
             // 
             this.BsiTenNV.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.BsiTenNV.Caption = "Nguyễn Văn A";
+            this.BsiTenNV.Caption = "Tên nhân viên";
             this.BsiTenNV.Id = 1;
             this.BsiTenNV.Name = "BsiTenNV";
-            // 
-            // BsiMaNV
-            // 
-            this.BsiMaNV.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.BsiMaNV.Caption = "NV113";
-            this.BsiMaNV.Id = 2;
-            this.BsiMaNV.Name = "BsiMaNV";
             // 
             // barStaticItem4
             // 
@@ -339,11 +331,10 @@
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.BsiChucvu,
             this.BsiTenNV,
-            this.BsiMaNV,
             this.barStaticItem4});
             this.fluentFormDefaultManager1.MaxItemId = 4;
             // 
-            // FormMain
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -354,8 +345,9 @@
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FormMain";
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MaximizeBox = false;
+            this.Name = "FrmMain";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Hệ thống quản lý siêu thị";
             this.fluentDesignFormContainer1.ResumeLayout(false);
@@ -375,7 +367,6 @@
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
         private DevExpress.XtraEditors.PanelControl PnlMain;
         private DevExpress.XtraEditors.LabelControl labelControl8;
@@ -398,11 +389,11 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement DangXuat;
         private DevExpress.XtraBars.Navigation.AccordionControlElement TKDoanhThu;
         private DevExpress.XtraBars.Navigation.AccordionControlElement TKHangTon;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement TKKhachHang;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement TKBanHang;
         private DevExpress.XtraBars.BarStaticItem BsiChucvu;
         private DevExpress.XtraBars.BarStaticItem BsiTenNV;
-        private DevExpress.XtraBars.BarStaticItem BsiMaNV;
         private DevExpress.XtraBars.BarStaticItem barStaticItem4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement DangKy;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
     }
 }

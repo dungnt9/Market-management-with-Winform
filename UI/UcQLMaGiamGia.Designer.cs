@@ -32,7 +32,7 @@
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.RcMGG = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
-            this.BbiThemMoi = new DevExpress.XtraBars.BarButtonItem();
+            this.BbiTaoMoi = new DevExpress.XtraBars.BarButtonItem();
             this.BbiSua = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
@@ -88,7 +88,7 @@
             this.RcMGG.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.RcMGG.ExpandCollapseItem,
             this.bbiPrintPreview,
-            this.BbiThemMoi,
+            this.BbiTaoMoi,
             this.BbiSua,
             this.bbiDelete,
             this.BbiLamMoi});
@@ -107,13 +107,13 @@
             this.bbiPrintPreview.Id = 20;
             this.bbiPrintPreview.Name = "bbiPrintPreview";
             // 
-            // BbiThemMoi
+            // BbiTaoMoi
             // 
-            this.BbiThemMoi.Caption = "Thêm mới";
-            this.BbiThemMoi.Id = 16;
-            this.BbiThemMoi.ImageOptions.ImageUri.Uri = "New";
-            this.BbiThemMoi.Name = "BbiThemMoi";
-            this.BbiThemMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThemMoi_ItemClick);
+            this.BbiTaoMoi.Caption = "Tạo mới";
+            this.BbiTaoMoi.Id = 16;
+            this.BbiTaoMoi.ImageOptions.ImageUri.Uri = "New";
+            this.BbiTaoMoi.Name = "BbiTaoMoi";
+            this.BbiTaoMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiTaoMoi_ItemClick);
             // 
             // BbiSua
             // 
@@ -150,7 +150,7 @@
             // 
             this.RpgTacVuMGG.AllowTextClipping = false;
             this.RpgTacVuMGG.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.RpgTacVuMGG.ItemLinks.Add(this.BbiThemMoi);
+            this.RpgTacVuMGG.ItemLinks.Add(this.BbiTaoMoi);
             this.RpgTacVuMGG.ItemLinks.Add(this.BbiSua);
             this.RpgTacVuMGG.ItemLinks.Add(this.BbiLamMoi);
             this.RpgTacVuMGG.Name = "RpgTacVuMGG";
@@ -164,7 +164,7 @@
             this.CbePhanTram.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbePhanTram.Size = new System.Drawing.Size(122, 22);
-            this.CbePhanTram.TabIndex = 48;
+            this.CbePhanTram.TabIndex = 40;
             // 
             // LbNgayTao
             // 
@@ -193,7 +193,7 @@
             this.TeTenChuongTrinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeTenChuongTrinh.Properties.Appearance.Options.UseFont = true;
             this.TeTenChuongTrinh.Size = new System.Drawing.Size(128, 22);
-            this.TeTenChuongTrinh.TabIndex = 40;
+            this.TeTenChuongTrinh.TabIndex = 39;
             // 
             // LbTenChuongTrinh
             // 
@@ -235,7 +235,7 @@
             this.DeNgayTao.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DeNgayTao.Size = new System.Drawing.Size(122, 20);
-            this.DeNgayTao.TabIndex = 51;
+            this.DeNgayTao.TabIndex = 41;
             // 
             // TeMoTa
             // 
@@ -244,7 +244,7 @@
             this.TeMoTa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeMoTa.Properties.Appearance.Options.UseFont = true;
             this.TeMoTa.Size = new System.Drawing.Size(164, 22);
-            this.TeMoTa.TabIndex = 57;
+            this.TeMoTa.TabIndex = 44;
             // 
             // LbMoTa
             // 
@@ -272,7 +272,7 @@
             this.RbConHieuLuc.Location = new System.Drawing.Point(608, 150);
             this.RbConHieuLuc.Name = "RbConHieuLuc";
             this.RbConHieuLuc.Size = new System.Drawing.Size(101, 22);
-            this.RbConHieuLuc.TabIndex = 61;
+            this.RbConHieuLuc.TabIndex = 42;
             this.RbConHieuLuc.TabStop = true;
             this.RbConHieuLuc.Text = "Còn hiệu lực";
             this.RbConHieuLuc.UseVisualStyleBackColor = true;
@@ -283,7 +283,7 @@
             this.RbHetHan.Location = new System.Drawing.Point(703, 151);
             this.RbHetHan.Name = "RbHetHan";
             this.RbHetHan.Size = new System.Drawing.Size(83, 20);
-            this.RbHetHan.TabIndex = 62;
+            this.RbHetHan.TabIndex = 43;
             this.RbHetHan.TabStop = true;
             this.RbHetHan.Text = "Hết hạn";
             this.RbHetHan.UseVisualStyleBackColor = true;
@@ -331,7 +331,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage RpQLMaGiamGia;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup RpgTacVuMGG;
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.BarButtonItem BbiThemMoi;
+        private DevExpress.XtraBars.BarButtonItem BbiTaoMoi;
         private DevExpress.XtraBars.BarButtonItem BbiSua;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem BbiLamMoi;

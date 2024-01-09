@@ -94,7 +94,7 @@
             this.LbMaNV.Appearance.Options.UseFont = true;
             this.LbMaNV.Location = new System.Drawing.Point(46, 78);
             this.LbMaNV.Name = "LbMaNV";
-            this.LbMaNV.Size = new System.Drawing.Size(89, 19);
+            this.LbMaNV.Size = new System.Drawing.Size(73, 13);
             this.LbMaNV.TabIndex = 30;
             this.LbMaNV.Text = "Mã Nhân VIên";
             // 
@@ -105,7 +105,7 @@
             this.TeMaNV.Name = "TeMaNV";
             this.TeMaNV.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeMaNV.Properties.Appearance.Options.UseFont = true;
-            this.TeMaNV.Size = new System.Drawing.Size(156, 26);
+            this.TeMaNV.Size = new System.Drawing.Size(156, 20);
             this.TeMaNV.TabIndex = 31;
             // 
             // PbAn2
@@ -166,7 +166,7 @@
             this.LbThongBao.Appearance.Options.UseForeColor = true;
             this.LbThongBao.Location = new System.Drawing.Point(185, 280);
             this.LbThongBao.Name = "LbThongBao";
-            this.LbThongBao.Size = new System.Drawing.Size(0, 16);
+            this.LbThongBao.Size = new System.Drawing.Size(0, 13);
             this.LbThongBao.TabIndex = 16;
             // 
             // BtnQuayLai
@@ -177,7 +177,7 @@
             this.BtnQuayLai.Location = new System.Drawing.Point(418, 251);
             this.BtnQuayLai.Name = "BtnQuayLai";
             this.BtnQuayLai.Size = new System.Drawing.Size(137, 23);
-            this.BtnQuayLai.TabIndex = 15;
+            this.BtnQuayLai.TabIndex = 36;
             this.BtnQuayLai.Text = "Quay lại trang chủ";
             this.BtnQuayLai.Click += new System.EventHandler(this.BtnQuayLai_Click);
             // 
@@ -189,7 +189,7 @@
             this.BtnXoaDangKy.Location = new System.Drawing.Point(418, 77);
             this.BtnXoaDangKy.Name = "BtnXoaDangKy";
             this.BtnXoaDangKy.Size = new System.Drawing.Size(137, 23);
-            this.BtnXoaDangKy.TabIndex = 14;
+            this.BtnXoaDangKy.TabIndex = 37;
             this.BtnXoaDangKy.Text = "Xoá hết thông tin";
             this.BtnXoaDangKy.Click += new System.EventHandler(this.BtnXoaDangKy_Click);
             // 
@@ -201,7 +201,7 @@
             this.BtnDangKy.Location = new System.Drawing.Point(418, 192);
             this.BtnDangKy.Name = "BtnDangKy";
             this.BtnDangKy.Size = new System.Drawing.Size(137, 23);
-            this.BtnDangKy.TabIndex = 13;
+            this.BtnDangKy.TabIndex = 35;
             this.BtnDangKy.Text = "Đăng ký";
             this.BtnDangKy.Click += new System.EventHandler(this.BtnDangKy_Click);
             // 
@@ -212,7 +212,7 @@
             this.LbNhapLai.Appearance.Options.UseFont = true;
             this.LbNhapLai.Location = new System.Drawing.Point(46, 221);
             this.LbNhapLai.Name = "LbNhapLai";
-            this.LbNhapLai.Size = new System.Drawing.Size(112, 19);
+            this.LbNhapLai.Size = new System.Drawing.Size(94, 13);
             this.LbNhapLai.TabIndex = 11;
             this.LbNhapLai.Text = "Nhập lại mật khẩu";
             // 
@@ -223,7 +223,7 @@
             this.LbMatKhau.Appearance.Options.UseFont = true;
             this.LbMatKhau.Location = new System.Drawing.Point(46, 170);
             this.LbMatKhau.Name = "LbMatKhau";
-            this.LbMatKhau.Size = new System.Drawing.Size(60, 19);
+            this.LbMatKhau.Size = new System.Drawing.Size(49, 13);
             this.LbMatKhau.TabIndex = 9;
             this.LbMatKhau.Text = "Mật Khẩu";
             // 
@@ -235,8 +235,8 @@
             this.TeNhapLai.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeNhapLai.Properties.Appearance.Options.UseFont = true;
             this.TeNhapLai.Properties.PasswordChar = '*';
-            this.TeNhapLai.Size = new System.Drawing.Size(156, 26);
-            this.TeNhapLai.TabIndex = 12;
+            this.TeNhapLai.Size = new System.Drawing.Size(156, 20);
+            this.TeNhapLai.TabIndex = 34;
             this.TeNhapLai.EditValueChanged += new System.EventHandler(this.TeNhapLai_EditValueChanged);
             // 
             // TeMatKhau
@@ -247,8 +247,8 @@
             this.TeMatKhau.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeMatKhau.Properties.Appearance.Options.UseFont = true;
             this.TeMatKhau.Properties.PasswordChar = '*';
-            this.TeMatKhau.Size = new System.Drawing.Size(156, 26);
-            this.TeMatKhau.TabIndex = 10;
+            this.TeMatKhau.Size = new System.Drawing.Size(156, 20);
+            this.TeMatKhau.TabIndex = 33;
             this.TeMatKhau.EditValueChanged += new System.EventHandler(this.TeMatKhau_EditValueChanged);
             // 
             // LbTenTaiKhoan
@@ -258,7 +258,7 @@
             this.LbTenTaiKhoan.Appearance.Options.UseFont = true;
             this.LbTenTaiKhoan.Location = new System.Drawing.Point(46, 123);
             this.LbTenTaiKhoan.Name = "LbTenTaiKhoan";
-            this.LbTenTaiKhoan.Size = new System.Drawing.Size(83, 19);
+            this.LbTenTaiKhoan.Size = new System.Drawing.Size(71, 13);
             this.LbTenTaiKhoan.TabIndex = 3;
             this.LbTenTaiKhoan.Text = "Tên Tài Khoản";
             // 
@@ -269,8 +269,8 @@
             this.TeTenTaiKhoan.Name = "TeTenTaiKhoan";
             this.TeTenTaiKhoan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeTenTaiKhoan.Properties.Appearance.Options.UseFont = true;
-            this.TeTenTaiKhoan.Size = new System.Drawing.Size(156, 26);
-            this.TeTenTaiKhoan.TabIndex = 4;
+            this.TeTenTaiKhoan.Size = new System.Drawing.Size(156, 20);
+            this.TeTenTaiKhoan.TabIndex = 32;
             // 
             // LbDKTaiKhoan
             // 
@@ -283,7 +283,7 @@
             this.LbDKTaiKhoan.Appearance.Options.UseForeColor = true;
             this.LbDKTaiKhoan.Location = new System.Drawing.Point(282, 17);
             this.LbDKTaiKhoan.Name = "LbDKTaiKhoan";
-            this.LbDKTaiKhoan.Size = new System.Drawing.Size(230, 40);
+            this.LbDKTaiKhoan.Size = new System.Drawing.Size(183, 31);
             this.LbDKTaiKhoan.TabIndex = 1;
             this.LbDKTaiKhoan.Text = "Đăng ký tài khoản";
             // 
@@ -301,7 +301,7 @@
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(739, 514);
-            this.MinimumSize = new System.Drawing.Size(739, 514);
+            this.MinimumSize = new System.Drawing.Size(739, 506);
             this.Name = "FrmDangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Đăng Ký";

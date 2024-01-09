@@ -20,36 +20,38 @@ namespace market_management.UI
     public partial class UcLoaiSanPham : DevExpress.XtraEditors.XtraUserControl
     {
         DataAccess dataAccess = new DataAccess();
+
         public UcLoaiSanPham()
         {
             InitializeComponent();
             LoadData();
         }
-        
+
         void LoadData()
         {
-            GcLoaiSP.DataSource = dataAccess.GetDataTable("SELECT \r\n\tMaLoaiSP as 'Mã loại sản phẩm', \r\n\tTenLoaiSP as 'Tên loại sản phẩm'\r\nfrom LOAI_SAN_PHAM");
+            string stringQuery = "SELECT " +
+                "MaLoaiSP as 'Mã loại sản phẩm'," +
+                "TenLoaiSP as 'Tên loại sản phẩm'," +
+                "CASE " +
+                "   WHEN TrangThai = 1 THEN 'Đang kinh doanh'" +
+                "   WHEN TrangThai = 0 THEN 'Không còn kinh doanh'" +
+                "   ELSE 'NULL'" +
+                "END AS 'Trạng thái'" +
+                " FROM LOAI_SAN_PHAM";
+            GcLoaiSP.DataSource = dataAccess.GetDataTable(stringQuery);
+            DataTable dataTable = dataAccess.GetDataTable(stringQuery);
+            //bsiRecordsCount.Caption = "RECORDS : " + dataTable.Rows.Count;
         }
-        private bool IsMaLoaiSPExists(string maLoaiSP)
-        {
-            // Thực hiện truy vấn để lấy danh sách các MaLoaiSP từ bảng LOAI_SAN_PHAM
-            DataTable dataTable = dataAccess.GetDataTable($"SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE MaLoaiSP = '{maLoaiSP}'");
 
-            // Kiểm tra sự tồn tại của maLoaiSP trong danh sách
-            return dataTable.Rows.Count > 0;
-        }
+
         private void BbiThem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var maLoaiSP = CbeMaLoaiSP.Text;
-            var tenLoaiSP = CbeTenLoaiSP.Text;
+            FrmThemLoaiSP frmThemLoaiSP = new FrmThemLoaiSP();
+            frmThemLoaiSP.ShowDialog();
+        }
 
-            if (string.IsNullOrEmpty(maLoaiSP))
-            {
-                XtraMessageBox.Show("Bạn phải nhập mã loại sản phẩm", "Thông báo");
-                CbeMaLoaiSP.Focus();
-                return;
-            }
-
+        /*public void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
             var isExist = IsMaLoaiSPExists(maLoaiSP);
 
             if (isExist)
@@ -86,80 +88,66 @@ namespace market_management.UI
                 XtraMessageBox.Show($"Lỗi thêm loại sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        */
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             
             var maLoaiSP = gridView1.GetRowCellValue(e.FocusedRowHandle, "Mã loại sản phẩm").ToString();
             var tenLoaiSP = gridView1.GetRowCellValue(e.FocusedRowHandle, "Tên loại sản phẩm").ToString();
-            CbeMaLoaiSP.Text = maLoaiSP;
-            CbeTenLoaiSP.Text = tenLoaiSP;
-            
-        }
-       
-        private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            
-            var maLoaiSP = CbeMaLoaiSP.Text;
-            var tenLoaiSP = CbeTenLoaiSP.Text;
+            var trangThai = gridView1.GetRowCellValue(e.FocusedRowHandle, "Trạng thái").ToString();
 
-            if (string.IsNullOrEmpty(maLoaiSP) || string.IsNullOrEmpty(tenLoaiSP))
+            CbeTenLoaiSP.Text = tenLoaiSP;
+            //LbcMaLoaiSP.Text = maLoaiSP;
+            //CmbTrangThai.Text = trangThai;
+        }
+
+        /*private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var tenLoaiSP = CbeTenLoaiSP.Text;
+            //var maLoaiSP = LbcMaLoaiSP.Text;
+           var trangThai = CbeTrangThai.Text;
+
+            if (string.IsNullOrEmpty(tenLoaiSP) || string.IsNullOrEmpty(trangThai))
             {
                 XtraMessageBox.Show("Vui lòng chọn loại sản phẩm cần cập nhật và nhập thông tin mới", "Thông báo");
                 return;
             }
 
-            var sqlUpdate = $"UPDATE LOAI_SAN_PHAM SET TenLoaiSP = N'{tenLoaiSP}' WHERE MaLoaiSP = '{maLoaiSP}'";
+            var sqlUpdate = $"UPDATE LOAI_SAN_PHAM\r\n" +
+                 $"SET TenLoaiSP = N'{tenLoaiSP}', " +
+                 $"TrangThai = ";
 
-            DataAccess dataAccess = new DataAccess();
+            if (trangThai == "Đang kinh doanh")
+            {
+                sqlUpdate += "1";
+            }
+            else if (trangThai == "Không còn kinh doanh")
+            {
+                sqlUpdate += "0";
+            }
+            else
+            {
+                sqlUpdate += "NULL"; 
+            }
+
+            sqlUpdate += $"\r\nWHERE MaLoaiSP = '{maLoaiSP}'";
+
+
             try
             {
                 dataAccess.UpdateData(sqlUpdate);
                 XtraMessageBox.Show("Cập nhật loại sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadData(); // Gọi lại phương thức để cập nhật GridView
+                LoadData();
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show($"Lỗi cập nhật loại sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
-
-        private void BbiXoa_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var maLoaiSP = CbeMaLoaiSP.Text;
-
-            if (string.IsNullOrEmpty(maLoaiSP))
-            {
-                XtraMessageBox.Show("Vui lòng chọn loại sản phẩm cần xóa", "Thông báo");
-                return;
-            }
-
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa loại sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirmationResult == DialogResult.Yes)
-            {
-                var sqlDelete = $"DELETE FROM LOAI_SAN_PHAM WHERE MaLoaiSP = '{maLoaiSP}'";
-
-                DataAccess dataAccess = new DataAccess();
-                try
-                {
-                    dataAccess.UpdateData(sqlDelete);
-                    XtraMessageBox.Show("Xóa loại sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
-                    
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show($"Lỗi xóa loại sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
+        */
         private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadData();
-            CbeMaLoaiSP.Text = "";
             CbeTenLoaiSP.Text = "";
         }
 
@@ -186,7 +174,7 @@ namespace market_management.UI
 
             return MaLoaiSP;
         }
-        private void HienThiMaLoaiSP()
+        /*private void HienThiMaLoaiSP()
         {
             List<string> MaLoaiSP = LayMaLoaiSP();
             CbeMaLoaiSP.Properties.Items.AddRange(MaLoaiSP);
@@ -195,44 +183,39 @@ namespace market_management.UI
             CbeMaLoaiSP.Properties.AutoComplete = true;
             CbeMaLoaiSP.Properties.CaseSensitiveSearch = false;
         }
-
+        */
         private List<string> LayTenLoaiSP()
         {
             List<string> TenLoaiSP = new List<string>();
-            string connectionString = @"Data Source= DESKTOP-IAMCQPA\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True ";
             string query = "SELECT TenLoaiSP FROM LOAI_SAN_PHAM";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
+                dataAccess.objConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
-                        }
+                        TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
                     }
                 }
+                dataAccess.objConnection.Close();
             }
-
             return TenLoaiSP;
         }
+
         private void HienThiTenLoaiSP()
         {
             List<string> TenLoaiSP = LayTenLoaiSP();
             CbeTenLoaiSP.Properties.Items.AddRange(TenLoaiSP);
 
-            // Nếu bạn muốn có tính năng tự động hoàn tất khi người dùng nhập
             CbeTenLoaiSP.Properties.AutoComplete = true;
             CbeTenLoaiSP.Properties.CaseSensitiveSearch = false;
         }
 
-
         private void UcLoaiSanPham_Load(object sender, EventArgs e)
         {
-            HienThiMaLoaiSP();
             HienThiTenLoaiSP();
         }
 
@@ -240,6 +223,7 @@ namespace market_management.UI
         {
 
         }
+
         private void CbeMaLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
         {
 

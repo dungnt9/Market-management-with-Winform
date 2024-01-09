@@ -99,7 +99,8 @@
             this.RpQLNhapHang});
             this.RcQLNhapHang.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.RcQLNhapHang.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.RcQLNhapHang.Size = new System.Drawing.Size(801, 126);
+            this.RcQLNhapHang.Size = new System.Drawing.Size(934, 154);
+            //this.RcQLNhapHang.StatusBar = this.ribbonStatusBar;
             this.RcQLNhapHang.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bsiRecordsCount
@@ -122,7 +123,7 @@
             this.BbiSua.Id = 17;
             this.BbiSua.ImageOptions.ImageUri.Uri = "Edit";
             this.BbiSua.Name = "BbiSua";
-            this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
+            //this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
             // 
             // BbiXoa
             // 
@@ -179,10 +180,9 @@
             // 
             this.LbThoiGian.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbThoiGian.Appearance.Options.UseFont = true;
-            this.LbThoiGian.Location = new System.Drawing.Point(54, 210);
-            this.LbThoiGian.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LbThoiGian.Location = new System.Drawing.Point(63, 259);
             this.LbThoiGian.Name = "LbThoiGian";
-            this.LbThoiGian.Size = new System.Drawing.Size(49, 15);
+            this.LbThoiGian.Size = new System.Drawing.Size(62, 20);
             this.LbThoiGian.TabIndex = 59;
             this.LbThoiGian.Text = "Thời gian";
             // 
@@ -190,10 +190,9 @@
             // 
             this.LbThanhTien.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbThanhTien.Appearance.Options.UseFont = true;
-            this.LbThanhTien.Location = new System.Drawing.Point(54, 176);
-            this.LbThanhTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LbThanhTien.Location = new System.Drawing.Point(63, 216);
             this.LbThanhTien.Name = "LbThanhTien";
-            this.LbThanhTien.Size = new System.Drawing.Size(50, 15);
+            this.LbThanhTien.Size = new System.Drawing.Size(63, 20);
             this.LbThanhTien.TabIndex = 56;
             this.LbThanhTien.Text = "Tổng tiền";
             // 
@@ -201,10 +200,9 @@
             // 
             this.LbMaNCC.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbMaNCC.Appearance.Options.UseFont = true;
-            this.LbMaNCC.Location = new System.Drawing.Point(459, 140);
-            this.LbMaNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LbMaNCC.Location = new System.Drawing.Point(536, 172);
             this.LbMaNCC.Name = "LbMaNCC";
-            this.LbMaNCC.Size = new System.Drawing.Size(93, 15);
+            this.LbMaNCC.Size = new System.Drawing.Size(115, 20);
             this.LbMaNCC.TabIndex = 54;
             this.LbMaNCC.Text = "Tên nhà cung cấp";
             // 
@@ -212,10 +210,9 @@
             // 
             this.LbTenNV.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbTenNV.Appearance.Options.UseFont = true;
-            this.LbTenNV.Location = new System.Drawing.Point(459, 175);
-            this.LbTenNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LbTenNV.Location = new System.Drawing.Point(536, 215);
             this.LbTenNV.Name = "LbTenNV";
-            this.LbTenNV.Size = new System.Drawing.Size(74, 15);
+            this.LbTenNV.Size = new System.Drawing.Size(91, 20);
             this.LbTenNV.TabIndex = 52;
             this.LbTenNV.Text = "Tên nhân viên";
             // 
@@ -223,17 +220,17 @@
             // 
             this.LbMaDonNhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbMaDonNhap.Appearance.Options.UseFont = true;
-            this.LbMaDonNhap.Location = new System.Drawing.Point(54, 140);
-            this.LbMaDonNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LbMaDonNhap.Location = new System.Drawing.Point(63, 172);
             this.LbMaDonNhap.Name = "LbMaDonNhap";
-            this.LbMaDonNhap.Size = new System.Drawing.Size(71, 15);
+            this.LbMaDonNhap.Size = new System.Drawing.Size(88, 20);
             this.LbMaDonNhap.TabIndex = 50;
             this.LbMaDonNhap.Text = "Mã đơn nhập";
             // 
             // DeThoiGian
             // 
             this.DeThoiGian.EditValue = null;
-            this.DeThoiGian.Location = new System.Drawing.Point(143, 209);
+            this.DeThoiGian.Location = new System.Drawing.Point(167, 257);
+            this.DeThoiGian.Margin = new System.Windows.Forms.Padding(4);
             this.DeThoiGian.Name = "DeThoiGian";
             this.DeThoiGian.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DeThoiGian.Properties.Appearance.Options.UseFont = true;
@@ -241,7 +238,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DeThoiGian.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DeThoiGian.Size = new System.Drawing.Size(181, 22);
+            this.DeThoiGian.Size = new System.Drawing.Size(211, 26);
             this.DeThoiGian.TabIndex = 68;
             // 
             // LbcMaDN
@@ -304,7 +301,7 @@
             this.TeTongtien.Size = new System.Drawing.Size(181, 20);
             this.TeTongtien.TabIndex = 78;
             // 
-            // UcQLNhapHang
+            this.Size = new System.Drawing.Size(934, 758);
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -332,13 +329,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeThoiGian.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTongtien.Properties)).EndInit();
             this.ResumeLayout(false);
-<<<<<<< Updated upstream
-=======
-        }
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
->>>>>>> Stashed changes
             this.PerformLayout();
-
         }
 
         #endregion
@@ -368,3 +360,4 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }
+

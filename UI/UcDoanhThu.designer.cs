@@ -34,11 +34,18 @@
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.LbDoanhThu = new DevExpress.XtraEditors.LabelControl();
+            this.CbeNam = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.LbNam = new DevExpress.XtraEditors.LabelControl();
+            this.LbThang = new DevExpress.XtraEditors.LabelControl();
+            this.CbeThang = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GcDoanhThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeNam.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeThang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // GcDoanhThu
@@ -85,10 +92,65 @@
             this.LbDoanhThu.TabIndex = 6;
             this.LbDoanhThu.Text = "Thống Kê Doanh Thu";
             // 
+            // CbeNam
+            // 
+            this.CbeNam.Location = new System.Drawing.Point(129, 87);
+            this.CbeNam.Name = "CbeNam";
+            this.CbeNam.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbeNam.Properties.Appearance.Options.UseFont = true;
+            this.CbeNam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeNam.Size = new System.Drawing.Size(100, 24);
+            this.CbeNam.TabIndex = 7;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(0, 0);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(63, 13);
+            this.labelControl1.TabIndex = 8;
+            this.labelControl1.Text = "labelControl1";
+            // 
+            // LbNam
+            // 
+            this.LbNam.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbNam.Appearance.Options.UseFont = true;
+            this.LbNam.Location = new System.Drawing.Point(81, 90);
+            this.LbNam.Name = "LbNam";
+            this.LbNam.Size = new System.Drawing.Size(28, 17);
+            this.LbNam.TabIndex = 9;
+            this.LbNam.Text = "Năm";
+            // 
+            // LbThang
+            // 
+            this.LbThang.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbThang.Appearance.Options.UseFont = true;
+            this.LbThang.Location = new System.Drawing.Point(303, 90);
+            this.LbThang.Name = "LbThang";
+            this.LbThang.Size = new System.Drawing.Size(36, 17);
+            this.LbThang.TabIndex = 11;
+            this.LbThang.Text = "Tháng";
+            // 
+            // CbeThang
+            // 
+            this.CbeThang.Location = new System.Drawing.Point(351, 87);
+            this.CbeThang.Name = "CbeThang";
+            this.CbeThang.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbeThang.Properties.Appearance.Options.UseFont = true;
+            this.CbeThang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeThang.Size = new System.Drawing.Size(100, 24);
+            this.CbeThang.TabIndex = 10;
+            // 
             // UcDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LbThang);
+            this.Controls.Add(this.CbeThang);
+            this.Controls.Add(this.LbNam);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.CbeNam);
             this.Controls.Add(this.LbDoanhThu);
             this.Controls.Add(this.chartControl1);
             this.Controls.Add(this.GcDoanhThu);
@@ -99,6 +161,8 @@
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeNam.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeThang.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +174,10 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraCharts.ChartControl chartControl1;
         private DevExpress.XtraEditors.LabelControl LbDoanhThu;
+        private DevExpress.XtraEditors.ComboBoxEdit CbeNam;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl LbNam;
+        private DevExpress.XtraEditors.LabelControl LbThang;
+        private DevExpress.XtraEditors.ComboBoxEdit CbeThang;
     }
 }

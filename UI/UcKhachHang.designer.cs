@@ -66,11 +66,11 @@
             // 
             // GcDanhMucKH
             // 
-            this.GcDanhMucKH.Location = new System.Drawing.Point(0, 279);
+            this.GcDanhMucKH.Location = new System.Drawing.Point(0, 272);
             this.GcDanhMucKH.MainView = this.gridView;
             this.GcDanhMucKH.MenuManager = this.RcDanhMucKH;
             this.GcDanhMucKH.Name = "GcDanhMucKH";
-            this.GcDanhMucKH.Size = new System.Drawing.Size(800, 321);
+            this.GcDanhMucKH.Size = new System.Drawing.Size(800, 328);
             this.GcDanhMucKH.TabIndex = 2;
             this.GcDanhMucKH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -82,6 +82,7 @@
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
+            this.gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_FocusedRowChanged);
             // 
             // RcDanhMucKH
             // 
@@ -151,18 +152,18 @@
             // 
             // TeDiaChi
             // 
-            this.TeDiaChi.Location = new System.Drawing.Point(603, 138);
+            this.TeDiaChi.Location = new System.Drawing.Point(603, 140);
             this.TeDiaChi.Name = "TeDiaChi";
             this.TeDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeDiaChi.Properties.Appearance.Options.UseFont = true;
             this.TeDiaChi.Size = new System.Drawing.Size(144, 22);
-            this.TeDiaChi.TabIndex = 50;
+            this.TeDiaChi.TabIndex = 45;
             // 
             // LbDiaChi
             // 
             this.LbDiaChi.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbDiaChi.Appearance.Options.UseFont = true;
-            this.LbDiaChi.Location = new System.Drawing.Point(509, 139);
+            this.LbDiaChi.Location = new System.Drawing.Point(509, 141);
             this.LbDiaChi.Name = "LbDiaChi";
             this.LbDiaChi.Size = new System.Drawing.Size(36, 15);
             this.LbDiaChi.TabIndex = 49;
@@ -170,18 +171,18 @@
             // 
             // TeSDT
             // 
-            this.TeSDT.Location = new System.Drawing.Point(361, 192);
+            this.TeSDT.Location = new System.Drawing.Point(361, 183);
             this.TeSDT.Name = "TeSDT";
             this.TeSDT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeSDT.Properties.Appearance.Options.UseFont = true;
             this.TeSDT.Size = new System.Drawing.Size(122, 22);
-            this.TeSDT.TabIndex = 46;
+            this.TeSDT.TabIndex = 44;
             // 
             // LbSDT
             // 
             this.LbSDT.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbSDT.Appearance.Options.UseFont = true;
-            this.LbSDT.Location = new System.Drawing.Point(276, 195);
+            this.LbSDT.Location = new System.Drawing.Point(276, 186);
             this.LbSDT.Name = "LbSDT";
             this.LbSDT.Size = new System.Drawing.Size(69, 15);
             this.LbSDT.TabIndex = 45;
@@ -191,7 +192,7 @@
             // 
             this.LbGioiTinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbGioiTinh.Appearance.Options.UseFont = true;
-            this.LbGioiTinh.Location = new System.Drawing.Point(276, 139);
+            this.LbGioiTinh.Location = new System.Drawing.Point(276, 141);
             this.LbGioiTinh.Name = "LbGioiTinh";
             this.LbGioiTinh.Size = new System.Drawing.Size(45, 15);
             this.LbGioiTinh.TabIndex = 44;
@@ -201,7 +202,7 @@
             // 
             this.LbMaGiamGia.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbMaGiamGia.Appearance.Options.UseFont = true;
-            this.LbMaGiamGia.Location = new System.Drawing.Point(509, 195);
+            this.LbMaGiamGia.Location = new System.Drawing.Point(509, 186);
             this.LbMaGiamGia.Name = "LbMaGiamGia";
             this.LbMaGiamGia.Size = new System.Drawing.Size(66, 15);
             this.LbMaGiamGia.TabIndex = 43;
@@ -209,18 +210,18 @@
             // 
             // TeTenKH
             // 
-            this.TeTenKH.Location = new System.Drawing.Point(123, 194);
+            this.TeTenKH.Location = new System.Drawing.Point(123, 185);
             this.TeTenKH.Name = "TeTenKH";
             this.TeTenKH.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeTenKH.Properties.Appearance.Options.UseFont = true;
             this.TeTenKH.Size = new System.Drawing.Size(128, 22);
-            this.TeTenKH.TabIndex = 42;
+            this.TeTenKH.TabIndex = 41;
             // 
             // LbTenKH
             // 
             this.LbTenKH.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbTenKH.Appearance.Options.UseFont = true;
-            this.LbTenKH.Location = new System.Drawing.Point(27, 195);
+            this.LbTenKH.Location = new System.Drawing.Point(27, 186);
             this.LbTenKH.Name = "LbTenKH";
             this.LbTenKH.Size = new System.Drawing.Size(87, 15);
             this.LbTenKH.TabIndex = 41;
@@ -228,7 +229,7 @@
             // 
             // TeMaKH
             // 
-            this.TeMaKH.Location = new System.Drawing.Point(123, 138);
+            this.TeMaKH.Location = new System.Drawing.Point(123, 140);
             this.TeMaKH.Name = "TeMaKH";
             this.TeMaKH.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeMaKH.Properties.Appearance.Options.UseFont = true;
@@ -239,7 +240,7 @@
             // 
             this.LbMaKH.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbMaKH.Appearance.Options.UseFont = true;
-            this.LbMaKH.Location = new System.Drawing.Point(27, 139);
+            this.LbMaKH.Location = new System.Drawing.Point(27, 141);
             this.LbMaKH.Name = "LbMaKH";
             this.LbMaKH.Size = new System.Drawing.Size(85, 15);
             this.LbMaKH.TabIndex = 39;
@@ -247,30 +248,30 @@
             // 
             // CbeMaGiamGia
             // 
-            this.CbeMaGiamGia.Location = new System.Drawing.Point(603, 193);
+            this.CbeMaGiamGia.Location = new System.Drawing.Point(603, 184);
             this.CbeMaGiamGia.Name = "CbeMaGiamGia";
             this.CbeMaGiamGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CbeMaGiamGia.Properties.Appearance.Options.UseFont = true;
             this.CbeMaGiamGia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbeMaGiamGia.Size = new System.Drawing.Size(144, 22);
-            this.CbeMaGiamGia.TabIndex = 59;
+            this.CbeMaGiamGia.TabIndex = 46;
             // 
             // CbeGioiTinh
             // 
-            this.CbeGioiTinh.Location = new System.Drawing.Point(361, 138);
+            this.CbeGioiTinh.Location = new System.Drawing.Point(361, 140);
             this.CbeGioiTinh.Name = "CbeGioiTinh";
             this.CbeGioiTinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.CbeGioiTinh.Properties.Appearance.Options.UseFont = true;
             this.CbeGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbeGioiTinh.Size = new System.Drawing.Size(122, 22);
-            this.CbeGioiTinh.TabIndex = 54;
+            this.CbeGioiTinh.TabIndex = 43;
             // 
             // DeNgaySinh
             // 
             this.DeNgaySinh.EditValue = null;
-            this.DeNgaySinh.Location = new System.Drawing.Point(123, 241);
+            this.DeNgaySinh.Location = new System.Drawing.Point(123, 230);
             this.DeNgaySinh.Name = "DeNgaySinh";
             this.DeNgaySinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeNgaySinh.Properties.Appearance.Options.UseFont = true;
@@ -279,13 +280,13 @@
             this.DeNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DeNgaySinh.Size = new System.Drawing.Size(128, 22);
-            this.DeNgaySinh.TabIndex = 63;
+            this.DeNgaySinh.TabIndex = 42;
             // 
             // LbNgaySinh
             // 
             this.LbNgaySinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNgaySinh.Appearance.Options.UseFont = true;
-            this.LbNgaySinh.Location = new System.Drawing.Point(27, 242);
+            this.LbNgaySinh.Location = new System.Drawing.Point(27, 231);
             this.LbNgaySinh.Name = "LbNgaySinh";
             this.LbNgaySinh.Size = new System.Drawing.Size(54, 15);
             this.LbNgaySinh.TabIndex = 62;

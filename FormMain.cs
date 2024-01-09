@@ -196,9 +196,17 @@ namespace market_management
 
         private void DangKy_Click(object sender, EventArgs e)
         {
+            if (Session.chucVu)
+            {
+                DangKy.Visible = true;
+            }
             FrmDangKy f = new FrmDangKy();
             f.ShowDialog();
         }
-        
+
+        private void accordionControlElement1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

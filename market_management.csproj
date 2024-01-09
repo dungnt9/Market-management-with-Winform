@@ -79,11 +79,11 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDonNhap.cs">
+    <Compile Include="FormTaoDonNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDonNhap.Designer.cs">
-      <DependentUpon>FormDonNhap.cs</DependentUpon>
+    <Compile Include="FormTaoDonNhap.Designer.cs">
+      <DependentUpon>FormTaoDonNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -93,23 +93,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThemKH.cs">
+    <Compile Include="Session.cs" />
+    <Compile Include="FormThemKH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemKH.Designer.cs">
-      <DependentUpon>ThemKH.cs</DependentUpon>
+    <Compile Include="FormThemKH.Designer.cs">
+      <DependentUpon>FormThemKH.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemMGG.cs">
+    <Compile Include="FormTaoMGG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemMGG.Designer.cs">
-      <DependentUpon>ThemMGG.cs</DependentUpon>
+    <Compile Include="FormTaoMGG.Designer.cs">
+      <DependentUpon>FormTaoMGG.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemNV.cs">
+    <Compile Include="FormThemNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemNV.Designer.cs">
-      <DependentUpon>ThemNV.cs</DependentUpon>
+    <Compile Include="FormThemNV.Designer.cs">
+      <DependentUpon>FormThemNV.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UcDoanhThu.cs">
       <SubType>UserControl</SubType>
@@ -153,11 +154,11 @@
     <Compile Include="UI\UcSanPham.Designer.cs">
       <DependentUpon>UcSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UcTKKhachHang.cs">
+    <Compile Include="UI\UcTKBanHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\UcTKKhachHang.Designer.cs">
-      <DependentUpon>UcTKKhachHang.cs</DependentUpon>
+    <Compile Include="UI\UcTKBanHang.Designer.cs">
+      <DependentUpon>UcTKBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="XemChiTietDonNhap.cs">
       <SubType>Form</SubType>
@@ -171,8 +172,8 @@
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDonNhap.resx">
-      <DependentUpon>FormDonNhap.cs</DependentUpon>
+    <EmbeddedResource Include="FormTaoDonNhap.resx">
+      <DependentUpon>FormTaoDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -188,14 +189,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ThemKH.resx">
-      <DependentUpon>ThemKH.cs</DependentUpon>
+    <EmbeddedResource Include="FormThemKH.resx">
+      <DependentUpon>FormThemKH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemMGG.resx">
-      <DependentUpon>ThemMGG.cs</DependentUpon>
+    <EmbeddedResource Include="FormTaoMGG.resx">
+      <DependentUpon>FormTaoMGG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemNV.resx">
-      <DependentUpon>ThemNV.cs</DependentUpon>
+    <EmbeddedResource Include="FormThemNV.resx">
+      <DependentUpon>FormThemNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcDoanhThu.resx">
       <DependentUpon>UcDoanhThu.cs</DependentUpon>
@@ -218,8 +219,8 @@
     <EmbeddedResource Include="UI\UcSanPham.resx">
       <DependentUpon>UcSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UcTKKhachHang.resx">
-      <DependentUpon>UcTKKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UcTKBanHang.resx">
+      <DependentUpon>UcTKBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XemChiTietDonNhap.resx">
       <DependentUpon>XemChiTietDonNhap.cs</DependentUpon>

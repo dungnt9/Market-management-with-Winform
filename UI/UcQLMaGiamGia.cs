@@ -43,12 +43,6 @@ namespace market_management.UI
                                                                     "from MA_GIAM_GIA");
         }
 
-        private void BbiThemMoi_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            FrmThemMGG f = new FrmThemMGG();
-            f.ShowDialog();
-        }
-
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (string.IsNullOrEmpty(TeMaGiamGia.Text))
@@ -90,7 +84,7 @@ namespace market_management.UI
 
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            var MaGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã Nhân Viên").ToString();
+            var MaGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle,).ToString();
             var TenChuongTrinh = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên Nhân Viên").ToString();
             var NgayTao = gridView.GetRowCellValue(e.FocusedRowHandle, "Ngày Sinh").ToString();
             var PhanTram = gridView.GetRowCellValue(e.FocusedRowHandle, "Giới Tính").ToString();
@@ -101,6 +95,12 @@ namespace market_management.UI
             CbePhanTram.Text = PhanTram;
             TeMoTa.Text = MoTa;
             
+        }
+
+        private void BbiTaoMoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmThemMGG f = new FrmThemMGG();
+            f.ShowDialog();
         }
     }
 }

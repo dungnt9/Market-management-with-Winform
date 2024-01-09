@@ -49,19 +49,13 @@ namespace market_management
 
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (string.IsNullOrEmpty(TeMaKH.Text))
-            {
-                XtraMessageBox.Show("Vui lòng chọn khách hàng cần sửa", "Thông báo");
-                return;
-            }
-
             var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn sửa thông tin khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirmationResult == DialogResult.Yes)
             {
                 try
                 {
-                    string s = string.Format("UPDATE KHACH_HANG SET " + "TenKH = N'{1}' where MaKH = {0} )", TeMaKH.Text, TeMaKH.Text);
+                    string s = string.Format("UPDATE KHACH_HANG SET " + "TenKH = N'{1}' where MaKH = {0} )", TeTenKH.Text, TeMaKH.Text);
                     dataAccess.UpdateData(s);
                     XtraMessageBox.Show("Cập nhật khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData(); // Gọi lại phương thức để cập nhật GridView
@@ -144,6 +138,32 @@ namespace market_management
 
             CbeMaGiamGia.Properties.AutoComplete = true;
             CbeMaGiamGia.Properties.CaseSensitiveSearch = false;
+        }
+
+        private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            GridView currentView = (GridView)GcDanhMucKH.FocusedView;
+            var MaKH = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[0]).ToString();
+            var TenKH = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[1]).ToString();
+            var NgaySinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
+            var GioiTinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
+            var SDT = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
+            var DiaChi = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
+            var MaGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
+            TeMaKH.Text = MaKH;
+            TeTenKH.Text = TenKH;
+            CbeGioiTinh.Text = GioiTinh;
+            if(DeNgaySinh.Text != "")
+            {
+                DeNgaySinh.Text = NgaySinh.Substring(0, 9);
+            }
+            else
+            {
+                DeNgaySinh.Text = NgaySinh;
+            }
+            TeSDT.Text = SDT;
+            TeDiaChi.Text = DiaChi;
+            CbeMaGiamGia.Text = MaGiamGia;
         }
     }
 }

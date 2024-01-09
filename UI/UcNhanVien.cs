@@ -32,7 +32,7 @@ namespace market_management
         //Lất data từ CSDL
         void LoadData()
         {
-            GcDanhMucNV.DataSource = dataAccess.GetDataTable("select MaNV as 'Mã Nhân VIên', " +
+            GcDanhMucNV.DataSource = dataAccess.GetDataTable("select MaNV as 'Mã Nhân Viên', " +
                                                                     "TenNV as 'Tên Nhân Viên',   " +
                                                                     "NgaySinh as 'Ngày Sinh'," +
                                                                     "GioiTinh as 'Giới Tính', " +
@@ -46,24 +46,8 @@ namespace market_management
 
         private void BbiThemMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (TeTenNV.Text != "")
-            {
-                if (TeMaNV.Text != "")
-                {
-                    XtraMessageBox.Show("Mã Nhân Viên cần để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    string s = string.Format("INSERT INTO NHAN_VIEN (TenNV,GioiTinh, SDT, DiaChi, CanCuoc, NgaySinh, Email ,ChucVu) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}', '{6}', N'{7}')", TeTenNV.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, TeCCCD.Text, DeNgaySinh.Text, TeEmail.Text, CbeChucVu.Text);
-                    XtraMessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GcDanhMucNV.DataSource = dataAccess.GetDataTable(s);
-                    LoadData();
-                }
-            }
-            else
-            {
-                XtraMessageBox.Show("Không được để trống các trường sau \n - Tên Nhân Viên ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            FrmThemNV f = new FrmThemNV();
+            f.ShowDialog();
         }
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -109,13 +93,14 @@ namespace market_management
         {
             DialogResult dr = XtraMessageBox.Show("Xác nhận xoá?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            if (true)
+            if (dr == DialogResult.Yes)
             {
                 GridView currentView = (GridView)GcDanhMucNV.FocusedView;
 
-                string _MaNV = currentView.GetRowCellValue(currentView.FocusedRowHandle, currentView.Columns[0]).ToString();
+                int _MaNV = (int) currentView.GetRowCellValue(currentView.FocusedRowHandle, currentView.Columns[0]);
 
-                dataAccess.UpdateData(string.Format(" delete from NHAN_VIEN where MaNV = {0})", _MaNV));
+                dataAccess.UpdateData(string.Format("delete from NHAN_VIEN where MaNV = "+ _MaNV));
+                XtraMessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData();
             }
         }
@@ -183,24 +168,32 @@ namespace market_management
 
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            //var MaNV = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã Nhân Viên").ToString();
-            //var TenNV = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên Nhân Viên").ToString();
-            var NgaySinh = gridView.GetRowCellValue(e.FocusedRowHandle, "Ngày Sinh").ToString();
-           /* var GioiTinh = gridView.GetRowCellValue(e.FocusedRowHandle, "Giới Tính").ToString();
-            var SDT = gridView.GetRowCellValue(e.FocusedRowHandle, "Số Điện Thoại").ToString();
-            var Email = gridView.GetRowCellValue(e.FocusedRowHandle, "Email").ToString();
-            var DiaChi = gridView.GetRowCellValue(e.FocusedRowHandle, "Địa Chỉ").ToString();
-            var CCCD = gridView.GetRowCellValue(e.FocusedRowHandle, "Căn Cước").ToString();
-            var ChucVu = gridView.GetRowCellValue(e.FocusedRowHandle, "Chức Vụ").ToString();*/
-            //TeMaNV.Text = MaNV;
-            //TeTenNV.Text = TenNV;
-            //CbeGioiTinh.Text = GioiTinh;
-            DeNgaySinh.Text = NgaySinh;
-            /*TeSDT.Text = SDT;
+            GridView currentView = (GridView)GcDanhMucNV.FocusedView;
+            var MaNV = currentView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[0]).ToString();
+            var TenNV = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[1]).ToString();
+            var NgaySinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
+            var GioiTinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
+            var SDT = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
+            var Email = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
+            var DiaChi = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[7]).ToString();
+            var CCCD = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
+            var ChucVu = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[8]).ToString();
+            TeMaNV.Text = MaNV;
+            TeTenNV.Text = TenNV;
+            CbeGioiTinh.Text = GioiTinh;
+            if (DeNgaySinh.Text != "")
+            {
+                DeNgaySinh.Text = NgaySinh.Substring(0, 9);
+            }
+            else
+            {
+                DeNgaySinh.Text = NgaySinh;
+            }
+            TeSDT.Text = SDT;
             TeDiaChi.Text = DiaChi;
             TeCCCD.Text = CCCD;
             CbeChucVu.Text = ChucVu;
-            TeEmail.Text = Email;*/
+            TeEmail.Text = Email;
         }
     }
 }
