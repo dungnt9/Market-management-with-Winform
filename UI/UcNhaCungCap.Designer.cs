@@ -47,12 +47,15 @@
             this.TeTenNCC = new DevExpress.XtraEditors.TextEdit();
             this.TeSĐTNCC = new DevExpress.XtraEditors.TextEdit();
             this.TeDiaChiNCC = new DevExpress.XtraEditors.TextEdit();
+            this.LbLoaiSanPham = new DevExpress.XtraEditors.LabelControl();
+            this.CbeLoaiSanPham = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GcNCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSĐTNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeDiaChiNCC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeLoaiSanPham.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // GcNCC
@@ -230,10 +233,30 @@
             this.TeDiaChiNCC.Size = new System.Drawing.Size(100, 20);
             this.TeDiaChiNCC.TabIndex = 9;
             // 
+            // LbLoaiSanPham
+            // 
+            this.LbLoaiSanPham.Location = new System.Drawing.Point(314, 196);
+            this.LbLoaiSanPham.Name = "LbLoaiSanPham";
+            this.LbLoaiSanPham.Size = new System.Drawing.Size(69, 13);
+            this.LbLoaiSanPham.TabIndex = 12;
+            this.LbLoaiSanPham.Text = "Loại Sản Phẩm";
+            // 
+            // CbeLoaiSanPham
+            // 
+            this.CbeLoaiSanPham.Location = new System.Drawing.Point(394, 196);
+            this.CbeLoaiSanPham.MenuManager = this.ribbonControl;
+            this.CbeLoaiSanPham.Name = "CbeLoaiSanPham";
+            this.CbeLoaiSanPham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeLoaiSanPham.Size = new System.Drawing.Size(100, 20);
+            this.CbeLoaiSanPham.TabIndex = 13;
+            // 
             // UcNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.CbeLoaiSanPham);
+            this.Controls.Add(this.LbLoaiSanPham);
             this.Controls.Add(this.TeDiaChiNCC);
             this.Controls.Add(this.TeSĐTNCC);
             this.Controls.Add(this.TeTenNCC);
@@ -251,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TeTenNCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSĐTNCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeDiaChiNCC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeLoaiSanPham.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +301,7 @@
         private DevExpress.XtraEditors.TextEdit TeTenNCC;
         private DevExpress.XtraEditors.TextEdit TeSĐTNCC;
         private DevExpress.XtraEditors.TextEdit TeDiaChiNCC;
+        private DevExpress.XtraEditors.LabelControl LbLoaiSanPham;
+        private DevExpress.XtraEditors.ComboBoxEdit CbeLoaiSanPham;
     }
 }

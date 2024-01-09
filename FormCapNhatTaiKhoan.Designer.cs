@@ -120,6 +120,7 @@
             this.TeNhapLaiMatKhau.Name = "TeNhapLaiMatKhau";
             this.TeNhapLaiMatKhau.Size = new System.Drawing.Size(100, 20);
             this.TeNhapLaiMatKhau.TabIndex = 8;
+            this.TeNhapLaiMatKhau.Validating += new System.ComponentModel.CancelEventHandler(this.TeNhapLaiMatKhau_Validating);
             // 
             // BtnCapNhat
             // 

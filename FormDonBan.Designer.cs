@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.BtnThemThanhVien = new DevExpress.XtraEditors.SimpleButton();
             this.CbeSDT = new DevExpress.XtraEditors.ComboBoxEdit();
             this.TeDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.CbeGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -40,6 +41,7 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.GcSP_HDB = new DevExpress.XtraGrid.GridControl();
+            this.GvSP_HDB = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btnThemSP = new System.Windows.Forms.Button();
             this.TeSoLuong = new DevExpress.XtraEditors.TextEdit();
@@ -53,7 +55,6 @@
             this.LbThoiGian = new DevExpress.XtraEditors.LabelControl();
             this.LbTongTien = new DevExpress.XtraEditors.LabelControl();
             this.BtnTaoHoaDon = new System.Windows.Forms.Button();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.LbMaHDB = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -65,15 +66,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP_HDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvSP_HDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.BtnThemThanhVien);
             this.groupControl1.Controls.Add(this.CbeSDT);
             this.groupControl1.Controls.Add(this.TeDiaChi);
             this.groupControl1.Controls.Add(this.CbeGioiTinh);
@@ -89,6 +91,15 @@
             this.groupControl1.Size = new System.Drawing.Size(602, 164);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin Khách Hàng";
+            // 
+            // BtnThemThanhVien
+            // 
+            this.BtnThemThanhVien.Location = new System.Drawing.Point(425, 122);
+            this.BtnThemThanhVien.Name = "BtnThemThanhVien";
+            this.BtnThemThanhVien.Size = new System.Drawing.Size(109, 23);
+            this.BtnThemThanhVien.TabIndex = 11;
+            this.BtnThemThanhVien.Text = "Thêm Thành Viên";
+            this.BtnThemThanhVien.Click += new System.EventHandler(this.BtnThemThanhVien_Click);
             // 
             // CbeSDT
             // 
@@ -181,12 +192,19 @@
             // GcSP_HDB
             // 
             this.GcSP_HDB.Location = new System.Drawing.Point(3, 317);
-            this.GcSP_HDB.MainView = this.gridView1;
+            this.GcSP_HDB.MainView = this.GvSP_HDB;
             this.GcSP_HDB.Name = "GcSP_HDB";
             this.GcSP_HDB.Size = new System.Drawing.Size(759, 200);
             this.GcSP_HDB.TabIndex = 1;
             this.GcSP_HDB.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.GvSP_HDB});
+            // 
+            // GvSP_HDB
+            // 
+            this.GvSP_HDB.GridControl = this.GcSP_HDB;
+            this.GvSP_HDB.Name = "GvSP_HDB";
+            this.GvSP_HDB.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.GvSP_HDB_RowUpdated);
+            this.GvSP_HDB.RowCountChanged += new System.EventHandler(this.GvSP_HDB_RowCountChanged);
             // 
             // groupControl2
             // 
@@ -217,6 +235,7 @@
             this.TeSoLuong.Name = "TeSoLuong";
             this.TeSoLuong.Size = new System.Drawing.Size(100, 20);
             this.TeSoLuong.TabIndex = 3;
+            this.TeSoLuong.Validating += new System.ComponentModel.CancelEventHandler(this.TeSoLuong_Validating);
             // 
             // CbeTenSP
             // 
@@ -301,11 +320,6 @@
             this.BtnTaoHoaDon.UseVisualStyleBackColor = true;
             this.BtnTaoHoaDon.Click += new System.EventHandler(this.BtnTaoHoaDon_Click);
             // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.GcSP_HDB;
-            this.gridView1.Name = "gridView1";
-            // 
             // LbMaHDB
             // 
             this.LbMaHDB.Location = new System.Drawing.Point(128, 594);
@@ -351,12 +365,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP_HDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvSP_HDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeTenSP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,8 +403,9 @@
         private System.Windows.Forms.Button BtnTaoHoaDon;
         private System.Windows.Forms.Button btnThemSP;
         private DevExpress.XtraEditors.ComboBoxEdit CbeSDT;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView GvSP_HDB;
         private DevExpress.XtraEditors.LabelControl LbMaHDB;
         private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.SimpleButton BtnThemThanhVien;
     }
 }

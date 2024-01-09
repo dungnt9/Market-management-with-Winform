@@ -17,6 +17,8 @@ namespace market_management.UI
     {
         DataAccess dataAccess = new DataAccess();
         string maHDB = null;
+        string tongTien;
+        string thoigian;
         public UcQLBanHang()
         {
             InitializeComponent();
@@ -48,7 +50,7 @@ namespace market_management.UI
         private void BbiXemChiTietHDB_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-            FormChiTietDonBan frmChiTietDonBan = new FormChiTietDonBan(maHDB);
+            FormChiTietDonBan frmChiTietDonBan = new FormChiTietDonBan(maHDB, tongTien, thoigian);
             frmChiTietDonBan.ShowDialog();
         }
 

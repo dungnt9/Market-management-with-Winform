@@ -30,7 +30,7 @@
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.GcHangBoSung = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.GvHangBoSung = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.LbTongGiaTriKho = new DevExpress.XtraEditors.LabelControl();
@@ -40,11 +40,11 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.GcHangTon = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.GvHangTon = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.GcHangBoSung)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvHangBoSung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GcHangTon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvHangTon)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -58,17 +58,17 @@
             // GcHangBoSung
             // 
             this.GcHangBoSung.Location = new System.Drawing.Point(17, 231);
-            this.GcHangBoSung.MainView = this.gridView1;
+            this.GcHangBoSung.MainView = this.GvHangBoSung;
             this.GcHangBoSung.Name = "GcHangBoSung";
             this.GcHangBoSung.Size = new System.Drawing.Size(709, 146);
             this.GcHangBoSung.TabIndex = 1;
             this.GcHangBoSung.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.GvHangBoSung});
             // 
-            // gridView1
+            // GvHangBoSung
             // 
-            this.gridView1.GridControl = this.GcHangBoSung;
-            this.gridView1.Name = "gridView1";
+            this.GvHangBoSung.GridControl = this.GcHangBoSung;
+            this.GvHangBoSung.Name = "GvHangBoSung";
             // 
             // labelControl2
             // 
@@ -137,17 +137,17 @@
             // GcHangTon
             // 
             this.GcHangTon.Location = new System.Drawing.Point(17, 463);
-            this.GcHangTon.MainView = this.gridView2;
+            this.GcHangTon.MainView = this.GvHangTon;
             this.GcHangTon.Name = "GcHangTon";
             this.GcHangTon.Size = new System.Drawing.Size(731, 200);
             this.GcHangTon.TabIndex = 10;
             this.GcHangTon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.GvHangTon});
             // 
-            // gridView2
+            // GvHangTon
             // 
-            this.gridView2.GridControl = this.GcHangTon;
-            this.gridView2.Name = "gridView2";
+            this.GvHangTon.GridControl = this.GcHangTon;
+            this.GvHangTon.Name = "GvHangTon";
             // 
             // UcTKHangTonKho
             // 
@@ -167,9 +167,9 @@
             this.Name = "UcTKHangTonKho";
             this.Size = new System.Drawing.Size(763, 631);
             ((System.ComponentModel.ISupportInitialize)(this.GcHangBoSung)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvHangBoSung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GcHangTon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvHangTon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +179,7 @@
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl GcHangBoSung;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView GvHangBoSung;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl LbTongGiaTriKho;
@@ -189,6 +189,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraGrid.GridControl GcHangTon;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView GvHangTon;
     }
 }

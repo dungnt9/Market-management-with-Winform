@@ -18,33 +18,25 @@ namespace market_management
         {
             InitializeComponent();
         }
-
-        private bool KiemTraMatKhau(string MatKhauMoi, string NhapLaiMatKhau)
-        {
-            if(MatKhauMoi == NhapLaiMatKhau)
-            {
-                return true;
-            }    
-            else
-            {
-                return false;
-            }    
-        }
-
         private void BtnCapNhat_Click(object sender, EventArgs e)
         {
             string MaNV = LbTenNhanVien.Text;
             string TenDangNhapMoi = TeTenDangNhap.Text;
             string MatKhauMoi = TeMatKhau.Text;
+
+            dataAccess.UpdateData(string.Format("UPDATE TAI_KHOAN SET TenDangNhap = N'{1}', MatKhau = N'{2}' where MaNV = '{0}'", MaNV, TenDangNhapMoi, MatKhauMoi));
+        }
+
+        private void TeNhapLaiMatKhau_Validating(object sender, CancelEventArgs e)
+        {
+            string MatKhauMoi = TeMatKhau.Text;
             string NhapLaiMatKhauMoi = TeNhapLaiMatKhau.Text;
 
-            if(KiemTraMatKhau(MatKhauMoi, NhapLaiMatKhauMoi) == false)
+            if (MatKhauMoi != NhapLaiMatKhauMoi)
             {
-                MessageBox.Show("Mật khẩu và nhập lại mật khẩu không khớp. Vui lòng thử lại.");
-                return;
-            }
-
-            dataAccess.UpdateData(string.Format("update TAI_KHOAN set TenDangNhap = N'{1}', MatKhau = N'{2}' where MaNV = '{0}'", MaNV, TenDangNhapMoi, MatKhauMoi));
+                MessageBox.Show("Nhập lại mật khẩu không chính xác");
+                //e.Cancel = true;
+            }    
         }
     }
 }

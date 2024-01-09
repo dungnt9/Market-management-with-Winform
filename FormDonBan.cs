@@ -19,124 +19,145 @@ namespace market_management
         DataAccess dataAccess = new DataAccess();
         System.Data.DataTable dataTable;
 
+        string maHDB = GenerateRandomString(8);
+        string current_time = DateTime.Now.ToShortDateString();
+
+        int maKH = -1;
+        
+
         public FormDonBan()
         {
             InitializeComponent();
+
             HienThiTenSP();
             HienThiSoDienThoai();
 
-            string maHDB = GenerateRandomString(8);
-
             dataTable = new System.Data.DataTable();
-            // ... Khởi tạo cấu trúc của DataTable, ví dụ: 
             dataTable.Columns.Add("Mã Sản Phẩm", typeof(int));
             dataTable.Columns.Add("Tên Sản Phẩm", typeof(string));
             dataTable.Columns.Add("Số Lượng", typeof(int));
             dataTable.Columns.Add("Giá Bán Lẻ", typeof(decimal));
 
             GcSP_HDB.DataSource = dataTable;
+            GvSP_HDB.Columns["Mã Sản Phẩm"].OptionsColumn.ReadOnly = true;
+            GvSP_HDB.Columns["Tên Sản Phẩm"].OptionsColumn.ReadOnly = true;
+            GvSP_HDB.Columns["Giá Bán Lẻ"].OptionsColumn.ReadOnly = true;
 
-            DateTime currentTime = DateTime.Now;
-            LbThoiGian.Text = currentTime.ToShortDateString();
 
-            
+            LbThoiGian.Text = current_time;
+            LbMaHDB.Text = maHDB;
+            LbTenNV.Text = "";
         }
 
-        private bool KiemTraKhachHangCu()
+        private bool KiemTraKhachHangThanhVien()
         {
             string sdtCheck = CbeSDT.Text;
 
-            // Tạo câu truy vấn SQL để kiểm tra sự tồn tại của tên khách hàng
-            string query = $"SELECT COUNT(*) FROM KHACH_HANG WHERE SDT = '{sdtCheck}'"; // Thay TenBang và TenKhachHang bằng tên bảng và tên cột trong cơ sở dữ liệu của bạn
+            string query = $"SELECT COUNT(*) FROM KHACH_HANG WHERE SDT = '{sdtCheck}'";
 
-           
-
-            // Kiểm tra sự tồn tại của tên khách hàng
             int count = Convert.ToInt32(dataAccess.GetScalar(query));
 
             if (count > 0)
             {
-                MessageBox.Show("Tên khách hàng đã tồn tại trong cơ sở dữ liệu.");
+                //MessageBox.Show("Khách hàng thành viên");
                 return true;
             }
             else
             {
-                MessageBox.Show("Tên khách hàng không tồn tại trong cơ sở dữ liệu.");
+                //MessageBox.Show("Tên khách hàng không tồn tại trong cơ sở dữ liệu.");
                 return false;
             }
         }
 
-        private void CapNhatKhachHangMoi()
+        private void LayThongTinKhachHangThanhVien(string sdt)
         {
-            return;
-        }
 
-        private void LayThongTinKhachHangCu(string sdt)
-        {
-            string sdtKH = sdt;
+            string query = $"SELECT * FROM KHACH_HANG WHERE SDT = '{sdt}'";
 
-            // Tạo câu truy vấn SQL để lấy thông tin của khách hàng
-            string query = $"SELECT * FROM KHACH_HANG WHERE SDT = '{sdt}'"; // Thay TenBang và TenKhachHang bằng tên bảng và tên cột trong cơ sở dữ liệu của bạn
-
-            // Lấy dữ liệu từ cơ sở dữ liệu
             System.Data.DataTable customerData = dataAccess.GetDataTable(query);
 
             TeTenKH.Text = Convert.ToString(customerData.Rows[0]["TenKH"]);
-            TeDiaChi.Text = Convert.ToString(customerData.Rows[0]["DiaChi"]);
-            DeNgaySinh.Text = Convert.ToString(customerData.Rows[0]["NgaySinh"]);
-            CbeGioiTinh.Text = Convert.ToString(customerData.Rows[0]["GioiTinh"]);
+            //TeDiaChi.Text = Convert.ToString(customerData.Rows[0]["DiaChi"]);
+            //DeNgaySinh.Text = Convert.ToString(customerData.Rows[0]["NgaySinh"]);
+            //CbeGioiTinh.Text = Convert.ToString(customerData.Rows[0]["GioiTinh"]);
+
+            maKH = Convert.ToInt32(customerData.Rows[0]["MaKH"]);
 
         }
 
         private void XuLyKhachHang()
         {
-            string sdt = CbeSDT.Text;
-            bool is_KHcu = KiemTraKhachHangCu();
-            if(is_KHcu == true)
+            string SDT = CbeSDT.Text;
+            bool thanhvien = KiemTraKhachHangThanhVien();
+            if(thanhvien == true)
             {
-                LayThongTinKhachHangCu(sdt);
-            }    
-            else
-            {
-                return;
-            }    
-            
+                LayThongTinKhachHangThanhVien(SDT);
+            }       
         }
 
         private void BtnTaoHoaDon_Click(object sender, EventArgs e)
         {
-
+            CapNhatSanPham();
+            //CapNhatKhachHang();
+            LuuHoaDon();
+            LuuCTHoaDon();
         }
+
+        /*private void CapNhatKhachHang()
+        {
+            string tenKH = TeTenKH.Text;
+            string sdt = CbeSDT.Text;
+            string query = $"INSERT INTO KHACH_HANG (TenKH, SDT) VALUES ('{tenKH}', '{sdt}')";
+
+            dataAccess.UpdateData(query);
+        }*/
 
         private void LuuHoaDon()
         {
-            string maHDB = "";
-            dataAccess.UpdateData($"INSERT INTO HOA_DON_BAN (MaHDB, MaKH, MaNV, TongTien, ThoiGian) VALUES ()");
+            string maNV = "";
+            int tongtien = Convert.ToInt32(LbTongTien.Text);
+            DateTime thoigian = Convert.ToDateTime(LbThoiGian.Text);
+            dataAccess.UpdateData($"INSERT INTO HOA_DON_BAN (MaHDB, MaKH, MaNV, TongTien, ThoiGian) VALUES ('{maHDB}', {maKH}, '{maNV}', {tongtien}, {thoigian})");
+        }
+
+        private void LuuCTHoaDon()
+        {
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int maSP = Convert.ToInt32(row["Mã Sản Phẩm"]);
+                int soluong = Convert.ToInt32(row["Số Lượng"]);
+                dataAccess.UpdateData($"INSERT INTO CT_HOA_DON_BAN (MaHDB, MaSP, SoLuong) VALUES ('{maHDB}', {maSP}, {soluong})");
+            }
         }
 
         private void btnThemSP_Click(object sender, EventArgs e)
         {
             string tenSP = CbeTenSP.Text;
 
-            // Tạo câu truy vấn SQL để lấy thông tin của khách hàng
             string query = $"SELECT MaSP AS 'Mã Sản Phẩm', TenSP AS 'Tên Sản Phẩm', GiaBanLe AS 'Giá Bán Lẻ', SoLuong AS 'Số Lượng' FROM SAN_PHAM WHERE TenSP = '{tenSP}'"; // Thay TenBang và TenKhachHang bằng tên bảng và tên cột trong cơ sở dữ liệu của bạn
 
-            // Lấy dữ liệu từ cơ sở dữ liệu
             System.Data.DataTable sanpham = dataAccess.GetDataTable(query);
+
+            int soluongKho = Convert.ToInt32(sanpham.Rows[0]["Số Lượng"]);
 
             if (sanpham.Rows.Count > 0)
             {
-                // Thêm dòng vào DataTable
                 DataRow newRow = dataTable.NewRow();
                 newRow["Mã Sản Phẩm"] = sanpham.Rows[0]["Mã Sản Phẩm"];
                 newRow["Tên Sản Phẩm"] = sanpham.Rows[0]["Tên Sản Phẩm"];
                 newRow["Giá Bán Lẻ"] = sanpham.Rows[0]["Giá Bán Lẻ"];
                 newRow["Số Lượng"] = TeSoLuong.Text;
 
-                dataTable.Rows.Add(newRow);
-            }
+                if (Convert.ToInt32(TeSoLuong.Text) > soluongKho)
+                {
+                    MessageBox.Show("Không đủ hàng");
+                    return;
+                }
 
-            LbTongTien.Text = TinhTongTien().ToString();
+                dataTable.Rows.Add(newRow);
+            }   
+
+            //LbTongTien.Text = TinhTongTien().ToString();
         }
 
         private List<string> LayTenSP()
@@ -228,12 +249,12 @@ namespace market_management
             }
         }
 
-        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        private void GvSP_HDB_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
             LbTongTien.Text = TinhTongTien().ToString();
         }
 
-        private void gridView1_RowCountChanged(object sender, EventArgs e)
+        private void GvSP_HDB_RowCountChanged(object sender, EventArgs e)
         {
             LbTongTien.Text = TinhTongTien().ToString();
         }
@@ -257,6 +278,19 @@ namespace market_management
             return new string(randomArray);
         }
 
+        private void BtnThemThanhVien_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void TeSoLuong_Validating(object sender, CancelEventArgs e)
+        {
+            if (!int.TryParse(TeSoLuong.Text, out _))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số.");
+                e.Cancel = true; // Ngăn chặn mất focus nếu giá trị không hợp lệ
+            }
+
+        }
     }
 }

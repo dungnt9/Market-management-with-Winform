@@ -20,6 +20,10 @@ namespace market_management.UI
         public UcTKHangTonKho()
         {
             InitializeComponent();
+
+            GvHangBoSung.OptionsBehavior.Editable = false;
+            GvHangTon.OptionsBehavior.Editable = false;
+
             ThongKe();
         }
         private void ThongKe()

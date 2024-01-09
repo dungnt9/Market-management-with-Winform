@@ -90,7 +90,7 @@ namespace market_management.UI
                 {
                     dataAccess.UpdateData(sqlDelete);
                     XtraMessageBox.Show("Xóa nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
+                    LoadData();
 
                 }
                 catch (Exception ex)
@@ -111,6 +111,7 @@ namespace market_management.UI
             var tenNCC = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên Nhà Cung Cấp").ToString();
             var diachiNCC = gridView.GetRowCellValue(e.FocusedRowHandle, "Địa Chỉ").ToString();
             var sdtNCC = gridView.GetRowCellValue(e.FocusedRowHandle, "Số Điện Thoại").ToString();
+            var loaiSP = gridView.GetRowCellValue(e.FocusedRowHandle, "Loại Sản Phẩm").ToString();
 
             TeTenNCC.Text = tenNCC;
             TeDiaChiNCC.Text = diachiNCC;
