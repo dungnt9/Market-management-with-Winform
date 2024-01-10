@@ -47,7 +47,5 @@ namespace market_management.UI
                 e.Handled = true;
             }
         }
-    }
-
-    
+    }  
 }
