@@ -14,6 +14,21 @@ namespace market_management
     public partial class FrmTaoMGG : DevExpress.XtraEditors.XtraForm
     {
         DataAccess dataAccess = new DataAccess();
+
+        string MaGiamGia = GenerateRandomString(8);
+        static string GenerateRandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            Random random = new Random();
+            char[] randomArray = new char[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                randomArray[i] = chars[random.Next(chars.Length)];
+            }
+            return new string(randomArray);
+        }
         public FrmTaoMGG()
         {
             InitializeComponent();
@@ -27,7 +42,17 @@ namespace market_management
             CbePhanTram.Properties.Items.Add("40");
             CbePhanTram.Properties.Items.Add("50");
 
-            DeNgayTao.Text = DateTime.Now.ToString().Substring(0,9); 
+            CbeNgayLe.Properties.Items.Add("1/1");
+            CbeNgayLe.Properties.Items.Add("1/6");
+            CbeNgayLe.Properties.Items.Add("1/5");
+            CbeNgayLe.Properties.Items.Add("30/4");
+            CbeNgayLe.Properties.Items.Add("20/10");
+            CbeNgayLe.Properties.Items.Add("20/11");
+            CbeNgayLe.Properties.Items.Add("8/3");
+            CbeNgayLe.Properties.Items.Add("19/11");
+
+
+            DeNgayTao.Text = DateTime.Now.ToString().Substring(0, 9);
         }
 
         private void BtnTao_Click(object sender, EventArgs e)
@@ -37,31 +62,23 @@ namespace market_management
                 int PhanTram = Convert.ToInt32(CbePhanTram.Text);
                 string TrangThai = "1";
                 string MoTa = "";
-                if (CheNgayLe.Checked)
+                if (RbNgayLe.Checked)
                 {
-                    CheNgauNhien.Checked = false;
-                    CheDiemTich.Checked = false;
                     MoTa = $"Ngày lễ {CbeNgayLe.Text}";
                 }
-                else if(CheDiemTich.Checked)
+                else if (RbDiemTich.Checked)
                 {
-                    CheNgayLe.Checked = false;
-                    CheNgauNhien.Checked = false;
                     MoTa = $"Điểm cần tích: {CbeDiemTich.Text}";
-                    int DiemTich = Convert.ToInt32(CbeDiemTich.Text);
-
                 }
-                else if(CheNgauNhien.Checked)
+                else if (RbNgauNhien.Checked)
                 {
-                    CheNgayLe.Checked = false;
-                    CheDiemTich.Checked = false;
                     MoTa = $"Nhân viên sẽ cung cấp cho khách hàng";
 
                 }
-                string s = string.Format("INSERT INTO MA_GIAM_GIA (TenChuongTrinh, PhanTram, NgayTao, TrangThai, Mota) VALUES" + "(N'{0}','{1}','{2}','{3}',N'{4}')", TeTenChuongTrinh.Text, PhanTram, DeNgayTao.Text, TrangThai, MoTa);
+                string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia, TenChuongTrinh, PhanTram, NgayTao, TrangThai, Mota) VALUES" + "('{0}',N'{1}','{2}','{3}','{4}',N'{5}')", MaGiamGia, TeTenChuongTrinh.Text, PhanTram, DeNgayTao.Text, TrangThai, MoTa);
                 MessageBox.Show("Thêm thành công");
                 dataAccess.UpdateData(s);
-                if (CheDiemTich.Checked)
+                if (RbDiemTich.Checked)
                 {
                     int DiemTich = Convert.ToInt32(CbeDiemTich.Text);
                     GanMaGiamGia(DiemTich);
@@ -78,15 +95,15 @@ namespace market_management
             TeTenChuongTrinh.Text = "";
             CbePhanTram.Text = "";
             DeNgayTao.Text = "";
-            CheNgayLe.Checked = false;
-            CheNgauNhien.Checked = false;
-            CheDiemTich.Checked = false;
-            RbConHieuLuc.Checked = false;
+            RbNgayLe.Checked = false;
+            RbNgauNhien.Checked = false;
+            RbDiemTich.Checked = false;
         }
 
         public void GanMaGiamGia(int DiemTich)
         {
-            string s = string.Format("UPDATE KHACH_HANG \r\nSET MaGiamGia = '{0}'\r\nWHERE Diem >= '{1}'",1,DiemTich);
+
+            string s = string.Format("UPDATE KHACH_HANG \r\nSET MaGiamGia = '{0}'\r\nWHERE Diem >= '{1}'", 1, DiemTich);
             dataAccess.UpdateData(s);
         }
     }

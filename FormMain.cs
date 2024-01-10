@@ -33,13 +33,14 @@ namespace market_management
         public FormMain()
         {
             InitializeComponent();
+            LoadNhanVienData();
         }
         public int MaNV { get; set; }
 
 
         public void LoadNhanVienData()
         {
-            string query = "SELECT TenNV, CapQuanLy FROM NHAN_VIEN INNER JOIN CHUC_VU ON NHAN_VIEN.MaCV=CHUC_VU.MaCV WHERE NHAN_VIEN.MaNV = @MaNV";
+            string query = "SELECT TenNV, CapQuanLy FROM NHAN_VIEN INNER JOIN CHUC_VU ON NHAN_VIEN.MaCV = CHUC_VU.MaCV WHERE NHAN_VIEN.MaNV = @MaNV";
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
                 dataAccess.objConnection.Open();
@@ -52,7 +53,7 @@ namespace market_management
                     {
                         BsiTenNV.Caption = reader["TenNV"].ToString();
                         Session.tenNV = BsiTenNV.Caption;
-                        Session.chucVu = (bool) reader["CapQuanLy"];
+                        Session.chucVu = (bool)reader["CapQuanLy"];
                         if (Session.chucVu)
                         {
                             BsiChucvu.Caption = "Quản lý";
@@ -67,6 +68,7 @@ namespace market_management
                 }
             }
         }
+
 
 
         private void LoaiSP_Click(object sender, EventArgs e)
@@ -249,6 +251,7 @@ namespace market_management
         {
             if (Session.chucVu == true)
             {
+                NV.Visible = true;
                 DangKy.Visible = true;
             }
             FrmDangKy f = new FrmDangKy();
@@ -262,13 +265,11 @@ namespace market_management
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            Session.tenNV = BsiTenNV.Caption;
-            //Session.chucVu = BsiChucvu.Caption;
-            //if (Session.chucVu.Substring(0, 7) == "Quản lý")
-            //{
-            //    NV.Visible = true;
-            //    DangKy.Visible = true;
-            //}
+            if (Session.chucVu)
+            {
+                NV.Visible = true;
+                DangKy.Visible = true;
+            }
         }
 
         private void accordionControlElement2_Click(object sender, EventArgs e)

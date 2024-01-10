@@ -51,6 +51,8 @@
             this.LbTrangThai = new DevExpress.XtraEditors.LabelControl();
             this.RbConHieuLuc = new System.Windows.Forms.RadioButton();
             this.RbHetHan = new System.Windows.Forms.RadioButton();
+            this.DeNgayHetHan = new DevExpress.XtraEditors.DateEdit();
+            this.LbNgayHetHan = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.GcMaGiamGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcMGG)).BeginInit();
@@ -60,15 +62,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeMoTa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // GcMaGiamGia
             // 
-            this.GcMaGiamGia.Location = new System.Drawing.Point(0, 242);
+            this.GcMaGiamGia.Location = new System.Drawing.Point(0, 290);
             this.GcMaGiamGia.MainView = this.gridView;
             this.GcMaGiamGia.MenuManager = this.RcMGG;
             this.GcMaGiamGia.Name = "GcMaGiamGia";
-            this.GcMaGiamGia.Size = new System.Drawing.Size(800, 358);
+            this.GcMaGiamGia.Size = new System.Drawing.Size(800, 310);
             this.GcMaGiamGia.TabIndex = 2;
             this.GcMaGiamGia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -157,7 +161,7 @@
             // 
             // CbePhanTram
             // 
-            this.CbePhanTram.Location = new System.Drawing.Point(382, 152);
+            this.CbePhanTram.Location = new System.Drawing.Point(148, 253);
             this.CbePhanTram.Name = "CbePhanTram";
             this.CbePhanTram.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbePhanTram.Properties.Appearance.Options.UseFont = true;
@@ -180,7 +184,7 @@
             // 
             this.LbPhanTram.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbPhanTram.Appearance.Options.UseFont = true;
-            this.LbPhanTram.Location = new System.Drawing.Point(297, 153);
+            this.LbPhanTram.Location = new System.Drawing.Point(41, 256);
             this.LbPhanTram.Name = "LbPhanTram";
             this.LbPhanTram.Size = new System.Drawing.Size(56, 15);
             this.LbPhanTram.TabIndex = 41;
@@ -288,10 +292,35 @@
             this.RbHetHan.Text = "Hết hạn";
             this.RbHetHan.UseVisualStyleBackColor = true;
             // 
+            // DeNgayHetHan
+            // 
+            this.DeNgayHetHan.EditValue = null;
+            this.DeNgayHetHan.Location = new System.Drawing.Point(382, 151);
+            this.DeNgayHetHan.MenuManager = this.RcMGG;
+            this.DeNgayHetHan.Name = "DeNgayHetHan";
+            this.DeNgayHetHan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DeNgayHetHan.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DeNgayHetHan.Size = new System.Drawing.Size(122, 20);
+            this.DeNgayHetHan.TabIndex = 58;
+            // 
+            // LbNgayHetHan
+            // 
+            this.LbNgayHetHan.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbNgayHetHan.Appearance.Options.UseFont = true;
+            this.LbNgayHetHan.Location = new System.Drawing.Point(297, 157);
+            this.LbNgayHetHan.Name = "LbNgayHetHan";
+            this.LbNgayHetHan.Size = new System.Drawing.Size(75, 15);
+            this.LbNgayHetHan.TabIndex = 59;
+            this.LbNgayHetHan.Text = "Ngày Hết Hạn";
+            // 
             // UcQLMaGiamGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DeNgayHetHan);
+            this.Controls.Add(this.LbNgayHetHan);
             this.Controls.Add(this.RbHetHan);
             this.Controls.Add(this.RbConHieuLuc);
             this.Controls.Add(this.TeMoTa);
@@ -318,6 +347,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeMoTa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +379,7 @@
         private DevExpress.XtraEditors.LabelControl LbTrangThai;
         private System.Windows.Forms.RadioButton RbConHieuLuc;
         private System.Windows.Forms.RadioButton RbHetHan;
+        private DevExpress.XtraEditors.DateEdit DeNgayHetHan;
+        private DevExpress.XtraEditors.LabelControl LbNgayHetHan;
     }
 }

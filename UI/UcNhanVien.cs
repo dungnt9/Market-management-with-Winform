@@ -40,8 +40,8 @@ namespace market_management
                                                                     "SDT as 'Số Điện Thoại'," +
                                                                     "Email as Email," +
                                                                     "DiaChi as 'Địa Chỉ', " +
-                                                                    "ChucVu as 'Chức Vụ'" +
-                                                                    "from NHAN_VIEN");
+                                                                    "TenCV as 'Tên Chức Vụ'" +
+                                                                    "from NHAN_VIEN t1\r\nINNER JOIN Chuc_Vu t2\r\nON t1.MaCV = t2.MaCV");
         }
 
         private void BbiThemMoi_ItemClick(object sender, ItemClickEventArgs e)
@@ -141,7 +141,7 @@ namespace market_management
         private List<string> LayChucVu()
         {
             List<string> ChucVu = new List<string>();
-            string query = "SELECT DISTINCT ChucVu FROM NHAN_VIEN";
+            string query = "SELECT TenCV FROM CHUC_VU";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
@@ -151,7 +151,7 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        ChucVu.Add(reader["ChucVu"].ToString());
+                        ChucVu.Add(reader["TenCV"].ToString());
                     }
                 }
 

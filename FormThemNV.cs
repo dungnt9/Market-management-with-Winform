@@ -59,7 +59,7 @@ namespace market_management
         private List<string> LayChucVu()
         {
             List<string> ChucVu = new List<string>();
-            string query = "SELECT DISTINCT ChucVu FROM NHAN_VIEN";
+            string query = "SELECT MaCV FROM CHUC_VU";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
@@ -69,7 +69,7 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        ChucVu.Add(reader["ChucVu"].ToString());
+                        ChucVu.Add(reader["MaCV"].ToString());
                     }
                 }
 
@@ -99,13 +99,29 @@ namespace market_management
         {
             if (TeTenNV.Text != "")
             {
-                string s = string.Format("INSERT INTO NHAN_VIEN (TenNV,GioiTinh, SDT, DiaChi, CanCuoc, NgaySinh, Email ,ChucVu) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}', '{6}', N'{7}')", TeTenNV.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, TeCCCD.Text, DeNgaySinh.Text, TeEmail.Text, CbeChucVu.Text);
+                string s = string.Format("INSERT INTO NHAN_VIEN (TenNV,GioiTinh, SDT, DiaChi, CanCuoc, NgaySinh, Email , MaChucVu) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}', '{6}', '{7}')", TeTenNV.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, TeCCCD.Text, DeNgaySinh.Text, TeEmail.Text, CbeChucVu.Text);
                 XtraMessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataAccess.UpdateData(s);
             }
             else
             {
                 XtraMessageBox.Show("Không được để trống các trường sau \n - Tên Nhân Viên ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TeSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TeCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

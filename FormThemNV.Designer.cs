@@ -137,6 +137,7 @@
             this.TeCCCD.Properties.Appearance.Options.UseFont = true;
             this.TeCCCD.Size = new System.Drawing.Size(144, 22);
             this.TeCCCD.TabIndex = 49;
+            this.TeCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeCCCD_KeyPress);
             // 
             // DeNgaySinh
             // 
@@ -189,9 +190,9 @@
             this.LbChucVu.Appearance.Options.UseFont = true;
             this.LbChucVu.Location = new System.Drawing.Point(31, 169);
             this.LbChucVu.Name = "LbChucVu";
-            this.LbChucVu.Size = new System.Drawing.Size(45, 15);
+            this.LbChucVu.Size = new System.Drawing.Size(65, 15);
             this.LbChucVu.TabIndex = 53;
-            this.LbChucVu.Text = "Chức Vụ";
+            this.LbChucVu.Text = "Mã Chức Vụ";
             // 
             // LbDiaChi
             // 
@@ -261,6 +262,7 @@
             this.TeSDT.Properties.Appearance.Options.UseFont = true;
             this.TeSDT.Size = new System.Drawing.Size(122, 22);
             this.TeSDT.TabIndex = 46;
+            this.TeSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeSDT_KeyPress);
             // 
             // LbNgaySinh
             // 
