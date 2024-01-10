@@ -177,6 +177,7 @@
             this.TeSDT.Properties.Appearance.Options.UseFont = true;
             this.TeSDT.Size = new System.Drawing.Size(122, 22);
             this.TeSDT.TabIndex = 44;
+            this.TeSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeSDT_KeyPress);
             // 
             // LbSDT
             // 

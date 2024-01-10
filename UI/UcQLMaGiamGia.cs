@@ -65,15 +65,24 @@ namespace market_management.UI
             {
                 try
                 {
-                    string s = string.Format("UPDATE MA_GIAM_GIA SET " + "TenNV = N'{1}' where MaNV = N'{0}' )", TeMaGiamGia.Text, TeTenChuongTrinh.Text);
+                    int trangThai = 1;
+                    if(RbConHieuLuc.Checked)
+                    {
+                        trangThai = 1;
+                    }
+                    else if (RbHetHan.Checked)
+                    {
+                        trangThai = 0;
+                    }
+                    string s = string.Format("UPDATE MA_GIAM_GIA SET " + "TenChuongTrinh = N'{1}', NgayTao = '{2}', NgayHetHan = '{3}', MoTa = N'{4}', TrangThai = '{5}', PhanTram = '{6}' where MaGiamGia = '{0}'", TeMaGiamGia.Text, TeTenChuongTrinh.Text, DeNgayTao.Text, DeNgayHetHan.Text,TeMoTa.Text, trangThai, CbePhanTram.Text);
                     dataAccess.UpdateData(s);
-                    XtraMessageBox.Show("Cập nhật nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
+                    XtraMessageBox.Show("Cập nhật mã giảm giá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
 
                 }
                 catch (Exception ex)
                 {
-                    XtraMessageBox.Show($"Lỗi cập nhật nhà cung cấp: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show($"Lỗi cập nhật mã giảm giá: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -85,6 +94,7 @@ namespace market_management.UI
             TeTenChuongTrinh.Text = "";
             CbePhanTram.Text = "";
             DeNgayTao.Text = "";
+            DeNgayHetHan.Text = "";
             TeMoTa.Text = "";
             RbConHieuLuc.Checked = false;
             RbHetHan.Checked = false;
@@ -95,23 +105,46 @@ namespace market_management.UI
             GridView currentView = (GridView)GcMaGiamGia.FocusedView;
             var maGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[0]).ToString();
             var tenChuongTrinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[1]).ToString();
-            var ngayTao = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
-            var ngayHetHan = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
-            var phanTram = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
-            var moTa = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
-            var trangThai = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
+            var ngayTao = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
+            var ngayHetHan = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
+            var phanTram = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
+            var moTa = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
+            var trangThai = (bool)gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]);
             TeMaGiamGia.Text = maGiamGia;
             TeTenChuongTrinh.Text = tenChuongTrinh;
-            DeNgayTao.Text = ngayTao;
+            if (DeNgayHetHan.Text != "")
+            {
+                DeNgayHetHan.Text = ngayHetHan.Substring(0, 9);
+            }
+            else
+            {
+                DeNgayHetHan.Text = ngayHetHan;
+            }
+            if (DeNgayTao.Text != "")
+            {
+                DeNgayTao.Text = ngayTao.Substring(0, 9);
+            }
+            else
+            {
+                DeNgayTao.Text = ngayTao;
+            }
             CbePhanTram.Text = phanTram;
             TeMoTa.Text = moTa;
-            if(trangThai == "1")
+            if(trangThai)
             {
                 RbConHieuLuc.Checked = true;
             }
             else
             {
-                RbHetHan.Checked = false;
+                RbHetHan.Checked = true;
+            }
+        }
+
+        private void CbePhanTram_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

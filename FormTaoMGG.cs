@@ -33,14 +33,24 @@ namespace market_management
         {
             InitializeComponent();
 
+            CbePhanTram.Properties.Items.Add("1");
+            CbePhanTram.Properties.Items.Add("2");
             CbePhanTram.Properties.Items.Add("5");
             CbePhanTram.Properties.Items.Add("10");
             CbePhanTram.Properties.Items.Add("15");
             CbePhanTram.Properties.Items.Add("20");
             CbePhanTram.Properties.Items.Add("25");
             CbePhanTram.Properties.Items.Add("30");
-            CbePhanTram.Properties.Items.Add("40");
             CbePhanTram.Properties.Items.Add("50");
+
+            CbeDiemTich.Properties.Items.Add("1000");
+            CbeDiemTich.Properties.Items.Add("2000");
+            CbeDiemTich.Properties.Items.Add("5000");
+            CbeDiemTich.Properties.Items.Add("10000");
+            CbeDiemTich.Properties.Items.Add("20000");
+            CbeDiemTich.Properties.Items.Add("30000");
+            CbeDiemTich.Properties.Items.Add("50000");
+            CbeDiemTich.Properties.Items.Add("100000");
 
             CbeNgayLe.Properties.Items.Add("1/1");
             CbeNgayLe.Properties.Items.Add("1/6");
@@ -75,7 +85,7 @@ namespace market_management
                     MoTa = $"Nhân viên sẽ cung cấp cho khách hàng";
 
                 }
-                string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia, TenChuongTrinh, PhanTram, NgayTao, TrangThai, Mota) VALUES" + "('{0}',N'{1}','{2}','{3}','{4}',N'{5}')", MaGiamGia, TeTenChuongTrinh.Text, PhanTram, DeNgayTao.Text, TrangThai, MoTa);
+                string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia, TenChuongTrinh, PhanTram, NgayTao, NgayHetHan, TrangThai, Mota) VALUES" + "('{0}',N'{1}','{2}','{3}','{4}','{5}',N'{6}')", MaGiamGia, TeTenChuongTrinh.Text, PhanTram, DeNgayTao.Text, DeNgayHetHan.Text,TrangThai, MoTa);
                 MessageBox.Show("Thêm thành công");
                 dataAccess.UpdateData(s);
                 if (RbDiemTich.Checked)
@@ -95,6 +105,9 @@ namespace market_management
             TeTenChuongTrinh.Text = "";
             CbePhanTram.Text = "";
             DeNgayTao.Text = "";
+            DeNgayHetHan.Text = "";
+            CbeDiemTich.Text = "";
+            CbeNgayLe.Text = "";
             RbNgayLe.Checked = false;
             RbNgauNhien.Checked = false;
             RbDiemTich.Checked = false;

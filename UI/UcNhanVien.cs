@@ -117,7 +117,7 @@ namespace market_management
         }
         private List<string> LayGioiTinh()
         {
-            List<string> GioiTinh = new List<string>();
+            List<string> gioiTinh = new List<string>();
             string query = "SELECT DISTINCT GioiTinh FROM NHAN_VIEN";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
@@ -128,19 +128,19 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        GioiTinh.Add(reader["GioiTinh"].ToString());
+                        gioiTinh.Add(reader["GioiTinh"].ToString());
                     }
                 }
 
                 dataAccess.objConnection.Close();
 
             }
-            return GioiTinh;
+            return gioiTinh;
         }
 
         private List<string> LayChucVu()
         {
-            List<string> ChucVu = new List<string>();
+            List<string> chucVu = new List<string>();
             string query = "SELECT TenCV FROM CHUC_VU";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
@@ -151,27 +151,27 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        ChucVu.Add(reader["TenCV"].ToString());
+                        chucVu.Add(reader["TenCV"].ToString());
                     }
                 }
 
                 dataAccess.objConnection.Close();
 
             }
-            return ChucVu;
+            return chucVu;
         }
         private void HienThiGioiTinh()
         {
-            List<string> GioiTinh = LayGioiTinh();
-            CbeGioiTinh.Properties.Items.AddRange(GioiTinh);
+            List<string> gioiTinh = LayGioiTinh();
+            CbeGioiTinh.Properties.Items.AddRange(gioiTinh);
 
             CbeGioiTinh.Properties.AutoComplete = true;
             CbeGioiTinh.Properties.CaseSensitiveSearch = false;
         }
         private void HienThiChucVu()
         {
-            List<string> ChucVu = LayChucVu();
-            CbeChucVu.Properties.Items.AddRange(ChucVu);
+            List<string> chucVu = LayChucVu();
+            CbeChucVu.Properties.Items.AddRange(chucVu);
 
             CbeChucVu.Properties.AutoComplete = true;
             CbeChucVu.Properties.CaseSensitiveSearch = false;
@@ -180,31 +180,47 @@ namespace market_management
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             GridView currentView = (GridView)GcDanhMucNV.FocusedView;
-            var MaNV = currentView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[0]).ToString();
-            var TenNV = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[1]).ToString();
-            var NgaySinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
-            var GioiTinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
+            var maNV = currentView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[0]).ToString();
+            var tenNV = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[1]).ToString();
+            var ngaySinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
+            var gioiTinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
             var SDT = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
-            var Email = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
-            var DiaChi = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[7]).ToString();
+            var email = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
+            var diaChi = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[7]).ToString();
             var CCCD = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
-            var ChucVu = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[8]).ToString();
-            TeMaNV.Text = MaNV;
-            TeTenNV.Text = TenNV;
-            CbeGioiTinh.Text = GioiTinh;
+            var chucVu = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[8]).ToString();
+            TeMaNV.Text = maNV;
+            TeTenNV.Text = tenNV;
+            CbeGioiTinh.Text = gioiTinh;
             if (DeNgaySinh.Text != "")
             {
-                DeNgaySinh.Text = NgaySinh.Substring(0, 9);
+                DeNgaySinh.Text = ngaySinh.Substring(0, 9);
             }
             else
             {
-                DeNgaySinh.Text = NgaySinh;
+                DeNgaySinh.Text = ngaySinh;
             }
             TeSDT.Text = SDT;
-            TeDiaChi.Text = DiaChi;
+            TeDiaChi.Text = diaChi;
             TeCCCD.Text = CCCD;
-            CbeChucVu.Text = ChucVu;
-            TeEmail.Text = Email;
+            CbeChucVu.Text = chucVu;
+            TeEmail.Text = email;
+        }
+
+        private void TeSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TeCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
