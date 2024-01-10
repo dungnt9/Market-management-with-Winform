@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.Xpo.Helpers.AssociatedCollectionCriteriaHelper;
 
 namespace market_management
 {
@@ -33,8 +34,11 @@ namespace market_management
             string sqlInsert = $"INSERT INTO NHA_CUNG_CAP (TenNCC, DiaChi, SDT, MaLoaiSP) VALUES (N'{tenNCC}', N'{diachiNCC}', '{sdtNCC}', {maLoaiSP})";
 
             dataAccess.UpdateData(sqlInsert);
-            XtraMessageBox.Show("Thêm nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            var result = XtraMessageBox.Show("Thêm nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (result == DialogResult.OK)
+            {
+                this.Close(); // Tắt Form hiện tại
+            }
         }
 
         private List<string> LayTenLoaiSP()

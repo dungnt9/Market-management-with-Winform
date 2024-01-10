@@ -27,18 +27,14 @@ namespace market_management.UI
         }
 
         private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            if (maHDB == null)
-            {
-                return;
-            }    
-
+        {   
             FormDonBan frmDonBan = new FormDonBan();
             frmDonBan.ShowDialog();
         }
 
         private void LoadData()
         {
+            maHDB = null;
             GcQLBanHang.DataSource = dataAccess.GetDataTable("SELECT \r\n" +
                 "    HDB.MaHDB AS 'Mã Hóa Đơn Bán',\r\n" +
                 "    KH.TenKH AS 'Tên Khách Hàng',\r\n" +
