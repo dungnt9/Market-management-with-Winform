@@ -37,7 +37,7 @@ namespace market_management
                                                                     "SDT as 'Số Điện Thoại'," +
                                                                     "DiaChi as 'Địa Chỉ', " +
                                                                     "MaGiamGia as 'Mã Giảm Giá'," +
-                                                                    "Diem as 'Điểm Tích'" +
+                                                                    "TichDiem as 'Tích Điểm'" +
                                                                     "from KHACH_HANG");
         }
 
@@ -93,7 +93,7 @@ namespace market_management
         }
         private List<string> LayGioiTinh()
         {
-            List<string> GioiTinh = new List<string>();
+            List<string> gioiTinh = new List<string>();
             string query = "SELECT DISTINCT GioiTinh FROM KHACH_HANG";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
@@ -111,12 +111,12 @@ namespace market_management
                 dataAccess.objConnection.Close();
 
             }
-            return GioiTinh;
+            return gioiTinh;
         }
         
         private List<string> LayMaGiamGia()
         {
-            List<string> MaGiamGia = new List<string>();
+            List<string> maGiamGia = new List<string>();
             string query = "SELECT MaGiamGia FROM MA_GIAM_GIA";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
@@ -127,27 +127,27 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        MaGiamGia.Add(reader["MaGiamGia"].ToString());
+                        maGiamGia.Add(reader["MaGiamGia"].ToString());
                     }
                 }
 
                 dataAccess.objConnection.Close();
 
             }
-            return MaGiamGia;
+            return maGiamGia;
         }
         private void HienThiGioiTinh()
         {
-            List<string> GioiTinh = LayGioiTinh();
-            CbeGioiTinh.Properties.Items.AddRange(GioiTinh);
+            List<string> gioiTinh = LayGioiTinh();
+            CbeGioiTinh.Properties.Items.AddRange(gioiTinh);
 
             CbeGioiTinh.Properties.AutoComplete = true;
             CbeGioiTinh.Properties.CaseSensitiveSearch = false;
         }
         private void HienThiMaGiamGia()
         {
-            List<string> MaGiamGia = LayMaGiamGia();
-            CbeMaGiamGia.Properties.Items.AddRange(MaGiamGia);
+            List<string> maGiamGia = LayMaGiamGia();
+            CbeMaGiamGia.Properties.Items.AddRange(maGiamGia);
 
             CbeMaGiamGia.Properties.AutoComplete = true;
             CbeMaGiamGia.Properties.CaseSensitiveSearch = false;
@@ -156,28 +156,36 @@ namespace market_management
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             GridView currentView = (GridView)GcDanhMucKH.FocusedView;
-            var MaKH = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[0]).ToString();
-            var TenKH = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[1]).ToString();
-            var NgaySinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
-            var GioiTinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
+            var maKH = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[0]).ToString();
+            var tenKH = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[1]).ToString();
+            var ngaySinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
+            var gioiTinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
             var SDT = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
-            var DiaChi = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
-            var MaGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
-            var DiemTich = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
-            TeMaKH.Text = MaKH;
-            TeTenKH.Text = TenKH;
-            CbeGioiTinh.Text = GioiTinh;
+            var diaChi = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
+            var maGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
+            //var Diem = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[7]).ToString();
+            TeMaKH.Text = maKH;
+            TeTenKH.Text = tenKH;
+            CbeGioiTinh.Text = gioiTinh;
             if(DeNgaySinh.Text != "")
             {
-                DeNgaySinh.Text = NgaySinh.Substring(0, 9);
+                DeNgaySinh.Text = ngaySinh.Substring(0, 9);
             }
             else
             {
-                DeNgaySinh.Text = NgaySinh;
+                DeNgaySinh.Text = ngaySinh;
             }
             TeSDT.Text = SDT;
-            TeDiaChi.Text = DiaChi;
-            CbeMaGiamGia.Text = MaGiamGia;
+            TeDiaChi.Text = diaChi;
+            CbeMaGiamGia.Text = maGiamGia;
+        }
+
+        private void TeSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void UcKhachHang_Load(object sender, EventArgs e)

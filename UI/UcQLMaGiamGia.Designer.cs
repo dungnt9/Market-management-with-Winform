@@ -167,8 +167,9 @@
             this.CbePhanTram.Properties.Appearance.Options.UseFont = true;
             this.CbePhanTram.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbePhanTram.Size = new System.Drawing.Size(122, 26);
+            this.CbePhanTram.Size = new System.Drawing.Size(128, 22);
             this.CbePhanTram.TabIndex = 40;
+            this.CbePhanTram.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbePhanTram_KeyPress);
             // 
             // LbNgayTao
             // 

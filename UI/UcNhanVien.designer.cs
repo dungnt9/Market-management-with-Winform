@@ -224,6 +224,7 @@
             this.TeCCCD.Properties.Appearance.Options.UseFont = true;
             this.TeCCCD.Size = new System.Drawing.Size(144, 26);
             this.TeCCCD.TabIndex = 29;
+            this.TeCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeCCCD_KeyPress);
             // 
             // LbCCCD
             // 
@@ -281,6 +282,7 @@
             this.TeSDT.Properties.Appearance.Options.UseFont = true;
             this.TeSDT.Size = new System.Drawing.Size(150, 26);
             this.TeSDT.TabIndex = 26;
+            this.TeSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeSDT_KeyPress);
             // 
             // LbSDT
             // 

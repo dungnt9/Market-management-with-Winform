@@ -30,7 +30,6 @@
         {
             this.LbDKTaiKhoan = new DevExpress.XtraEditors.LabelControl();
             this.GrbDangKy = new DevExpress.XtraEditors.GroupControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LbNgayHetHan = new DevExpress.XtraEditors.LabelControl();
             this.RbNgauNhien = new System.Windows.Forms.RadioButton();
             this.RbDiemTich = new System.Windows.Forms.RadioButton();
@@ -46,6 +45,7 @@
             this.LbTenChuongTrinh = new DevExpress.XtraEditors.LabelControl();
             this.BtnXoaThongTin = new DevExpress.XtraEditors.SimpleButton();
             this.BtnTao = new DevExpress.XtraEditors.SimpleButton();
+            this.DeNgayHetHan = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).BeginInit();
             this.GrbDangKy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -55,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanTram.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenChuongTrinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // LbDKTaiKhoan
@@ -79,7 +81,7 @@
             this.GrbDangKy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.GrbDangKy.Appearance.Options.UseBackColor = true;
             this.GrbDangKy.Appearance.Options.UseFont = true;
-            this.GrbDangKy.Controls.Add(this.comboBoxEdit1);
+            this.GrbDangKy.Controls.Add(this.DeNgayHetHan);
             this.GrbDangKy.Controls.Add(this.LbNgayHetHan);
             this.GrbDangKy.Controls.Add(this.RbNgauNhien);
             this.GrbDangKy.Controls.Add(this.RbDiemTich);
@@ -100,17 +102,6 @@
             this.GrbDangKy.Size = new System.Drawing.Size(914, 258);
             this.GrbDangKy.TabIndex = 2;
             this.GrbDangKy.Text = "Thông tin mã giảm giá";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(687, 66);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(122, 22);
-            this.comboBoxEdit1.TabIndex = 80;
             // 
             // LbNgayHetHan
             // 
@@ -159,7 +150,6 @@
             // 
             // CbeNgayLe
             // 
-            this.CbeNgayLe.Enabled = false;
             this.CbeNgayLe.Location = new System.Drawing.Point(427, 149);
             this.CbeNgayLe.Name = "CbeNgayLe";
             this.CbeNgayLe.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,6 +267,18 @@
             this.BtnTao.Text = "Tạo";
             this.BtnTao.Click += new System.EventHandler(this.BtnTao_Click);
             // 
+            // DeNgayHetHan
+            // 
+            this.DeNgayHetHan.EditValue = null;
+            this.DeNgayHetHan.Location = new System.Drawing.Point(695, 68);
+            this.DeNgayHetHan.Name = "DeNgayHetHan";
+            this.DeNgayHetHan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DeNgayHetHan.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DeNgayHetHan.Size = new System.Drawing.Size(122, 20);
+            this.DeNgayHetHan.TabIndex = 82;
+            // 
             // FrmTaoMGG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +301,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanTram.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenChuongTrinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,7 +326,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit CbeNgayLe;
         private System.Windows.Forms.RadioButton RbNgauNhien;
         private System.Windows.Forms.RadioButton RbDiemTich;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.LabelControl LbNgayHetHan;
+        private DevExpress.XtraEditors.DateEdit DeNgayHetHan;
     }
 }
