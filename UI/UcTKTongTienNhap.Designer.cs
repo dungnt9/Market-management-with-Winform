@@ -96,11 +96,11 @@
             // 
             this.LbDoanhThu.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbDoanhThu.Appearance.Options.UseFont = true;
-            this.LbDoanhThu.Location = new System.Drawing.Point(18, 14);
+            this.LbDoanhThu.Location = new System.Drawing.Point(18, 32);
             this.LbDoanhThu.Name = "LbDoanhThu";
-            this.LbDoanhThu.Size = new System.Drawing.Size(232, 32);
+            this.LbDoanhThu.Size = new System.Drawing.Size(347, 32);
             this.LbDoanhThu.TabIndex = 18;
-            this.LbDoanhThu.Text = "Thống Kê Nhập Hàng";
+            this.LbDoanhThu.Text = "Thống Kê Tổng Tiền Nhập Hàng";
             // 
             // CcBanHang
             // 

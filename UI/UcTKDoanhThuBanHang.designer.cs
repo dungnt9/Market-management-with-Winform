@@ -34,7 +34,7 @@ namespace market_management
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             this.CcBanHang = new DevExpress.XtraCharts.ChartControl();
-            this.LbDoanhThu = new DevExpress.XtraEditors.LabelControl();
+            this.LbDoanhThuBanHang = new DevExpress.XtraEditors.LabelControl();
             this.CbeNam = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LbNam = new DevExpress.XtraEditors.LabelControl();
             this.GcBanHang = new DevExpress.XtraGrid.GridControl();
@@ -66,15 +66,15 @@ namespace market_management
             this.CcBanHang.Size = new System.Drawing.Size(306, 196);
             this.CcBanHang.TabIndex = 4;
             // 
-            // LbDoanhThu
+            // LbDoanhThuBanHang
             // 
-            this.LbDoanhThu.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.LbDoanhThu.Appearance.Options.UseFont = true;
-            this.LbDoanhThu.Location = new System.Drawing.Point(18, 24);
-            this.LbDoanhThu.Name = "LbDoanhThu";
-            this.LbDoanhThu.Size = new System.Drawing.Size(214, 32);
-            this.LbDoanhThu.TabIndex = 6;
-            this.LbDoanhThu.Text = "Thống Kê Bán Hàng";
+            this.LbDoanhThuBanHang.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbDoanhThuBanHang.Appearance.Options.UseFont = true;
+            this.LbDoanhThuBanHang.Location = new System.Drawing.Point(18, 24);
+            this.LbDoanhThuBanHang.Name = "LbDoanhThuBanHang";
+            this.LbDoanhThuBanHang.Size = new System.Drawing.Size(340, 32);
+            this.LbDoanhThuBanHang.TabIndex = 6;
+            this.LbDoanhThuBanHang.Text = "Thống Kê Doanh Thu Bán Hàng";
             // 
             // CbeNam
             // 
@@ -134,7 +134,7 @@ namespace market_management
             this.Controls.Add(this.GcBanHang);
             this.Controls.Add(this.LbNam);
             this.Controls.Add(this.CbeNam);
-            this.Controls.Add(this.LbDoanhThu);
+            this.Controls.Add(this.LbDoanhThuBanHang);
             this.Controls.Add(this.CcBanHang);
             this.Name = "UcTKDoanhThuBanHang";
             this.Size = new System.Drawing.Size(870, 660);
@@ -151,7 +151,7 @@ namespace market_management
 
         #endregion
         private DevExpress.XtraCharts.ChartControl CcBanHang;
-        private DevExpress.XtraEditors.LabelControl LbDoanhThu;
+        private DevExpress.XtraEditors.LabelControl LbDoanhThuBanHang;
         private DevExpress.XtraEditors.ComboBoxEdit CbeNam;
         private DevExpress.XtraEditors.LabelControl LbNam;
         private DevExpress.XtraGrid.GridControl GcBanHang;
