@@ -39,7 +39,6 @@
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,7 +59,7 @@
             // 
             // GcNCC
             // 
-            this.GcNCC.Location = new System.Drawing.Point(0, 251);
+            this.GcNCC.Location = new System.Drawing.Point(0, 247);
             this.GcNCC.MainView = this.gridView;
             this.GcNCC.MenuManager = this.ribbonControl;
             this.GcNCC.Name = "GcNCC";
@@ -106,7 +105,6 @@
             this.bbiPrintPreview.Id = 14;
             this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
             this.bbiPrintPreview.Name = "bbiPrintPreview";
-            this.bbiPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrintPreview_ItemClick);
             // 
             // bsiRecordsCount
             // 
@@ -149,11 +147,10 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup1});
             this.ribbonPage1.MergeOrder = 0;
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Home";
+            this.ribbonPage1.Text = "Quản lý Nhà Cung Cấp";
             // 
             // ribbonPageGroup1
             // 
@@ -166,14 +163,6 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Tasks";
             // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.AllowTextClipping = false;
-            this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup2.ItemLinks.Add(this.bbiPrintPreview);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Print and Export";
-            // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
@@ -185,65 +174,70 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(42, 152);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(137, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tên Nhà Cung Cấp";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(45, 201);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(105, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Số Điện Thoại";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(311, 156);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(447, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(58, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Địa Chỉ";
             // 
             // TeTenNCC
             // 
-            this.TeTenNCC.Location = new System.Drawing.Point(161, 152);
+            this.TeTenNCC.Location = new System.Drawing.Point(201, 154);
             this.TeTenNCC.MenuManager = this.ribbonControl;
             this.TeTenNCC.Name = "TeTenNCC";
-            this.TeTenNCC.Size = new System.Drawing.Size(100, 20);
+            this.TeTenNCC.Size = new System.Drawing.Size(158, 20);
             this.TeTenNCC.TabIndex = 7;
             // 
             // TeSĐTNCC
             // 
-            this.TeSĐTNCC.Location = new System.Drawing.Point(161, 193);
+            this.TeSĐTNCC.Location = new System.Drawing.Point(201, 203);
             this.TeSĐTNCC.MenuManager = this.ribbonControl;
             this.TeSĐTNCC.Name = "TeSĐTNCC";
-            this.TeSĐTNCC.Size = new System.Drawing.Size(100, 20);
+            this.TeSĐTNCC.Size = new System.Drawing.Size(158, 20);
             this.TeSĐTNCC.TabIndex = 8;
             // 
             // TeDiaChiNCC
             // 
-            this.TeDiaChiNCC.Location = new System.Drawing.Point(394, 153);
+            this.TeDiaChiNCC.Location = new System.Drawing.Point(579, 156);
             this.TeDiaChiNCC.MenuManager = this.ribbonControl;
             this.TeDiaChiNCC.Name = "TeDiaChiNCC";
-            this.TeDiaChiNCC.Size = new System.Drawing.Size(100, 20);
+            this.TeDiaChiNCC.Size = new System.Drawing.Size(196, 20);
             this.TeDiaChiNCC.TabIndex = 9;
             // 
             // LbLoaiSanPham
             // 
-            this.LbLoaiSanPham.Location = new System.Drawing.Point(314, 196);
+            this.LbLoaiSanPham.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbLoaiSanPham.Appearance.Options.UseFont = true;
+            this.LbLoaiSanPham.Location = new System.Drawing.Point(451, 201);
             this.LbLoaiSanPham.Name = "LbLoaiSanPham";
-            this.LbLoaiSanPham.Size = new System.Drawing.Size(69, 13);
+            this.LbLoaiSanPham.Size = new System.Drawing.Size(102, 20);
             this.LbLoaiSanPham.TabIndex = 12;
             this.LbLoaiSanPham.Text = "Loại Sản Phẩm";
             // 
             // CbeLoaiSanPham
             // 
-            this.CbeLoaiSanPham.Location = new System.Drawing.Point(394, 196);
+            this.CbeLoaiSanPham.Location = new System.Drawing.Point(579, 203);
             this.CbeLoaiSanPham.MenuManager = this.ribbonControl;
             this.CbeLoaiSanPham.Name = "CbeLoaiSanPham";
             this.CbeLoaiSanPham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -288,7 +282,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiThemNCC;

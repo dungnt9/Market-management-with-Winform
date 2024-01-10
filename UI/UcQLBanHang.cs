@@ -28,6 +28,11 @@ namespace market_management.UI
 
         private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (maHDB == null)
+            {
+                return;
+            }    
+
             FormDonBan frmDonBan = new FormDonBan();
             frmDonBan.ShowDialog();
         }
@@ -47,16 +52,11 @@ namespace market_management.UI
                 "    JOIN NHAN_VIEN NV ON HDB.MaNV = NV.MaNV;");
         }
 
-        private void BbiXemChiTietHDB_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-            FormChiTietDonBan frmChiTietDonBan = new FormChiTietDonBan(maHDB, tongTien, thoigian);
-            frmChiTietDonBan.ShowDialog();
-        }
-
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             maHDB = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã Hóa Đơn Bán").ToString();
+            tongTien = gridView.GetRowCellValue(e.FocusedRowHandle, "Tổng Tiền").ToString();
+            thoigian = gridView.GetRowCellValue(e.FocusedRowHandle, "Thời Gian").ToString();
         }
 
         private void bbiDelete_ItemClick(object sender, ItemClickEventArgs e)
@@ -71,11 +71,13 @@ namespace market_management.UI
 
             if (confirmationResult == DialogResult.Yes)
             {
-                var sqlDelete = $"DELETE FROM HOA_DON_BAN WHERE MaHDB = '{maHDB}'";
+                var sqlDeleteCT_HDB = $"DELETE FROM CT_HOA_DON_BAN WHERE MaHDB = '{maHDB}'";
+                var sqlDelete_HDB = $"DELETE FROM HOA_DON_BAN WHERE MaHDB = '{maHDB}'";
 
                 try
                 {
-                    dataAccess.UpdateData(sqlDelete);
+                    dataAccess.UpdateData(sqlDeleteCT_HDB);
+                    dataAccess.UpdateData(sqlDelete_HDB);
                     XtraMessageBox.Show("Xóa hóa đơn bán thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData(); // Gọi lại phương thức để cập nhật GridView
 
@@ -85,6 +87,22 @@ namespace market_management.UI
                     XtraMessageBox.Show($"Lỗi xóa hóa đơn bán: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void BtnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            if (maHDB == null)
+            {
+                return;
+            }
+
+            FormChiTietDonBan frmChiTietDonBan = new FormChiTietDonBan(maHDB, tongTien, thoigian);
+            frmChiTietDonBan.ShowDialog();
+        }
+
+        private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            LoadData();
         }
     }
 }

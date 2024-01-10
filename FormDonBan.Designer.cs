@@ -99,7 +99,6 @@
             this.BtnThemThanhVien.Size = new System.Drawing.Size(109, 23);
             this.BtnThemThanhVien.TabIndex = 11;
             this.BtnThemThanhVien.Text = "Thêm Thành Viên";
-            this.BtnThemThanhVien.Click += new System.EventHandler(this.BtnThemThanhVien_Click);
             // 
             // CbeSDT
             // 
@@ -109,7 +108,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbeSDT.Size = new System.Drawing.Size(100, 20);
             this.CbeSDT.TabIndex = 10;
-            this.CbeSDT.EditValueChanged += new System.EventHandler(this.CbeSDT_EditValueChanged);
+            this.CbeSDT.Leave += new System.EventHandler(this.CbeSDT_Leave);
             // 
             // TeDiaChi
             // 

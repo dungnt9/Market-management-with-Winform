@@ -17,11 +17,12 @@ namespace market_management.UI
     public partial class UcTKHangTonKho : DevExpress.XtraEditors.XtraUserControl
     {
         DataAccess dataAccess = new DataAccess();
+        int mucAnToan = -1;
+        string latest = DateTime.Now.ToShortDateString();
         public UcTKHangTonKho()
         {
             InitializeComponent();
 
-            GvHangBoSung.OptionsBehavior.Editable = false;
             GvHangTon.OptionsBehavior.Editable = false;
 
             ThongKe();
@@ -29,7 +30,7 @@ namespace market_management.UI
         private void ThongKe()
         {
             UpdateTotalQuantity();
-            LoadHangThieu();
+            //LoadData();
         }
 
         private void UpdateTotalQuantity()
@@ -75,31 +76,41 @@ namespace market_management.UI
                 MessageBox.Show($"Lỗi: {ex.Message}");
             }
         }
-        private void LoadHangThieu()
+        private void LoadData()
         {
             try
             {
-                // Tạo câu truy vấn SQL để lấy các sản phẩm có số lượng dưới 50
-                string queryHangBoSung = "SELECT * FROM SAN_PHAM WHERE SoLuong < 50"; // Thay TenBang và SoLuong bằng tên thực tế của bảng và cột trong cơ sở dữ liệu của bạn
-                string queryHangTon = "SELECT * FROM SAN_PHAM WHERE SoLuong > 100";
+                if (mucAnToan == -1)
+                {
+                    return;
+                }    
+                string queryHangTon = $"SELECT * FROM SAN_PHAM WHERE SoLuong > {mucAnToan}";
 
-                // Lấy dữ liệu từ cơ sở dữ liệu
-                DataTable dataTableHangBoSung = dataAccess.GetDataTable(queryHangBoSung);
                 DataTable dataTableHangTon = dataAccess.GetDataTable(queryHangTon);
 
                 // Hiển thị kết quả trong GridControl (đặt tên là gridControl)
-                GcHangBoSung.DataSource = dataTableHangBoSung;
                 GcHangTon.DataSource = dataTableHangTon;
 
-
-
-                // Tự động tạo cột từ các cột trong DataTable
-                // gridView.PopulateColumns();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi: {ex.Message}");
             }
+        }
+
+        private void TeMucAnToan_TextChanged(object sender, EventArgs e)
+        {
+            if (TeMucAnToan.Text == "")
+            {
+                return;
+            }    
+            mucAnToan = Convert.ToInt32(TeMucAnToan.Text);
+            LoadData();
+        }
+
+        private void BtnLamMoi_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

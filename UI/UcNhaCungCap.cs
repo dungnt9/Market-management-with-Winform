@@ -1,6 +1,8 @@
-﻿using DevExpress.Xpo;
+﻿using DevExpress.DataAccess.Sql;
+using DevExpress.Xpo;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraRichEdit.Import.Html;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,12 +28,9 @@ namespace market_management.UI
 
         private void LoadData()
         {
-            GcNCC.DataSource = dataAccess.GetDataTable("SELECT \r\n    NCC.MaNCC AS 'Mã Nhà Cung Cấp',\r\n    NCC.TenNCC AS 'Tên Nhà Cung Cấp',\r\n    NCC.DiaChi AS 'Địa Chỉ',\r\n    NCC.SDT AS 'Số Điện Thoại' \r\n FROM \r\n NHA_CUNG_CAP NCC;");
+            GcNCC.DataSource = dataAccess.GetDataTable("SELECT NCC.MaNCC AS 'Mã Nhà Cung Cấp', NCC.TenNCC AS 'Tên Nhà Cung Cấp', NCC.DiaChi AS 'Địa Chỉ', NCC.SDT AS 'Số Điện Thoại', LSP.TenLoaiSP AS 'Loại Sản Phẩm'  FROM NHA_CUNG_CAP NCC JOIN LOAI_SAN_PHAM LSP ON NCC.MaLoaiSP = LSP.MaLoaiSP");
         }
-        void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            GcNCC.ShowRibbonPrintPreview();
-        }
+        
         private void BbiThemNCC_ItemClick(object sender, ItemClickEventArgs e)
         {
             FormNhaCungCap frmNhaCungCap = new FormNhaCungCap();
@@ -63,7 +62,6 @@ namespace market_management.UI
                     dataAccess.UpdateData(sqlDelete);
                     XtraMessageBox.Show("Cập nhật nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData(); // Gọi lại phương thức để cập nhật GridView
-
                 }
                 catch (Exception ex)
                 {
@@ -116,6 +114,7 @@ namespace market_management.UI
             TeTenNCC.Text = tenNCC;
             TeDiaChiNCC.Text = diachiNCC;
             TeSĐTNCC.Text = sdtNCC;
+            CbeLoaiSanPham.Text = loaiSP;
         }
     }
 }

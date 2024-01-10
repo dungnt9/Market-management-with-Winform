@@ -24,7 +24,7 @@ namespace market_management
             string TenDangNhapMoi = TeTenDangNhap.Text;
             string MatKhauMoi = TeMatKhau.Text;
 
-            dataAccess.UpdateData(string.Format("UPDATE TAI_KHOAN SET TenDangNhap = N'{1}', MatKhau = N'{2}' where MaNV = '{0}'", MaNV, TenDangNhapMoi, MatKhauMoi));
+            dataAccess.UpdateData($"UPDATE TAI_KHOAN SET TenDangNhap = N'{TenDangNhapMoi}', MatKhau = N'{MatKhauMoi}' where MaNV = '{MaNV}'");
         }
 
         private void TeNhapLaiMatKhau_Validating(object sender, CancelEventArgs e)
@@ -37,6 +37,16 @@ namespace market_management
                 MessageBox.Show("Nhập lại mật khẩu không chính xác");
                 //e.Cancel = true;
             }    
+        }
+
+        private void TeMatKhau_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LbMaNV_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

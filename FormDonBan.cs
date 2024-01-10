@@ -1,5 +1,6 @@
 ﻿using DevExpress.DataAccess.Native.Data;
 using DevExpress.Xpo.DB.Helpers;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using System;
 using System.Collections.Generic;
@@ -97,10 +98,20 @@ namespace market_management
 
         private void BtnTaoHoaDon_Click(object sender, EventArgs e)
         {
-            CapNhatSanPham();
-            //CapNhatKhachHang();
-            LuuHoaDon();
-            LuuCTHoaDon();
+            try
+            {
+                CapNhatSanPham();
+                //CapNhatKhachHang();
+                LuuHoaDon();
+                LuuCTHoaDon();
+
+                XtraMessageBox.Show("Thêm hóa đơn bán thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Lỗi Thêm hóa đơn bán: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /*private void CapNhatKhachHang()
@@ -114,10 +125,17 @@ namespace market_management
 
         private void LuuHoaDon()
         {
-            string maNV = "";
+            int maNV = 2;
             int tongtien = Convert.ToInt32(LbTongTien.Text);
-            DateTime thoigian = Convert.ToDateTime(LbThoiGian.Text);
-            dataAccess.UpdateData($"INSERT INTO HOA_DON_BAN (MaHDB, MaKH, MaNV, TongTien, ThoiGian) VALUES ('{maHDB}', {maKH}, '{maNV}', {tongtien}, {thoigian})");
+            string thoigian = LbThoiGian.Text;
+            if (maKH == -1)
+            {
+                dataAccess.UpdateData($"INSERT INTO HOA_DON_BAN (MaHDB, MaNV, TongTien, ThoiGian) VALUES ('{maHDB}', {maNV}, {tongtien}, '{thoigian}')");
+            }    
+            else
+            {
+                dataAccess.UpdateData($"INSERT INTO HOA_DON_BAN (MaHDB, MaKH, MaNV, TongTien, ThoiGian) VALUES ('{maHDB}', {maKH}, {maNV}, {tongtien}, '{thoigian}')");
+            }    
         }
 
         private void LuuCTHoaDon()
@@ -259,11 +277,7 @@ namespace market_management
             LbTongTien.Text = TinhTongTien().ToString();
         }
 
-        private void CbeSDT_EditValueChanged(object sender, EventArgs e)
-        {
-            XuLyKhachHang();
-        }
-
+        
         static string GenerateRandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -291,6 +305,13 @@ namespace market_management
                 e.Cancel = true; // Ngăn chặn mất focus nếu giá trị không hợp lệ
             }
 
+        }
+
+        
+
+        private void CbeSDT_Leave(object sender, EventArgs e)
+        {
+            XuLyKhachHang();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace market_management
 
         private void HienThiThongTinKH(string maHDB)
         {
-            string query = $"select TenKH, SDT, GioiTinh, DiaChi, NgaySinh from KHACH_HANG join HOA_DON_BAN on KHACH_HANG.MaKH = HOA_DON_BAN.MaKH where MaHDB = {maHDB}";
+            string query = $"select TenKH, SDT, GioiTinh, DiaChi, NgaySinh from KHACH_HANG join HOA_DON_BAN on KHACH_HANG.MaKH = HOA_DON_BAN.MaKH where MaHDB = '{maHDB}'";
             DataTable dataTable = dataAccess.GetDataTable(query);
 
             LbTenKH.Text = dataTable.Rows[0]["TenKH"].ToString();
