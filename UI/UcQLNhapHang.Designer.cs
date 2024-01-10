@@ -53,7 +53,6 @@
             this.GcQLNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.GcQLNhapHang.Location = new System.Drawing.Point(0, 203);
             this.GcQLNhapHang.MainView = this.gridView;
-            this.GcQLNhapHang.Margin = new System.Windows.Forms.Padding(4);
             this.GcQLNhapHang.MenuManager = this.RcQLNhapHang;
             this.GcQLNhapHang.Name = "GcQLNhapHang";
             this.GcQLNhapHang.Size = new System.Drawing.Size(934, 514);
@@ -64,17 +63,14 @@
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView.DetailHeight = 431;
             this.gridView.GridControl = this.GcQLNhapHang;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
-            this.gridView.OptionsEditForm.PopupEditFormWidth = 933;
             this.gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_FocusedRowChanged);
             // 
             // RcQLNhapHang
             // 
-            this.RcQLNhapHang.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
             this.RcQLNhapHang.ExpandCollapseItem.Id = 0;
             this.RcQLNhapHang.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.RcQLNhapHang.ExpandCollapseItem,
@@ -84,16 +80,14 @@
             this.BbiLamMoi,
             this.BsiXemChiTiet});
             this.RcQLNhapHang.Location = new System.Drawing.Point(0, 0);
-            this.RcQLNhapHang.Margin = new System.Windows.Forms.Padding(4);
             this.RcQLNhapHang.MaxItemId = 21;
             this.RcQLNhapHang.Name = "RcQLNhapHang";
-            this.RcQLNhapHang.OptionsMenuMinWidth = 385;
             this.RcQLNhapHang.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.RpQLNhapHang});
             this.RcQLNhapHang.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.RcQLNhapHang.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.RcQLNhapHang.Size = new System.Drawing.Size(934, 154);
-            this.RcQLNhapHang.StatusBar = this.ribbonStatusBar;
+            //this.RcQLNhapHang.StatusBar = this.ribbonStatusBar;
             this.RcQLNhapHang.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bsiRecordsCount
@@ -108,7 +102,7 @@
             this.BbiNew.Id = 16;
             this.BbiNew.ImageOptions.ImageUri.Uri = "New";
             this.BbiNew.Name = "BbiNew";
-            this.BbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiNew_ItemClick);
+            //this.BbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiNew_ItemClick);
             // 
             // BbiXoa
             // 
@@ -191,23 +185,21 @@
             // 
             // UcQLNhapHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.LbcMaDN);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.GcQLNhapHang);
             this.Controls.Add(this.RcQLNhapHang);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcQLNhapHang";
-            this.Size = new System.Drawing.Size(934, 758);
+            this.Size = new System.Drawing.Size(801, 616);
             this.Load += new System.EventHandler(this.UcQLNhapHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GcQLNhapHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcQLNhapHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -216,7 +208,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl RcQLNhapHang;
         private DevExpress.XtraBars.Ribbon.RibbonPage RpQLNhapHang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup RpgTacVuNhapHang;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiNew;
         private DevExpress.XtraBars.BarButtonItem BbiXoa;
@@ -227,3 +218,4 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
+

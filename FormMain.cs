@@ -31,6 +31,8 @@ namespace market_management
         public FormMain()
         {
             InitializeComponent();
+
+            LoadDataNV();
         }
         public int MaNV { get; set; }
 
@@ -126,7 +128,7 @@ namespace market_management
         {
             if (_UcDT == null)
             {
-                _UcDT = new UcDoanhThu();
+                _UcDT = new UcTKBanHang();
                 _UcDT.Dock = DockStyle.Fill;
                 PnlMain.Controls.Add(_UcDT);
                 _UcDT.BringToFront();
@@ -169,7 +171,17 @@ namespace market_management
 
         private void QLMaGiamGia_Click(object sender, EventArgs e)
         {
-
+            if (_UcMGG == null)
+            {
+                _UcMGG = new UcQLMaGiamGia();
+                _UcMGG.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcMGG);
+                _UcMGG.BringToFront();
+            }
+            else
+            {
+                _UcMGG.BringToFront();
+            }
         }
 
         private void DangXuat_Click(object sender, EventArgs e)
@@ -245,6 +257,32 @@ namespace market_management
             else
             {
                 _UcTKSPDaBan.BringToFront();
+            }
+        }
+
+        private void DangKy_Click(object sender, EventArgs e)
+        {
+            if (Session.chucVu == "Quản lý")
+            {
+                DangKy.Visible = true;
+            }
+            FrmDangKy f = new FrmDangKy();
+            f.ShowDialog();
+        }
+
+        private void accordionControlElement1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            Session.tenNV = BsiTenNV.Caption;
+            Session.chucVu = BsiChucvu.Caption;
+            if (Session.chucVu.Substring(0, 7) == "Quản lý")
+            {
+                NV.Visible = true;
+                DangKy.Visible = true;
             }
         }
     }

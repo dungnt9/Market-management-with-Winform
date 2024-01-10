@@ -52,10 +52,13 @@
     <Reference Include="DevExpress.XtraCharts.v23.2.UI, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v23.2.Wizard, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v23.2.Win, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraRichEdit.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -141,12 +144,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormThemKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemKH.Designer.cs">
+      <DependentUpon>FormThemKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaoMGG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoMGG.Designer.cs">
+      <DependentUpon>FormTaoMGG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemNV.Designer.cs">
+      <DependentUpon>FormThemNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Session.cs" />
+    <Compile Include="UI\TKNhapHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TKNhapHang.Designer.cs">
+      <DependentUpon>TKNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UcTKBanHang.cs">
     <Compile Include="Session.cs" />
     <Compile Include="UI\UcDoanhThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\UcDoanhThu.designer.cs">
-      <DependentUpon>UcDoanhThu.cs</DependentUpon>
+    <Compile Include="UI\UcTKBanHang.designer.cs">
+      <DependentUpon>UcTKBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UcKhachHang.cs">
       <SubType>UserControl</SubType>
@@ -281,6 +310,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcDoanhThu.resx">
       <DependentUpon>UcDoanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="FormThemKH.resx">
+      <DependentUpon>FormThemKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoMGG.resx">
+      <DependentUpon>FormTaoMGG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemNV.resx">
+      <DependentUpon>FormThemNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TKNhapHang.resx">
+      <DependentUpon>TKNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcTKBanHang.resx">
+      <DependentUpon>UcTKBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcKhachHang.resx">
       <DependentUpon>UcKhachHang.cs</DependentUpon>
@@ -357,6 +400,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\d25000794d527b5ca218ebc85e6484c7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnhDangKy.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

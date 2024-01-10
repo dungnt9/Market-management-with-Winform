@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,22 +16,102 @@ namespace market_management.UI
 {
     public partial class UcQLMaGiamGia : DevExpress.XtraEditors.XtraUserControl
     {
+        DataAccess dataAccess = new DataAccess();
         public UcQLMaGiamGia()
         {
             InitializeComponent();
+            LoadData();
 
-            BindingList<Customer> dataSource = GetDataSource();
-            GcMaGiamGia.DataSource = dataSource;
-            bsiRecordsCount.Caption = "RECORDS : " + dataSource.Count;
+            CbePhanTram.Properties.Items.Add("5");
+            CbePhanTram.Properties.Items.Add("10");
+            CbePhanTram.Properties.Items.Add("15");
+            CbePhanTram.Properties.Items.Add("20");
+            CbePhanTram.Properties.Items.Add("25");
+            CbePhanTram.Properties.Items.Add("30");
+            CbePhanTram.Properties.Items.Add("40");
+            CbePhanTram.Properties.Items.Add("50");
+
         }
-        public BindingList<Customer> GetDataSource()
+        //Lất data từ CSDL
+        void LoadData()
         {
-            BindingList<Customer> result = new BindingList<Customer>();
-            result.Add(new Customer());
-            return result;
+            GcMaGiamGia.DataSource = dataAccess.GetDataTable("select MaGiamGia as 'Mã Giảm Giá', " +
+                                                                    "TenChuongTrinh as 'Tên Chuong Trinh'," +
+                                                                    "PhanTram as 'Phần Trăm'," +
+                                                                    "NgayTao as 'Ngày Tạo', " +
+                                                                    "TrangThai as 'Trạng Thái'," +
+                                                                    "MoTa as 'Mô Tả'" +
+                                                                    "from MA_GIAM_GIA");
         }
-        public class Customer
+
+        private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (string.IsNullOrEmpty(TeMaGiamGia.Text))
+            {
+                XtraMessageBox.Show("Vui lòng chọn mã giảm giá cần sửa", "Thông báo");
+                return;
+            }
+
+            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn sửa mã giảm giá này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationResult == DialogResult.Yes)
+            {
+                try
+                {
+                    string s = string.Format("UPDATE MA_GIAM_GIA SET " + "TenChuongTrinh = N'{1}', where MaNV = N'{0}' )", TeMaGiamGia.Text, TeTenChuongTrinh.Text);
+                    dataAccess.UpdateData(s);
+                    XtraMessageBox.Show("Cập nhật nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData(); // Gọi lại phương thức để cập nhật GridView
+
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Lỗi cập nhật nhà cung cấp: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            LoadData();
+            TeMaGiamGia.Text = "";
+            TeTenChuongTrinh.Text = "";
+            CbePhanTram.Text = "";
+            DeNgayTao.Text = "";
+            TeMoTa.Text = "";
+            RbConHieuLuc.Checked = false;
+            RbHetHan.Checked = false;
+        }
+
+        private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            GridView currentView = (GridView)GcMaGiamGia.FocusedView;
+            var MaGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[0]).ToString();
+            var TenChuongTrinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[1]).ToString();
+            var NgayTao = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
+            var PhanTram = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
+            var MoTa = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
+            var TrangThai = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
+            TeMaGiamGia.Text = MaGiamGia;
+            TeTenChuongTrinh.Text = TenChuongTrinh;
+            DeNgayTao.Text = NgayTao;
+            CbePhanTram.Text = PhanTram;
+            TeMoTa.Text = MoTa;
+            if (TrangThai == "True")
+            {
+                RbConHieuLuc.Checked = true;
+            }
+            else
+            {
+                RbHetHan.Checked = true;
+
+            }
+        }
+
+        private void BbiTaoMoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmThemMGG f = new FrmThemMGG();
+            f.ShowDialog();
         }
     }
 }

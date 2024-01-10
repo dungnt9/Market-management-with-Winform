@@ -57,6 +57,7 @@
             this.TKSPDaBan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.DangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.DangKy = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.BsiChucvu = new DevExpress.XtraBars.BarStaticItem();
             this.BsiTenNV = new DevExpress.XtraBars.BarStaticItem();
@@ -133,8 +134,9 @@
             this.accordionControlSeparator5,
             this.BaoCaoThongKe,
             this.accordionControlSeparator6,
-            this.DangXuat});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
+            this.DangXuat,
+            this.DangKy});
+            this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
@@ -154,7 +156,8 @@
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
-            this.accordionControlElement1.Text = "Quản lý thông tin danh mục";
+            this.accordionControlElement1.Text = "Đăng ký tài khoản cho nhân viên";
+            this.accordionControlElement1.Click += new System.EventHandler(this.accordionControlElement1_Click);
             // 
             // SP
             // 
@@ -168,6 +171,7 @@
             this.NV.Name = "NV";
             this.NV.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.NV.Text = "Nhân viên";
+            this.NV.Visible = false;
             this.NV.Click += new System.EventHandler(this.NV_Click);
             // 
             // KH
@@ -293,6 +297,15 @@
             this.DangXuat.Text = "Đăng xuất";
             this.DangXuat.Click += new System.EventHandler(this.DangXuat_Click);
             // 
+            // DangKy
+            // 
+            this.DangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DangKy.ImageOptions.Image")));
+            this.DangKy.Name = "DangKy";
+            this.DangKy.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.DangKy.Text = "Tạo tài khoản nhân viên";
+            this.DangKy.Visible = false;
+            this.DangKy.Click += new System.EventHandler(this.DangKy_Click);
+            // 
             // fluentDesignFormControl1
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
@@ -369,6 +382,7 @@
             this.Name = "FormMain";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Hệ thống quản lý siêu thị";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.fluentDesignFormContainer1.ResumeLayout(false);
             this.fluentDesignFormContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PnlMain)).EndInit();
@@ -386,7 +400,6 @@
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
         private DevExpress.XtraEditors.PanelControl PnlMain;
         private DevExpress.XtraEditors.LabelControl labelControl8;

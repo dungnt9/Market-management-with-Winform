@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.RcDanhMucLoaiSP = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
             this.BbiThem = new DevExpress.XtraBars.BarButtonItem();
             this.BbiSua = new DevExpress.XtraBars.BarButtonItem();
             this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
             this.RpDanhMucLSP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RpgTacVuLSP = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.CbeTenLoaiSP = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LbTenLSP = new DevExpress.XtraEditors.LabelControl();
             this.GcLoaiSP = new DevExpress.XtraGrid.GridControl();
@@ -52,11 +50,9 @@
             // 
             // RcDanhMucLoaiSP
             // 
-            this.RcDanhMucLoaiSP.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
             this.RcDanhMucLoaiSP.ExpandCollapseItem.Id = 0;
             this.RcDanhMucLoaiSP.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.RcDanhMucLoaiSP.ExpandCollapseItem,
-            this.bsiRecordsCount,
             this.BbiThem,
             this.BbiSua,
             this.BbiLamMoi});
@@ -70,15 +66,8 @@
             this.RcDanhMucLoaiSP.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.RcDanhMucLoaiSP.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.RcDanhMucLoaiSP.Size = new System.Drawing.Size(934, 154);
-            this.RcDanhMucLoaiSP.StatusBar = this.ribbonStatusBar;
+            //this.RcDanhMucLoaiSP.StatusBar = this.ribbonStatusBar;
             this.RcDanhMucLoaiSP.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
-            // 
-            // bsiRecordsCount
-            // 
-            this.bsiRecordsCount.Caption = "RECORDS : 0";
-            this.bsiRecordsCount.Id = 15;
-            this.bsiRecordsCount.Name = "bsiRecordsCount";
-            this.bsiRecordsCount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bsiRecordsCount_ItemClick);
             // 
             // BbiThem
             // 
@@ -86,7 +75,7 @@
             this.BbiThem.Id = 16;
             this.BbiThem.ImageOptions.ImageUri.Uri = "New";
             this.BbiThem.Name = "BbiThem";
-            this.BbiThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThem_ItemClick);
+            //this.BbiThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThem_ItemClick);
             // 
             // BbiSua
             // 
@@ -94,7 +83,7 @@
             this.BbiSua.Id = 17;
             this.BbiSua.ImageOptions.ImageUri.Uri = "Edit";
             this.BbiSua.Name = "BbiSua";
-            this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
+            // this.BbiSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiSua_ItemClick);
             // 
             // BbiLamMoi
             // 
@@ -123,15 +112,6 @@
             this.RpgTacVuLSP.ItemLinks.Add(this.BbiLamMoi);
             this.RpgTacVuLSP.Name = "RpgTacVuLSP";
             // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 725);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.RcDanhMucLoaiSP;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(934, 33);
-            // 
             // CbeTenLoaiSP
             // 
             this.CbeTenLoaiSP.Location = new System.Drawing.Point(638, 170);
@@ -151,7 +131,7 @@
             this.LbTenLSP.Appearance.Options.UseFont = true;
             this.LbTenLSP.Location = new System.Drawing.Point(503, 173);
             this.LbTenLSP.Name = "LbTenLSP";
-            this.LbTenLSP.Size = new System.Drawing.Size(120, 20);
+            this.LbTenLSP.Size = new System.Drawing.Size(95, 15);
             this.LbTenLSP.TabIndex = 20;
             this.LbTenLSP.Text = "Tên loại sản phẩm";
             // 
@@ -216,7 +196,7 @@
             // 
             // UcLoaiSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.CmbTrangThai);
             this.Controls.Add(this.labelControl2);
@@ -227,9 +207,7 @@
             this.Controls.Add(this.LbTenLSP);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.RcDanhMucLoaiSP);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcLoaiSanPham";
-            this.Size = new System.Drawing.Size(934, 758);
             this.Load += new System.EventHandler(this.UcLoaiSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucLoaiSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeTenLoaiSP.Properties)).EndInit();
@@ -244,8 +222,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl RcDanhMucLoaiSP;
         private DevExpress.XtraBars.Ribbon.RibbonPage RpDanhMucLSP;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup RpgTacVuLSP;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiThem;
         private DevExpress.XtraBars.BarButtonItem BbiSua;
         private DevExpress.XtraBars.BarButtonItem BbiLamMoi;

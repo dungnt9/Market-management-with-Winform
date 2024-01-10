@@ -115,7 +115,6 @@
             this.TeTenDangNhap.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.TeTenDangNhap.Size = new System.Drawing.Size(281, 28);
             this.TeTenDangNhap.TabIndex = 15;
-            this.TeTenDangNhap.EditValueChanged += new System.EventHandler(this.TeTenDangNhap_EditValueChanged);
             // 
             // pictureBox1
             // 
@@ -128,7 +127,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox3
             // 
@@ -199,7 +197,6 @@
             this.MaximizeBox = false;
             this.Name = "FrmDangNhap";
             this.Text = "Form Đăng nhập";
-            this.Load += new System.EventHandler(this.FrmDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TeTenDangNhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
