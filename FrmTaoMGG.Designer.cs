@@ -48,7 +48,7 @@
             this.DeNgayHetHan = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).BeginInit();
             this.GrbDangKy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeDiemTich.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeNgayLe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).BeginInit();
@@ -294,7 +294,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).EndInit();
             this.GrbDangKy.ResumeLayout(false);
             this.GrbDangKy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeDiemTich.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeNgayLe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).EndInit();

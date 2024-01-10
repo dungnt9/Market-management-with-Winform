@@ -49,6 +49,7 @@ namespace market_management.UI
         {
             FrmTaoMGG f = new FrmTaoMGG();
             f.ShowDialog();
+            
         }
 
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)

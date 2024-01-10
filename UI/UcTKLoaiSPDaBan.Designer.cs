@@ -55,7 +55,7 @@
             // 
             // LbcSoLoaiSP
             // 
-            this.LbcSoLoaiSP.Location = new System.Drawing.Point(403, 108);
+            this.LbcSoLoaiSP.Location = new System.Drawing.Point(26, 120);
             this.LbcSoLoaiSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcSoLoaiSP.Name = "LbcSoLoaiSP";
             this.LbcSoLoaiSP.Size = new System.Drawing.Size(76, 13);
@@ -85,7 +85,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(346, 39);
+            this.labelControl2.Location = new System.Drawing.Point(26, 25);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(207, 21);
@@ -99,10 +99,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LbcTenLoaiSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbcTenLoaiSP.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.LbcTenLoaiSP.Appearance.Options.UseFont = true;
+            this.LbcTenLoaiSP.Appearance.Options.UseForeColor = true;
             this.LbcTenLoaiSP.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LbcTenLoaiSP.LineVisible = true;
-            this.LbcTenLoaiSP.Location = new System.Drawing.Point(375, 64);
+            this.LbcTenLoaiSP.Location = new System.Drawing.Point(26, 59);
             this.LbcTenLoaiSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcTenLoaiSP.Name = "LbcTenLoaiSP";
             this.LbcTenLoaiSP.Size = new System.Drawing.Size(136, 40);

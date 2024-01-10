@@ -93,6 +93,7 @@ namespace market_management
                     int DiemTich = Convert.ToInt32(CbeDiemTich.Text);
                     GanMaGiamGia(DiemTich);
                 }
+                this.Close();
             }
             else
             {

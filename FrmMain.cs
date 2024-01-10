@@ -62,10 +62,7 @@ namespace market_management
                         else BsiChucvu.Caption = "Nhân viên";
 
                     }
-                    else
-                    {
-                        MessageBox.Show("No data found.");
-                    }
+                    
                 }
                 dataAccess.objConnection.Close();
             }

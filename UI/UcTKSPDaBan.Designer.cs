@@ -44,7 +44,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(366, 25);
+            this.labelControl5.Location = new System.Drawing.Point(22, 25);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(176, 21);
@@ -55,8 +55,10 @@
             // 
             this.LbcTenSP.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.LbcTenSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbcTenSP.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.LbcTenSP.Appearance.Options.UseFont = true;
-            this.LbcTenSP.Location = new System.Drawing.Point(408, 50);
+            this.LbcTenSP.Appearance.Options.UseForeColor = true;
+            this.LbcTenSP.Location = new System.Drawing.Point(22, 50);
             this.LbcTenSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcTenSP.Name = "LbcTenSP";
             this.LbcTenSP.Size = new System.Drawing.Size(85, 40);
@@ -65,7 +67,7 @@
             // 
             // LbcSoSP
             // 
-            this.LbcSoSP.Location = new System.Drawing.Point(423, 96);
+            this.LbcSoSP.Location = new System.Drawing.Point(22, 109);
             this.LbcSoSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcSoSP.Name = "LbcSoSP";
             this.LbcSoSP.Size = new System.Drawing.Size(57, 13);
@@ -75,11 +77,11 @@
             // GcSanPhamDaBan
             // 
             this.GcSanPhamDaBan.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.GcSanPhamDaBan.Location = new System.Drawing.Point(5, 126);
+            this.GcSanPhamDaBan.Location = new System.Drawing.Point(-3, 126);
             this.GcSanPhamDaBan.MainView = this.gridView2;
             this.GcSanPhamDaBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GcSanPhamDaBan.Name = "GcSanPhamDaBan";
-            this.GcSanPhamDaBan.Size = new System.Drawing.Size(854, 515);
+            this.GcSanPhamDaBan.Size = new System.Drawing.Size(862, 515);
             this.GcSanPhamDaBan.TabIndex = 8;
             this.GcSanPhamDaBan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
