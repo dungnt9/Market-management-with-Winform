@@ -36,7 +36,8 @@ namespace market_management
                                                                     "GioiTinh as 'Giới Tính', " +
                                                                     "SDT as 'Số Điện Thoại'," +
                                                                     "DiaChi as 'Địa Chỉ', " +
-                                                                    "MaGiamGia as 'Mã Giảm Giá'" +
+                                                                    "MaGiamGia as 'Mã Giảm Giá'," +
+                                                                    "Diem as 'Điểm Tích'" +
                                                                     "from KHACH_HANG");
         }
 
@@ -55,15 +56,27 @@ namespace market_management
             {
                 try
                 {
-                    string s = string.Format("UPDATE KHACH_HANG SET " + "TenKH = N'{1}' where MaKH = {0} )", TeTenKH.Text, TeMaKH.Text);
-                    dataAccess.UpdateData(s);
-                    XtraMessageBox.Show("Cập nhật khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
+                    if(CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) == false)
+                    {
+                        string s = string.Format("UPDATE KHACH_HANG SET " + "TenKH = N'{1}', NgaySinh = '{2}', GioiTinh = '{3}', SDT = '{4}', DiaChi = N'{5}', MaGiamGia = N'{6}'" +
+                                             " where MaKH = {0} )", TeMaKH.Text, TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text);
+                        dataAccess.UpdateData(s);
+                        XtraMessageBox.Show("Cập nhật khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                    }
+                    else if (CbeMaGiamGia.Properties.Items.Contains(CbeMaGiamGia.Text) == false)
+                    {
+                        XtraMessageBox.Show("Mã giảm giá không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) == false)
+                    {
+                        XtraMessageBox.Show("Giới tính không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
                 }
                 catch (Exception ex)
                 {
-                    XtraMessageBox.Show($"Lỗi cập nhật nhà cung cấp: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show($"Lỗi cập nhật khách hàng: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -91,7 +104,7 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        GioiTinh.Add(reader["GioiTinh"].ToString());
+                            
                     }
                 }
 
@@ -150,6 +163,7 @@ namespace market_management
             var SDT = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
             var DiaChi = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
             var MaGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
+            var DiemTich = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
             TeMaKH.Text = MaKH;
             TeTenKH.Text = TenKH;
             CbeGioiTinh.Text = GioiTinh;

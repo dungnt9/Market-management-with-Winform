@@ -63,15 +63,26 @@ namespace market_management
             {
                 try
                 {
-                    string s = string.Format("UPDATE NHAN_VIEN SET " + "TenNV = N'{1}' where MaNV = N'{0}' )", TeMaNV.Text, TeMaNV.Text);
-                    dataAccess.UpdateData(s);
-                    XtraMessageBox.Show("Cập nhật nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
-
+                    if(CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) & CbeChucVu.Properties.Items.Contains(CbeChucVu.Text))
+                    {
+                        string s = string.Format("UPDATE NHAN_VIEN SET " + "TenNV = {1},NgaySinh = '{2}', GioiTinh = '{3}', SDT = '{4}', DiaChi = N'{5}', CanCuoc = N'{6}', Email = {7}, ChucVu = {8}" +
+                                             " where MaKH = {0} )", TeMaNV.Text, TeTenNV.Text, DeNgaySinh.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, TeCCCD.Text, TeEmail.Text, CbeChucVu.Text);
+                        dataAccess.UpdateData(s);
+                        XtraMessageBox.Show("Cập nhật nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                    }
+                    else if (CbeChucVu.Properties.Items.Contains(CbeChucVu.Text) == false)
+                    {
+                        XtraMessageBox.Show("Chức vụ không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) == false)
+                    {
+                        XtraMessageBox.Show("Giới tính không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    XtraMessageBox.Show($"Lỗi cập nhật nhà cung cấp: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show($"Lỗi cập nhật nhân viên: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

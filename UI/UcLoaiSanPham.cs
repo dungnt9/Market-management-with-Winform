@@ -44,11 +44,11 @@ namespace market_management.UI
         }
 
 
-        private void BbiThem_ItemClick(object sender, ItemClickEventArgs e)
+        /*private void BbiThem_ItemClick(object sender, ItemClickEventArgs e)
         {
             FrmThemLoaiSP frmThemLoaiSP = new FrmThemLoaiSP();
             frmThemLoaiSP.ShowDialog();
-        }
+        }*/
 
         /*public void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {

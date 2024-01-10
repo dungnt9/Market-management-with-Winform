@@ -77,7 +77,7 @@
             this.BbiThem.Id = 16;
             this.BbiThem.ImageOptions.ImageUri.Uri = "New";
             this.BbiThem.Name = "BbiThem";
-            this.BbiThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThem_ItemClick);
+            //this.BbiThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiThem_ItemClick);
             // 
             // BbiSua
             // 
@@ -202,9 +202,9 @@
             this.CbeTrangThai.Size = new System.Drawing.Size(199, 26);
             this.CbeTrangThai.TabIndex = 46;
             */ 
-            this.CmbTrangThai.TabIndex = 46;
+            //this.CmbTrangThai.TabIndex = 46;
             // 
-            this.CmbTrangThai.TabIndex = 46;
+            //this.CmbTrangThai.TabIndex = 46;
             // 
             // UcLoaiSanPham
             // 

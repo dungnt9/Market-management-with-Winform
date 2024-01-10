@@ -115,7 +115,7 @@
             this.BbiNew.Id = 16;
             this.BbiNew.ImageOptions.ImageUri.Uri = "New";
             this.BbiNew.Name = "BbiNew";
-            this.BbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiNew_ItemClick);
+            //this.BbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiNew_ItemClick);
             // 
             // BbiSua
             // 
@@ -329,7 +329,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeThoiGian.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTongtien.Properties)).EndInit();
             this.ResumeLayout(false);
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
             this.PerformLayout();
         }
 

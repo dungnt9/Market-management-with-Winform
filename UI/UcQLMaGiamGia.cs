@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,7 +58,7 @@ namespace market_management.UI
             {
                 try
                 {
-                    string s = string.Format("UPDATE MA_GIAM_GIA SET " + "TenNV = N'{1}' where MaNV = N'{0}' )", TeMaGiamGia.Text, TeTenChuongTrinh.Text);
+                    string s = string.Format("UPDATE MA_GIAM_GIA SET " + "TenChuongTrinh = N'{1}', where MaNV = N'{0}' )", TeMaGiamGia.Text, TeTenChuongTrinh.Text);
                     dataAccess.UpdateData(s);
                     XtraMessageBox.Show("Cập nhật nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData(); // Gọi lại phương thức để cập nhật GridView
@@ -84,17 +85,27 @@ namespace market_management.UI
 
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            var MaGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle,).ToString();
-            var TenChuongTrinh = gridView.GetRowCellValue(e.FocusedRowHandle, "Tên Nhân Viên").ToString();
-            var NgayTao = gridView.GetRowCellValue(e.FocusedRowHandle, "Ngày Sinh").ToString();
-            var PhanTram = gridView.GetRowCellValue(e.FocusedRowHandle, "Giới Tính").ToString();
-            var MoTa = gridView.GetRowCellValue(e.FocusedRowHandle, "Email").ToString();
+            GridView currentView = (GridView)GcMaGiamGia.FocusedView;
+            var MaGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[0]).ToString();
+            var TenChuongTrinh = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[1]).ToString();
+            var NgayTao = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[3]).ToString();
+            var PhanTram = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[2]).ToString();
+            var MoTa = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
+            var TrangThai = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
             TeMaGiamGia.Text = MaGiamGia;
             TeTenChuongTrinh.Text = TenChuongTrinh;
             DeNgayTao.Text = NgayTao;
             CbePhanTram.Text = PhanTram;
             TeMoTa.Text = MoTa;
-            
+            if (TrangThai == "True")
+            {
+                RbConHieuLuc.Checked = true;
+            }
+            else
+            {
+                RbHetHan.Checked = true;
+
+            }
         }
 
         private void BbiTaoMoi_ItemClick(object sender, ItemClickEventArgs e)

@@ -16,53 +16,52 @@ namespace market_management
     {
         UcLoaiSanPham _UcLSP;
         UcSanPham _UcSP;
-        UcTKKhachHang _UcTKKhachHang;
+        //UcTKKhachHang _UcTKKhachHang;
         UcQLNhapHang _UcQLNhapHang;
         UcKhachHang _UcKH;
         UcNhanVien _UcNV;
-        UcDoanhThu _UcDT;
+        UcTKBanHang _UcDT;
         UcQLMaGiamGia _UcMGG;
+        DataAccess dataAccess = new DataAccess();
 
         public FormMain()
         {
             InitializeComponent();
 
-            if(BsiChucvu.Caption == "Quản lý")
-            {
-                DangKy.Visible = true;
-            }
+            LoadDataNV();
         }
+        public int MaNV { get; set; }
 
-        private void LoadNhanVienData()
+        public void LoadDataNV()
         {
-            string connectionString = @"Data Source= LAPTOP-MSGIJ51R\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True "; 
+            string query = "SELECT TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV = @MaNV";
+            List<string> ThongTin = new List<string>();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
-                connection.Open();
+                dataAccess.objConnection.Open();
 
-                string query = "SELECT MaNV, TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV='{luuNhanVien}'";
+                cmd.Parameters.AddWithValue("@MaNV", MaNV);
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    if (reader.Read())
                     {
-                        if (reader.Read())
-                        {
-                            // Assuming BsiMaNV, BsiTenNV, and BsiChucvu are TextBox controls
-                            BsiMaNV.Caption = reader["MaNV"].ToString();
-                            BsiTenNV.Caption = reader["TenNV"].ToString();
-                            BsiChucvu.Caption = reader["ChucVu"].ToString();
-                        }
-                        else
-                        {
-                            // Handle the case when there is no data
-                            MessageBox.Show("No data found.");
-                        }
+                        ThongTin.Add(reader["TenNV"].ToString());
+                        ThongTin.Add(reader["ChucVu"].ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found.");
                     }
                 }
+                BsiTenNV.Caption = ThongTin[0];
+                BsiChucvu.Caption = ThongTin[1];
+                dataAccess.objConnection.Close();
             }
         }
+
+
 
         private void LoaiSP_Click(object sender, EventArgs e)
         {
@@ -122,7 +121,7 @@ namespace market_management
                 _UcNV.BringToFront();
             }
         }
-        private void TKKhachHang_Click(object sender, EventArgs e)
+        /*private void TKKhachHang_Click(object sender, EventArgs e)
         {
             if (_UcTKKhachHang == null)
             {
@@ -136,12 +135,12 @@ namespace market_management
                 _UcTKKhachHang.BringToFront();
             }
         }
-
+        */
         private void TKDoanhThu_Click(object sender, EventArgs e)
         {
             if (_UcDT == null)
             {
-                _UcDT = new UcDoanhThu();
+                _UcDT = new UcTKBanHang();
                 _UcDT.Dock = DockStyle.Fill;
                 PnlMain.Controls.Add(_UcDT);
                 _UcDT.BringToFront();
@@ -196,7 +195,7 @@ namespace market_management
 
         private void DangKy_Click(object sender, EventArgs e)
         {
-            if (Session.chucVu)
+            if (Session.chucVu == "Quản lý")
             {
                 DangKy.Visible = true;
             }
@@ -207,6 +206,17 @@ namespace market_management
         private void accordionControlElement1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            Session.tenNV = BsiTenNV.Caption;
+            Session.chucVu = BsiChucvu.Caption;
+            if (Session.chucVu.Substring(0, 7) == "Quản lý")
+            {
+                NV.Visible = true;
+                DangKy.Visible = true;
+            }
         }
     }
 }

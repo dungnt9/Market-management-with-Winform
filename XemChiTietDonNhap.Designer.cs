@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 711);
+            this.ClientSize = new System.Drawing.Size(907, 711);
             this.Controls.Add(this.DgvSP);
             this.Name = "XemChiTietDonNhap";
             this.Text = "Form Xem chi tiết đơn nhập";

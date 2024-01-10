@@ -22,11 +22,11 @@ namespace market_management.UI
             InitializeComponent();
             LoadData();
         }
-        private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
+        /*private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
             FrmDonNhap frmDonNhap = new FrmDonNhap();
             frmDonNhap.ShowDialog();
-        }
+        }*/
         void LoadData()
         {
             GcQLNhapHang.DataSource = dataAccess.GetDataTable("SELECT \r\n" +

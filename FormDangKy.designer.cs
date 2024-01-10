@@ -81,7 +81,7 @@
             this.GrbDangKy.Controls.Add(this.TeMatKhau);
             this.GrbDangKy.Controls.Add(this.LbTenTaiKhoan);
             this.GrbDangKy.Controls.Add(this.TeTenTaiKhoan);
-            this.GrbDangKy.Location = new System.Drawing.Point(84, 58);
+            this.GrbDangKy.Location = new System.Drawing.Point(84, 78);
             this.GrbDangKy.Name = "GrbDangKy";
             this.GrbDangKy.Size = new System.Drawing.Size(576, 313);
             this.GrbDangKy.TabIndex = 0;
@@ -281,7 +281,7 @@
             this.LbDKTaiKhoan.Appearance.Options.UseBackColor = true;
             this.LbDKTaiKhoan.Appearance.Options.UseFont = true;
             this.LbDKTaiKhoan.Appearance.Options.UseForeColor = true;
-            this.LbDKTaiKhoan.Location = new System.Drawing.Point(282, 17);
+            this.LbDKTaiKhoan.Location = new System.Drawing.Point(297, 30);
             this.LbDKTaiKhoan.Name = "LbDKTaiKhoan";
             this.LbDKTaiKhoan.Size = new System.Drawing.Size(183, 31);
             this.LbDKTaiKhoan.TabIndex = 1;
