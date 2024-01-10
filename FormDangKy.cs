@@ -100,6 +100,7 @@ namespace market_management
             {
                 string s = string.Format("INSERT INTO TaiKhoan (MaNV, TenTaiKhoan ,MatKhau) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}')", TeMaNV.Text, TeTenTaiKhoan.Text, TeMatKhau.Text);
                 MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                dataAccess.UpdateData(s);
             }
             else
             {

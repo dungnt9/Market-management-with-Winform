@@ -42,6 +42,7 @@
             this.NCC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.LoaiSP = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ChucVu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.QLBanHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
@@ -64,7 +65,6 @@
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
-            this.ChucVu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PnlMain)).BeginInit();
             this.PnlMain.SuspendLayout();
@@ -78,10 +78,10 @@
             // 
             this.fluentDesignFormContainer1.Controls.Add(this.PnlMain);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 39);
-            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(223, 31);
+            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(938, 747);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(804, 608);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // PnlMain
@@ -91,9 +91,9 @@
             this.PnlMain.Controls.Add(this.BbiCapNhatThongTin);
             this.PnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlMain.Location = new System.Drawing.Point(0, 0);
-            this.PnlMain.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.PnlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PnlMain.Name = "PnlMain";
-            this.PnlMain.Size = new System.Drawing.Size(938, 747);
+            this.PnlMain.Size = new System.Drawing.Size(804, 608);
             this.PnlMain.TabIndex = 6;
             // 
             // labelControl8
@@ -102,20 +102,20 @@
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(316, 139);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.labelControl8.Location = new System.Drawing.Point(271, 113);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(355, 41);
+            this.labelControl8.Size = new System.Drawing.Size(288, 32);
             this.labelControl8.TabIndex = 6;
             this.labelControl8.Text = "Hệ thống quản lý siêu thị";
             // 
             // BbiCapNhatThongTin
             // 
             this.BbiCapNhatThongTin.Image = ((System.Drawing.Image)(resources.GetObject("BbiCapNhatThongTin.Image")));
-            this.BbiCapNhatThongTin.Location = new System.Drawing.Point(-28, 6);
-            this.BbiCapNhatThongTin.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.BbiCapNhatThongTin.Location = new System.Drawing.Point(-24, 5);
+            this.BbiCapNhatThongTin.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.BbiCapNhatThongTin.Name = "BbiCapNhatThongTin";
-            this.BbiCapNhatThongTin.Size = new System.Drawing.Size(1122, 881);
+            this.BbiCapNhatThongTin.Size = new System.Drawing.Size(962, 716);
             this.BbiCapNhatThongTin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BbiCapNhatThongTin.TabIndex = 4;
             this.BbiCapNhatThongTin.TabStop = false;
@@ -137,11 +137,11 @@
             this.accordionControlSeparator6,
             this.DangXuat,
             this.DangKy});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 39);
-            this.accordionControl1.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(260, 747);
+            this.accordionControl1.Size = new System.Drawing.Size(223, 608);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -196,7 +196,15 @@
             this.NV.Name = "NV";
             this.NV.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.NV.Text = "Nhân viên";
+            this.NV.Visible = false;
             this.NV.Click += new System.EventHandler(this.NV_Click_1);
+            // 
+            // ChucVu
+            // 
+            this.ChucVu.Name = "ChucVu";
+            this.ChucVu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ChucVu.Text = "Chức vụ";
+            this.ChucVu.Click += new System.EventHandler(this.ChucVu_Click_1);
             // 
             // accordionControlSeparator2
             // 
@@ -317,9 +325,9 @@
             this.barSubItem1});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
-            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1198, 39);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1027, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barSubItem1);
@@ -367,25 +375,18 @@
             this.barSubItem1});
             this.fluentFormDefaultManager1.MaxItemId = 5;
             // 
-            // ChucVu
-            // 
-            this.ChucVu.Name = "ChucVu";
-            this.ChucVu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ChucVu.Text = "Chức vụ";
-            this.ChucVu.Click += new System.EventHandler(this.ChucVu_Click_1);
-            // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 786);
+            this.ClientSize = new System.Drawing.Size(1027, 639);
             this.ControlContainer = this.fluentDesignFormContainer1;
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
-            this.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.NavigationControl = this.accordionControl1;
