@@ -29,7 +29,8 @@ namespace market_management.UI
         }
         void LoadData()
         {
-            GcQLNhapHang.DataSource = dataAccess.GetDataTable("SELECT \r\n" +
+
+            string stringQuery = "SELECT \r\n" +
                 "    HDN.MaHDN AS 'Mã đơn nhập',\r\n" +
                 "    NCC.TenNCC AS 'Tên nhà cung cấp',\r\n" +
                 "    NCC.SDT AS 'Số điện thoại NCC',\r\n" +
@@ -39,13 +40,11 @@ namespace market_management.UI
                 "FROM \r\n" +
                 "    HOA_DON_NHAP HDN\r\n" +
                 "    JOIN NHA_CUNG_CAP NCC ON HDN.MaNCC = NCC.MaNCC\r\n" +
-                "    JOIN NHAN_VIEN NV ON HDN.MaNV = NV.MaNV;");
+                "    JOIN NHAN_VIEN NV ON HDN.MaNV = NV.MaNV;";
+            GcQLNhapHang.DataSource = dataAccess.GetDataTable(stringQuery);
+            DataTable dataTable = dataAccess.GetDataTable(stringQuery);
+            bsiRecordsCount.Caption = "RECORDS : " + dataTable.Rows.Count;
         }
-
-
-
-
-
 
         private void UcQLNhapHang_Load(object sender, EventArgs e)
         {
@@ -54,7 +53,6 @@ namespace market_management.UI
 
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            
             var maDonNhap = gridView.GetRowCellValue(e.FocusedRowHandle, "Mã đơn nhập").ToString();
             LbcMaDN.Text = maDonNhap;
         }

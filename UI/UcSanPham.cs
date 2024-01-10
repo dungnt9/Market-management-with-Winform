@@ -25,10 +25,10 @@ namespace market_management.UI
             InitializeComponent();
             LoadData();
         }
+        
         void LoadData()
         {
-            GcSP.DataSource = dataAccess.GetDataTable(
-                "SELECT SP.MaSP AS 'Mã sản phẩm'," +
+            string stringQuery = "SELECT SP.MaSP AS 'Mã sản phẩm'," +
                 "SP.TenSP AS 'Tên sản phẩm'," +
                 "LSP.TenLoaiSP AS 'Phân loại'," +
                 "SP.SoLuong AS 'Số lượng'," +
@@ -38,7 +38,11 @@ namespace market_management.UI
                 "   WHEN SP.TrangThai = 1 THEN 'Đang kinh doanh'" +
                 "   WHEN SP.TrangThai = 0 THEN 'Không còn kinh doanh'" +
                 "   ELSE 'NULL' END AS 'Trạng thái'" +
-                " FROM SAN_PHAM SP JOIN LOAI_SAN_PHAM LSP ON SP.MaLoaiSP = LSP.MaLoaiSP;");
+                " FROM SAN_PHAM SP JOIN LOAI_SAN_PHAM LSP ON SP.MaLoaiSP = LSP.MaLoaiSP";
+            GcSP.DataSource = dataAccess.GetDataTable(stringQuery);
+            DataTable dataTable = dataAccess.GetDataTable(stringQuery);
+            bsiRecordsCount.Caption = "RECORDS : " + dataTable.Rows.Count;
+
         }
 
 
@@ -111,14 +115,12 @@ namespace market_management.UI
             sqlUpdate += $" WHERE MaSP = '{maSP}'";
 
 
-
-
             DataAccess dataAccess = new DataAccess();
             try
             {
                 dataAccess.UpdateData(sqlUpdate);
                 XtraMessageBox.Show("Cập nhật sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadData(); // Gọi lại phương thức để cập nhật GridView
+                LoadData();
             }
             catch (Exception ex)
             {
@@ -142,6 +144,7 @@ namespace market_management.UI
                         TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
                     }
                 }
+                dataAccess.objConnection.Close();
             }
             return TenLoaiSP;
         }
@@ -159,88 +162,10 @@ namespace market_management.UI
             HienThiTenLoaiSP();
         }
 
-
-        private bool IsTenSPExists(string tenSP)
-        {
-            DataTable dataTable = dataAccess.GetDataTable($"SELECT TenSP FROM SAN_PHAM WHERE TenSP = N'{tenSP}'");
-            return dataTable.Rows.Count > 0;
-        }
         private void BbiThem_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            var maSP = LbcMaSP.Text;
-            var tenSP = TeTenSP.Text;
-            var phanLoai = CbePhanLoai.Text;
-            var soLuong = TeSoLuong.Text;
-            var giaNhap = TeGiaNhap.Text;
-            var giaBan = TeGiaBan.Text;
-            var trangThai = CmbTrangThai.Text;
-
-            var isExist = IsTenSPExists(tenSP);
-
-            if (isExist)
-            {
-                XtraMessageBox.Show($"Sản phẩm đã tồn tại!", "Thông báo");
-                return;
-            }
-            
-
-            if (string.IsNullOrEmpty(tenSP)|| string.IsNullOrEmpty(phanLoai) || string.IsNullOrEmpty(soLuong) || string.IsNullOrEmpty(giaNhap) || string.IsNullOrEmpty(giaBan) || string.IsNullOrEmpty(trangThai))
-            {
-                XtraMessageBox.Show("Nhập đầy đủ thông tin sản phẩm", "Thông báo");
-                return;
-            }
-
-
-            var sqlInsert = $"INSERT INTO SAN_PHAM (TenSP, MaLoaiSP, SoLuong, GiaNhap, GiaBanLe, TrangThai) " +
-                            $"VALUES (N'{tenSP}', " +
-                            $"(SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = N'{phanLoai}'), {soLuong}, {giaNhap}, {giaBan},";
-            if (trangThai == "Đang kinh doanh")
-            {
-                sqlInsert += "1";
-            }
-            else if (trangThai == "Không còn kinh doanh")
-            {
-                sqlInsert += "0";
-            }
-            else
-            {
-                sqlInsert += "NULL";
-            }
-            sqlInsert += ")";
-
-
-
-
-
-
-
-
-
-
-
-
-
-            DataAccess dataAccess = new DataAccess();
-            try
-            {
-                dataAccess.UpdateData(sqlInsert);
-
-                XtraMessageBox.Show("Thêm sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                LbcMaSP.Text = "";
-                TeTenSP.Text = "";
-                CbePhanLoai.Text = "";
-                TeSoLuong.Text = "";
-                TeGiaNhap.Text = "";
-                TeGiaBan.Text = "";
-                CmbTrangThai.Text = "";
-
-                LoadData(); // Gọi lại phương thức để cập nhật GridView
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show($"Lỗi thêm sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            FrmThemSP frmThemSP = new FrmThemSP();
+            frmThemSP.ShowDialog();
         }
     }
 }
