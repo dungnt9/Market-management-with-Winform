@@ -39,8 +39,7 @@ namespace market_management
 
         public void LoadNhanVienData()
         {
-            string query = "SELECT TenNV, ChucVu FROM NHAN_VIEN WHERE NHAN_VIEN.MaNV = @MaNV";
-
+            string query = "SELECT TenNV, CapQuanLy FROM NHAN_VIEN INNER JOIN CHUC_VU ON NHAN_VIEN.MaCV=CHUC_VU.MaCV WHERE NHAN_VIEN.MaNV = @MaNV";
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
             {
                 dataAccess.objConnection.Open();
@@ -53,7 +52,13 @@ namespace market_management
                     {
                         BsiTenNV.Caption = reader["TenNV"].ToString();
                         Session.tenNV = BsiTenNV.Caption;
-                        BsiChucvu.Caption = reader["ChucVu"].ToString();
+                        Session.chucVu = (bool) reader["CapQuanLy"];
+                        if (Session.chucVu)
+                        {
+                            BsiChucvu.Caption = "Quản lý";
+                        }
+                        else BsiChucvu.Caption = "Nhân viên";
+
                     }
                     else
                     {

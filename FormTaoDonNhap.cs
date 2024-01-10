@@ -1,4 +1,5 @@
-﻿using DevExpress.Xpo.DB.Helpers;
+﻿using DevExpress.Xpo;
+using DevExpress.Xpo.DB.Helpers;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -44,12 +45,8 @@ namespace market_management
 
             TeSoLuong.KeyPress += TeSoLuong_KeyPress;
             GcSP.DataSource = dataTable;
-            /*
-            GcSP.DataSource = dataTable;
-            GvSP_HDN.Columns["Mã Sản Phẩm"].OptionsColumn.ReadOnly = true;
-            GvSP_HDN.Columns["Tên Sản Phẩm"].OptionsColumn.ReadOnly = true;
-            GvSP_HDN.Columns["Giá Bán Nhập"].OptionsColumn.ReadOnly = true;
-            */
+            
+            
         }
         
         private List<string> LayTenNCC()
@@ -104,8 +101,12 @@ namespace market_management
                 CapNhatSanPham();
                 LuuHoaDon();
                 LuuCTHoaDon();
-
-                XtraMessageBox.Show("Tạo hóa đơn nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var result = XtraMessageBox.Show("Thêm hóa đơn nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    this.Close(); 
+                }
+                
 
             }
             catch (Exception ex)
@@ -123,19 +124,15 @@ namespace market_management
 
             string _maHDN = maHDN;
             string tenNCC = CmbTenNCC.SelectedItem.ToString();
-            string query = $"SELECT MaNCC FROM NHA_CUNG_CAP WHERE TenNCC = N'{tenNCC}'";
-            int maNCC;
-            
-            using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
-            {
-                dataAccess.objConnection.Open();
-                maNCC = Convert.ToInt32(cmd.ExecuteScalar());
-                dataAccess.objConnection.Close();
-            }
+            string query = $"SELECT MaNCC FROM NHA_CUNG_CAP WHERE TenNCC = N'{tenNCC}'";            
 
+            DataTable NCCData = dataAccess.GetDataTable(query);
+
+            int maNCC = Convert.ToInt32(NCCData.Rows[0]["MaNCC"]);
+
+            
             dataAccess.UpdateData($"INSERT INTO HOA_DON_NHAP (MaHDN, MaNCC, MaNV, TongTien, ThoiGian) " +
                 $"VALUES ('{_maHDN}', {maNCC}, {maNV}, {tongTien}, '{thoiGian}')");
-            
         }
         private void LuuCTHoaDon()
         {
