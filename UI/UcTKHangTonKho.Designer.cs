@@ -94,10 +94,10 @@
             // 
             // GcHangTon
             // 
-            this.GcHangTon.Location = new System.Drawing.Point(0, 217);
+            this.GcHangTon.Location = new System.Drawing.Point(0, 227);
             this.GcHangTon.MainView = this.GvHangTon;
             this.GcHangTon.Name = "GcHangTon";
-            this.GcHangTon.Size = new System.Drawing.Size(763, 256);
+            this.GcHangTon.Size = new System.Drawing.Size(870, 433);
             this.GcHangTon.TabIndex = 10;
             this.GcHangTon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvHangTon});
@@ -140,7 +140,7 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl1);
             this.Name = "UcTKHangTonKho";
-            this.Size = new System.Drawing.Size(763, 477);
+            this.Size = new System.Drawing.Size(870, 660);
             ((System.ComponentModel.ISupportInitialize)(this.GcHangTon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GvHangTon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeMucAnToan.Properties)).EndInit();

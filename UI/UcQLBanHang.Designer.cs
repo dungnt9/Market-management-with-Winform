@@ -40,7 +40,6 @@
             this.BbiXemChiTietHDB = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.BtnXemChiTiet = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.GcQLBanHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -49,11 +48,11 @@
             // 
             // GcQLBanHang
             // 
-            this.GcQLBanHang.Location = new System.Drawing.Point(0, 191);
+            this.GcQLBanHang.Location = new System.Drawing.Point(0, 202);
             this.GcQLBanHang.MainView = this.gridView;
             this.GcQLBanHang.MenuManager = this.ribbonControl;
             this.GcQLBanHang.Name = "GcQLBanHang";
-            this.GcQLBanHang.Size = new System.Drawing.Size(800, 484);
+            this.GcQLBanHang.Size = new System.Drawing.Size(870, 458);
             this.GcQLBanHang.TabIndex = 2;
             this.GcQLBanHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -86,8 +85,7 @@
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(800, 126);
-            this.ribbonControl.StatusBar = this.ribbonStatusBar;
+            this.ribbonControl.Size = new System.Drawing.Size(870, 126);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiPrintPreview
@@ -157,14 +155,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 573);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(800, 27);
-            // 
             // BtnXemChiTiet
             // 
             this.BtnXemChiTiet.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,11 +171,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BtnXemChiTiet);
-            this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.GcQLBanHang);
             this.Controls.Add(this.ribbonControl);
             this.Name = "UcQLBanHang";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(870, 660);
             ((System.ComponentModel.ISupportInitialize)(this.GcQLBanHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
@@ -202,7 +191,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiTaoHoaDonBan;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;

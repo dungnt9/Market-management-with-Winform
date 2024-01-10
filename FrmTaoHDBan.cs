@@ -16,7 +16,7 @@ using static DevExpress.Xpo.Helpers.AssociatedCollectionCriteriaHelper;
 
 namespace market_management
 {
-    public partial class FormDonBan : Form
+    public partial class FrmTaoHDBan : DevExpress.XtraEditors.XtraForm
     {
         DataAccess dataAccess = new DataAccess();
         System.Data.DataTable dataTable;
@@ -30,7 +30,7 @@ namespace market_management
         int thanhtien = 0;
         
 
-        public FormDonBan()
+        public FrmTaoHDBan()
         {
             InitializeComponent();
 

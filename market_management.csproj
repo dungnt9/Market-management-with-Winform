@@ -76,53 +76,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
-    <Compile Include="FormChiTietDonBan.cs">
+    <Compile Include="FrmChiTietDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChiTietDonBan.Designer.cs">
-      <DependentUpon>FormChiTietDonBan.cs</DependentUpon>
+    <Compile Include="FrmChiTietDonBan.Designer.cs">
+      <DependentUpon>FrmChiTietDonBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDangKy.cs">
+    <Compile Include="FrmDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDangKy.designer.cs">
-      <DependentUpon>FormDangKy.cs</DependentUpon>
+    <Compile Include="FrmDangKy.designer.cs">
+      <DependentUpon>FrmDangKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCapNhatTaiKhoan.cs">
+    <Compile Include="FrmCapNhatTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCapNhatTaiKhoan.Designer.cs">
-      <DependentUpon>FormCapNhatTaiKhoan.cs</DependentUpon>
+    <Compile Include="FrmCapNhatTaiKhoan.Designer.cs">
+      <DependentUpon>FrmCapNhatTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDangNhap.cs">
+    <Compile Include="FrmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDangNhap.Designer.cs">
-      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    <Compile Include="FrmDangNhap.Designer.cs">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDonBan.cs">
+    <Compile Include="FrmTaoHDBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDonBan.Designer.cs">
-      <DependentUpon>FormDonBan.cs</DependentUpon>
+    <Compile Include="FrmTaoHDBan.Designer.cs">
+      <DependentUpon>FrmTaoHDBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTaoDonNhap.cs">
+    <Compile Include="FrmTaoHDNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTaoDonNhap.Designer.cs">
-      <DependentUpon>FormTaoDonNhap.cs</DependentUpon>
+    <Compile Include="FrmTaoHDNhap.Designer.cs">
+      <DependentUpon>FrmTaoHDNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNhaCungCap.cs">
+    <Compile Include="FrmNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNhaCungCap.Designer.cs">
-      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
+    <Compile Include="FrmNhaCungCap.Designer.cs">
+      <DependentUpon>FrmNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmThemLoaiSP.cs">
       <SubType>Form</SubType>
@@ -136,31 +136,31 @@
     <Compile Include="FrmThemSP.Designer.cs">
       <DependentUpon>FrmThemSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormThemChucVu.cs">
+    <Compile Include="FrmThemChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormThemChucVu.Designer.cs">
-      <DependentUpon>FormThemChucVu.cs</DependentUpon>
+    <Compile Include="FrmThemChucVu.Designer.cs">
+      <DependentUpon>FrmThemChucVu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormThemKH.cs">
+    <Compile Include="FrmThemKH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormThemKH.Designer.cs">
-      <DependentUpon>FormThemKH.cs</DependentUpon>
+    <Compile Include="FrmThemKH.Designer.cs">
+      <DependentUpon>FrmThemKH.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTaoMGG.cs">
+    <Compile Include="FrmTaoMGG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTaoMGG.Designer.cs">
-      <DependentUpon>FormTaoMGG.cs</DependentUpon>
+    <Compile Include="FrmTaoMGG.Designer.cs">
+      <DependentUpon>FrmTaoMGG.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormThemNV.cs">
+    <Compile Include="FrmThemNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormThemNV.Designer.cs">
-      <DependentUpon>FormThemNV.cs</DependentUpon>
+    <Compile Include="FrmThemNV.Designer.cs">
+      <DependentUpon>FrmThemNV.cs</DependentUpon>
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="UI\UcTKTongTienNhap.cs">
@@ -247,17 +247,17 @@
     <Compile Include="UI\UcChucVu.Designer.cs">
       <DependentUpon>UcChucVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="XemChiTietDonNhap.cs">
+    <Compile Include="FrmXemCT_HDNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="XemChiTietDonNhap.Designer.cs">
-      <DependentUpon>XemChiTietDonNhap.cs</DependentUpon>
+    <Compile Include="FrmXemCT_HDNhap.Designer.cs">
+      <DependentUpon>FrmXemCT_HDNhap.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormChiTietDonBan.resx">
-      <DependentUpon>FormChiTietDonBan.cs</DependentUpon>
+    <EmbeddedResource Include="FrmChiTietDonBan.resx">
+      <DependentUpon>FrmChiTietDonBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDangKy.resx">
-      <DependentUpon>FormDangKy.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDangKy.resx">
+      <DependentUpon>FrmDangKy.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="UI\UcQLBanHang.cs">
       <SubType>UserControl</SubType>
@@ -265,23 +265,23 @@
     <Compile Include="UI\UcQLBanHang.Designer.cs">
       <DependentUpon>UcQLBanHang.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormCapNhatTaiKhoan.resx">
-      <DependentUpon>FormCapNhatTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCapNhatTaiKhoan.resx">
+      <DependentUpon>FrmCapNhatTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDangNhap.resx">
-      <DependentUpon>FormDangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDangNhap.resx">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTaoDonNhap.resx">
-      <DependentUpon>FormTaoDonNhap.cs</DependentUpon>
+    <EmbeddedResource Include="FrmTaoHDNhap.resx">
+      <DependentUpon>FrmTaoHDNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDonBan.resx">
-      <DependentUpon>FormDonBan.cs</DependentUpon>
+    <EmbeddedResource Include="FrmTaoHDBan.resx">
+      <DependentUpon>FrmTaoHDBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNhaCungCap.resx">
-      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
+    <EmbeddedResource Include="FrmNhaCungCap.resx">
+      <DependentUpon>FrmNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmThemLoaiSP.resx">
       <DependentUpon>FrmThemLoaiSP.cs</DependentUpon>
@@ -289,8 +289,8 @@
     <EmbeddedResource Include="FrmThemSP.resx">
       <DependentUpon>FrmThemSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormThemChucVu.resx">
-      <DependentUpon>FormThemChucVu.cs</DependentUpon>
+    <EmbeddedResource Include="FrmThemChucVu.resx">
+      <DependentUpon>FrmThemChucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -306,14 +306,14 @@
     <EmbeddedResource Include="UI\UcChucVu.resx">
       <DependentUpon>UcChucVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormThemKH.resx">
-      <DependentUpon>FormThemKH.cs</DependentUpon>
+    <EmbeddedResource Include="FrmThemKH.resx">
+      <DependentUpon>FrmThemKH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTaoMGG.resx">
-      <DependentUpon>FormTaoMGG.cs</DependentUpon>
+    <EmbeddedResource Include="FrmTaoMGG.resx">
+      <DependentUpon>FrmTaoMGG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormThemNV.resx">
-      <DependentUpon>FormThemNV.cs</DependentUpon>
+    <EmbeddedResource Include="FrmThemNV.resx">
+      <DependentUpon>FrmThemNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcTKTongTienNhap.resx">
       <DependentUpon>UcTKTongTienNhap.cs</DependentUpon>
@@ -357,8 +357,8 @@
     <EmbeddedResource Include="UI\UcTKHangTonKho.resx">
       <DependentUpon>UcTKHangTonKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XemChiTietDonNhap.resx">
-      <DependentUpon>XemChiTietDonNhap.cs</DependentUpon>
+    <EmbeddedResource Include="FrmXemCT_HDNhap.resx">
+      <DependentUpon>FrmXemCT_HDNhap.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

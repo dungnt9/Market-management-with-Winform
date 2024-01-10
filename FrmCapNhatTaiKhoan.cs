@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    public partial class FormCapNhatTaiKhoan : DevExpress.XtraEditors.XtraForm
+    public partial class FrmCapNhatTaiKhoan : DevExpress.XtraEditors.XtraForm
     {
         DataAccess dataAccess = new DataAccess();
-        public FormCapNhatTaiKhoan()
+        public FrmCapNhatTaiKhoan()
         {
             InitializeComponent();
         }

@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    public partial class FrmTaoDonNhap : DevExpress.XtraEditors.XtraForm
+    public partial class FrmTaoHDNhap : DevExpress.XtraEditors.XtraForm
     {
         
         DataAccess dataAccess = new DataAccess();
@@ -22,7 +22,7 @@ namespace market_management
         public string maHDN = GenerateRandomString(8);
         string current_time = DateTime.Now.ToShortDateString();
 
-        public FrmTaoDonNhap()
+        public FrmTaoHDNhap()
         {
             InitializeComponent();
            

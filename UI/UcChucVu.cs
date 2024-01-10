@@ -119,7 +119,7 @@ namespace market_management.UI
 
         private void BbiThemCV_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormThemChucVu frmThemChucVu = new FormThemChucVu();
+            FrmThemChucVu frmThemChucVu = new FrmThemChucVu();
             frmThemChucVu.ShowDialog();
             frmThemChucVu.BringToFront();
 

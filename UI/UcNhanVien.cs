@@ -206,5 +206,10 @@ namespace market_management
             CbeChucVu.Text = ChucVu;
             TeEmail.Text = Email;
         }
+
+        private void UcNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -44,45 +44,52 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(351, 41);
+            this.labelControl5.Location = new System.Drawing.Point(366, 25);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(220, 28);
+            this.labelControl5.Size = new System.Drawing.Size(176, 21);
             this.labelControl5.TabIndex = 5;
             this.labelControl5.Text = "Sản phẩm bán chạy nhất";
             // 
             // LbcTenSP
             // 
             this.LbcTenSP.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.LbcTenSP.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbcTenSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbcTenSP.Appearance.Options.UseFont = true;
-            this.LbcTenSP.Location = new System.Drawing.Point(416, 75);
+            this.LbcTenSP.Location = new System.Drawing.Point(408, 50);
+            this.LbcTenSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcTenSP.Name = "LbcTenSP";
-            this.LbcTenSP.Size = new System.Drawing.Size(83, 33);
+            this.LbcTenSP.Size = new System.Drawing.Size(85, 40);
             this.LbcTenSP.TabIndex = 7;
             this.LbcTenSP.Text = "Tên SP";
             // 
             // LbcSoSP
             // 
-            this.LbcSoSP.Location = new System.Drawing.Point(429, 117);
+            this.LbcSoSP.Location = new System.Drawing.Point(423, 96);
+            this.LbcSoSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcSoSP.Name = "LbcSoSP";
-            this.LbcSoSP.Size = new System.Drawing.Size(70, 16);
+            this.LbcSoSP.Size = new System.Drawing.Size(57, 13);
             this.LbcSoSP.TabIndex = 6;
             this.LbcSoSP.Text = "Số lượng SP";
             // 
             // GcSanPhamDaBan
             // 
-            this.GcSanPhamDaBan.Location = new System.Drawing.Point(5, 149);
+            this.GcSanPhamDaBan.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GcSanPhamDaBan.Location = new System.Drawing.Point(5, 126);
             this.GcSanPhamDaBan.MainView = this.gridView2;
+            this.GcSanPhamDaBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GcSanPhamDaBan.Name = "GcSanPhamDaBan";
-            this.GcSanPhamDaBan.Size = new System.Drawing.Size(883, 567);
+            this.GcSanPhamDaBan.Size = new System.Drawing.Size(854, 515);
             this.GcSanPhamDaBan.TabIndex = 8;
             this.GcSanPhamDaBan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
+            this.gridView2.DetailHeight = 284;
             this.gridView2.GridControl = this.GcSanPhamDaBan;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsEditForm.PopupEditFormWidth = 686;
             // 
             // GcTKSP
             // 
@@ -90,19 +97,21 @@
             this.GcTKSP.Controls.Add(this.GcSanPhamDaBan);
             this.GcTKSP.Controls.Add(this.labelControl5);
             this.GcTKSP.Controls.Add(this.LbcSoSP);
-            this.GcTKSP.Location = new System.Drawing.Point(22, 16);
+            this.GcTKSP.Location = new System.Drawing.Point(3, 13);
+            this.GcTKSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GcTKSP.Name = "GcTKSP";
-            this.GcTKSP.Size = new System.Drawing.Size(893, 721);
+            this.GcTKSP.Size = new System.Drawing.Size(864, 645);
             this.GcTKSP.TabIndex = 10;
             this.GcTKSP.Text = "Thống kê sản phẩm";
             // 
             // UcTKSPDaBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.GcTKSP);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UcTKSPDaBan";
-            this.Size = new System.Drawing.Size(934, 758);
+            this.Size = new System.Drawing.Size(870, 660);
             ((System.ComponentModel.ISupportInitialize)(this.GcSanPhamDaBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GcTKSP)).EndInit();

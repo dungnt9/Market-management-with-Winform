@@ -68,11 +68,11 @@
             // 
             // GcMaGiamGia
             // 
-            this.GcMaGiamGia.Location = new System.Drawing.Point(0, 290);
+            this.GcMaGiamGia.Location = new System.Drawing.Point(0, 281);
             this.GcMaGiamGia.MainView = this.gridView;
             this.GcMaGiamGia.MenuManager = this.RcMGG;
             this.GcMaGiamGia.Name = "GcMaGiamGia";
-            this.GcMaGiamGia.Size = new System.Drawing.Size(800, 310);
+            this.GcMaGiamGia.Size = new System.Drawing.Size(870, 379);
             this.GcMaGiamGia.TabIndex = 2;
             this.GcMaGiamGia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -103,7 +103,7 @@
             this.RpQLMaGiamGia});
             this.RcMGG.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.RcMGG.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.RcMGG.Size = new System.Drawing.Size(800, 126);
+            this.RcMGG.Size = new System.Drawing.Size(870, 126);
             this.RcMGG.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiPrintPreview
@@ -161,119 +161,121 @@
             // 
             // CbePhanTram
             // 
-            this.CbePhanTram.Location = new System.Drawing.Point(148, 253);
+            this.CbePhanTram.Location = new System.Drawing.Point(153, 250);
             this.CbePhanTram.Name = "CbePhanTram";
-            this.CbePhanTram.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbePhanTram.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbePhanTram.Properties.Appearance.Options.UseFont = true;
             this.CbePhanTram.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbePhanTram.Size = new System.Drawing.Size(122, 22);
+            this.CbePhanTram.Size = new System.Drawing.Size(122, 26);
             this.CbePhanTram.TabIndex = 40;
             // 
             // LbNgayTao
             // 
-            this.LbNgayTao.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbNgayTao.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNgayTao.Appearance.Options.UseFont = true;
-            this.LbNgayTao.Location = new System.Drawing.Point(297, 209);
+            this.LbNgayTao.Location = new System.Drawing.Point(322, 206);
             this.LbNgayTao.Name = "LbNgayTao";
-            this.LbNgayTao.Size = new System.Drawing.Size(50, 15);
+            this.LbNgayTao.Size = new System.Drawing.Size(64, 20);
             this.LbNgayTao.TabIndex = 42;
             this.LbNgayTao.Text = "Ngày Tạo";
             // 
             // LbPhanTram
             // 
-            this.LbPhanTram.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbPhanTram.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbPhanTram.Appearance.Options.UseFont = true;
-            this.LbPhanTram.Location = new System.Drawing.Point(41, 256);
+            this.LbPhanTram.Location = new System.Drawing.Point(30, 253);
             this.LbPhanTram.Name = "LbPhanTram";
-            this.LbPhanTram.Size = new System.Drawing.Size(56, 15);
+            this.LbPhanTram.Size = new System.Drawing.Size(69, 20);
             this.LbPhanTram.TabIndex = 41;
             this.LbPhanTram.Text = "Phần Trăm";
             // 
             // TeTenChuongTrinh
             // 
-            this.TeTenChuongTrinh.Location = new System.Drawing.Point(148, 208);
+            this.TeTenChuongTrinh.Location = new System.Drawing.Point(153, 203);
             this.TeTenChuongTrinh.Name = "TeTenChuongTrinh";
-            this.TeTenChuongTrinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeTenChuongTrinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeTenChuongTrinh.Properties.Appearance.Options.UseFont = true;
-            this.TeTenChuongTrinh.Size = new System.Drawing.Size(128, 22);
+            this.TeTenChuongTrinh.Size = new System.Drawing.Size(128, 26);
             this.TeTenChuongTrinh.TabIndex = 39;
             // 
             // LbTenChuongTrinh
             // 
-            this.LbTenChuongTrinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbTenChuongTrinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTenChuongTrinh.Appearance.Options.UseFont = true;
-            this.LbTenChuongTrinh.Location = new System.Drawing.Point(41, 209);
+            this.LbTenChuongTrinh.Location = new System.Drawing.Point(30, 206);
             this.LbTenChuongTrinh.Name = "LbTenChuongTrinh";
-            this.LbTenChuongTrinh.Size = new System.Drawing.Size(95, 15);
+            this.LbTenChuongTrinh.Size = new System.Drawing.Size(117, 20);
             this.LbTenChuongTrinh.TabIndex = 39;
             this.LbTenChuongTrinh.Text = "Tên Chương Trình";
             // 
             // TeMaGiamGia
             // 
-            this.TeMaGiamGia.Location = new System.Drawing.Point(148, 152);
+            this.TeMaGiamGia.Location = new System.Drawing.Point(153, 150);
             this.TeMaGiamGia.Name = "TeMaGiamGia";
-            this.TeMaGiamGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeMaGiamGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeMaGiamGia.Properties.Appearance.Options.UseFont = true;
-            this.TeMaGiamGia.Size = new System.Drawing.Size(128, 22);
+            this.TeMaGiamGia.Size = new System.Drawing.Size(128, 26);
             this.TeMaGiamGia.TabIndex = 38;
             // 
             // LbMaGiamGia
             // 
-            this.LbMaGiamGia.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbMaGiamGia.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbMaGiamGia.Appearance.Options.UseFont = true;
-            this.LbMaGiamGia.Location = new System.Drawing.Point(41, 153);
+            this.LbMaGiamGia.Location = new System.Drawing.Point(30, 150);
             this.LbMaGiamGia.Name = "LbMaGiamGia";
-            this.LbMaGiamGia.Size = new System.Drawing.Size(68, 15);
+            this.LbMaGiamGia.Size = new System.Drawing.Size(86, 20);
             this.LbMaGiamGia.TabIndex = 37;
             this.LbMaGiamGia.Text = "Mã Giảm Giá";
             // 
             // DeNgayTao
             // 
             this.DeNgayTao.EditValue = null;
-            this.DeNgayTao.Location = new System.Drawing.Point(382, 209);
+            this.DeNgayTao.Location = new System.Drawing.Point(422, 203);
             this.DeNgayTao.MenuManager = this.RcMGG;
             this.DeNgayTao.Name = "DeNgayTao";
+            this.DeNgayTao.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeNgayTao.Properties.Appearance.Options.UseFont = true;
             this.DeNgayTao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DeNgayTao.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DeNgayTao.Size = new System.Drawing.Size(122, 20);
+            this.DeNgayTao.Size = new System.Drawing.Size(122, 26);
             this.DeNgayTao.TabIndex = 41;
             // 
             // TeMoTa
             // 
-            this.TeMoTa.Location = new System.Drawing.Point(608, 208);
+            this.TeMoTa.Location = new System.Drawing.Point(661, 206);
             this.TeMoTa.Name = "TeMoTa";
-            this.TeMoTa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeMoTa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeMoTa.Properties.Appearance.Options.UseFont = true;
-            this.TeMoTa.Size = new System.Drawing.Size(164, 22);
+            this.TeMoTa.Size = new System.Drawing.Size(164, 26);
             this.TeMoTa.TabIndex = 44;
             // 
             // LbMoTa
             // 
-            this.LbMoTa.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbMoTa.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbMoTa.Appearance.Options.UseFont = true;
-            this.LbMoTa.Location = new System.Drawing.Point(537, 209);
+            this.LbMoTa.Location = new System.Drawing.Point(586, 206);
             this.LbMoTa.Name = "LbMoTa";
-            this.LbMoTa.Size = new System.Drawing.Size(33, 15);
+            this.LbMoTa.Size = new System.Drawing.Size(42, 20);
             this.LbMoTa.TabIndex = 56;
             this.LbMoTa.Text = "Mô Tả";
             // 
             // LbTrangThai
             // 
-            this.LbTrangThai.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbTrangThai.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTrangThai.Appearance.Options.UseFont = true;
-            this.LbTrangThai.Location = new System.Drawing.Point(537, 153);
+            this.LbTrangThai.Location = new System.Drawing.Point(586, 154);
             this.LbTrangThai.Name = "LbTrangThai";
-            this.LbTrangThai.Size = new System.Drawing.Size(54, 15);
+            this.LbTrangThai.Size = new System.Drawing.Size(69, 20);
             this.LbTrangThai.TabIndex = 54;
             this.LbTrangThai.Text = "Trạng Thái";
             // 
             // RbConHieuLuc
             // 
-            this.RbConHieuLuc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbConHieuLuc.Location = new System.Drawing.Point(608, 150);
+            this.RbConHieuLuc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbConHieuLuc.Location = new System.Drawing.Point(661, 153);
             this.RbConHieuLuc.Name = "RbConHieuLuc";
             this.RbConHieuLuc.Size = new System.Drawing.Size(101, 22);
             this.RbConHieuLuc.TabIndex = 42;
@@ -283,8 +285,8 @@
             // 
             // RbHetHan
             // 
-            this.RbHetHan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbHetHan.Location = new System.Drawing.Point(703, 151);
+            this.RbHetHan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbHetHan.Location = new System.Drawing.Point(756, 154);
             this.RbHetHan.Name = "RbHetHan";
             this.RbHetHan.Size = new System.Drawing.Size(83, 20);
             this.RbHetHan.TabIndex = 43;
@@ -295,23 +297,25 @@
             // DeNgayHetHan
             // 
             this.DeNgayHetHan.EditValue = null;
-            this.DeNgayHetHan.Location = new System.Drawing.Point(382, 151);
+            this.DeNgayHetHan.Location = new System.Drawing.Point(422, 148);
             this.DeNgayHetHan.MenuManager = this.RcMGG;
             this.DeNgayHetHan.Name = "DeNgayHetHan";
+            this.DeNgayHetHan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeNgayHetHan.Properties.Appearance.Options.UseFont = true;
             this.DeNgayHetHan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DeNgayHetHan.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DeNgayHetHan.Size = new System.Drawing.Size(122, 20);
+            this.DeNgayHetHan.Size = new System.Drawing.Size(122, 26);
             this.DeNgayHetHan.TabIndex = 58;
             // 
             // LbNgayHetHan
             // 
-            this.LbNgayHetHan.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbNgayHetHan.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNgayHetHan.Appearance.Options.UseFont = true;
-            this.LbNgayHetHan.Location = new System.Drawing.Point(297, 157);
+            this.LbNgayHetHan.Location = new System.Drawing.Point(322, 150);
             this.LbNgayHetHan.Name = "LbNgayHetHan";
-            this.LbNgayHetHan.Size = new System.Drawing.Size(75, 15);
+            this.LbNgayHetHan.Size = new System.Drawing.Size(94, 20);
             this.LbNgayHetHan.TabIndex = 59;
             this.LbNgayHetHan.Text = "Ngày Hết Hạn";
             // 
@@ -337,7 +341,7 @@
             this.Controls.Add(this.GcMaGiamGia);
             this.Controls.Add(this.RcMGG);
             this.Name = "UcQLMaGiamGia";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(870, 660);
             ((System.ComponentModel.ISupportInitialize)(this.GcMaGiamGia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcMGG)).EndInit();

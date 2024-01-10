@@ -27,7 +27,7 @@ namespace market_management.UI
 
         private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {   
-            FormDonBan frmDonBan = new FormDonBan();
+            FrmTaoHDBan frmDonBan = new FrmTaoHDBan();
             frmDonBan.ShowDialog();
         }
 
@@ -91,7 +91,7 @@ namespace market_management.UI
                 return;
             }
 
-            FormChiTietDonBan frmChiTietDonBan = new FormChiTietDonBan(maHDB, tongTien, thoigian);
+            FrmChiTietDonBan frmChiTietDonBan = new FrmChiTietDonBan(maHDB, tongTien, thoigian);
             frmChiTietDonBan.ShowDialog();
         }
 

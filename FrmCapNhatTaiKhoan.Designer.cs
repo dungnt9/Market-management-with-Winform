@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class FormCapNhatTaiKhoan
+    partial class FrmCapNhatTaiKhoan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhatTaiKhoan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCapNhatTaiKhoan));
             this.LbThongTinTaiKhoan = new System.Windows.Forms.Label();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
             this.LbTenNhanVien = new System.Windows.Forms.Label();
@@ -150,7 +150,7 @@
             this.LbMaNV.Text = "0000";
             this.LbMaNV.Click += new System.EventHandler(this.LbMaNV_Click);
             // 
-            // FormCapNhatTaiKhoan
+            // FrmCapNhatTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,8 +166,9 @@
             this.Controls.Add(this.LbTenNhanVien);
             this.Controls.Add(this.svgImageBox1);
             this.Controls.Add(this.LbThongTinTaiKhoan);
-            this.Name = "FormCapNhatTaiKhoan";
-            this.Text = "Cập nhật tài khoản";
+            this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.Name = "FrmCapNhatTaiKhoan";
+            this.Text = "Form Cập nhật tài khoản";
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenDangNhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeMatKhau.Properties)).EndInit();

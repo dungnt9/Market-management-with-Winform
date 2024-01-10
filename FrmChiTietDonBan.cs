@@ -17,10 +17,10 @@ using static DevExpress.Utils.Drawing.Helpers.NativeMethods;
 
 namespace market_management
 {
-    public partial class FormChiTietDonBan : DevExpress.XtraEditors.XtraForm
+    public partial class FrmChiTietDonBan : DevExpress.XtraEditors.XtraForm
     {
         DataAccess dataAccess = new DataAccess();
-        public FormChiTietDonBan(string MaHDB, string tongTien, string thoigian)
+        public FrmChiTietDonBan(string MaHDB, string tongTien, string thoigian)
         {
             InitializeComponent();
             HienThiThongTinHoaDon(MaHDB, tongTien, thoigian);

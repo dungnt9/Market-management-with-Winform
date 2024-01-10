@@ -63,13 +63,13 @@
             // 
             // GcSP
             // 
-            this.GcSP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.GcSP.Location = new System.Drawing.Point(4, 373);
+            this.GcSP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcSP.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GcSP.Location = new System.Drawing.Point(0, 296);
             this.GcSP.MainView = this.gridView;
-            this.GcSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GcSP.MenuManager = this.RcDanhMucSP;
             this.GcSP.Name = "GcSP";
-            this.GcSP.Size = new System.Drawing.Size(925, 361);
+            this.GcSP.Size = new System.Drawing.Size(870, 364);
             this.GcSP.TabIndex = 2;
             this.GcSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -77,17 +77,14 @@
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView.DetailHeight = 431;
             this.gridView.GridControl = this.GcSP;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
-            this.gridView.OptionsEditForm.PopupEditFormWidth = 933;
             this.gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_FocusedRowChanged_1);
             // 
             // RcDanhMucSP
             // 
-            this.RcDanhMucSP.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
             this.RcDanhMucSP.ExpandCollapseItem.Id = 0;
             this.RcDanhMucSP.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.RcDanhMucSP.ExpandCollapseItem,
@@ -95,15 +92,13 @@
             this.BbiLamMoi,
             this.BbiThem});
             this.RcDanhMucSP.Location = new System.Drawing.Point(0, 0);
-            this.RcDanhMucSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RcDanhMucSP.MaxItemId = 21;
             this.RcDanhMucSP.Name = "RcDanhMucSP";
-            this.RcDanhMucSP.OptionsMenuMinWidth = 385;
             this.RcDanhMucSP.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.RpDanhMucSP});
             this.RcDanhMucSP.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.RcDanhMucSP.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.RcDanhMucSP.Size = new System.Drawing.Size(933, 154);
+            this.RcDanhMucSP.Size = new System.Drawing.Size(870, 126);
             this.RcDanhMucSP.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // BbiSua
@@ -152,10 +147,9 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(96, 183);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Location = new System.Drawing.Point(71, 149);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(89, 20);
             this.labelControl1.TabIndex = 19;
@@ -163,10 +157,9 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(96, 284);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Location = new System.Drawing.Point(71, 229);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(61, 20);
             this.labelControl2.TabIndex = 20;
@@ -174,10 +167,9 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(96, 235);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl3.Location = new System.Drawing.Point(71, 188);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(91, 20);
             this.labelControl3.TabIndex = 21;
@@ -185,10 +177,10 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(565, 271);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl4.Location = new System.Drawing.Point(494, 229);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(67, 20);
             this.labelControl4.TabIndex = 22;
@@ -196,10 +188,9 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(564, 231);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl5.Location = new System.Drawing.Point(494, 188);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(60, 20);
             this.labelControl5.TabIndex = 23;
@@ -207,32 +198,30 @@
             // 
             // TeGiaBan
             // 
-            this.TeGiaBan.Location = new System.Drawing.Point(659, 278);
-            this.TeGiaBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeGiaBan.Location = new System.Drawing.Point(576, 223);
             this.TeGiaBan.MenuManager = this.RcDanhMucSP;
             this.TeGiaBan.Name = "TeGiaBan";
-            this.TeGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeGiaBan.Properties.Appearance.Options.UseFont = true;
-            this.TeGiaBan.Size = new System.Drawing.Size(204, 26);
+            this.TeGiaBan.Size = new System.Drawing.Size(245, 26);
             this.TeGiaBan.TabIndex = 24;
             // 
             // TeSoLuong
             // 
-            this.TeSoLuong.Location = new System.Drawing.Point(659, 229);
-            this.TeSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeSoLuong.Location = new System.Drawing.Point(576, 182);
             this.TeSoLuong.MenuManager = this.RcDanhMucSP;
             this.TeSoLuong.Name = "TeSoLuong";
-            this.TeSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeSoLuong.Properties.Appearance.Options.UseFont = true;
-            this.TeSoLuong.Size = new System.Drawing.Size(204, 26);
+            this.TeSoLuong.Size = new System.Drawing.Size(245, 26);
             this.TeSoLuong.TabIndex = 25;
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(565, 183);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.labelControl6.Location = new System.Drawing.Point(495, 149);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(59, 20);
             this.labelControl6.TabIndex = 31;
@@ -240,77 +229,73 @@
             // 
             // TeGiaNhap
             // 
-            this.TeGiaNhap.Location = new System.Drawing.Point(659, 182);
-            this.TeGiaNhap.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.TeGiaNhap.Location = new System.Drawing.Point(576, 143);
+            this.TeGiaNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TeGiaNhap.MenuManager = this.RcDanhMucSP;
             this.TeGiaNhap.Name = "TeGiaNhap";
-            this.TeGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeGiaNhap.Properties.Appearance.Options.UseFont = true;
-            this.TeGiaNhap.Size = new System.Drawing.Size(204, 26);
+            this.TeGiaNhap.Size = new System.Drawing.Size(245, 26);
             this.TeGiaNhap.TabIndex = 32;
             // 
             // CbePhanLoai
             // 
-            this.CbePhanLoai.Location = new System.Drawing.Point(220, 280);
-            this.CbePhanLoai.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CbePhanLoai.Location = new System.Drawing.Point(175, 226);
+            this.CbePhanLoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbePhanLoai.MenuManager = this.RcDanhMucSP;
             this.CbePhanLoai.Name = "CbePhanLoai";
-            this.CbePhanLoai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbePhanLoai.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbePhanLoai.Properties.Appearance.Options.UseFont = true;
             this.CbePhanLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbePhanLoai.Size = new System.Drawing.Size(214, 28);
+            this.CbePhanLoai.Size = new System.Drawing.Size(225, 26);
             this.CbePhanLoai.TabIndex = 39;
             // 
             // LbcMaSP
             // 
-            this.LbcMaSP.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbcMaSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbcMaSP.Appearance.Options.UseFont = true;
-            this.LbcMaSP.Location = new System.Drawing.Point(220, 185);
-            this.LbcMaSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LbcMaSP.Location = new System.Drawing.Point(175, 149);
             this.LbcMaSP.Name = "LbcMaSP";
-            this.LbcMaSP.Size = new System.Drawing.Size(25, 18);
+            this.LbcMaSP.Size = new System.Drawing.Size(25, 20);
             this.LbcMaSP.TabIndex = 42;
             this.LbcMaSP.Text = "Mã ";
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(565, 325);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl7.Location = new System.Drawing.Point(495, 264);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(67, 18);
+            this.labelControl7.Size = new System.Drawing.Size(66, 20);
             this.labelControl7.TabIndex = 47;
             this.labelControl7.Text = "Trạng thái";
             // 
             // CmbTrangThai
             // 
-            this.CmbTrangThai.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CmbTrangThai.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbTrangThai.FormattingEnabled = true;
             this.CmbTrangThai.Items.AddRange(new object[] {
             "Đang kinh doanh",
             "Không còn kinh doanh"});
-            this.CmbTrangThai.Location = new System.Drawing.Point(659, 322);
-            this.CmbTrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbTrangThai.Location = new System.Drawing.Point(576, 262);
             this.CmbTrangThai.Name = "CmbTrangThai";
-            this.CmbTrangThai.Size = new System.Drawing.Size(204, 26);
+            this.CmbTrangThai.Size = new System.Drawing.Size(245, 28);
             this.CmbTrangThai.TabIndex = 48;
             // 
             // TeTenSP
             // 
-            this.TeTenSP.Location = new System.Drawing.Point(220, 233);
-            this.TeTenSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeTenSP.Location = new System.Drawing.Point(175, 185);
             this.TeTenSP.MenuManager = this.RcDanhMucSP;
             this.TeTenSP.Name = "TeTenSP";
-            this.TeTenSP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeTenSP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeTenSP.Properties.Appearance.Options.UseFont = true;
-            this.TeTenSP.Size = new System.Drawing.Size(214, 24);
+            this.TeTenSP.Size = new System.Drawing.Size(225, 26);
             this.TeTenSP.TabIndex = 51;
             // 
             // UcSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TeTenSP);
             this.Controls.Add(this.CmbTrangThai);
@@ -328,9 +313,8 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.GcSP);
             this.Controls.Add(this.RcDanhMucSP);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UcSanPham";
-            this.Size = new System.Drawing.Size(933, 738);
+            this.Size = new System.Drawing.Size(870, 660);
             this.Load += new System.EventHandler(this.UcSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GcSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
