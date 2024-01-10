@@ -49,12 +49,11 @@ namespace market_management
 
                     if (reader.Read())
                     {
-                        // Ensure that the value can be converted to int
                         if (int.TryParse(reader["MaNV"].ToString(), out int maNV))
                         {
                             luuNhanVien = maNV;
+                            Session.luuMaNV = maNV;
 
-                            // Open FormMain when credentials are correct
                             OpenFormMain();
                         }
                         else
