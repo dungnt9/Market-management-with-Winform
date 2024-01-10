@@ -39,25 +39,25 @@
             this.RpDanhMucSP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RpgTacVuSP = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.TeSoLuong = new DevExpress.XtraEditors.TextEdit();
-            this.TeGiaBan = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.TeGiaBan = new DevExpress.XtraEditors.TextEdit();
+            this.TeSoLuong = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.TeGiaNhap = new DevExpress.XtraEditors.TextEdit();
             this.CbePhanLoai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LbcMaSP = new DevExpress.XtraEditors.LabelControl();
-            this.CmbTrangThai = new System.Windows.Forms.ComboBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.CmbTrangThai = new System.Windows.Forms.ComboBox();
             this.TeTenSP = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaBan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanLoai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenSP.Properties)).BeginInit();
@@ -66,7 +66,7 @@
             // GcSP
             // 
             this.GcSP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.GcSP.Location = new System.Drawing.Point(0, 365);
+            this.GcSP.Location = new System.Drawing.Point(1, 365);
             this.GcSP.MainView = this.gridView;
             this.GcSP.Margin = new System.Windows.Forms.Padding(4);
             this.GcSP.MenuManager = this.RcDanhMucSP;
@@ -169,55 +169,15 @@
             this.ribbonStatusBar.Ribbon = this.RcDanhMucSP;
             this.ribbonStatusBar.Size = new System.Drawing.Size(934, 33);
             // 
-            // TeSoLuong
+            // labelControl1
             // 
-            this.TeSoLuong.Location = new System.Drawing.Point(645, 183);
-            this.TeSoLuong.MenuManager = this.RcDanhMucSP;
-            this.TeSoLuong.Name = "TeSoLuong";
-            this.TeSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TeSoLuong.Properties.Appearance.Options.UseFont = true;
-            this.TeSoLuong.Size = new System.Drawing.Size(213, 26);
-            this.TeSoLuong.TabIndex = 25;
-            // 
-            // TeGiaBan
-            // 
-            this.TeGiaBan.Location = new System.Drawing.Point(645, 267);
-            this.TeGiaBan.MenuManager = this.RcDanhMucSP;
-            this.TeGiaBan.Name = "TeGiaBan";
-            this.TeGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TeGiaBan.Properties.Appearance.Options.UseFont = true;
-            this.TeGiaBan.Size = new System.Drawing.Size(213, 26);
-            this.TeGiaBan.TabIndex = 24;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(565, 190);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(60, 20);
-            this.labelControl5.TabIndex = 23;
-            this.labelControl5.Text = "Số lượng";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(565, 271);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(67, 20);
-            this.labelControl4.TabIndex = 22;
-            this.labelControl4.Text = "Giá bán lẻ";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(110, 228);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(91, 20);
-            this.labelControl3.TabIndex = 21;
-            this.labelControl3.Text = "Tên sản phẩm";
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(110, 186);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(89, 20);
+            this.labelControl1.TabIndex = 19;
+            this.labelControl1.Text = "Mã sản phẩm";
             // 
             // labelControl2
             // 
@@ -229,15 +189,55 @@
             this.labelControl2.TabIndex = 20;
             this.labelControl2.Text = "Phân loại";
             // 
-            // labelControl1
+            // labelControl3
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(110, 186);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(89, 20);
-            this.labelControl1.TabIndex = 19;
-            this.labelControl1.Text = "Mã sản phẩm";
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(110, 228);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(91, 20);
+            this.labelControl3.TabIndex = 21;
+            this.labelControl3.Text = "Tên sản phẩm";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(565, 271);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(67, 20);
+            this.labelControl4.TabIndex = 22;
+            this.labelControl4.Text = "Giá bán lẻ";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(565, 190);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(60, 20);
+            this.labelControl5.TabIndex = 23;
+            this.labelControl5.Text = "Số lượng";
+            // 
+            // TeGiaBan
+            // 
+            this.TeGiaBan.Location = new System.Drawing.Point(645, 267);
+            this.TeGiaBan.MenuManager = this.RcDanhMucSP;
+            this.TeGiaBan.Name = "TeGiaBan";
+            this.TeGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeGiaBan.Properties.Appearance.Options.UseFont = true;
+            this.TeGiaBan.Size = new System.Drawing.Size(213, 26);
+            this.TeGiaBan.TabIndex = 24;
+            // 
+            // TeSoLuong
+            // 
+            this.TeSoLuong.Location = new System.Drawing.Point(645, 183);
+            this.TeSoLuong.MenuManager = this.RcDanhMucSP;
+            this.TeSoLuong.Name = "TeSoLuong";
+            this.TeSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeSoLuong.Properties.Appearance.Options.UseFont = true;
+            this.TeSoLuong.Size = new System.Drawing.Size(213, 26);
+            this.TeSoLuong.TabIndex = 25;
             // 
             // labelControl6
             // 
@@ -281,6 +281,16 @@
             this.LbcMaSP.TabIndex = 42;
             this.LbcMaSP.Text = "Mã ";
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(565, 314);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(67, 18);
+            this.labelControl7.TabIndex = 47;
+            this.labelControl7.Text = "Trạng thái";
+            // 
             // CmbTrangThai
             // 
             this.CmbTrangThai.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -292,16 +302,6 @@
             this.CmbTrangThai.Name = "CmbTrangThai";
             this.CmbTrangThai.Size = new System.Drawing.Size(213, 26);
             this.CmbTrangThai.TabIndex = 48;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(565, 314);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(67, 18);
-            this.labelControl7.TabIndex = 47;
-            this.labelControl7.Text = "Trạng thái";
             // 
             // TeTenSP
             // 
@@ -341,8 +341,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GcSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucSP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaBan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TeSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeGiaNhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanLoai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenSP.Properties)).EndInit();
@@ -361,20 +361,20 @@
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiSua;
         private DevExpress.XtraBars.BarButtonItem BbiLamMoi;
-        private DevExpress.XtraEditors.TextEdit TeSoLuong;
-        private DevExpress.XtraEditors.TextEdit TeGiaBan;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraBars.BarButtonItem BbiThem;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit TeGiaBan;
+        private DevExpress.XtraEditors.TextEdit TeSoLuong;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit TeGiaNhap;
         private DevExpress.XtraEditors.ComboBoxEdit CbePhanLoai;
-        private DevExpress.XtraBars.BarButtonItem BbiThem;
         private DevExpress.XtraEditors.LabelControl LbcMaSP;
-        private System.Windows.Forms.ComboBox CmbTrangThai;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private System.Windows.Forms.ComboBox CmbTrangThai;
         private DevExpress.XtraEditors.TextEdit TeTenSP;
     }
 }

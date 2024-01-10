@@ -51,12 +51,12 @@
             // GcQLNhapHang
             // 
             this.GcQLNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.GcQLNhapHang.Location = new System.Drawing.Point(0, 201);
+            this.GcQLNhapHang.Location = new System.Drawing.Point(0, 203);
             this.GcQLNhapHang.MainView = this.gridView;
             this.GcQLNhapHang.Margin = new System.Windows.Forms.Padding(4);
             this.GcQLNhapHang.MenuManager = this.RcQLNhapHang;
             this.GcQLNhapHang.Name = "GcQLNhapHang";
-            this.GcQLNhapHang.Size = new System.Drawing.Size(934, 525);
+            this.GcQLNhapHang.Size = new System.Drawing.Size(934, 514);
             this.GcQLNhapHang.TabIndex = 2;
             this.GcQLNhapHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});

@@ -18,7 +18,6 @@ namespace market_management
 
         UcLoaiSanPham _UcLSP;
         UcSanPham _UcSP;
-        UcTKKhachHang _UcTKKhachHang;
         UcQLNhapHang _UcQLNhapHang;
         UcKhachHang _UcKH;
         UcNhanVien _UcNV;
@@ -26,6 +25,8 @@ namespace market_management
         UcDoanhThu _UcDT;
         UcQLBanHang _UcQLBanHang;
         UcTKHangTonKho _UcTKHangTonKho;
+        UcTKLoaiSPDaBan _UcTKLoaiSPDaBan;
+        UcTKSPDaBan _UcTKSPDaBan;
 
         public FormMain()
         {
@@ -49,6 +50,7 @@ namespace market_management
                     if (reader.Read())
                     {
                         BsiTenNV.Caption = reader["TenNV"].ToString();
+                        Session.tenNV = BsiTenNV.Caption;
                         BsiChucvu.Caption = reader["ChucVu"].ToString();
                     }
                     else
@@ -118,20 +120,7 @@ namespace market_management
                 _UcNV.BringToFront();
             }
         }
-        private void TKKhachHang_Click(object sender, EventArgs e)
-        {
-            if (_UcTKKhachHang == null)
-            {
-                _UcTKKhachHang = new UcTKKhachHang();
-                _UcTKKhachHang.Dock = DockStyle.Fill;
-                PnlMain.Controls.Add(_UcTKKhachHang);
-                _UcTKKhachHang.BringToFront();
-            }
-            else
-            {
-                _UcTKKhachHang.BringToFront();
-            }
-        }
+        
 
         private void TKDoanhThu_Click(object sender, EventArgs e)
         {
@@ -224,6 +213,38 @@ namespace market_management
             else
             {
                 _UcNhaCungCap.BringToFront();
+            }
+        }
+
+        
+
+        private void TKLoaiSPDaBan_Click(object sender, EventArgs e)
+        {
+            if (_UcTKLoaiSPDaBan == null)
+            {
+                _UcTKLoaiSPDaBan = new UcTKLoaiSPDaBan();
+                _UcTKLoaiSPDaBan.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcTKLoaiSPDaBan);
+                _UcTKLoaiSPDaBan.BringToFront();
+            }
+            else
+            {
+                _UcTKLoaiSPDaBan.BringToFront();
+            }
+        }
+
+        private void TKSPDaBan_Click(object sender, EventArgs e)
+        {
+            if (_UcTKSPDaBan == null)
+            {
+                _UcTKSPDaBan = new UcTKSPDaBan();
+                _UcTKSPDaBan.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcTKSPDaBan);
+                _UcTKSPDaBan.BringToFront();
+            }
+            else
+            {
+                _UcTKSPDaBan.BringToFront();
             }
         }
     }

@@ -19,17 +19,14 @@ namespace market_management.UI
 {
     public partial class UcLoaiSanPham : DevExpress.XtraEditors.XtraUserControl
     {
-        DataAccess dataAccess = new DataAccess();
-
         public UcLoaiSanPham()
         {
             InitializeComponent();
-            LoadData();
         }
-
+        DataAccess dataAccess = new DataAccess();
         void LoadData()
         {
-            GcLoaiSP.DataSource = dataAccess.GetDataTable("SELECT " +
+            string stringQuery = "SELECT " +
                 "MaLoaiSP as 'Mã loại sản phẩm'," +
                 "TenLoaiSP as 'Tên loại sản phẩm'," +
                 "CASE " +
@@ -37,65 +34,15 @@ namespace market_management.UI
                 "   WHEN TrangThai = 0 THEN 'Không còn kinh doanh'" +
                 "   ELSE 'NULL'" +
                 "END AS 'Trạng thái'" +
-                " FROM LOAI_SAN_PHAM;");
+                " FROM LOAI_SAN_PHAM;";
+            GcLoaiSP.DataSource = dataAccess.GetDataTable(stringQuery);
+            DataTable dataTable = dataAccess.GetDataTable(stringQuery);
+            bsiRecordsCount.Caption = "RECORDS : " + dataTable.Rows.Count;
         }
-
-        private bool IsTenLoaiSPExists(string tenLoaiSP)
-        {
-            DataTable dataTable = dataAccess.GetDataTable($"SELECT TenLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = N'{tenLoaiSP}'");
-            return dataTable.Rows.Count > 0;
-        }
-
         private void BbiThem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var tenLoaiSP = CbeTenLoaiSP.Text;
-            var trangThai = CmbTrangThai.Text;
-            var isExist = IsTenLoaiSPExists(tenLoaiSP);
-
-            if (isExist)
-            {
-                XtraMessageBox.Show($"Loại sản phẩm này đã tồn tại!", "Thông báo");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(tenLoaiSP) || string.IsNullOrEmpty(trangThai))
-            {
-                XtraMessageBox.Show("Nhập đầy đủ thông tin loại sản phẩm", "Thông báo");
-                return;
-            }
-
-            var sqlInsert = $"INSERT INTO LOAI_SAN_PHAM (TenLoaiSP, TrangThai)\r\n" +
-                $"VALUES (N'{tenLoaiSP}', ";
-
-            if (trangThai == "Đang kinh doanh")
-            {
-                sqlInsert += "1";
-            }
-            else if (trangThai == "Không còn kinh doanh")
-            {
-                sqlInsert += "0";
-            }
-            else
-            {
-                sqlInsert += "NULL";
-            }
-
-            sqlInsert += ")";
-
-
-            try
-            {
-                dataAccess.UpdateData(sqlInsert);
-                XtraMessageBox.Show("Thêm loại sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                CbeTenLoaiSP.Text = "";
-                CmbTrangThai.Text = "";
-                LoadData();
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show($"Lỗi thêm loại sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            FrmThemLoaiSP frmThemLoaiSP = new FrmThemLoaiSP();
+            frmThemLoaiSP.ShowDialog();
         }
 
         public void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -177,6 +124,7 @@ namespace market_management.UI
                         TenLoaiSP.Add(reader["TenLoaiSP"].ToString());
                     }
                 }
+                dataAccess.objConnection.Close();
             }
             return TenLoaiSP;
         }
@@ -192,6 +140,7 @@ namespace market_management.UI
 
         private void UcLoaiSanPham_Load(object sender, EventArgs e)
         {
+            LoadData();
             HienThiTenLoaiSP();
         }
 

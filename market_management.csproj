@@ -121,6 +121,18 @@
     <Compile Include="FormNhaCungCap.Designer.cs">
       <DependentUpon>FormNhaCungCap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThemLoaiSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemLoaiSP.Designer.cs">
+      <DependentUpon>FrmThemLoaiSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThemSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemSP.Designer.cs">
+      <DependentUpon>FrmThemSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThemChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +141,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="UI\UcDoanhThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +184,12 @@
     <Compile Include="UI\UcSanPham.Designer.cs">
       <DependentUpon>UcSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UcTKSPDaBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcTKSPDaBan.Designer.cs">
+      <DependentUpon>UcTKSPDaBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UcTKHangCanBoSung.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,17 +202,17 @@
     <Compile Include="UI\UcTKHangTonKho.Designer.cs">
       <DependentUpon>UcTKHangTonKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UcTKKhachHang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\UcTKKhachHang.Designer.cs">
-      <DependentUpon>UcTKKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\UcNhaCungCap.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\UcNhaCungCap.Designer.cs">
       <DependentUpon>UcNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UcTKLoaiSPDaBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UcTKLoaiSPDaBan.Designer.cs">
+      <DependentUpon>UcTKLoaiSPDaBan.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UcChucVu.cs">
       <SubType>UserControl</SubType>
@@ -236,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNhaCungCap.resx">
       <DependentUpon>FormNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemLoaiSP.resx">
+      <DependentUpon>FrmThemLoaiSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemSP.resx">
+      <DependentUpon>FrmThemSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemChucVu.resx">
       <DependentUpon>FormThemChucVu.cs</DependentUpon>
@@ -281,14 +306,17 @@
     <EmbeddedResource Include="UI\UcSanPham.resx">
       <DependentUpon>UcSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcTKLoaiSPDaBan.resx">
+      <DependentUpon>UcTKLoaiSPDaBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UcTKSPDaBan.resx">
+      <DependentUpon>UcTKSPDaBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UcTKHangCanBoSung.resx">
       <DependentUpon>UcTKHangCanBoSung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcTKHangTonKho.resx">
       <DependentUpon>UcTKHangTonKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\UcTKKhachHang.resx">
-      <DependentUpon>UcTKKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XemChiTietDonNhap.resx">
       <DependentUpon>XemChiTietDonNhap.cs</DependentUpon>
