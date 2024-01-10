@@ -170,10 +170,9 @@
       <DependentUpon>TKNhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UcTKBanHang.cs">
-    <Compile Include="Session.cs" />
-    <Compile Include="UI\UcDoanhThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Session.cs" />
     <Compile Include="UI\UcTKBanHang.designer.cs">
       <DependentUpon>UcTKBanHang.cs</DependentUpon>
     </Compile>
@@ -308,8 +307,6 @@
     <EmbeddedResource Include="UI\UcChucVu.resx">
       <DependentUpon>UcChucVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UcDoanhThu.resx">
-      <DependentUpon>UcDoanhThu.cs</DependentUpon>
     <EmbeddedResource Include="FormThemKH.resx">
       <DependentUpon>FormThemKH.cs</DependentUpon>
     </EmbeddedResource>

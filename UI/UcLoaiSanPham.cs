@@ -37,7 +37,6 @@ namespace market_management.UI
                 " FROM LOAI_SAN_PHAM;";
             GcLoaiSP.DataSource = dataAccess.GetDataTable(stringQuery);
             DataTable dataTable = dataAccess.GetDataTable(stringQuery);
-            bsiRecordsCount.Caption = "RECORDS : " + dataTable.Rows.Count;
         }
         private void BbiThem_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -99,7 +98,6 @@ namespace market_management.UI
                 XtraMessageBox.Show($"Lỗi cập nhật loại sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        */
         private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadData();
@@ -107,7 +105,6 @@ namespace market_management.UI
             LbcMaLoaiSP.Text = "";
             CmbTrangThai.Text = "";
         }
-        */
         private List<string> LayTenLoaiSP()
         {
             List<string> TenLoaiSP = new List<string>();

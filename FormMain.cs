@@ -22,17 +22,15 @@ namespace market_management
         UcKhachHang _UcKH;
         UcNhanVien _UcNV;
         UcNhaCungCap _UcNhaCungCap;
-        UcDoanhThu _UcDT;
         UcQLBanHang _UcQLBanHang;
         UcTKHangTonKho _UcTKHangTonKho;
         UcTKLoaiSPDaBan _UcTKLoaiSPDaBan;
         UcTKSPDaBan _UcTKSPDaBan;
+        UcQLMaGiamGia _UcMGG;
 
         public FormMain()
         {
             InitializeComponent();
-
-            LoadDataNV();
         }
         public int MaNV { get; set; }
 
@@ -124,21 +122,6 @@ namespace market_management
         }
         
 
-        private void TKDoanhThu_Click(object sender, EventArgs e)
-        {
-            if (_UcDT == null)
-            {
-                _UcDT = new UcTKBanHang();
-                _UcDT.Dock = DockStyle.Fill;
-                PnlMain.Controls.Add(_UcDT);
-                _UcDT.BringToFront();
-            }
-            else
-            {
-                _UcDT.BringToFront();
-            }
-        }
-
         private void TKHangTon_Click(object sender, EventArgs e)
         {
             if (_UcTKHangTonKho == null)
@@ -191,13 +174,13 @@ namespace market_management
             frmDangNhap.ShowDialog();
 
         }
-
+        /*
         private void DangKy_Click(object sender, EventArgs e)
         {
             FrmDangKy frmDangKy = new FrmDangKy();
             frmDangKy.ShowDialog();
         }
-
+        */
         private void QLBanHang_Click(object sender, EventArgs e)
         {
             if (_UcQLBanHang == null)
@@ -262,7 +245,7 @@ namespace market_management
 
         private void DangKy_Click(object sender, EventArgs e)
         {
-            if (Session.chucVu == "Quản lý")
+            if (Session.chucVu == true)
             {
                 DangKy.Visible = true;
             }
@@ -278,12 +261,12 @@ namespace market_management
         private void FormMain_Load(object sender, EventArgs e)
         {
             Session.tenNV = BsiTenNV.Caption;
-            Session.chucVu = BsiChucvu.Caption;
-            if (Session.chucVu.Substring(0, 7) == "Quản lý")
-            {
-                NV.Visible = true;
-                DangKy.Visible = true;
-            }
+            //Session.chucVu = BsiChucvu.Caption;
+            //if (Session.chucVu.Substring(0, 7) == "Quản lý")
+            //{
+            //    NV.Visible = true;
+            //    DangKy.Visible = true;
+            //}
         }
     }
 }

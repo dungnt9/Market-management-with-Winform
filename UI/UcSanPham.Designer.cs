@@ -37,7 +37,6 @@
             this.BbiThem = new DevExpress.XtraBars.BarButtonItem();
             this.RpDanhMucSP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RpgTacVuSP = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -144,15 +143,6 @@
             this.RpgTacVuSP.ItemLinks.Add(this.BbiSua);
             this.RpgTacVuSP.ItemLinks.Add(this.BbiLamMoi);
             this.RpgTacVuSP.Name = "RpgTacVuSP";
-            // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 725);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.RcDanhMucSP;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(934, 33);
             // 
             // labelControl1
             // 

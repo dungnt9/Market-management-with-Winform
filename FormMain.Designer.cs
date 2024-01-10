@@ -35,7 +35,7 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.BbiCapNhatThongTin = new System.Windows.Forms.PictureBox();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
-            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            //this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.SP = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.NV = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.KH = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -123,7 +123,7 @@
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement1,
+            //this.accordionControlElement1,
             this.accordionControlSeparator1,
             this.accordionControlSeparator2,
             this.QLBanHang,
@@ -146,7 +146,7 @@
             // 
             // accordionControlElement1
             // 
-            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            /*this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.SP,
             this.NV,
             this.KH,
@@ -158,7 +158,7 @@
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Đăng ký tài khoản cho nhân viên";
             this.accordionControlElement1.Click += new System.EventHandler(this.accordionControlElement1_Click);
-            // 
+            */// 
             // SP
             // 
             this.SP.Name = "SP";
@@ -262,7 +262,6 @@
             this.TKDoanhThu.Name = "TKDoanhThu";
             this.TKDoanhThu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.TKDoanhThu.Text = "Thống kê doanh thu";
-            this.TKDoanhThu.Click += new System.EventHandler(this.TKDoanhThu_Click);
             // 
             // TKHangTon
             // 

@@ -40,7 +40,6 @@
             this.RpQLNhapHang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RpgTacVuNhapHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.LbcMaDN = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.GcQLNhapHang)).BeginInit();
@@ -154,15 +153,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.BsiXemChiTiet);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 725);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.RcQLNhapHang;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(934, 33);
-            // 
             // LbcMaDN
             // 
             this.LbcMaDN.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,7 +179,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.LbcMaDN);
-            this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.GcQLNhapHang);
             this.Controls.Add(this.RcQLNhapHang);
             this.Name = "UcQLNhapHang";

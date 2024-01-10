@@ -41,7 +41,6 @@ namespace market_management.UI
                 " FROM SAN_PHAM SP JOIN LOAI_SAN_PHAM LSP ON SP.MaLoaiSP = LSP.MaLoaiSP";
             GcSP.DataSource = dataAccess.GetDataTable(stringQuery);
             DataTable dataTable = dataAccess.GetDataTable(stringQuery);
-            bsiRecordsCount.Caption = "RECORDS : " + dataTable.Rows.Count;
 
         }
 

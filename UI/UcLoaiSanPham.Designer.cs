@@ -205,7 +205,6 @@
             this.Controls.Add(this.GcLoaiSP);
             this.Controls.Add(this.CbeTenLoaiSP);
             this.Controls.Add(this.LbTenLSP);
-            this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.RcDanhMucLoaiSP);
             this.Name = "UcLoaiSanPham";
             this.Load += new System.EventHandler(this.UcLoaiSanPham_Load);
