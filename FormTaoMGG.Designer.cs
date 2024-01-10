@@ -32,12 +32,8 @@
             this.GrbDangKy = new DevExpress.XtraEditors.GroupControl();
             this.CbeDiemTich = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CbeNgayLe = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.CheNgauNhien = new DevExpress.XtraEditors.CheckEdit();
-            this.CheDiemTich = new DevExpress.XtraEditors.CheckEdit();
-            this.CheNgayLe = new DevExpress.XtraEditors.CheckEdit();
-            this.RbConHieuLuc = new System.Windows.Forms.RadioButton();
+            this.RbNgayLe = new System.Windows.Forms.RadioButton();
             this.LbMoTa = new DevExpress.XtraEditors.LabelControl();
-            this.LbTrangThai = new DevExpress.XtraEditors.LabelControl();
             this.DeNgayTao = new DevExpress.XtraEditors.DateEdit();
             this.CbePhanTram = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LbNgayTao = new DevExpress.XtraEditors.LabelControl();
@@ -46,17 +42,19 @@
             this.LbTenChuongTrinh = new DevExpress.XtraEditors.LabelControl();
             this.BtnXoaThongTin = new DevExpress.XtraEditors.SimpleButton();
             this.BtnTao = new DevExpress.XtraEditors.SimpleButton();
+            this.RbDiemTich = new System.Windows.Forms.RadioButton();
+            this.RbNgauNhien = new System.Windows.Forms.RadioButton();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.LbNgayHetHan = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).BeginInit();
             this.GrbDangKy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CbeDiemTich.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeNgayLe.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheNgauNhien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheDiemTich.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheNgayLe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanTram.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenChuongTrinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LbDKTaiKhoan
@@ -81,14 +79,14 @@
             this.GrbDangKy.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.GrbDangKy.Appearance.Options.UseBackColor = true;
             this.GrbDangKy.Appearance.Options.UseFont = true;
+            this.GrbDangKy.Controls.Add(this.comboBoxEdit1);
+            this.GrbDangKy.Controls.Add(this.LbNgayHetHan);
+            this.GrbDangKy.Controls.Add(this.RbNgauNhien);
+            this.GrbDangKy.Controls.Add(this.RbDiemTich);
             this.GrbDangKy.Controls.Add(this.CbeDiemTich);
             this.GrbDangKy.Controls.Add(this.CbeNgayLe);
-            this.GrbDangKy.Controls.Add(this.CheNgauNhien);
-            this.GrbDangKy.Controls.Add(this.CheDiemTich);
-            this.GrbDangKy.Controls.Add(this.CheNgayLe);
-            this.GrbDangKy.Controls.Add(this.RbConHieuLuc);
+            this.GrbDangKy.Controls.Add(this.RbNgayLe);
             this.GrbDangKy.Controls.Add(this.LbMoTa);
-            this.GrbDangKy.Controls.Add(this.LbTrangThai);
             this.GrbDangKy.Controls.Add(this.DeNgayTao);
             this.GrbDangKy.Controls.Add(this.CbePhanTram);
             this.GrbDangKy.Controls.Add(this.LbNgayTao);
@@ -99,13 +97,13 @@
             this.GrbDangKy.Controls.Add(this.BtnTao);
             this.GrbDangKy.Location = new System.Drawing.Point(56, 110);
             this.GrbDangKy.Name = "GrbDangKy";
-            this.GrbDangKy.Size = new System.Drawing.Size(914, 314);
+            this.GrbDangKy.Size = new System.Drawing.Size(914, 258);
             this.GrbDangKy.TabIndex = 2;
             this.GrbDangKy.Text = "Thông tin mã giảm giá";
             // 
             // CbeDiemTich
             // 
-            this.CbeDiemTich.Location = new System.Drawing.Point(590, 149);
+            this.CbeDiemTich.Location = new System.Drawing.Point(590, 148);
             this.CbeDiemTich.Name = "CbeDiemTich";
             this.CbeDiemTich.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeDiemTich.Properties.Appearance.Options.UseFont = true;
@@ -126,44 +124,17 @@
             this.CbeNgayLe.Size = new System.Drawing.Size(122, 22);
             this.CbeNgayLe.TabIndex = 76;
             // 
-            // CheNgauNhien
+            // RbNgayLe
             // 
-            this.CheNgauNhien.Location = new System.Drawing.Point(740, 124);
-            this.CheNgauNhien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CheNgauNhien.Name = "CheNgauNhien";
-            this.CheNgauNhien.Properties.Caption = "Ngẫu nhiên";
-            this.CheNgauNhien.Size = new System.Drawing.Size(81, 20);
-            this.CheNgauNhien.TabIndex = 75;
-            // 
-            // CheDiemTich
-            // 
-            this.CheDiemTich.Location = new System.Drawing.Point(590, 124);
-            this.CheDiemTich.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CheDiemTich.Name = "CheDiemTich";
-            this.CheDiemTich.Properties.Caption = "Điểm tích";
-            this.CheDiemTich.Size = new System.Drawing.Size(81, 20);
-            this.CheDiemTich.TabIndex = 74;
-            // 
-            // CheNgayLe
-            // 
-            this.CheNgayLe.Location = new System.Drawing.Point(427, 124);
-            this.CheNgayLe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CheNgayLe.Name = "CheNgayLe";
-            this.CheNgayLe.Properties.Caption = "Ngày Lễ";
-            this.CheNgayLe.Size = new System.Drawing.Size(81, 20);
-            this.CheNgayLe.TabIndex = 73;
-            // 
-            // RbConHieuLuc
-            // 
-            this.RbConHieuLuc.BackColor = System.Drawing.Color.Transparent;
-            this.RbConHieuLuc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbConHieuLuc.Location = new System.Drawing.Point(682, 66);
-            this.RbConHieuLuc.Name = "RbConHieuLuc";
-            this.RbConHieuLuc.Size = new System.Drawing.Size(101, 22);
-            this.RbConHieuLuc.TabIndex = 68;
-            this.RbConHieuLuc.TabStop = true;
-            this.RbConHieuLuc.Text = "Còn hiệu lực";
-            this.RbConHieuLuc.UseVisualStyleBackColor = false;
+            this.RbNgayLe.BackColor = System.Drawing.Color.Transparent;
+            this.RbNgayLe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbNgayLe.Location = new System.Drawing.Point(427, 122);
+            this.RbNgayLe.Name = "RbNgayLe";
+            this.RbNgayLe.Size = new System.Drawing.Size(101, 22);
+            this.RbNgayLe.TabIndex = 68;
+            this.RbNgayLe.TabStop = true;
+            this.RbNgayLe.Text = "Ngày Lễ";
+            this.RbNgayLe.UseVisualStyleBackColor = false;
             // 
             // LbMoTa
             // 
@@ -175,20 +146,10 @@
             this.LbMoTa.TabIndex = 72;
             this.LbMoTa.Text = "Mô Tả";
             // 
-            // LbTrangThai
-            // 
-            this.LbTrangThai.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbTrangThai.Appearance.Options.UseFont = true;
-            this.LbTrangThai.Location = new System.Drawing.Point(611, 68);
-            this.LbTrangThai.Name = "LbTrangThai";
-            this.LbTrangThai.Size = new System.Drawing.Size(54, 15);
-            this.LbTrangThai.TabIndex = 71;
-            this.LbTrangThai.Text = "Trạng Thái";
-            // 
             // DeNgayTao
             // 
             this.DeNgayTao.EditValue = null;
-            this.DeNgayTao.Location = new System.Drawing.Point(191, 124);
+            this.DeNgayTao.Location = new System.Drawing.Point(427, 68);
             this.DeNgayTao.Name = "DeNgayTao";
             this.DeNgayTao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -199,7 +160,7 @@
             // 
             // CbePhanTram
             // 
-            this.CbePhanTram.Location = new System.Drawing.Point(427, 66);
+            this.CbePhanTram.Location = new System.Drawing.Point(191, 121);
             this.CbePhanTram.Name = "CbePhanTram";
             this.CbePhanTram.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbePhanTram.Properties.Appearance.Options.UseFont = true;
@@ -212,7 +173,7 @@
             // 
             this.LbNgayTao.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNgayTao.Appearance.Options.UseFont = true;
-            this.LbNgayTao.Location = new System.Drawing.Point(84, 124);
+            this.LbNgayTao.Location = new System.Drawing.Point(342, 67);
             this.LbNgayTao.Name = "LbNgayTao";
             this.LbNgayTao.Size = new System.Drawing.Size(50, 15);
             this.LbNgayTao.TabIndex = 68;
@@ -222,7 +183,7 @@
             // 
             this.LbPhanTram.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbPhanTram.Appearance.Options.UseFont = true;
-            this.LbPhanTram.Location = new System.Drawing.Point(342, 67);
+            this.LbPhanTram.Location = new System.Drawing.Point(84, 124);
             this.LbPhanTram.Name = "LbPhanTram";
             this.LbPhanTram.Size = new System.Drawing.Size(56, 15);
             this.LbPhanTram.TabIndex = 67;
@@ -252,7 +213,7 @@
             this.BtnXoaThongTin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnXoaThongTin.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnXoaThongTin.Appearance.Options.UseFont = true;
-            this.BtnXoaThongTin.Location = new System.Drawing.Point(67, 227);
+            this.BtnXoaThongTin.Location = new System.Drawing.Point(80, 209);
             this.BtnXoaThongTin.Name = "BtnXoaThongTin";
             this.BtnXoaThongTin.Size = new System.Drawing.Size(122, 23);
             this.BtnXoaThongTin.TabIndex = 14;
@@ -264,12 +225,57 @@
             this.BtnTao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnTao.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnTao.Appearance.Options.UseFont = true;
-            this.BtnTao.Location = new System.Drawing.Point(393, 227);
+            this.BtnTao.Location = new System.Drawing.Point(406, 209);
             this.BtnTao.Name = "BtnTao";
             this.BtnTao.Size = new System.Drawing.Size(122, 23);
             this.BtnTao.TabIndex = 13;
             this.BtnTao.Text = "Tạo";
             this.BtnTao.Click += new System.EventHandler(this.BtnTao_Click);
+            // 
+            // RbDiemTich
+            // 
+            this.RbDiemTich.BackColor = System.Drawing.Color.Transparent;
+            this.RbDiemTich.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbDiemTich.Location = new System.Drawing.Point(590, 120);
+            this.RbDiemTich.Name = "RbDiemTich";
+            this.RbDiemTich.Size = new System.Drawing.Size(101, 22);
+            this.RbDiemTich.TabIndex = 78;
+            this.RbDiemTich.TabStop = true;
+            this.RbDiemTich.Text = "Điểm Tích";
+            this.RbDiemTich.UseVisualStyleBackColor = false;
+            // 
+            // RbNgauNhien
+            // 
+            this.RbNgauNhien.BackColor = System.Drawing.Color.Transparent;
+            this.RbNgauNhien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbNgauNhien.Location = new System.Drawing.Point(744, 118);
+            this.RbNgauNhien.Name = "RbNgauNhien";
+            this.RbNgauNhien.Size = new System.Drawing.Size(101, 22);
+            this.RbNgauNhien.TabIndex = 79;
+            this.RbNgauNhien.TabStop = true;
+            this.RbNgauNhien.Text = "Ngẫu nhiên";
+            this.RbNgauNhien.UseVisualStyleBackColor = false;
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(687, 66);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Size = new System.Drawing.Size(122, 22);
+            this.comboBoxEdit1.TabIndex = 80;
+            // 
+            // LbNgayHetHan
+            // 
+            this.LbNgayHetHan.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbNgayHetHan.Appearance.Options.UseFont = true;
+            this.LbNgayHetHan.Location = new System.Drawing.Point(593, 67);
+            this.LbNgayHetHan.Name = "LbNgayHetHan";
+            this.LbNgayHetHan.Size = new System.Drawing.Size(75, 15);
+            this.LbNgayHetHan.TabIndex = 81;
+            this.LbNgayHetHan.Text = "Ngày Hết Hạn";
             // 
             // FrmTaoMGG
             // 
@@ -288,13 +294,11 @@
             this.GrbDangKy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CbeDiemTich.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeNgayLe.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheNgauNhien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheDiemTich.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CheNgayLe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanTram.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenChuongTrinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,19 +310,19 @@
         private DevExpress.XtraEditors.GroupControl GrbDangKy;
         private DevExpress.XtraEditors.SimpleButton BtnXoaThongTin;
         private DevExpress.XtraEditors.SimpleButton BtnTao;
-        private System.Windows.Forms.RadioButton RbConHieuLuc;
+        private System.Windows.Forms.RadioButton RbNgayLe;
         private DevExpress.XtraEditors.LabelControl LbMoTa;
-        private DevExpress.XtraEditors.LabelControl LbTrangThai;
         private DevExpress.XtraEditors.DateEdit DeNgayTao;
         private DevExpress.XtraEditors.ComboBoxEdit CbePhanTram;
         private DevExpress.XtraEditors.LabelControl LbNgayTao;
         private DevExpress.XtraEditors.LabelControl LbPhanTram;
         private DevExpress.XtraEditors.TextEdit TeTenChuongTrinh;
         private DevExpress.XtraEditors.LabelControl LbTenChuongTrinh;
-        private DevExpress.XtraEditors.CheckEdit CheNgayLe;
         private DevExpress.XtraEditors.ComboBoxEdit CbeDiemTich;
         private DevExpress.XtraEditors.ComboBoxEdit CbeNgayLe;
-        private DevExpress.XtraEditors.CheckEdit CheNgauNhien;
-        private DevExpress.XtraEditors.CheckEdit CheDiemTich;
+        private System.Windows.Forms.RadioButton RbNgauNhien;
+        private System.Windows.Forms.RadioButton RbDiemTich;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.LabelControl LbNgayHetHan;
     }
 }
