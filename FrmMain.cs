@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    public partial class FormMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
+    public partial class FrmMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
         DataAccess dataAccess = new DataAccess();
 
@@ -31,7 +31,7 @@ namespace market_management
         UcTKTongTienNhap _UcTKTongTienNhap;
         UcChucVu _UcChucVu;
         UcTKHangCanBoSung _UcTKHangCanBoSung;
-        public FormMain()
+        public FrmMain()
         {
             InitializeComponent();
             LoadNhanVienData();
@@ -67,6 +67,7 @@ namespace market_management
                         MessageBox.Show("No data found.");
                     }
                 }
+                dataAccess.objConnection.Close();
             }
         }
 
@@ -397,6 +398,12 @@ namespace market_management
             {
                 _UcTKHangCanBoSung.BringToFront();
             }
+        }
+
+        private void BsiCapNhatThongTin_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmCapNhatTaiKhoan frmCapNhatTaiKhoan = new FrmCapNhatTaiKhoan();
+            frmCapNhatTaiKhoan.ShowDialog();
         }
     }
 }

@@ -73,7 +73,7 @@ namespace market_management.UI
                 XtraMessageBox.Show("Vui lòng chọn đơn nhập cần xem chi tiết", "Thông báo");
                 return;
             }
-            XemChiTietDonNhap xem = new XemChiTietDonNhap(maDonNhap);
+            FrmXemCT_HDNhap xem = new FrmXemCT_HDNhap(maDonNhap);
             xem.ShowDialog();
         }
 
@@ -111,7 +111,7 @@ namespace market_management.UI
 
         private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmTaoDonNhap frmTaoDonNhap = new FrmTaoDonNhap();
+            FrmTaoHDNhap frmTaoDonNhap = new FrmTaoHDNhap();
             frmTaoDonNhap.ShowDialog();
         }
     }

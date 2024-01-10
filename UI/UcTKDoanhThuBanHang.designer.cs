@@ -81,22 +81,22 @@ namespace market_management
             this.CbeNam.EditValue = "2024";
             this.CbeNam.Location = new System.Drawing.Point(86, 119);
             this.CbeNam.Name = "CbeNam";
-            this.CbeNam.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbeNam.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeNam.Properties.Appearance.Options.UseFont = true;
             this.CbeNam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeNam.Size = new System.Drawing.Size(100, 24);
+            this.CbeNam.Size = new System.Drawing.Size(100, 26);
             this.CbeNam.TabIndex = 7;
             this.CbeNam.SelectedIndexChanged += new System.EventHandler(this.CbeNam_SelectedIndexChanged);
             this.CbeNam.SelectedValueChanged += new System.EventHandler(this.CbeNam_SelectedValueChanged);
             // 
             // LbNam
             // 
-            this.LbNam.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbNam.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNam.Appearance.Options.UseFont = true;
             this.LbNam.Location = new System.Drawing.Point(38, 122);
             this.LbNam.Name = "LbNam";
-            this.LbNam.Size = new System.Drawing.Size(28, 17);
+            this.LbNam.Size = new System.Drawing.Size(32, 20);
             this.LbNam.TabIndex = 9;
             this.LbNam.Text = "Năm";
             // 
@@ -105,7 +105,7 @@ namespace market_management
             this.GcBanHang.Location = new System.Drawing.Point(0, 261);
             this.GcBanHang.MainView = this.gridView1;
             this.GcBanHang.Name = "GcBanHang";
-            this.GcBanHang.Size = new System.Drawing.Size(800, 336);
+            this.GcBanHang.Size = new System.Drawing.Size(870, 399);
             this.GcBanHang.TabIndex = 15;
             this.GcBanHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -118,13 +118,15 @@ namespace market_management
             // 
             // LbBieuDo
             // 
-            this.LbBieuDo.Location = new System.Drawing.Point(473, 233);
+            this.LbBieuDo.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbBieuDo.Appearance.Options.UseFont = true;
+            this.LbBieuDo.Location = new System.Drawing.Point(425, 226);
             this.LbBieuDo.Name = "LbBieuDo";
-            this.LbBieuDo.Size = new System.Drawing.Size(258, 13);
+            this.LbBieuDo.Size = new System.Drawing.Size(358, 20);
             this.LbBieuDo.TabIndex = 16;
             this.LbBieuDo.Text = "Biểu đồ thống kê tiền bán hàng từng tháng trong năm";
             // 
-            // UcTKBanHang
+            // UcTKDoanhThuBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,8 +136,8 @@ namespace market_management
             this.Controls.Add(this.CbeNam);
             this.Controls.Add(this.LbDoanhThu);
             this.Controls.Add(this.CcBanHang);
-            this.Name = "UcTKBanHang";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Name = "UcTKDoanhThuBanHang";
+            this.Size = new System.Drawing.Size(870, 660);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CcBanHang)).EndInit();

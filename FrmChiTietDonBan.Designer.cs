@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class FormChiTietDonBan
+    partial class FrmChiTietDonBan
     {
         /// <summary>
         /// Required designer variable.
@@ -192,15 +192,16 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Tên Khách Hàng";
             // 
-            // FormChiTietDonBan
+            // FrmChiTietDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 411);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.GcSP_HDB);
-            this.Name = "FormChiTietDonBan";
-            this.Text = "FormChiTietDonBan";
+            this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.Name = "FrmChiTietDonBan";
+            this.Text = "Form Xem chi tiết đơn bán";
             ((System.ComponentModel.ISupportInitialize)(this.GcSP_HDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

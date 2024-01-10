@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class FormDonBan
+    partial class FrmTaoHDBan
     {
         /// <summary>
         /// Required designer variable.
@@ -324,7 +324,7 @@
             this.LbThanhTien.TabIndex = 16;
             this.LbThanhTien.Text = "00000";
             // 
-            // FormDonBan
+            // FrmTaoHDBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -345,8 +345,9 @@
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.GcSP_HDB);
             this.Controls.Add(this.groupControl1);
-            this.Name = "FormDonBan";
-            this.Text = "FormDonBan";
+            this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.Name = "FrmTaoHDBan";
+            this.Text = "Form Tạo hóa đơn bán hàng";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

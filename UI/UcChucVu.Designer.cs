@@ -39,7 +39,6 @@
             this.BbiLamMoi = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.TeTenCV = new DevExpress.XtraEditors.TextEdit();
@@ -56,11 +55,12 @@
             // 
             // GcChucVu
             // 
-            this.GcChucVu.Location = new System.Drawing.Point(0, 235);
+            this.GcChucVu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GcChucVu.Location = new System.Drawing.Point(0, 265);
             this.GcChucVu.MainView = this.GvChucVu;
             this.GcChucVu.MenuManager = this.ribbonControl;
             this.GcChucVu.Name = "GcChucVu";
-            this.GcChucVu.Size = new System.Drawing.Size(800, 332);
+            this.GcChucVu.Size = new System.Drawing.Size(870, 395);
             this.GcChucVu.TabIndex = 2;
             this.GcChucVu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvChucVu});
@@ -92,8 +92,7 @@
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(800, 126);
-            this.ribbonControl.StatusBar = this.ribbonStatusBar;
+            this.ribbonControl.Size = new System.Drawing.Size(870, 126);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiPrintPreview
@@ -160,31 +159,23 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Tasks";
             // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 573);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(800, 27);
-            // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(46, 142);
+            this.labelControl1.Location = new System.Drawing.Point(46, 145);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(78, 17);
+            this.labelControl1.Size = new System.Drawing.Size(81, 20);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Tên Chức Vụ";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(46, 175);
+            this.labelControl2.Location = new System.Drawing.Point(46, 181);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(78, 17);
+            this.labelControl2.Size = new System.Drawing.Size(82, 20);
             this.labelControl2.TabIndex = 6;
             this.labelControl2.Text = "Cấp Quản Lý";
             // 
@@ -193,7 +184,9 @@
             this.TeTenCV.Location = new System.Drawing.Point(158, 142);
             this.TeTenCV.MenuManager = this.ribbonControl;
             this.TeTenCV.Name = "TeTenCV";
-            this.TeTenCV.Size = new System.Drawing.Size(298, 20);
+            this.TeTenCV.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeTenCV.Properties.Appearance.Options.UseFont = true;
+            this.TeTenCV.Size = new System.Drawing.Size(298, 26);
             this.TeTenCV.TabIndex = 7;
             // 
             // CbeCapQuanLy
@@ -201,21 +194,23 @@
             this.CbeCapQuanLy.Location = new System.Drawing.Point(158, 175);
             this.CbeCapQuanLy.MenuManager = this.ribbonControl;
             this.CbeCapQuanLy.Name = "CbeCapQuanLy";
+            this.CbeCapQuanLy.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbeCapQuanLy.Properties.Appearance.Options.UseFont = true;
             this.CbeCapQuanLy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbeCapQuanLy.Properties.Items.AddRange(new object[] {
             "Có",
             "Không"});
-            this.CbeCapQuanLy.Size = new System.Drawing.Size(100, 20);
+            this.CbeCapQuanLy.Size = new System.Drawing.Size(100, 26);
             this.CbeCapQuanLy.TabIndex = 8;
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(46, 212);
+            this.labelControl3.Location = new System.Drawing.Point(46, 215);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(39, 17);
+            this.labelControl3.Size = new System.Drawing.Size(42, 20);
             this.labelControl3.TabIndex = 11;
             this.labelControl3.Text = "Mô Tả";
             // 
@@ -224,7 +219,9 @@
             this.TeMoTa.Location = new System.Drawing.Point(158, 212);
             this.TeMoTa.MenuManager = this.ribbonControl;
             this.TeMoTa.Name = "TeMoTa";
-            this.TeMoTa.Size = new System.Drawing.Size(550, 20);
+            this.TeMoTa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeMoTa.Properties.Appearance.Options.UseFont = true;
+            this.TeMoTa.Size = new System.Drawing.Size(550, 26);
             this.TeMoTa.TabIndex = 12;
             // 
             // UcChucVu
@@ -237,11 +234,10 @@
             this.Controls.Add(this.TeTenCV);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.GcChucVu);
             this.Controls.Add(this.ribbonControl);
             this.Name = "UcChucVu";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(870, 660);
             ((System.ComponentModel.ISupportInitialize)(this.GcChucVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GvChucVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
@@ -261,7 +257,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem BbiThemCV;
         private DevExpress.XtraBars.BarButtonItem BbiSuaCV;

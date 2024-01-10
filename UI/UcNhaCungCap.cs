@@ -33,7 +33,7 @@ namespace market_management.UI
         
         private void BbiThemNCC_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormNhaCungCap frmNhaCungCap = new FormNhaCungCap();
+            FrmNhaCungCap frmNhaCungCap = new FrmNhaCungCap();
             frmNhaCungCap.ShowDialog();
             frmNhaCungCap.BringToFront();
 

@@ -58,11 +58,11 @@
             // 
             // GcNCC
             // 
-            this.GcNCC.Location = new System.Drawing.Point(-3, 250);
+            this.GcNCC.Location = new System.Drawing.Point(0, 239);
             this.GcNCC.MainView = this.gridView;
             this.GcNCC.MenuManager = this.ribbonControl;
             this.GcNCC.Name = "GcNCC";
-            this.GcNCC.Size = new System.Drawing.Size(803, 347);
+            this.GcNCC.Size = new System.Drawing.Size(870, 421);
             this.GcNCC.TabIndex = 2;
             this.GcNCC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -94,7 +94,7 @@
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(800, 126);
+            this.ribbonControl.Size = new System.Drawing.Size(870, 126);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiPrintPreview
@@ -164,30 +164,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 152);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 157);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 20);
+            this.label1.Size = new System.Drawing.Size(131, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tên Nhà Cung Cấp";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(45, 201);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 20);
+            this.label2.Size = new System.Drawing.Size(102, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Số Điện Thoại";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(447, 154);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(481, 152);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Địa Chỉ";
             // 
@@ -196,7 +196,9 @@
             this.TeTenNCC.Location = new System.Drawing.Point(201, 154);
             this.TeTenNCC.MenuManager = this.ribbonControl;
             this.TeTenNCC.Name = "TeTenNCC";
-            this.TeTenNCC.Size = new System.Drawing.Size(158, 20);
+            this.TeTenNCC.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeTenNCC.Properties.Appearance.Options.UseFont = true;
+            this.TeTenNCC.Size = new System.Drawing.Size(158, 26);
             this.TeTenNCC.TabIndex = 7;
             // 
             // TeSĐTNCC
@@ -204,35 +206,41 @@
             this.TeSĐTNCC.Location = new System.Drawing.Point(201, 203);
             this.TeSĐTNCC.MenuManager = this.ribbonControl;
             this.TeSĐTNCC.Name = "TeSĐTNCC";
-            this.TeSĐTNCC.Size = new System.Drawing.Size(158, 20);
+            this.TeSĐTNCC.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeSĐTNCC.Properties.Appearance.Options.UseFont = true;
+            this.TeSĐTNCC.Size = new System.Drawing.Size(158, 26);
             this.TeSĐTNCC.TabIndex = 8;
             // 
             // TeDiaChiNCC
             // 
-            this.TeDiaChiNCC.Location = new System.Drawing.Point(579, 156);
+            this.TeDiaChiNCC.Location = new System.Drawing.Point(597, 151);
             this.TeDiaChiNCC.MenuManager = this.ribbonControl;
             this.TeDiaChiNCC.Name = "TeDiaChiNCC";
-            this.TeDiaChiNCC.Size = new System.Drawing.Size(196, 20);
+            this.TeDiaChiNCC.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeDiaChiNCC.Properties.Appearance.Options.UseFont = true;
+            this.TeDiaChiNCC.Size = new System.Drawing.Size(196, 26);
             this.TeDiaChiNCC.TabIndex = 9;
             // 
             // LbLoaiSanPham
             // 
-            this.LbLoaiSanPham.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbLoaiSanPham.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbLoaiSanPham.Appearance.Options.UseFont = true;
-            this.LbLoaiSanPham.Location = new System.Drawing.Point(451, 201);
+            this.LbLoaiSanPham.Location = new System.Drawing.Point(485, 204);
             this.LbLoaiSanPham.Name = "LbLoaiSanPham";
-            this.LbLoaiSanPham.Size = new System.Drawing.Size(102, 20);
+            this.LbLoaiSanPham.Size = new System.Drawing.Size(97, 20);
             this.LbLoaiSanPham.TabIndex = 12;
             this.LbLoaiSanPham.Text = "Loại Sản Phẩm";
             // 
             // CbeLoaiSanPham
             // 
-            this.CbeLoaiSanPham.Location = new System.Drawing.Point(579, 203);
+            this.CbeLoaiSanPham.Location = new System.Drawing.Point(597, 198);
             this.CbeLoaiSanPham.MenuManager = this.ribbonControl;
             this.CbeLoaiSanPham.Name = "CbeLoaiSanPham";
+            this.CbeLoaiSanPham.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbeLoaiSanPham.Properties.Appearance.Options.UseFont = true;
             this.CbeLoaiSanPham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeLoaiSanPham.Size = new System.Drawing.Size(100, 20);
+            this.CbeLoaiSanPham.Size = new System.Drawing.Size(100, 26);
             this.CbeLoaiSanPham.TabIndex = 13;
             // 
             // UcNhaCungCap
@@ -250,7 +258,7 @@
             this.Controls.Add(this.GcNCC);
             this.Controls.Add(this.ribbonControl);
             this.Name = "UcNhaCungCap";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(870, 660);
             ((System.ComponentModel.ISupportInitialize)(this.GcNCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();

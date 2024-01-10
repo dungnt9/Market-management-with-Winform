@@ -70,7 +70,7 @@
             this.GcDanhMucKH.MainView = this.gridView;
             this.GcDanhMucKH.MenuManager = this.RcDanhMucKH;
             this.GcDanhMucKH.Name = "GcDanhMucKH";
-            this.GcDanhMucKH.Size = new System.Drawing.Size(800, 328);
+            this.GcDanhMucKH.Size = new System.Drawing.Size(870, 388);
             this.GcDanhMucKH.TabIndex = 2;
             this.GcDanhMucKH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -99,7 +99,7 @@
             this.RpDanhMucKH});
             this.RcDanhMucKH.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.RcDanhMucKH.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.RcDanhMucKH.Size = new System.Drawing.Size(800, 126);
+            this.RcDanhMucKH.Size = new System.Drawing.Size(870, 126);
             this.RcDanhMucKH.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // BbiThemMoi
@@ -152,143 +152,143 @@
             // 
             // TeDiaChi
             // 
-            this.TeDiaChi.Location = new System.Drawing.Point(603, 140);
+            this.TeDiaChi.Location = new System.Drawing.Point(695, 140);
             this.TeDiaChi.Name = "TeDiaChi";
-            this.TeDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeDiaChi.Properties.Appearance.Options.UseFont = true;
-            this.TeDiaChi.Size = new System.Drawing.Size(144, 22);
+            this.TeDiaChi.Size = new System.Drawing.Size(144, 26);
             this.TeDiaChi.TabIndex = 45;
             // 
             // LbDiaChi
             // 
-            this.LbDiaChi.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbDiaChi.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbDiaChi.Appearance.Options.UseFont = true;
-            this.LbDiaChi.Location = new System.Drawing.Point(509, 141);
+            this.LbDiaChi.Location = new System.Drawing.Point(598, 143);
             this.LbDiaChi.Name = "LbDiaChi";
-            this.LbDiaChi.Size = new System.Drawing.Size(36, 15);
+            this.LbDiaChi.Size = new System.Drawing.Size(46, 20);
             this.LbDiaChi.TabIndex = 49;
             this.LbDiaChi.Text = "Địa chỉ";
             // 
             // TeSDT
             // 
-            this.TeSDT.Location = new System.Drawing.Point(361, 183);
+            this.TeSDT.Location = new System.Drawing.Point(429, 183);
             this.TeSDT.Name = "TeSDT";
-            this.TeSDT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeSDT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeSDT.Properties.Appearance.Options.UseFont = true;
-            this.TeSDT.Size = new System.Drawing.Size(122, 22);
+            this.TeSDT.Size = new System.Drawing.Size(131, 26);
             this.TeSDT.TabIndex = 44;
             // 
             // LbSDT
             // 
-            this.LbSDT.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbSDT.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbSDT.Appearance.Options.UseFont = true;
-            this.LbSDT.Location = new System.Drawing.Point(276, 186);
+            this.LbSDT.Location = new System.Drawing.Point(330, 186);
             this.LbSDT.Name = "LbSDT";
-            this.LbSDT.Size = new System.Drawing.Size(69, 15);
+            this.LbSDT.Size = new System.Drawing.Size(88, 20);
             this.LbSDT.TabIndex = 45;
             this.LbSDT.Text = "Số điện thoại";
             // 
             // LbGioiTinh
             // 
-            this.LbGioiTinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbGioiTinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbGioiTinh.Appearance.Options.UseFont = true;
-            this.LbGioiTinh.Location = new System.Drawing.Point(276, 141);
+            this.LbGioiTinh.Location = new System.Drawing.Point(330, 141);
             this.LbGioiTinh.Name = "LbGioiTinh";
-            this.LbGioiTinh.Size = new System.Drawing.Size(45, 15);
+            this.LbGioiTinh.Size = new System.Drawing.Size(56, 20);
             this.LbGioiTinh.TabIndex = 44;
             this.LbGioiTinh.Text = "Giới tính";
             // 
             // LbMaGiamGia
             // 
-            this.LbMaGiamGia.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbMaGiamGia.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbMaGiamGia.Appearance.Options.UseFont = true;
-            this.LbMaGiamGia.Location = new System.Drawing.Point(509, 186);
+            this.LbMaGiamGia.Location = new System.Drawing.Point(598, 188);
             this.LbMaGiamGia.Name = "LbMaGiamGia";
-            this.LbMaGiamGia.Size = new System.Drawing.Size(66, 15);
+            this.LbMaGiamGia.Size = new System.Drawing.Size(84, 20);
             this.LbMaGiamGia.TabIndex = 43;
             this.LbMaGiamGia.Text = "Mã giảm giá";
             // 
             // TeTenKH
             // 
-            this.TeTenKH.Location = new System.Drawing.Point(123, 185);
+            this.TeTenKH.Location = new System.Drawing.Point(141, 183);
             this.TeTenKH.Name = "TeTenKH";
-            this.TeTenKH.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeTenKH.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeTenKH.Properties.Appearance.Options.UseFont = true;
-            this.TeTenKH.Size = new System.Drawing.Size(128, 22);
+            this.TeTenKH.Size = new System.Drawing.Size(154, 26);
             this.TeTenKH.TabIndex = 41;
             // 
             // LbTenKH
             // 
-            this.LbTenKH.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbTenKH.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTenKH.Appearance.Options.UseFont = true;
             this.LbTenKH.Location = new System.Drawing.Point(27, 186);
             this.LbTenKH.Name = "LbTenKH";
-            this.LbTenKH.Size = new System.Drawing.Size(87, 15);
+            this.LbTenKH.Size = new System.Drawing.Size(108, 20);
             this.LbTenKH.TabIndex = 41;
             this.LbTenKH.Text = "Tên Khách Hàng";
             // 
             // TeMaKH
             // 
-            this.TeMaKH.Location = new System.Drawing.Point(123, 140);
+            this.TeMaKH.Location = new System.Drawing.Point(142, 140);
             this.TeMaKH.Name = "TeMaKH";
-            this.TeMaKH.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TeMaKH.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeMaKH.Properties.Appearance.Options.UseFont = true;
-            this.TeMaKH.Size = new System.Drawing.Size(128, 22);
+            this.TeMaKH.Size = new System.Drawing.Size(154, 26);
             this.TeMaKH.TabIndex = 40;
             // 
             // LbMaKH
             // 
-            this.LbMaKH.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbMaKH.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbMaKH.Appearance.Options.UseFont = true;
             this.LbMaKH.Location = new System.Drawing.Point(27, 141);
             this.LbMaKH.Name = "LbMaKH";
-            this.LbMaKH.Size = new System.Drawing.Size(85, 15);
+            this.LbMaKH.Size = new System.Drawing.Size(105, 20);
             this.LbMaKH.TabIndex = 39;
             this.LbMaKH.Text = "Mã Khách Hàng";
             // 
             // CbeMaGiamGia
             // 
-            this.CbeMaGiamGia.Location = new System.Drawing.Point(603, 184);
+            this.CbeMaGiamGia.Location = new System.Drawing.Point(695, 184);
             this.CbeMaGiamGia.Name = "CbeMaGiamGia";
-            this.CbeMaGiamGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.CbeMaGiamGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeMaGiamGia.Properties.Appearance.Options.UseFont = true;
             this.CbeMaGiamGia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeMaGiamGia.Size = new System.Drawing.Size(144, 22);
+            this.CbeMaGiamGia.Size = new System.Drawing.Size(144, 26);
             this.CbeMaGiamGia.TabIndex = 46;
             // 
             // CbeGioiTinh
             // 
-            this.CbeGioiTinh.Location = new System.Drawing.Point(361, 140);
+            this.CbeGioiTinh.Location = new System.Drawing.Point(429, 140);
             this.CbeGioiTinh.Name = "CbeGioiTinh";
-            this.CbeGioiTinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.CbeGioiTinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeGioiTinh.Properties.Appearance.Options.UseFont = true;
             this.CbeGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeGioiTinh.Size = new System.Drawing.Size(122, 22);
+            this.CbeGioiTinh.Size = new System.Drawing.Size(131, 26);
             this.CbeGioiTinh.TabIndex = 43;
             // 
             // DeNgaySinh
             // 
             this.DeNgaySinh.EditValue = null;
-            this.DeNgaySinh.Location = new System.Drawing.Point(123, 230);
+            this.DeNgaySinh.Location = new System.Drawing.Point(142, 228);
             this.DeNgaySinh.Name = "DeNgaySinh";
-            this.DeNgaySinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeNgaySinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeNgaySinh.Properties.Appearance.Options.UseFont = true;
             this.DeNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DeNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DeNgaySinh.Size = new System.Drawing.Size(128, 22);
+            this.DeNgaySinh.Size = new System.Drawing.Size(154, 26);
             this.DeNgaySinh.TabIndex = 42;
             // 
             // LbNgaySinh
             // 
-            this.LbNgaySinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbNgaySinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNgaySinh.Appearance.Options.UseFont = true;
             this.LbNgaySinh.Location = new System.Drawing.Point(27, 231);
             this.LbNgaySinh.Name = "LbNgaySinh";
-            this.LbNgaySinh.Size = new System.Drawing.Size(54, 15);
+            this.LbNgaySinh.Size = new System.Drawing.Size(67, 20);
             this.LbNgaySinh.TabIndex = 62;
             this.LbNgaySinh.Text = "Ngày Sinh";
             // 
@@ -313,7 +313,8 @@
             this.Controls.Add(this.GcDanhMucKH);
             this.Controls.Add(this.RcDanhMucKH);
             this.Name = "UcKhachHang";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(870, 660);
+            this.Load += new System.EventHandler(this.UcKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GcDanhMucKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcDanhMucKH)).EndInit();

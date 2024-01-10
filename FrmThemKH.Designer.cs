@@ -255,7 +255,7 @@
             this.Controls.Add(this.GrbDangKy);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.Name = "FrmThemKH";
-            this.Text = "Thêm Khách Hàng";
+            this.Text = "Form Thêm Khách Hàng";
             ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).EndInit();
             this.GrbDangKy.ResumeLayout(false);
             this.GrbDangKy.PerformLayout();

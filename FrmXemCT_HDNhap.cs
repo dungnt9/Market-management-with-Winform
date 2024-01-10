@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    public partial class XemChiTietDonNhap : Form
+    public partial class FrmXemCT_HDNhap : DevExpress.XtraEditors.XtraForm
     {
         DataAccess dataAccess = new DataAccess();
         private string maDonNhap;
-        public XemChiTietDonNhap(string maDonNhap)
+        public FrmXemCT_HDNhap(string maDonNhap)
         {
             this.maDonNhap = maDonNhap;
             InitializeComponent();

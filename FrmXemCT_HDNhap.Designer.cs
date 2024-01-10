@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class XemChiTietDonNhap
+    partial class FrmXemCT_HDNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -36,25 +36,31 @@
             // 
             // GcChiTiet
             // 
-            this.GcChiTiet.Location = new System.Drawing.Point(1, 2);
+            this.GcChiTiet.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.GcChiTiet.Location = new System.Drawing.Point(-1, 2);
             this.GcChiTiet.MainView = this.gridView1;
+            this.GcChiTiet.Margin = new System.Windows.Forms.Padding(2);
             this.GcChiTiet.Name = "GcChiTiet";
-            this.GcChiTiet.Size = new System.Drawing.Size(915, 707);
+            this.GcChiTiet.Size = new System.Drawing.Size(686, 574);
             this.GcChiTiet.TabIndex = 0;
             this.GcChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.GcChiTiet;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 600;
             // 
             // XemChiTietDonNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 711);
+            this.ClientSize = new System.Drawing.Size(687, 578);
             this.Controls.Add(this.GcChiTiet);
+            this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "XemChiTietDonNhap";
             this.Text = "Form Xem chi tiết đơn nhập";
             ((System.ComponentModel.ISupportInitialize)(this.GcChiTiet)).EndInit();

@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class FrmTaoDonNhap
+    partial class FrmTaoHDNhap
     {
         /// <summary>
         /// Required designer variable.

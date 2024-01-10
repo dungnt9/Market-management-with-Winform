@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    public partial class FormThemChucVu : DevExpress.XtraEditors.XtraForm
+    public partial class FrmThemChucVu : DevExpress.XtraEditors.XtraForm
     {
         DataAccess dataAccess = new DataAccess();
-        public FormThemChucVu()
+        public FrmThemChucVu()
         {
             InitializeComponent();
         }

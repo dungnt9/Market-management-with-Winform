@@ -50,10 +50,10 @@
             // 
             // GcHangBoSung
             // 
-            this.GcHangBoSung.Location = new System.Drawing.Point(0, 165);
+            this.GcHangBoSung.Location = new System.Drawing.Point(0, 162);
             this.GcHangBoSung.MainView = this.GvHangBoSung;
             this.GcHangBoSung.Name = "GcHangBoSung";
-            this.GcHangBoSung.Size = new System.Drawing.Size(816, 286);
+            this.GcHangBoSung.Size = new System.Drawing.Size(870, 498);
             this.GcHangBoSung.TabIndex = 1;
             this.GcHangBoSung.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvHangBoSung});
@@ -91,7 +91,7 @@
             this.Controls.Add(this.GcHangBoSung);
             this.Controls.Add(this.labelControl1);
             this.Name = "UcTKHangCanBoSung";
-            this.Size = new System.Drawing.Size(816, 454);
+            this.Size = new System.Drawing.Size(870, 660);
             ((System.ComponentModel.ISupportInitialize)(this.GcHangBoSung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GvHangBoSung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeMucKhoToiThieu.Properties)).EndInit();

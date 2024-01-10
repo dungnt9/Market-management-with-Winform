@@ -67,6 +67,7 @@ namespace market_management
                         MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng kiểm tra và thử lại.", "Lỗi đăng nhập",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    dataAccess.objConnection.Close();
                 }
             }
             catch (Exception ex)
@@ -79,7 +80,7 @@ namespace market_management
         private void OpenFormMain()
         {
             // Open FormMain
-            FormMain frmMain = new FormMain();
+            FrmMain frmMain = new FrmMain();
             frmMain.MaNV = luuNhanVien;
             frmMain.LoadNhanVienData();
             frmMain.Show();

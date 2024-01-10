@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             this.LbBieuDo = new DevExpress.XtraEditors.LabelControl();
             this.GcNhapHang = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -41,24 +41,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CcBanHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             this.SuspendLayout();
             // 
             // LbBieuDo
             // 
-            this.LbBieuDo.Location = new System.Drawing.Point(473, 223);
+            this.LbBieuDo.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbBieuDo.Appearance.Options.UseFont = true;
+            this.LbBieuDo.Location = new System.Drawing.Point(420, 216);
             this.LbBieuDo.Name = "LbBieuDo";
-            this.LbBieuDo.Size = new System.Drawing.Size(264, 13);
+            this.LbBieuDo.Size = new System.Drawing.Size(366, 20);
             this.LbBieuDo.TabIndex = 22;
             this.LbBieuDo.Text = "Biểu đồ thống kê tiền nhập hàng từng tháng trong năm";
             // 
             // GcNhapHang
             // 
-            this.GcNhapHang.Location = new System.Drawing.Point(0, 251);
+            this.GcNhapHang.Location = new System.Drawing.Point(3, 262);
             this.GcNhapHang.MainView = this.gridView1;
             this.GcNhapHang.Name = "GcNhapHang";
-            this.GcNhapHang.Size = new System.Drawing.Size(800, 336);
+            this.GcNhapHang.Size = new System.Drawing.Size(864, 395);
             this.GcNhapHang.TabIndex = 21;
             this.GcNhapHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -70,11 +72,11 @@
             // 
             // LbNam
             // 
-            this.LbNam.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.LbNam.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNam.Appearance.Options.UseFont = true;
             this.LbNam.Location = new System.Drawing.Point(38, 112);
             this.LbNam.Name = "LbNam";
-            this.LbNam.Size = new System.Drawing.Size(28, 17);
+            this.LbNam.Size = new System.Drawing.Size(32, 20);
             this.LbNam.TabIndex = 20;
             this.LbNam.Text = "Năm";
             // 
@@ -83,11 +85,11 @@
             this.CbeNam.EditValue = "2024";
             this.CbeNam.Location = new System.Drawing.Point(86, 109);
             this.CbeNam.Name = "CbeNam";
-            this.CbeNam.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbeNam.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeNam.Properties.Appearance.Options.UseFont = true;
             this.CbeNam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeNam.Size = new System.Drawing.Size(100, 24);
+            this.CbeNam.Size = new System.Drawing.Size(100, 26);
             this.CbeNam.TabIndex = 19;
             // 
             // LbDoanhThu
@@ -102,23 +104,23 @@
             // 
             // CcBanHang
             // 
-            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            this.CcBanHang.Diagram = xyDiagram2;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.CcBanHang.Diagram = xyDiagram1;
             this.CcBanHang.Legend.LegendID = -1;
             this.CcBanHang.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.CcBanHang.Location = new System.Drawing.Point(449, 14);
             this.CcBanHang.Name = "CcBanHang";
-            series2.ArgumentDataMember = "Tháng";
-            series2.Name = "Series 2";
-            series2.SeriesID = 1;
-            series2.ValueDataMembersSerializable = "Tổng Tiền Bán";
+            series1.ArgumentDataMember = "Tháng";
+            series1.Name = "Series 2";
+            series1.SeriesID = 1;
+            series1.ValueDataMembersSerializable = "Tổng Tiền Bán";
             this.CcBanHang.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
+        series1};
             this.CcBanHang.Size = new System.Drawing.Size(306, 196);
             this.CcBanHang.TabIndex = 17;
             // 
-            // TKNhapHang
+            // UcTKTongTienNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,13 +130,13 @@
             this.Controls.Add(this.CbeNam);
             this.Controls.Add(this.LbDoanhThu);
             this.Controls.Add(this.CcBanHang);
-            this.Name = "TKNhapHang";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Name = "UcTKTongTienNhap";
+            this.Size = new System.Drawing.Size(870, 660);
             ((System.ComponentModel.ISupportInitialize)(this.GcNhapHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeNam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CcBanHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

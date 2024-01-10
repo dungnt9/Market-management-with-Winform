@@ -179,5 +179,10 @@ namespace market_management
             TeDiaChi.Text = DiaChi;
             CbeMaGiamGia.Text = MaGiamGia;
         }
+
+        private void UcKhachHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,45 +41,46 @@
             // 
             // CmbTrangThai
             // 
-            this.CmbTrangThai.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CmbTrangThai.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbTrangThai.FormattingEnabled = true;
             this.CmbTrangThai.Items.AddRange(new object[] {
             "Đang kinh doanh",
             "Không còn kinh doanh"});
-            this.CmbTrangThai.Location = new System.Drawing.Point(168, 84);
+            this.CmbTrangThai.Location = new System.Drawing.Point(176, 86);
             this.CmbTrangThai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbTrangThai.Name = "CmbTrangThai";
-            this.CmbTrangThai.Size = new System.Drawing.Size(171, 22);
+            this.CmbTrangThai.Size = new System.Drawing.Size(194, 28);
             this.CmbTrangThai.TabIndex = 50;
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(53, 91);
+            this.labelControl2.Location = new System.Drawing.Point(36, 94);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(56, 14);
+            this.labelControl2.Size = new System.Drawing.Size(66, 20);
             this.labelControl2.TabIndex = 49;
             this.labelControl2.Text = "Trạng thái";
             // 
             // LbTenLSP
             // 
-            this.LbTenLSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbTenLSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTenLSP.Appearance.Options.UseFont = true;
-            this.LbTenLSP.Location = new System.Drawing.Point(52, 46);
+            this.LbTenLSP.Location = new System.Drawing.Point(35, 49);
             this.LbTenLSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbTenLSP.Name = "LbTenLSP";
-            this.LbTenLSP.Size = new System.Drawing.Size(95, 15);
+            this.LbTenLSP.Size = new System.Drawing.Size(120, 20);
             this.LbTenLSP.TabIndex = 47;
             this.LbTenLSP.Text = "Tên loại sản phẩm";
             // 
             // BtnThemLoaiSP
             // 
-            this.BtnThemLoaiSP.Location = new System.Drawing.Point(134, 139);
+            this.BtnThemLoaiSP.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnThemLoaiSP.Location = new System.Drawing.Point(108, 139);
             this.BtnThemLoaiSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnThemLoaiSP.Name = "BtnThemLoaiSP";
-            this.BtnThemLoaiSP.Size = new System.Drawing.Size(118, 25);
+            this.BtnThemLoaiSP.Size = new System.Drawing.Size(170, 28);
             this.BtnThemLoaiSP.TabIndex = 51;
             this.BtnThemLoaiSP.Text = "Thêm loại sản phẩm";
             this.BtnThemLoaiSP.UseVisualStyleBackColor = true;
@@ -87,10 +88,12 @@
             // 
             // TeTenLoaiSP
             // 
-            this.TeTenLoaiSP.Location = new System.Drawing.Point(168, 46);
+            this.TeTenLoaiSP.Location = new System.Drawing.Point(176, 46);
             this.TeTenLoaiSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TeTenLoaiSP.Name = "TeTenLoaiSP";
-            this.TeTenLoaiSP.Size = new System.Drawing.Size(171, 20);
+            this.TeTenLoaiSP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TeTenLoaiSP.Properties.Appearance.Options.UseFont = true;
+            this.TeTenLoaiSP.Size = new System.Drawing.Size(194, 26);
             this.TeTenLoaiSP.TabIndex = 52;
             // 
             // groupControl1
@@ -112,6 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 233);
             this.Controls.Add(this.groupControl1);
+            this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FrmThemLoaiSP";
