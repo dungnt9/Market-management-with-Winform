@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    public partial class UcTKBanHang : DevExpress.XtraEditors.XtraUserControl
+    public partial class UcTKDoanhThuBanHang : DevExpress.XtraEditors.XtraUserControl
     {
         DataAccess dataAccess = new DataAccess();
-        public UcTKBanHang()
+        public UcTKDoanhThuBanHang()
         {
             InitializeComponent();
 

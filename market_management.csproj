@@ -163,18 +163,17 @@
       <DependentUpon>FormThemNV.cs</DependentUpon>
     </Compile>
     <Compile Include="Session.cs" />
-    <Compile Include="UI\TKNhapHang.cs">
+    <Compile Include="UI\UcTKTongTienNhap.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\TKNhapHang.Designer.cs">
-      <DependentUpon>TKNhapHang.cs</DependentUpon>
+    <Compile Include="UI\UcTKTongTienNhap.Designer.cs">
+      <DependentUpon>UcTKTongTienNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UcTKBanHang.cs">
+    <Compile Include="UI\UcTKDoanhThuBanHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Session.cs" />
-    <Compile Include="UI\UcTKBanHang.designer.cs">
-      <DependentUpon>UcTKBanHang.cs</DependentUpon>
+    <Compile Include="UI\UcTKDoanhThuBanHang.designer.cs">
+      <DependentUpon>UcTKDoanhThuBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UcKhachHang.cs">
       <SubType>UserControl</SubType>
@@ -316,11 +315,11 @@
     <EmbeddedResource Include="FormThemNV.resx">
       <DependentUpon>FormThemNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\TKNhapHang.resx">
-      <DependentUpon>TKNhapHang.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UcTKTongTienNhap.resx">
+      <DependentUpon>UcTKTongTienNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UcTKBanHang.resx">
-      <DependentUpon>UcTKBanHang.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UcTKDoanhThuBanHang.resx">
+      <DependentUpon>UcTKDoanhThuBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcKhachHang.resx">
       <DependentUpon>UcKhachHang.cs</DependentUpon>

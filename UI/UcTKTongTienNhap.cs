@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace market_management.UI
 {
-    public partial class TKNhapHang : DevExpress.XtraEditors.XtraUserControl
+    public partial class UcTKTongTienNhap : DevExpress.XtraEditors.XtraUserControl
     {
         DataAccess dataAccess = new DataAccess();
 
-        public TKNhapHang()
+        public UcTKTongTienNhap()
         {
             InitializeComponent();
         

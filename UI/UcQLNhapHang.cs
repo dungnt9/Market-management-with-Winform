@@ -108,5 +108,11 @@ namespace market_management.UI
                 }
             }
         }
+
+        private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmTaoDonNhap frmTaoDonNhap = new FrmTaoDonNhap();
+            frmTaoDonNhap.ShowDialog();
+        }
     }
 }

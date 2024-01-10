@@ -49,12 +49,13 @@
             // 
             // GcQLNhapHang
             // 
-            this.GcQLNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.GcQLNhapHang.Location = new System.Drawing.Point(0, 203);
+            this.GcQLNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.GcQLNhapHang.Location = new System.Drawing.Point(0, 223);
             this.GcQLNhapHang.MainView = this.gridView;
+            this.GcQLNhapHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GcQLNhapHang.MenuManager = this.RcQLNhapHang;
             this.GcQLNhapHang.Name = "GcQLNhapHang";
-            this.GcQLNhapHang.Size = new System.Drawing.Size(934, 514);
+            this.GcQLNhapHang.Size = new System.Drawing.Size(934, 535);
             this.GcQLNhapHang.TabIndex = 2;
             this.GcQLNhapHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -62,14 +63,17 @@
             // gridView
             // 
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView.DetailHeight = 431;
             this.gridView.GridControl = this.GcQLNhapHang;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.Editable = false;
             this.gridView.OptionsBehavior.ReadOnly = true;
+            this.gridView.OptionsEditForm.PopupEditFormWidth = 933;
             this.gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_FocusedRowChanged);
             // 
             // RcQLNhapHang
             // 
+            this.RcQLNhapHang.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
             this.RcQLNhapHang.ExpandCollapseItem.Id = 0;
             this.RcQLNhapHang.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.RcQLNhapHang.ExpandCollapseItem,
@@ -79,14 +83,15 @@
             this.BbiLamMoi,
             this.BsiXemChiTiet});
             this.RcQLNhapHang.Location = new System.Drawing.Point(0, 0);
+            this.RcQLNhapHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RcQLNhapHang.MaxItemId = 21;
             this.RcQLNhapHang.Name = "RcQLNhapHang";
+            this.RcQLNhapHang.OptionsMenuMinWidth = 385;
             this.RcQLNhapHang.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.RpQLNhapHang});
             this.RcQLNhapHang.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.RcQLNhapHang.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.RcQLNhapHang.Size = new System.Drawing.Size(934, 154);
-            //this.RcQLNhapHang.StatusBar = this.ribbonStatusBar;
             this.RcQLNhapHang.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bsiRecordsCount
@@ -101,7 +106,7 @@
             this.BbiNew.Id = 16;
             this.BbiNew.ImageOptions.ImageUri.Uri = "New";
             this.BbiNew.Name = "BbiNew";
-            //this.BbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiNew_ItemClick);
+            this.BbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiNew_ItemClick);
             // 
             // BbiXoa
             // 
@@ -157,7 +162,8 @@
             // 
             this.LbcMaDN.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbcMaDN.Appearance.Options.UseFont = true;
-            this.LbcMaDN.Location = new System.Drawing.Point(484, 173);
+            this.LbcMaDN.Location = new System.Drawing.Point(508, 181);
+            this.LbcMaDN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LbcMaDN.Name = "LbcMaDN";
             this.LbcMaDN.Size = new System.Drawing.Size(22, 21);
             this.LbcMaDN.TabIndex = 81;
@@ -167,7 +173,8 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(365, 173);
+            this.labelControl1.Location = new System.Drawing.Point(369, 181);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(102, 21);
             this.labelControl1.TabIndex = 82;
@@ -175,20 +182,22 @@
             // 
             // UcQLNhapHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.LbcMaDN);
             this.Controls.Add(this.GcQLNhapHang);
             this.Controls.Add(this.RcQLNhapHang);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UcQLNhapHang";
-            this.Size = new System.Drawing.Size(801, 616);
+            this.Size = new System.Drawing.Size(934, 758);
             this.Load += new System.EventHandler(this.UcQLNhapHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GcQLNhapHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RcQLNhapHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

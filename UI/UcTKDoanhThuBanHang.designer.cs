@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    partial class UcTKBanHang
+    partial class UcTKDoanhThuBanHang
     {
         /// <summary> 
         /// Required designer variable.

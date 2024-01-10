@@ -1,6 +1,6 @@
 ﻿namespace market_management.UI
 {
-    partial class TKNhapHang
+    partial class UcTKTongTienNhap
     {
         /// <summary> 
         /// Required designer variable.

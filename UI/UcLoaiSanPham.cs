@@ -150,5 +150,55 @@ namespace market_management.UI
         {
 
         }
+
+        private void BbiThem_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            FrmThemLoaiSP frmThemLoaiSP = new FrmThemLoaiSP();
+            frmThemLoaiSP.ShowDialog();
+        }
+
+        private void BbiSua_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            var tenLoaiSP = CbeTenLoaiSP.Text;
+            var maLoaiSP = LbcMaLoaiSP.Text;
+            var trangThai = CmbTrangThai.Text;
+
+            if (string.IsNullOrEmpty(tenLoaiSP) || string.IsNullOrEmpty(trangThai))
+            {
+                XtraMessageBox.Show("Vui lòng chọn loại sản phẩm cần cập nhật và nhập thông tin mới", "Thông báo");
+                return;
+            }
+
+            var sqlUpdate = $"UPDATE LOAI_SAN_PHAM\r\n" +
+                 $"SET TenLoaiSP = N'{tenLoaiSP}', " +
+                 $"TrangThai = ";
+
+            if (trangThai == "Đang kinh doanh")
+            {
+                sqlUpdate += "1";
+            }
+            else if (trangThai == "Không còn kinh doanh")
+            {
+                sqlUpdate += "0";
+            }
+            else
+            {
+                sqlUpdate += "NULL";
+            }
+
+            sqlUpdate += $"\r\nWHERE MaLoaiSP = '{maLoaiSP}'";
+
+
+            try
+            {
+                dataAccess.UpdateData(sqlUpdate);
+                XtraMessageBox.Show("Cập nhật loại sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Lỗi cập nhật loại sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

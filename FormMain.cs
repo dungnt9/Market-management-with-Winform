@@ -16,7 +16,7 @@ namespace market_management
     {
         DataAccess dataAccess = new DataAccess();
 
-        UcLoaiSanPham _UcLSP;
+        UcLoaiSanPham _UcLSP; 
         UcSanPham _UcSP;
         UcQLNhapHang _UcQLNhapHang;
         UcKhachHang _UcKH;
@@ -27,7 +27,9 @@ namespace market_management
         UcTKLoaiSPDaBan _UcTKLoaiSPDaBan;
         UcTKSPDaBan _UcTKSPDaBan;
         UcQLMaGiamGia _UcMGG;
-
+        UcTKDoanhThuBanHang _UcTKDoanhThuBanHang;
+        UcTKTongTienNhap _UcTKTongTienNhap;
+        UcChucVu _UcChucVu;
         public FormMain()
         {
             InitializeComponent();
@@ -174,13 +176,8 @@ namespace market_management
             frmDangNhap.ShowDialog();
 
         }
-        /*
-        private void DangKy_Click(object sender, EventArgs e)
-        {
-            FrmDangKy frmDangKy = new FrmDangKy();
-            frmDangKy.ShowDialog();
-        }
-        */
+        
+        
         private void QLBanHang_Click(object sender, EventArgs e)
         {
             if (_UcQLBanHang == null)
@@ -267,6 +264,117 @@ namespace market_management
             //    NV.Visible = true;
             //    DangKy.Visible = true;
             //}
+        }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KH_Click_1(object sender, EventArgs e)
+        {
+            if (_UcKH == null)
+            {
+                _UcKH = new UcKhachHang();
+                _UcKH.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcKH);
+                _UcKH.BringToFront();
+            }
+            else
+            {
+                _UcKH.BringToFront();
+            }
+        }
+
+        private void NCC_Click_1(object sender, EventArgs e)
+        {
+            if (_UcNhaCungCap == null)
+            {
+                _UcNhaCungCap = new UcNhaCungCap();
+                _UcNhaCungCap.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcNhaCungCap);
+                _UcNhaCungCap.BringToFront();
+            }
+            else
+            {
+                _UcKH.BringToFront();
+            }
+        }
+
+        private void LoaiSP_Click_1(object sender, EventArgs e)
+        {
+            if (_UcLSP == null)
+            {
+                _UcLSP = new UcLoaiSanPham();
+                _UcLSP.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcLSP);
+                _UcLSP.BringToFront();
+            }
+            else
+            {
+                _UcLSP.BringToFront();
+            }
+        }
+
+        private void NV_Click_1(object sender, EventArgs e)
+        {
+            if (_UcNV == null)
+            {
+                _UcNV = new UcNhanVien();
+                _UcNV.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcNV);
+                _UcNV.BringToFront();
+            }
+            else
+            {
+                _UcNV.BringToFront();
+            }
+        }
+
+        private void TKDoanhThuBanHang_Click(object sender, EventArgs e)
+        {
+            if (_UcTKDoanhThuBanHang == null)
+            {
+                _UcTKDoanhThuBanHang = new UcTKDoanhThuBanHang();
+                _UcTKDoanhThuBanHang.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcTKDoanhThuBanHang);
+                _UcTKDoanhThuBanHang.BringToFront();
+            }
+            else
+            {
+                _UcTKDoanhThuBanHang.BringToFront();
+            }
+        }
+
+        private void TKTongTienNhap_Click(object sender, EventArgs e)
+        {
+            
+            if (_UcTKTongTienNhap == null)
+            {
+                _UcTKTongTienNhap = new UcTKTongTienNhap();
+                _UcTKTongTienNhap.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcTKTongTienNhap);
+                _UcTKTongTienNhap.BringToFront();
+            }
+            else
+            {
+                _UcTKTongTienNhap.BringToFront();
+            }
+        }
+
+        private void ChucVu_Click_1(object sender, EventArgs e)
+        {
+            if (_UcChucVu == null)
+            {
+                _UcChucVu = new UcChucVu();
+                _UcChucVu.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcChucVu);
+                _UcChucVu.BringToFront();
+            }
+            else
+            {
+                _UcChucVu.BringToFront();
+            }
         }
     }
 }

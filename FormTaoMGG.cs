@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace market_management
 {
-    public partial class FrmThemMGG : DevExpress.XtraEditors.XtraForm
+    public partial class FrmTaoMGG : DevExpress.XtraEditors.XtraForm
     {
         DataAccess dataAccess = new DataAccess();
-        public FrmThemMGG()
+        public FrmTaoMGG()
         {
             InitializeComponent();
 

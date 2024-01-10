@@ -110,7 +110,7 @@ namespace market_management.UI
 
         private void BbiTaoMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmThemMGG f = new FrmThemMGG();
+            FrmTaoMGG f = new FrmTaoMGG();
             f.ShowDialog();
         }
     }
