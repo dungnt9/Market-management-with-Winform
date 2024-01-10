@@ -21,6 +21,7 @@ namespace market_management.UI
         public UcChucVu()
         {
             InitializeComponent();
+            LoadData();
         }
         private void LoadData()
         {
@@ -31,11 +32,11 @@ namespace market_management.UI
         {
             if (string.IsNullOrEmpty(maCV))
             {
-                XtraMessageBox.Show("Vui lòng chọn chức vụ cần sửa", "Thông báo");
+                XtraMessageBox.Show("Vui Lòng Chọn Chức Vụ Cần Sửa", "Thông Báo");
                 return;
             }
 
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn sửa chức vụ cung cấp này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirmationResult = XtraMessageBox.Show("Bạn Có Chắc Chắn Muốn Sửa Chức Vụ Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             string tenCV = TeTenCV.Text;
             string capCV = CbeCapQuanLy.Text;
@@ -53,17 +54,17 @@ namespace market_management.UI
 
             if (confirmationResult == DialogResult.Yes)
             {
-                var sqlDelete = $"UPDATE CHUC_VU SET TenCV = N'{tenCV}', CapQuanLy = {capQL}, MoTa = '{mota}' WHERE MaCV = '{maCV}'";
+                var sqlDelete = $"UPDATE CHUC_VU SET TenCV = N'{tenCV}', CapQuanLy = '{capQL}', MoTa = '{mota}' WHERE MaCV = '{maCV}'";
 
                 try
                 {
                     dataAccess.UpdateData(sqlDelete);
-                    XtraMessageBox.Show("Cập nhật chức vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Cập Nhật Chức Vụ Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData(); // Gọi lại phương thức để cập nhật GridView
                 }
                 catch (Exception ex)
                 {
-                    XtraMessageBox.Show($"Lỗi cập nhật chức vụ: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show($"Lỗi Cập Nhật Chức Vụ: {ex.Message}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -91,11 +92,11 @@ namespace market_management.UI
         {
             if (string.IsNullOrEmpty(maCV))
             {
-                XtraMessageBox.Show("Vui lòng chọn chức vụ cần xóa", "Thông báo");
+                XtraMessageBox.Show("Vui Lòng Chọn Chức Vụ Cần Xóa", "Thông Báo");
                 return;
             }
 
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa chức vụ này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirmationResult = XtraMessageBox.Show("Bạn Có Chắc Chắn Muốn Xóa Chức Vụ Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirmationResult == DialogResult.Yes)
             {
@@ -106,12 +107,12 @@ namespace market_management.UI
                 {
                     dataAccess.UpdateData(sqlUpdateCV_NV);
                     dataAccess.UpdateData(sqlDeleteCV);
-                    XtraMessageBox.Show("Xóa chức vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Xóa Chức Vụ Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData(); // Gọi lại phương thức để cập nhật GridView
                 }
                 catch (Exception ex)
                 {
-                    XtraMessageBox.Show($"Lỗi xóa chức vụ: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show($"Lỗi Xóa Chức Vụ: {ex.Message}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -121,6 +122,13 @@ namespace market_management.UI
             FormThemChucVu frmThemChucVu = new FormThemChucVu();
             frmThemChucVu.ShowDialog();
             frmThemChucVu.BringToFront();
+
+            LoadData();
+        }
+
+        private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            LoadData();
         }
     }
 }

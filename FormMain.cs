@@ -297,7 +297,7 @@ namespace market_management
             }
             else
             {
-                _UcKH.BringToFront();
+                _UcNhaCungCap.BringToFront();
             }
         }
 

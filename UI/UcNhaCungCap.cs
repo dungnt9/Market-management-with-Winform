@@ -36,6 +36,8 @@ namespace market_management.UI
             FormNhaCungCap frmNhaCungCap = new FormNhaCungCap();
             frmNhaCungCap.ShowDialog();
             frmNhaCungCap.BringToFront();
+
+            LoadData();
         }
 
         private void BbiSuaNCC_ItemClick(object sender, ItemClickEventArgs e)
@@ -43,11 +45,11 @@ namespace market_management.UI
 
             if (string.IsNullOrEmpty(maNCC))
             {
-                XtraMessageBox.Show("Vui lòng chọn nhà cung cấp cần sửa", "Thông báo");
+                XtraMessageBox.Show("Vui Lòng Chọn Nhà Cung Cấp Cần Sửa", "Thông Báo");
                 return;
             }
 
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn sửa nhà cung cấp này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirmationResult = XtraMessageBox.Show("Bạn Có Chắc Chắn Muốn Sửa Nhà Cung Cấp Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             string tenNCC = TeTenNCC.Text;
             string sdtNCC = TeSĐTNCC.Text;
@@ -60,12 +62,12 @@ namespace market_management.UI
                 try
                 {
                     dataAccess.UpdateData(sqlDelete);
-                    XtraMessageBox.Show("Cập nhật nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Cập Nhật Nhà Cung Cấp Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData(); // Gọi lại phương thức để cập nhật GridView
                 }
                 catch (Exception ex)
                 {
-                    XtraMessageBox.Show($"Lỗi cập nhật nhà cung cấp: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show($"Lỗi Cập Nhật Nhà Cung Cấp: {ex.Message}", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -78,7 +80,7 @@ namespace market_management.UI
                 return;
             }
 
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa Nhà Cung Cấp Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirmationResult == DialogResult.Yes)
             {
@@ -100,7 +102,7 @@ namespace market_management.UI
 
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            LoadData();
         }
 
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

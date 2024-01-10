@@ -43,6 +43,11 @@ namespace market_management
             string query = $"select TenKH, SDT, GioiTinh, DiaChi, NgaySinh from KHACH_HANG join HOA_DON_BAN on KHACH_HANG.MaKH = HOA_DON_BAN.MaKH where MaHDB = '{maHDB}'";
             DataTable dataTable = dataAccess.GetDataTable(query);
 
+            if(dataTable.Rows.Count == 0)
+            {
+                return;
+            }    
+
             LbTenKH.Text = dataTable.Rows[0]["TenKH"].ToString();
             LbSDT.Text = dataTable.Rows[0]["SDT"].ToString();
             LbDiaChi.Text = dataTable.Rows[0]["DiaChi"].ToString();

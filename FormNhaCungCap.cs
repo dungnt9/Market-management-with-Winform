@@ -30,6 +30,11 @@ namespace market_management
             string sdtNCC = TeSDT_NCC.Text;
             int maLoaiSP = LayMaLoaiSP();
 
+            if(maLoaiSP == -1)
+            {
+                return;
+            }    
+
 
             string sqlInsert = $"INSERT INTO NHA_CUNG_CAP (TenNCC, DiaChi, SDT, MaLoaiSP) VALUES (N'{tenNCC}', N'{diachiNCC}', '{sdtNCC}', {maLoaiSP})";
 
@@ -73,12 +78,27 @@ namespace market_management
         private int LayMaLoaiSP()
         {
             string tenLSP = CbeLoaiSP.Text;
-            string query = $"SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = '{tenLSP}'";
+            string query = $"SELECT MaLoaiSP FROM LOAI_SAN_PHAM WHERE TenLoaiSP = N'{tenLSP}'";
 
             DataTable dataTable = dataAccess.GetDataTable(query);
+
+            if (dataTable.Rows.Count == 0)
+            {
+                XtraMessageBox.Show("Loại Sản Phẩm Chưa Được Kinh Doanh");
+                return -1;
+            }    
+             
             int maLoaiSP = Convert.ToInt32(dataTable.Rows[0]["MaLoaiSP"]);
 
             return maLoaiSP;
+        }
+
+        private void TeSDT_NCC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -139,6 +139,7 @@
             this.BbiLamMoi.Id = 19;
             this.BbiLamMoi.ImageOptions.ImageUri.Uri = "Refresh";
             this.BbiLamMoi.Name = "BbiLamMoi";
+            this.BbiLamMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BbiLamMoi_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -171,7 +172,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(46, 156);
+            this.labelControl1.Location = new System.Drawing.Point(46, 142);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(78, 17);
             this.labelControl1.TabIndex = 5;
@@ -181,7 +182,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(228, 156);
+            this.labelControl2.Location = new System.Drawing.Point(46, 175);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(78, 17);
             this.labelControl2.TabIndex = 6;
@@ -189,15 +190,15 @@
             // 
             // TeTenCV
             // 
-            this.TeTenCV.Location = new System.Drawing.Point(46, 188);
+            this.TeTenCV.Location = new System.Drawing.Point(158, 142);
             this.TeTenCV.MenuManager = this.ribbonControl;
             this.TeTenCV.Name = "TeTenCV";
-            this.TeTenCV.Size = new System.Drawing.Size(100, 20);
+            this.TeTenCV.Size = new System.Drawing.Size(298, 20);
             this.TeTenCV.TabIndex = 7;
             // 
             // CbeCapQuanLy
             // 
-            this.CbeCapQuanLy.Location = new System.Drawing.Point(228, 188);
+            this.CbeCapQuanLy.Location = new System.Drawing.Point(158, 175);
             this.CbeCapQuanLy.MenuManager = this.ribbonControl;
             this.CbeCapQuanLy.Name = "CbeCapQuanLy";
             this.CbeCapQuanLy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -212,7 +213,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(422, 156);
+            this.labelControl3.Location = new System.Drawing.Point(46, 212);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(39, 17);
             this.labelControl3.TabIndex = 11;
@@ -220,10 +221,10 @@
             // 
             // TeMoTa
             // 
-            this.TeMoTa.Location = new System.Drawing.Point(422, 188);
+            this.TeMoTa.Location = new System.Drawing.Point(158, 212);
             this.TeMoTa.MenuManager = this.ribbonControl;
             this.TeMoTa.Name = "TeMoTa";
-            this.TeMoTa.Size = new System.Drawing.Size(351, 20);
+            this.TeMoTa.Size = new System.Drawing.Size(550, 20);
             this.TeMoTa.TabIndex = 12;
             // 
             // UcChucVu

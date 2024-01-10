@@ -35,9 +35,13 @@ namespace market_management
                 capQL = false;
             }
 
-            string sqlInsert = $"INSERT INTO CHUC_VU (TenCV, CapQuanLy, MoTa) VALUES (N'{tenCV}', {capQL}, N'{motaCV}')";
+            string sqlInsert = $"INSERT INTO CHUC_VU (TenCV, CapQuanLy, MoTa) VALUES (N'{tenCV}', '{capQL}', N'{motaCV}')";
             dataAccess.UpdateData(sqlInsert);
-            XtraMessageBox.Show("Thêm chức vụ mới thành công");
+            var result = XtraMessageBox.Show("Thêm Chức Vụ Mới Thành Công");
+            if (result == DialogResult.OK)
+            {
+                this.Close();
+            }    
         }
     }
 }

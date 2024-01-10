@@ -37,36 +37,28 @@ namespace market_management.UI
         {
             try
             {
-                // Tạo câu truy vấn SQL để lấy tổng số lượng hàng đang có
-                string queryQuantity = "SELECT SUM(SoLuong) AS TongSoLuong FROM SAN_PHAM"; // Thay TenBang bằng tên thực tế của bảng trong cơ sở dữ liệu của bạn
-
-                // Lấy dữ liệu từ cơ sở dữ liệu
+                string queryQuantity = "SELECT SUM(SoLuong) AS TongSoLuong FROM SAN_PHAM";
                 object resultQuantity = dataAccess.GetScalar(queryQuantity);
 
                 if (resultQuantity != null && resultQuantity != DBNull.Value)
                 {
-                    // Hiển thị tổng số lượng trong một Label hoặc TextBox (đặt tên là labelTotalQuantity)
                     LbTongSoHang.Text = resultQuantity.ToString();
                 }
                 else
                 {
-                    // Nếu không có dữ liệu, hiển thị thông báo
-                    MessageBox.Show("Không có dữ liệu.");
+                    MessageBox.Show("Lỗi.");
                 }
 
-                string queryTotal = "SELECT SUM(GiaBanLe * SoLuong) AS TongGiaTri FROM SAN_PHAM"; // Thay TenBang, GiaBan, SoLuong bằng tên thực tế của bảng và các cột trong cơ sở dữ liệu của bạn
-
+                string queryTotal = "SELECT SUM(CAST(GiaBanLe AS bigint) * CAST(SoLuong AS bigint)) AS TongGiaTri FROM SAN_PHAM"; 
                 object resultTotal = dataAccess.GetScalar(queryTotal);
 
                 if (resultTotal != null && resultTotal != DBNull.Value)
                 {
-                    // Hiển thị tổng số lượng trong một Label hoặc TextBox (đặt tên là labelTotalQuantity)
                     LbTongGiaTriKho.Text = resultTotal.ToString();
                 }
                 else
                 {
-                    // Nếu không có dữ liệu, hiển thị thông báo
-                    MessageBox.Show("Không có dữ liệu.");
+                    MessageBox.Show("Lỗi.");
                 }
 
                 
@@ -88,7 +80,6 @@ namespace market_management.UI
 
                 DataTable dataTableHangTon = dataAccess.GetDataTable(queryHangTon);
 
-                // Hiển thị kết quả trong GridControl (đặt tên là gridControl)
                 GcHangTon.DataSource = dataTableHangTon;
 
             }

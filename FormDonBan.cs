@@ -25,6 +25,9 @@ namespace market_management
         string current_time = DateTime.Now.ToShortDateString();
 
         int maKH = -1;
+        int phantramGiamGia = 0;
+        int tongtien = 0;
+        int thanhtien = 0;
         
 
         public FormDonBan()
@@ -51,7 +54,7 @@ namespace market_management
             LbTenNV.Text = "";
         }
 
-        private bool KiemTraKhachHangThanhVien()
+        private bool KiemTraKhachHang()
         {
             string sdtCheck = CbeSDT.Text;
 
@@ -61,17 +64,15 @@ namespace market_management
 
             if (count > 0)
             {
-                //MessageBox.Show("Khách hàng thành viên");
                 return true;
             }
             else
             {
-                //MessageBox.Show("Tên khách hàng không tồn tại trong cơ sở dữ liệu.");
                 return false;
             }
         }
 
-        private void LayThongTinKhachHangThanhVien(string sdt)
+        private void LayThongTinKhachHang(string sdt)
         {
 
             string query = $"SELECT * FROM KHACH_HANG WHERE SDT = '{sdt}'";
@@ -79,22 +80,42 @@ namespace market_management
             System.Data.DataTable customerData = dataAccess.GetDataTable(query);
 
             TeTenKH.Text = Convert.ToString(customerData.Rows[0]["TenKH"]);
-            //TeDiaChi.Text = Convert.ToString(customerData.Rows[0]["DiaChi"]);
-            //DeNgaySinh.Text = Convert.ToString(customerData.Rows[0]["NgaySinh"]);
-            //CbeGioiTinh.Text = Convert.ToString(customerData.Rows[0]["GioiTinh"]);
+            string maGiamGia = Convert.ToString(customerData.Rows[0]["MaGiamGia"]);
+
+            phantramGiamGia = LayMaGiamGia(maGiamGia);
+            LbDuocGiam.Text = phantramGiamGia.ToString() + '%';
 
             maKH = Convert.ToInt32(customerData.Rows[0]["MaKH"]);
 
         }
 
+        private int LayMaGiamGia(string maGiamGia)
+        {
+            if(maGiamGia == null)
+            {
+                return 0;
+            }    
+            string query = $"SELECT * FROM MA_GIAM_GIA WHERE MaGiamGia = '{maGiamGia}'";
+            System.Data.DataTable dataTable = dataAccess.GetDataTable(query);
+
+            int phantram = Convert.ToInt32(dataTable.Rows[0]["PhanTram"]);
+
+            return phantram;
+        }
+
         private void XuLyKhachHang()
         {
             string SDT = CbeSDT.Text;
-            bool thanhvien = KiemTraKhachHangThanhVien();
-            if(thanhvien == true)
+            bool khachhang = KiemTraKhachHang();
+            if(khachhang == true)
             {
-                LayThongTinKhachHangThanhVien(SDT);
-            }       
+                LayThongTinKhachHang(SDT);
+            }
+            else
+            {
+                maKH = -1;
+            }    
+            
         }
 
         private void BtnTaoHoaDon_Click(object sender, EventArgs e)
@@ -102,14 +123,14 @@ namespace market_management
             try
             {
                 CapNhatSanPham();
-                //CapNhatKhachHang();
+                CapNhatTichDiem();
                 LuuHoaDon();
                 LuuCTHoaDon();
 
                 var result = XtraMessageBox.Show("Thêm hóa đơn bán thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
-                    this.Close(); // Tắt Form hiện tại
+                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -118,18 +139,22 @@ namespace market_management
             }
         }
 
-        /*private void CapNhatKhachHang()
+        private void CapNhatTichDiem()
         {
-            string tenKH = TeTenKH.Text;
-            string sdt = CbeSDT.Text;
-            string query = $"INSERT INTO KHACH_HANG (TenKH, SDT) VALUES ('{tenKH}', '{sdt}')";
+            if(maKH == -1)
+            {
+                return;
+            }
+            int diem = Convert.ToInt32(thanhtien / 1000);
+            string query = $"UPDATE KHACH_HANG SET TichDiem = {diem} WHERE MaKH = {maKH}";
 
             dataAccess.UpdateData(query);
-        }*/
+
+        }
 
         private void LuuHoaDon()
         {
-            int maNV = 2;
+            int maNV = Session.luuMaNV;
             int tongtien = Convert.ToInt32(LbTongTien.Text);
             string thoigian = LbThoiGian.Text;
             if (maKH == -1)
@@ -245,20 +270,20 @@ namespace market_management
             CbeSDT.Properties.CaseSensitiveSearch = false;
         }
 
-        private double TinhTongTien()
+        private int TinhTongTien()
         {
-            double totalIncome = 0;
+            int tongtien = 0;
 
             // Duyệt qua tất cả các dòng trong DataTable và tính tổng thu nhập
             foreach (DataRow row in dataTable.Rows)
             {
                 if (row["Giá Bán Lẻ"] != DBNull.Value)
                 {
-                    totalIncome += Convert.ToDouble(row["Giá Bán Lẻ"]) * Convert.ToDouble(row["Số Lượng"]);
+                    tongtien += Convert.ToInt32(row["Giá Bán Lẻ"]) * Convert.ToInt32(row["Số Lượng"]);
                 }
             }
 
-            return totalIncome;
+            return tongtien;
         }
 
         private void CapNhatSanPham()
@@ -273,12 +298,18 @@ namespace market_management
 
         private void GvSP_HDB_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            LbTongTien.Text = TinhTongTien().ToString();
+            tongtien = TinhTongTien();
+            thanhtien = tongtien - (tongtien * phantramGiamGia) / 100;
+            LbTongTien.Text = tongtien.ToString();
+            LbThanhTien.Text = thanhtien.ToString();
         }
 
         private void GvSP_HDB_RowCountChanged(object sender, EventArgs e)
         {
-            LbTongTien.Text = TinhTongTien().ToString();
+            tongtien = TinhTongTien();
+            thanhtien = tongtien - (tongtien * phantramGiamGia) / 100;
+            LbTongTien.Text = tongtien.ToString();
+            LbThanhTien.Text = thanhtien.ToString();
         }
 
         
@@ -295,27 +326,19 @@ namespace market_management
 
             return new string(randomArray);
         }
-
-        private void BtnThemThanhVien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TeSoLuong_Validating(object sender, CancelEventArgs e)
-        {
-            if (!int.TryParse(TeSoLuong.Text, out _))
-            {
-                MessageBox.Show("Vui lòng chỉ nhập số.");
-                e.Cancel = true; // Ngăn chặn mất focus nếu giá trị không hợp lệ
-            }
-
-        }
-
         
 
         private void CbeSDT_Leave(object sender, EventArgs e)
         {
             XuLyKhachHang();
+        }
+
+        private void TeSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.GrcThemNCC = new DevExpress.XtraEditors.GroupControl();
+            this.CbeLoaiSP = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.TeDiaChi_NCC = new DevExpress.XtraEditors.TextEdit();
             this.TeSDT_NCC = new DevExpress.XtraEditors.TextEdit();
             this.TeTenNCC = new DevExpress.XtraEditors.TextEdit();
@@ -36,14 +38,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.BtnThemNCC = new System.Windows.Forms.Button();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.CbeLoaiSP = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GrcThemNCC)).BeginInit();
             this.GrcThemNCC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeLoaiSP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeDiaChi_NCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSDT_NCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenNCC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeLoaiSP.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // GrcThemNCC
@@ -62,6 +62,25 @@
             this.GrcThemNCC.TabIndex = 0;
             this.GrcThemNCC.Text = "Thông Tin Nhà Cung Cấp";
             // 
+            // CbeLoaiSP
+            // 
+            this.CbeLoaiSP.Location = new System.Drawing.Point(206, 228);
+            this.CbeLoaiSP.Name = "CbeLoaiSP";
+            this.CbeLoaiSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbeLoaiSP.Size = new System.Drawing.Size(266, 20);
+            this.CbeLoaiSP.TabIndex = 7;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(21, 229);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(102, 20);
+            this.labelControl4.TabIndex = 6;
+            this.labelControl4.Text = "Loại Sản Phẩm";
+            // 
             // TeDiaChi_NCC
             // 
             this.TeDiaChi_NCC.Location = new System.Drawing.Point(206, 170);
@@ -75,6 +94,7 @@
             this.TeSDT_NCC.Name = "TeSDT_NCC";
             this.TeSDT_NCC.Size = new System.Drawing.Size(266, 20);
             this.TeSDT_NCC.TabIndex = 4;
+            this.TeSDT_NCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeSDT_NCC_KeyPress);
             // 
             // TeTenNCC
             // 
@@ -124,25 +144,6 @@
             this.BtnThemNCC.UseVisualStyleBackColor = true;
             this.BtnThemNCC.Click += new System.EventHandler(this.BtnThemNCC_Click);
             // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(21, 229);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(102, 20);
-            this.labelControl4.TabIndex = 6;
-            this.labelControl4.Text = "Loại Sản Phẩm";
-            // 
-            // CbeLoaiSP
-            // 
-            this.CbeLoaiSP.Location = new System.Drawing.Point(206, 228);
-            this.CbeLoaiSP.Name = "CbeLoaiSP";
-            this.CbeLoaiSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeLoaiSP.Size = new System.Drawing.Size(266, 20);
-            this.CbeLoaiSP.TabIndex = 7;
-            // 
             // FormNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,10 +156,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrcThemNCC)).EndInit();
             this.GrcThemNCC.ResumeLayout(false);
             this.GrcThemNCC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CbeLoaiSP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeDiaChi_NCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSDT_NCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenNCC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbeLoaiSP.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

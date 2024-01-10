@@ -23,7 +23,6 @@ namespace market_management.UI
         {
             InitializeComponent();
             LoadData();
-
         }
 
         private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
@@ -44,7 +43,7 @@ namespace market_management.UI
                 "    NV.TenNV AS 'Tên nhân viên'\r\n" +
                 "FROM \r\n" +
                 "    HOA_DON_BAN HDB\r\n" +
-                "    JOIN KHACH_HANG KH ON HDB.MaKH = KH.MaKH\r\n" +
+                "    LEFT JOIN KHACH_HANG KH ON HDB.MaKH = KH.MaKH\r\n" +
                 "    JOIN NHAN_VIEN NV ON HDB.MaNV = NV.MaNV;");
         }
 
@@ -75,7 +74,7 @@ namespace market_management.UI
                     dataAccess.UpdateData(sqlDeleteCT_HDB);
                     dataAccess.UpdateData(sqlDelete_HDB);
                     XtraMessageBox.Show("Xóa hóa đơn bán thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData(); // Gọi lại phương thức để cập nhật GridView
+                    LoadData();
 
                 }
                 catch (Exception ex)
