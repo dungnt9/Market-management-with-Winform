@@ -30,6 +30,7 @@ namespace market_management
         UcTKDoanhThuBanHang _UcTKDoanhThuBanHang;
         UcTKTongTienNhap _UcTKTongTienNhap;
         UcChucVu _UcChucVu;
+        UcTKHangCanBoSung _UcTKHangCanBoSung;
         public FormMain()
         {
             InitializeComponent();
@@ -380,6 +381,21 @@ namespace market_management
             else
             {
                 _UcChucVu.BringToFront();
+            }
+        }
+
+        private void TKHangBoSung_Click(object sender, EventArgs e)
+        {
+            if (_UcTKHangCanBoSung == null)
+            {
+                _UcTKHangCanBoSung = new UcTKHangCanBoSung();
+                _UcTKHangCanBoSung.Dock = DockStyle.Fill;
+                PnlMain.Controls.Add(_UcTKHangCanBoSung);
+                _UcTKHangCanBoSung.BringToFront();
+            }
+            else
+            {
+                _UcTKHangCanBoSung.BringToFront();
             }
         }
     }

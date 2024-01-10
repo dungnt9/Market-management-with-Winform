@@ -65,6 +65,7 @@
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.TKHangBoSung = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PnlMain)).BeginInit();
             this.PnlMain.SuspendLayout();
@@ -253,7 +254,8 @@
             this.TKTongTienNhap,
             this.TKHangTon,
             this.TKLoaiSPDaBan,
-            this.TKSPDaBan});
+            this.TKSPDaBan,
+            this.TKHangBoSung});
             this.BaoCaoThongKe.Expanded = true;
             this.BaoCaoThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BaoCaoThongKe.ImageOptions.Image")));
             this.BaoCaoThongKe.Name = "BaoCaoThongKe";
@@ -375,6 +377,13 @@
             this.barSubItem1});
             this.fluentFormDefaultManager1.MaxItemId = 5;
             // 
+            // TKHangBoSung
+            // 
+            this.TKHangBoSung.Name = "TKHangBoSung";
+            this.TKHangBoSung.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.TKHangBoSung.Text = "Thống kê hàng cần bổ sung";
+            this.TKHangBoSung.Click += new System.EventHandler(this.TKHangBoSung_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,5 +450,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement NV;
         private DevExpress.XtraBars.Navigation.AccordionControlElement TKTongTienNhap;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ChucVu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement TKHangBoSung;
     }
 }

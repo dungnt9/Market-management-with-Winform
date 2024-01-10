@@ -80,6 +80,7 @@
             this.TeMucKhoToiThieu.Size = new System.Drawing.Size(100, 20);
             this.TeMucKhoToiThieu.TabIndex = 4;
             this.TeMucKhoToiThieu.TextChanged += new System.EventHandler(this.TeMucKhoToiThieu_TextChanged);
+            this.TeMucKhoToiThieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeMucKhoToiThieu_KeyPress);
             // 
             // UcTKHangCanBoSung
             // 

@@ -32,8 +32,20 @@ namespace market_management.UI
 
         private void TeMucKhoToiThieu_TextChanged(object sender, EventArgs e)
         {
+            if(TeMucKhoToiThieu.Text == "")
+            {
+                return;
+            }    
             muctoithieu = Convert.ToInt32(TeMucKhoToiThieu.Text);
             LoadData();
+        }
+
+        private void TeMucKhoToiThieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 
