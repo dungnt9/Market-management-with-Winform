@@ -130,6 +130,12 @@
     <Compile Include="FrmThemLoaiSP.Designer.cs">
       <DependentUpon>FrmThemLoaiSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThemNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemNV.Designer.cs">
+      <DependentUpon>FrmThemNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmThemSP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +161,6 @@
     </Compile>
     <Compile Include="FrmTaoMGG.Designer.cs">
       <DependentUpon>FrmTaoMGG.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmThemNV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmThemNV.Designer.cs">
-      <DependentUpon>FrmThemNV.cs</DependentUpon>
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="UI\UcTKTongTienNhap.cs">
@@ -286,6 +286,9 @@
     <EmbeddedResource Include="FrmThemLoaiSP.resx">
       <DependentUpon>FrmThemLoaiSP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemNV.resx">
+      <DependentUpon>FrmThemNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmThemSP.resx">
       <DependentUpon>FrmThemSP.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTaoMGG.resx">
       <DependentUpon>FrmTaoMGG.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmThemNV.resx">
-      <DependentUpon>FrmThemNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UcTKTongTienNhap.resx">
       <DependentUpon>UcTKTongTienNhap.cs</DependentUpon>

@@ -35,7 +35,7 @@ namespace market_management
         }
         private List<string> LayGioiTinh()
         {
-            List<string> GioiTinh = new List<string>();
+            List<string> gioiTinh = new List<string>();
             string query = "SELECT DISTINCT GioiTinh FROM NHAN_VIEN";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
@@ -46,19 +46,19 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        GioiTinh.Add(reader["GioiTinh"].ToString());
+                        gioiTinh.Add(reader["GioiTinh"].ToString());
                     }
                 }
 
                 dataAccess.objConnection.Close();
 
             }
-            return GioiTinh;
+            return gioiTinh;
         }
 
         private List<string> LayChucVu()
         {
-            List<string> ChucVu = new List<string>();
+            List<string> chucVu = new List<string>();
             string query = "SELECT MaCV FROM CHUC_VU";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
@@ -69,27 +69,27 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        ChucVu.Add(reader["MaCV"].ToString());
+                        chucVu.Add(reader["MaCV"].ToString());
                     }
                 }
 
                 dataAccess.objConnection.Close();
 
             }
-            return ChucVu;
+            return chucVu;
         }
         private void HienThiGioiTinh()
         {
-            List<string> GioiTinh = LayGioiTinh();
-            CbeGioiTinh.Properties.Items.AddRange(GioiTinh);
+            List<string> gioiTinh = LayGioiTinh();
+            CbeGioiTinh.Properties.Items.AddRange(gioiTinh);
 
             CbeGioiTinh.Properties.AutoComplete = true;
             CbeGioiTinh.Properties.CaseSensitiveSearch = false;
         }
         private void HienThiChucVu()
         {
-            List<string> ChucVu = LayChucVu();
-            CbeChucVu.Properties.Items.AddRange(ChucVu);
+            List<string> chucVu = LayChucVu();
+            CbeChucVu.Properties.Items.AddRange(chucVu);
 
             CbeChucVu.Properties.AutoComplete = true;
             CbeChucVu.Properties.CaseSensitiveSearch = false;

@@ -90,8 +90,8 @@ namespace market_management
         private void BtnQuayLai_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FrmMain f = new FrmMain();
-            f.ShowDialog();
+            FrmMain frmMain = new FrmMain();
+            frmMain.ShowDialog();
         }
         //Cài đặt nút đăng ký
         private void BtnDangKy_Click(object sender, EventArgs e)
