@@ -79,6 +79,7 @@
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.GcLoaiSanPhamDaBan;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsEditForm.PopupEditFormWidth = 686;
             // 
             // labelControl2

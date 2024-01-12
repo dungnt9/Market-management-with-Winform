@@ -22,6 +22,11 @@ namespace market_management.UI
         public UcLoaiSanPham()
         {
             InitializeComponent();
+            LoadData();
+            HienThiTenLoaiSP();
+            CbeTenLoaiSP.Text = "";
+            LbcMaLoaiSP.Text = "";
+            CmbTrangThai.Text = "";
         }
         DataAccess dataAccess = new DataAccess();
         void LoadData()
@@ -137,8 +142,7 @@ namespace market_management.UI
 
         private void UcLoaiSanPham_Load(object sender, EventArgs e)
         {
-            LoadData();
-            HienThiTenLoaiSP();
+            
         }
 
         private void bsiRecordsCount_ItemClick(object sender, ItemClickEventArgs e)
@@ -194,6 +198,9 @@ namespace market_management.UI
                 dataAccess.UpdateData(sqlUpdate);
                 XtraMessageBox.Show("Cập nhật loại sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData();
+                CbeTenLoaiSP.Text = "";
+                LbcMaLoaiSP.Text = "";
+                CmbTrangThai.Text = "";
             }
             catch (Exception ex)
             {

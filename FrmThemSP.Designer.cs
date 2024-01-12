@@ -62,7 +62,7 @@
             this.CmbTrangThai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbTrangThai.Name = "CmbTrangThai";
             this.CmbTrangThai.Size = new System.Drawing.Size(183, 22);
-            this.CmbTrangThai.TabIndex = 64;
+            this.CmbTrangThai.TabIndex = 6;
             // 
             // labelControl7
             // 
@@ -136,7 +136,7 @@
             this.BtnThemSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnThemSP.Name = "BtnThemSP";
             this.BtnThemSP.Size = new System.Drawing.Size(103, 25);
-            this.BtnThemSP.TabIndex = 66;
+            this.BtnThemSP.TabIndex = 7;
             this.BtnThemSP.Text = "Thêm sản phẩm";
             this.BtnThemSP.UseVisualStyleBackColor = true;
             this.BtnThemSP.Click += new System.EventHandler(this.BtnThemSP_Click);
@@ -149,7 +149,7 @@
             this.TeTenSP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeTenSP.Properties.Appearance.Options.UseFont = true;
             this.TeTenSP.Size = new System.Drawing.Size(183, 20);
-            this.TeTenSP.TabIndex = 65;
+            this.TeTenSP.TabIndex = 1;
             // 
             // CbePhanLoai
             // 
@@ -161,7 +161,7 @@
             this.CbePhanLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbePhanLoai.Size = new System.Drawing.Size(183, 24);
-            this.CbePhanLoai.TabIndex = 61;
+            this.CbePhanLoai.TabIndex = 2;
             // 
             // TeGiaNhap
             // 
@@ -171,7 +171,8 @@
             this.TeGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeGiaNhap.Properties.Appearance.Options.UseFont = true;
             this.TeGiaNhap.Size = new System.Drawing.Size(183, 22);
-            this.TeGiaNhap.TabIndex = 60;
+            this.TeGiaNhap.TabIndex = 4;
+            this.TeGiaNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeGiaNhap_KeyPress);
             // 
             // TeSoLuong
             // 
@@ -181,7 +182,8 @@
             this.TeSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeSoLuong.Properties.Appearance.Options.UseFont = true;
             this.TeSoLuong.Size = new System.Drawing.Size(183, 22);
-            this.TeSoLuong.TabIndex = 58;
+            this.TeSoLuong.TabIndex = 3;
+            this.TeSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeSoLuong_KeyPress);
             // 
             // TeGiaBan
             // 
@@ -191,7 +193,8 @@
             this.TeGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TeGiaBan.Properties.Appearance.Options.UseFont = true;
             this.TeGiaBan.Size = new System.Drawing.Size(183, 22);
-            this.TeGiaBan.TabIndex = 57;
+            this.TeGiaBan.TabIndex = 5;
+            this.TeGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeGiaBan_KeyPress);
             // 
             // groupControl1
             // 

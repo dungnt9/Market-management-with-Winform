@@ -64,11 +64,10 @@ namespace market_management
             {
                 dataAccess.UpdateData(sqlInsert);
 
-                // Hiển thị thông báo và xử lý khi đóng Form
                 var result = XtraMessageBox.Show("Thêm loại sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
-                    this.Close(); // Tắt Form hiện tại
+                    this.Close(); 
                 }
             }
             catch (Exception ex)

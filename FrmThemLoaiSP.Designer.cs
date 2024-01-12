@@ -50,7 +50,7 @@
             this.CmbTrangThai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbTrangThai.Name = "CmbTrangThai";
             this.CmbTrangThai.Size = new System.Drawing.Size(194, 28);
-            this.CmbTrangThai.TabIndex = 50;
+            this.CmbTrangThai.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -81,7 +81,7 @@
             this.BtnThemLoaiSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnThemLoaiSP.Name = "BtnThemLoaiSP";
             this.BtnThemLoaiSP.Size = new System.Drawing.Size(170, 28);
-            this.BtnThemLoaiSP.TabIndex = 51;
+            this.BtnThemLoaiSP.TabIndex = 3;
             this.BtnThemLoaiSP.Text = "Thêm loại sản phẩm";
             this.BtnThemLoaiSP.UseVisualStyleBackColor = true;
             this.BtnThemLoaiSP.Click += new System.EventHandler(this.BtnThemLoaiSP_Click);
@@ -94,7 +94,7 @@
             this.TeTenLoaiSP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeTenLoaiSP.Properties.Appearance.Options.UseFont = true;
             this.TeTenLoaiSP.Size = new System.Drawing.Size(194, 26);
-            this.TeTenLoaiSP.TabIndex = 52;
+            this.TeTenLoaiSP.TabIndex = 1;
             // 
             // groupControl1
             // 

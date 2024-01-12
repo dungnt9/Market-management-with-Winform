@@ -60,43 +60,51 @@
             // 
             // GcSP
             // 
-            this.GcSP.Location = new System.Drawing.Point(0, 180);
+            this.GcSP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GcSP.Location = new System.Drawing.Point(0, 146);
             this.GcSP.MainView = this.GvSP_HDN;
+            this.GcSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GcSP.Name = "GcSP";
-            this.GcSP.Size = new System.Drawing.Size(934, 423);
+            this.GcSP.Size = new System.Drawing.Size(801, 344);
             this.GcSP.TabIndex = 2;
             this.GcSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvSP_HDN});
             // 
             // GvSP_HDN
             // 
+            this.GvSP_HDN.DetailHeight = 284;
             this.GvSP_HDN.GridControl = this.GcSP;
             this.GvSP_HDN.Name = "GvSP_HDN";
+            this.GvSP_HDN.OptionsBehavior.ReadOnly = true;
+            this.GvSP_HDN.OptionsEditForm.PopupEditFormWidth = 686;
             this.GvSP_HDN.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.GvSP_HDN_RowUpdated);
             this.GvSP_HDN.RowCountChanged += new System.EventHandler(this.GvSP_HDN_RowCountChanged);
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(664, 623);
+            this.labelControl11.Location = new System.Drawing.Point(569, 506);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(54, 16);
+            this.labelControl11.Size = new System.Drawing.Size(45, 13);
             this.labelControl11.TabIndex = 7;
             this.labelControl11.Text = "Tổng tiền";
             // 
             // LbcTongTien
             // 
-            this.LbcTongTien.Location = new System.Drawing.Point(735, 623);
+            this.LbcTongTien.Location = new System.Drawing.Point(630, 506);
+            this.LbcTongTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcTongTien.Name = "LbcTongTien";
-            this.LbcTongTien.Size = new System.Drawing.Size(54, 16);
+            this.LbcTongTien.Size = new System.Drawing.Size(45, 13);
             this.LbcTongTien.TabIndex = 8;
             this.LbcTongTien.Text = "Tổng tiền";
             // 
             // BtnTaoHD
             // 
-            this.BtnTaoHD.Location = new System.Drawing.Point(415, 654);
+            this.BtnTaoHD.Location = new System.Drawing.Point(356, 531);
+            this.BtnTaoHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnTaoHD.Name = "BtnTaoHD";
-            this.BtnTaoHD.Size = new System.Drawing.Size(98, 30);
-            this.BtnTaoHD.TabIndex = 9;
+            this.BtnTaoHD.Size = new System.Drawing.Size(84, 24);
+            this.BtnTaoHD.TabIndex = 5;
             this.BtnTaoHD.Text = "Tạo hóa đơn";
             this.BtnTaoHD.UseVisualStyleBackColor = true;
             this.BtnTaoHD.Click += new System.EventHandler(this.BtnTaoHD_Click);
@@ -107,42 +115,47 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.CmbTenNCC);
             this.groupControl1.Controls.Add(this.LbcTenNCC);
-            this.groupControl1.Location = new System.Drawing.Point(29, 12);
+            this.groupControl1.Location = new System.Drawing.Point(25, 10);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(386, 134);
+            this.groupControl1.Size = new System.Drawing.Size(331, 109);
             this.groupControl1.TabIndex = 10;
             this.groupControl1.Text = "Khởi tạo hóa đơn nhập";
             // 
             // LbcTenNV
             // 
-            this.LbcTenNV.Location = new System.Drawing.Point(141, 93);
+            this.LbcTenNV.Location = new System.Drawing.Point(121, 76);
+            this.LbcTenNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcTenNV.Name = "LbcTenNV";
-            this.LbcTenNV.Size = new System.Drawing.Size(22, 16);
+            this.LbcTenNV.Size = new System.Drawing.Size(18, 13);
             this.LbcTenNV.TabIndex = 3;
             this.LbcTenNV.Text = "Tên";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(22, 93);
+            this.labelControl1.Location = new System.Drawing.Point(19, 76);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(81, 16);
+            this.labelControl1.Size = new System.Drawing.Size(68, 13);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Tên nhân viên";
             // 
             // CmbTenNCC
             // 
             this.CmbTenNCC.FormattingEnabled = true;
-            this.CmbTenNCC.Location = new System.Drawing.Point(141, 43);
+            this.CmbTenNCC.Location = new System.Drawing.Point(121, 35);
+            this.CmbTenNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbTenNCC.Name = "CmbTenNCC";
-            this.CmbTenNCC.Size = new System.Drawing.Size(192, 24);
+            this.CmbTenNCC.Size = new System.Drawing.Size(165, 21);
             this.CmbTenNCC.TabIndex = 1;
             this.CmbTenNCC.SelectedIndexChanged += new System.EventHandler(this.CmbTenNCC_SelectedIndexChanged);
             // 
             // LbcTenNCC
             // 
-            this.LbcTenNCC.Location = new System.Drawing.Point(22, 46);
+            this.LbcTenNCC.Location = new System.Drawing.Point(19, 37);
+            this.LbcTenNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcTenNCC.Name = "LbcTenNCC";
-            this.LbcTenNCC.Size = new System.Drawing.Size(102, 16);
+            this.LbcTenNCC.Size = new System.Drawing.Size(85, 13);
             this.LbcTenNCC.TabIndex = 0;
             this.LbcTenNCC.Text = "Tên nhà cung cấp";
             // 
@@ -153,94 +166,104 @@
             this.groupControl2.Controls.Add(this.BtnThemSP);
             this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Controls.Add(this.labelControl3);
-            this.groupControl2.Location = new System.Drawing.Point(429, 12);
+            this.groupControl2.Location = new System.Drawing.Point(368, 10);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(461, 134);
+            this.groupControl2.Size = new System.Drawing.Size(395, 109);
             this.groupControl2.TabIndex = 11;
             this.groupControl2.Text = "Thêm sản phẩm vào hóa đơn nhập";
             this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
             // 
             // CbeTenSP
             // 
-            this.CbeTenSP.Location = new System.Drawing.Point(193, 37);
+            this.CbeTenSP.Location = new System.Drawing.Point(165, 30);
+            this.CbeTenSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbeTenSP.Name = "CbeTenSP";
             this.CbeTenSP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeTenSP.Size = new System.Drawing.Size(192, 22);
-            this.CbeTenSP.TabIndex = 5;
+            this.CbeTenSP.Size = new System.Drawing.Size(165, 20);
+            this.CbeTenSP.TabIndex = 2;
             this.CbeTenSP.SelectedIndexChanged += new System.EventHandler(this.CbeTenSP_SelectedIndexChanged);
             // 
             // TeSoLuong
             // 
-            this.TeSoLuong.Location = new System.Drawing.Point(193, 71);
+            this.TeSoLuong.Location = new System.Drawing.Point(165, 58);
+            this.TeSoLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TeSoLuong.Name = "TeSoLuong";
-            this.TeSoLuong.Size = new System.Drawing.Size(192, 22);
-            this.TeSoLuong.TabIndex = 4;
+            this.TeSoLuong.Size = new System.Drawing.Size(165, 20);
+            this.TeSoLuong.TabIndex = 3;
             this.TeSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeSoLuong_KeyPress);
             // 
             // BtnThemSP
             // 
-            this.BtnThemSP.Location = new System.Drawing.Point(193, 103);
+            this.BtnThemSP.Location = new System.Drawing.Point(165, 84);
+            this.BtnThemSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnThemSP.Name = "BtnThemSP";
-            this.BtnThemSP.Size = new System.Drawing.Size(117, 26);
-            this.BtnThemSP.TabIndex = 2;
+            this.BtnThemSP.Size = new System.Drawing.Size(100, 21);
+            this.BtnThemSP.TabIndex = 4;
             this.BtnThemSP.Text = "Thêm sản phẩm";
             this.BtnThemSP.UseVisualStyleBackColor = true;
             this.BtnThemSP.Click += new System.EventHandler(this.BtnThemSP_Click);
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(73, 77);
+            this.labelControl4.Location = new System.Drawing.Point(63, 63);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(51, 16);
+            this.labelControl4.Size = new System.Drawing.Size(42, 13);
             this.labelControl4.TabIndex = 1;
             this.labelControl4.Text = "Số lượng";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(73, 43);
+            this.labelControl3.Location = new System.Drawing.Point(63, 35);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(82, 16);
+            this.labelControl3.Size = new System.Drawing.Size(67, 13);
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Tên sản phẩm";
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(401, 623);
+            this.labelControl5.Location = new System.Drawing.Point(344, 506);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(53, 16);
+            this.labelControl5.Size = new System.Drawing.Size(43, 13);
             this.labelControl5.TabIndex = 12;
             this.labelControl5.Text = "Thời gian";
             // 
             // LbcThoiGian
             // 
-            this.LbcThoiGian.Location = new System.Drawing.Point(490, 623);
+            this.LbcThoiGian.Location = new System.Drawing.Point(420, 506);
+            this.LbcThoiGian.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcThoiGian.Name = "LbcThoiGian";
-            this.LbcThoiGian.Size = new System.Drawing.Size(53, 16);
+            this.LbcThoiGian.Size = new System.Drawing.Size(43, 13);
             this.LbcThoiGian.TabIndex = 13;
             this.LbcThoiGian.Text = "Thời gian";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(159, 621);
+            this.labelControl2.Location = new System.Drawing.Point(136, 505);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(99, 16);
+            this.labelControl2.Size = new System.Drawing.Size(83, 13);
             this.labelControl2.TabIndex = 14;
             this.labelControl2.Text = "Mã hóa đơn nhập";
             // 
             // LbcMaHDN
             // 
-            this.LbcMaHDN.Location = new System.Drawing.Point(273, 623);
+            this.LbcMaHDN.Location = new System.Drawing.Point(234, 506);
+            this.LbcMaHDN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcMaHDN.Name = "LbcMaHDN";
-            this.LbcMaHDN.Size = new System.Drawing.Size(17, 16);
+            this.LbcMaHDN.Size = new System.Drawing.Size(14, 13);
             this.LbcMaHDN.TabIndex = 15;
             this.LbcMaHDN.Text = "Mã";
             // 
-            // FrmTaoDonNhap
+            // FrmTaoHDNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 718);
+            this.ClientSize = new System.Drawing.Size(799, 583);
             this.Controls.Add(this.LbcMaHDN);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.LbcThoiGian);
@@ -252,7 +275,8 @@
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.GcSP);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
-            this.Name = "FrmTaoDonNhap";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "FrmTaoHDNhap";
             this.Text = "Form tạo hóa đơn nhập hàng";
             this.Load += new System.EventHandler(this.FrmTaoDonNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GcSP)).EndInit();

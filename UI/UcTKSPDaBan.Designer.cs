@@ -91,6 +91,7 @@
             this.gridView2.DetailHeight = 284;
             this.gridView2.GridControl = this.GcSanPhamDaBan;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.ReadOnly = true;
             this.gridView2.OptionsEditForm.PopupEditFormWidth = 686;
             // 
             // GcTKSP

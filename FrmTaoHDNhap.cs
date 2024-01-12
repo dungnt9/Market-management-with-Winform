@@ -16,7 +16,6 @@ namespace market_management
 {
     public partial class FrmTaoHDNhap : DevExpress.XtraEditors.XtraForm
     {
-        
         DataAccess dataAccess = new DataAccess();
         System.Data.DataTable dataTable;
         public string maHDN = GenerateRandomString(8);
@@ -30,9 +29,6 @@ namespace market_management
 
             LbcTenNV.Text = Session.tenNV;
             LbcMaHDN.Text = maHDN;
-            
-
-
             CmbTenNCC.SelectedIndexChanged += CmbTenNCC_SelectedIndexChanged;
 
             dataTable = new System.Data.DataTable();
@@ -45,8 +41,6 @@ namespace market_management
 
             TeSoLuong.KeyPress += TeSoLuong_KeyPress;
             GcSP.DataSource = dataTable;
-            
-            
         }
         
         private List<string> LayTenNCC()
@@ -86,14 +80,6 @@ namespace market_management
         {
             
         }
-
-
-
-
-
-
-
-
         private void BtnTaoHD_Click(object sender, EventArgs e)
         {
             try
@@ -106,8 +92,6 @@ namespace market_management
                 {
                     this.Close(); 
                 }
-                
-
             }
             catch (Exception ex)
             {
@@ -146,12 +130,6 @@ namespace market_management
                     $" ('{_maHDN}', {maSP}, {soLuong}, {tongTien})");
             }
         }
-        
-
-
-
-
-
         private void CmbTenNCC_SelectedIndexChanged(object sender, EventArgs e)
         {
             string tenNCC = CmbTenNCC.Text;
@@ -191,7 +169,6 @@ namespace market_management
                 dataAccess.objConnection.Close();
             }
 
-            // Xóa danh sách hiện tại và thêm danh sách mới vào ComboBoxEdit
             CbeTenSP.Properties.Items.Clear();
             CbeTenSP.Properties.Items.AddRange(tenSPList);
             CbeTenSP.Properties.AutoComplete = true;
@@ -214,27 +191,22 @@ namespace market_management
 
             if (sanpham.Rows.Count > 0)
             {
-                // Thêm dòng vào DataTable
                 DataRow newRow = dataTable.NewRow();
                 newRow["Mã Sản Phẩm"] = sanpham.Rows[0]["Mã Sản Phẩm"];
                 newRow["Tên Sản Phẩm"] = sanpham.Rows[0]["Tên Sản Phẩm"];
                 newRow["Giá Nhập"] = sanpham.Rows[0]["Giá Nhập"];
                 newRow["Số Lượng"] = TeSoLuong.Text;
                 
-
                 dataTable.Rows.Add(newRow);
             }
 
             LbcTongTien.Text = TinhTongTien().ToString();
-            //LbcTongTien.Text = TinhTongTien().ToString("N0");
-            //LbcTongTien.Text = string.Format("{0:#,##0}", double.Parse(LbcTongTien.Text));
 
         }
         private double TinhTongTien()
         {
             double tongTien = 0;
 
-            // Duyệt qua tất cả các dòng trong DataTable và tính tổng
             foreach (DataRow row in dataTable.Rows)
             {
                 if (row["Giá Nhập"] != DBNull.Value)
@@ -254,11 +226,6 @@ namespace market_management
                 dataAccess.UpdateData(string.Format($"UPDATE SAN_PHAM SET SoLuong = SoLuong + {soLuongNhap} where MaSP = {maSP}"));
             }
         }
-
-        
-        
-        
-        
         static string GenerateRandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -279,7 +246,6 @@ namespace market_management
             {
                 e.Handled = true;
             }
-
         }
 
         private void CbeTenSP_SelectedIndexChanged(object sender, EventArgs e)

@@ -24,6 +24,13 @@ namespace market_management.UI
         {
             InitializeComponent();
             LoadData();
+            LbcMaSP.Text = "";
+            TeTenSP.Text = "";
+            CbePhanLoai.Text = "";
+            TeSoLuong.Text = "";
+            TeGiaNhap.Text = "";
+            TeGiaBan.Text = "";
+            CmbTrangThai.Text = "";
         }
         
         void LoadData()
@@ -43,7 +50,6 @@ namespace market_management.UI
             DataTable dataTable = dataAccess.GetDataTable(stringQuery);
 
         }
-
 
         private void gridView_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -120,11 +126,19 @@ namespace market_management.UI
                 dataAccess.UpdateData(sqlUpdate);
                 XtraMessageBox.Show("Cập nhật sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData();
+                LbcMaSP.Text = "";
+                TeTenSP.Text = "";
+                CbePhanLoai.Text = "";
+                TeSoLuong.Text = "";
+                TeGiaNhap.Text = "";
+                TeGiaBan.Text = "";
+                CmbTrangThai.Text = "";
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show($"Lỗi cập nhật sản phẩm: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private List<string> LayTenLoaiSP()
@@ -165,6 +179,35 @@ namespace market_management.UI
         {
             FrmThemSP frmThemSP = new FrmThemSP();
             frmThemSP.ShowDialog();
+        }
+
+        private void TeGiaNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TeSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TeGiaBan_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TeGiaBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

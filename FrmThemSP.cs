@@ -10,8 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-
-
 namespace market_management
 {
     public partial class FrmThemSP : DevExpress.XtraEditors.XtraForm
@@ -100,11 +98,10 @@ namespace market_management
             {
                 dataAccess.UpdateData(sqlInsert);
 
-                // Hiển thị thông báo và xử lý khi đóng Form
                 var result = XtraMessageBox.Show("Thêm sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
-                    this.Close(); // Tắt Form hiện tại
+                    this.Close(); 
                 }
             }
             catch (Exception ex)
@@ -116,6 +113,30 @@ namespace market_management
         private void FrmThemSP_Load(object sender, EventArgs e)
         {
             HienThiTenLoaiSP();
+        }
+
+        private void TeSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TeGiaNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TeGiaBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
