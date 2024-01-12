@@ -166,7 +166,7 @@ namespace market_management
             TeMaKH.Text = maKH;
             TeTenKH.Text = tenKH;
             CbeGioiTinh.Text = gioiTinh;
-            if(DeNgaySinh.Text != "")
+            if(ngaySinh != "")
             {
                 DeNgaySinh.Text = ngaySinh.Substring(0, 9);
             }

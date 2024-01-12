@@ -15,19 +15,19 @@ namespace market_management
     {
         DataAccess dataAccess = new DataAccess();
 
-        string MaGiamGia = GenerateRandomString(8);
+        string maGiamGia = GenerateRandomString(8);
         static string GenerateRandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
             Random random = new Random();
-            char[] randomArray = new char[length];
+            char[] randomMa = new char[length];
 
             for (int i = 0; i < length; i++)
             {
-                randomArray[i] = chars[random.Next(chars.Length)];
+                randomMa[i] = chars[random.Next(chars.Length)];
             }
-            return new string(randomArray);
+            return new string(randomMa);
         }
         public FrmTaoMGG()
         {
@@ -69,9 +69,10 @@ namespace market_management
         {
             if (TeTenChuongTrinh.Text != "")
             {
-                int phanTram = Convert.ToInt32(CbePhanTram.Text);
+                string phanTram = CbePhanTram.Text;
                 string trangThai = "1";
                 string moTa = "";
+                string hetHan = DeNgayHetHan.Text;
                 if (RbNgayLe.Checked)
                 {
                     moTa = $"Ngày lễ {CbeNgayLe.Text}";
@@ -82,12 +83,21 @@ namespace market_management
                 }
                 else if (RbNgauNhien.Checked)
                 {
-                    moTa = $"Nhân viên sẽ cung cấp cho khách hàng";
+                    moTa = "Nhân viên sẽ cung cấp cho khách hàng";
 
                 }
-                string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia, TenChuongTrinh, PhanTram, NgayTao, NgayHetHan, TrangThai, Mota) VALUES" + "('{0}',N'{1}','{2}','{3}','{4}','{5}',N'{6}')", MaGiamGia, TeTenChuongTrinh.Text, phanTram, DeNgayTao.Text, DeNgayHetHan.Text, trangThai, moTa);
-                MessageBox.Show("Thêm thành công");
-                dataAccess.UpdateData(s);
+                if (hetHan != "")
+                {
+                    string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia, TenChuongTrinh, PhanTram, NgayTao, NgayHetHan, TrangThai, Mota) VALUES" + "('{0}',N'{1}','{2}','{3}','{4}','{5}',N'{6}')", maGiamGia, TeTenChuongTrinh.Text, phanTram, DeNgayTao.Text, DeNgayHetHan.Text, trangThai, moTa);
+                    MessageBox.Show("Thêm thành công");
+                    dataAccess.UpdateData(s);
+                }
+                else
+                {
+                    string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia, TenChuongTrinh, PhanTram, NgayTao, NgayHetHan, TrangThai, Mota) VALUES" + "('{0}',N'{1}','{2}','{3}', NULL,'{4}',N'{5}')", maGiamGia, TeTenChuongTrinh.Text, phanTram, DeNgayTao.Text, trangThai, moTa);
+                    MessageBox.Show("Thêm thành công");
+                    dataAccess.UpdateData(s);
+                }
                 if (RbDiemTich.Checked)
                 {
                     int diemTich = Convert.ToInt32(CbeDiemTich.Text);
@@ -116,7 +126,6 @@ namespace market_management
 
         public void GanMaGiamGia(int diemTich)
         {
-
             string s = string.Format("UPDATE KHACH_HANG \r\nSET MaGiamGia = '{0}'\r\nWHERE Diem >= '{1}'", 1, diemTich);
             dataAccess.UpdateData(s);
         }

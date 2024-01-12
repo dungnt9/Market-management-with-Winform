@@ -115,7 +115,7 @@ namespace market_management.UI
             var trangThai = (bool)gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]);
             TeMaGiamGia.Text = maGiamGia;
             TeTenChuongTrinh.Text = tenChuongTrinh;
-            if (DeNgayHetHan.Text != "")
+            if (ngayHetHan != "")
             {
                 DeNgayHetHan.Text = ngayHetHan.Substring(0, 9);
             }
@@ -123,7 +123,7 @@ namespace market_management.UI
             {
                 DeNgayHetHan.Text = ngayHetHan;
             }
-            if (DeNgayTao.Text != "")
+            if (ngayTao != "")
             {
                 DeNgayTao.Text = ngayTao.Substring(0, 9);
             }

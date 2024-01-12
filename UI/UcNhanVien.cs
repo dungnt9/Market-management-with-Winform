@@ -192,7 +192,7 @@ namespace market_management
             TeMaNV.Text = maNV;
             TeTenNV.Text = tenNV;
             CbeGioiTinh.Text = gioiTinh;
-            if (DeNgaySinh.Text != "")
+            if (ngaySinh != "")
             {
                 DeNgaySinh.Text = ngaySinh.Substring(0, 9);
             }
