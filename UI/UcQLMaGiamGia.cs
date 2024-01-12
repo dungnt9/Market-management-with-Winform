@@ -31,6 +31,14 @@ namespace market_management.UI
             CbePhanTram.Properties.Items.Add("40");
             CbePhanTram.Properties.Items.Add("50");
 
+            TeMaGiamGia.Text = "";
+            TeTenChuongTrinh.Text = "";
+            CbePhanTram.Text = "";
+            DeNgayTao.Text = "";
+            DeNgayHetHan.Text = "";
+            TeMoTa.Text = "";
+            RbConHieuLuc.Checked = false;
+            RbHetHan.Checked = false;
         }
         //Lất data từ CSDL
         void LoadData()

@@ -32,8 +32,8 @@ namespace market_management.UI
 
             if (dongLoaiSPBanNhieuNhat != null)
             {
-                LbcTenLoaiSP.Text = dongLoaiSPBanNhieuNhat["TenLoaiSP"].ToString();
-                LbcSoLoaiSP.Text = dongLoaiSPBanNhieuNhat["SoLuongDaBan"].ToString() + " sản phẩm";
+                LbcTenLoaiSP.Text = dongLoaiSPBanNhieuNhat["Loại Sản Phẩm"].ToString();
+                LbcSoLoaiSP.Text = dongLoaiSPBanNhieuNhat["Số Lượng Đã Bán"].ToString() + " sản phẩm";
             }
         }
         private DataRow LayDongLoaiSPBanNhieuNhat()
@@ -51,7 +51,7 @@ namespace market_management.UI
                            "JOIN SAN_PHAM SP ON LSP.MaLoaiSP = SP.MaLoaiSP " +
                            "JOIN CT_HOA_DON_BAN CT ON SP.MaSP = CT.MaSP " +
                            "GROUP BY LSP.MaLoaiSP, LSP.TenLoaiSP " +
-                           "ORDER BY SoLuongDaBan DESC";
+                           "ORDER BY [Số Lượng Đã Bán] DESC";
 
             dataTable = dataAccess.GetDataTable(query);
 

@@ -55,10 +55,12 @@
             // 
             // LbcSoLoaiSP
             // 
-            this.LbcSoLoaiSP.Location = new System.Drawing.Point(26, 120);
+            this.LbcSoLoaiSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbcSoLoaiSP.Appearance.Options.UseFont = true;
+            this.LbcSoLoaiSP.Location = new System.Drawing.Point(26, 113);
             this.LbcSoLoaiSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcSoLoaiSP.Name = "LbcSoLoaiSP";
-            this.LbcSoLoaiSP.Size = new System.Drawing.Size(76, 13);
+            this.LbcSoLoaiSP.Size = new System.Drawing.Size(109, 20);
             this.LbcSoLoaiSP.TabIndex = 3;
             this.LbcSoLoaiSP.Text = "Số lượng loại SP";
             // 
@@ -86,7 +88,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(26, 25);
+            this.labelControl2.Location = new System.Drawing.Point(26, 39);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(207, 21);
@@ -99,16 +101,16 @@
             this.LbcTenLoaiSP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LbcTenLoaiSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbcTenLoaiSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbcTenLoaiSP.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.LbcTenLoaiSP.Appearance.Options.UseFont = true;
             this.LbcTenLoaiSP.Appearance.Options.UseForeColor = true;
             this.LbcTenLoaiSP.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
             this.LbcTenLoaiSP.LineVisible = true;
-            this.LbcTenLoaiSP.Location = new System.Drawing.Point(26, 59);
+            this.LbcTenLoaiSP.Location = new System.Drawing.Point(26, 64);
             this.LbcTenLoaiSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcTenLoaiSP.Name = "LbcTenLoaiSP";
-            this.LbcTenLoaiSP.Size = new System.Drawing.Size(136, 40);
+            this.LbcTenLoaiSP.Size = new System.Drawing.Size(153, 45);
             this.LbcTenLoaiSP.TabIndex = 4;
             this.LbcTenLoaiSP.Text = "Tên loại SP";
             // 

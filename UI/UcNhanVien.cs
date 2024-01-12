@@ -28,6 +28,15 @@ namespace market_management
 
             HienThiGioiTinh();
             HienThiChucVu();
+            TeMaNV.Text = "";
+            TeTenNV.Text = "";
+            CbeGioiTinh.Text = "";
+            DeNgaySinh.Text = "";
+            TeSDT.Text = "";
+            TeEmail.Text = "";
+            TeDiaChi.Text = "";
+            TeCCCD.Text = "";
+            CbeChucVu.Text = "";
         }
         //Lất data từ CSDL
         void LoadData()

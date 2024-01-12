@@ -24,6 +24,10 @@ namespace market_management.UI
         {
             InitializeComponent();
             LoadData();
+            TeTenNCC.Text = "";
+            TeDiaChiNCC.Text = "";
+            TeSĐTNCC.Text = "";
+            CbeLoaiSanPham.Text = "";
         }
 
         private void LoadData()
@@ -103,6 +107,10 @@ namespace market_management.UI
         private void bbiRefresh_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadData();
+            TeTenNCC.Text = "";
+            TeDiaChiNCC.Text = "";
+            TeSĐTNCC.Text = "";
+            CbeLoaiSanPham.Text = "";
         }
 
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

@@ -27,15 +27,14 @@ namespace market_management.UI
             GcSanPhamDaBan.DataSource = dataTable;
         }
 
-
         private void LaySPBanNhieuNhat()
         {
             DataRow dongSPBanNhieuNhat = LayDongSPBanNhieuNhat();
 
             if (dongSPBanNhieuNhat != null)
             {
-                LbcTenSP.Text = dongSPBanNhieuNhat["TenSP"].ToString();
-                LbcSoSP.Text = dongSPBanNhieuNhat["SoLuongDaBan"].ToString() + " sản phẩm";
+                LbcTenSP.Text = dongSPBanNhieuNhat["Tên Sản Phẩm"].ToString();
+                LbcSoSP.Text = dongSPBanNhieuNhat["Số lượng đã bán"].ToString() + " sản phẩm";
             }
         }
         private DataRow LayDongSPBanNhieuNhat()
@@ -47,16 +46,22 @@ namespace market_management.UI
         private DataTable LaySPDaBan()
         {
             DataTable dataTable = new DataTable();
-
-            string query = "SELECT SP.MaSP AS 'Mã Sản Phẩm', SP.TenSP AS 'Tên Sản Phẩm', SP.SoLuong AS 'Số Lượng', SUM(CT.SoLuong) AS 'Số Lượng Đã Bán' " +
+            
+            string query = "SELECT SP.MaSP AS 'Mã Sản Phẩm', SP.TenSP AS 'Tên Sản Phẩm', SP.SoLuong AS 'Số lượng', SUM(CT.SoLuong) AS 'Số lượng đã bán' " +
                            "FROM SAN_PHAM SP " +
                            "JOIN CT_HOA_DON_BAN CT ON SP.MaSP = CT.MaSP " +
                            "GROUP BY SP.MaSP, SP.TenSP, SP.SoLuong " +
-                           "ORDER BY SoLuongDaBan DESC";
-
+                           "ORDER BY [Số lượng đã bán] DESC";
+            
             dataTable = dataAccess.GetDataTable(query);
 
             return dataTable;
+        }
+
+        private void CmbNam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadData();
+            LaySPBanNhieuNhat();
         }
     }
 }

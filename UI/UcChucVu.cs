@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.Xpo.DB.DataStoreLongrunnersWatch;
 
 namespace market_management.UI
 {
@@ -22,6 +23,9 @@ namespace market_management.UI
         {
             InitializeComponent();
             LoadData();
+            TeTenCV.Text = "";
+            TeMoTa.Text = "";
+            CbeCapQuanLy.Text = "";
         }
         private void LoadData()
         {
@@ -129,6 +133,9 @@ namespace market_management.UI
         private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
             LoadData();
+            TeTenCV.Text = "";
+            TeMoTa.Text = "";
+            CbeCapQuanLy.Text = "";
         }
     }
 }

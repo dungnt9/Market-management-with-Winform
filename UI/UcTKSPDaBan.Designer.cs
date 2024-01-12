@@ -54,23 +54,25 @@
             // LbcTenSP
             // 
             this.LbcTenSP.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.LbcTenSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbcTenSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbcTenSP.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.LbcTenSP.Appearance.Options.UseFont = true;
             this.LbcTenSP.Appearance.Options.UseForeColor = true;
-            this.LbcTenSP.Location = new System.Drawing.Point(22, 50);
+            this.LbcTenSP.Location = new System.Drawing.Point(22, 45);
             this.LbcTenSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcTenSP.Name = "LbcTenSP";
-            this.LbcTenSP.Size = new System.Drawing.Size(85, 40);
+            this.LbcTenSP.Size = new System.Drawing.Size(96, 45);
             this.LbcTenSP.TabIndex = 7;
             this.LbcTenSP.Text = "Tên SP";
             // 
             // LbcSoSP
             // 
-            this.LbcSoSP.Location = new System.Drawing.Point(22, 109);
+            this.LbcSoSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbcSoSP.Appearance.Options.UseFont = true;
+            this.LbcSoSP.Location = new System.Drawing.Point(22, 94);
             this.LbcSoSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LbcSoSP.Name = "LbcSoSP";
-            this.LbcSoSP.Size = new System.Drawing.Size(57, 13);
+            this.LbcSoSP.Size = new System.Drawing.Size(80, 20);
             this.LbcSoSP.TabIndex = 6;
             this.LbcSoSP.Text = "Số lượng SP";
             // 

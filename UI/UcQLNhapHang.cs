@@ -21,6 +21,7 @@ namespace market_management.UI
         {
             InitializeComponent();
             LoadData();
+            LbcMaDN.Text = "";
         }
         void LoadData()
         {
