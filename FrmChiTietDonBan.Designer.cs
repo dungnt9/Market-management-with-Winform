@@ -43,6 +43,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.BtnInHoaDon = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.GcSP_HDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -78,9 +79,9 @@
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(52, 13);
+            this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(633, 150);
+            this.groupControl1.Size = new System.Drawing.Size(633, 151);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Thông Tin Chung";
             // 
@@ -192,11 +193,21 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Tên Khách Hàng";
             // 
+            // BtnInHoaDon
+            // 
+            this.BtnInHoaDon.Location = new System.Drawing.Point(669, 128);
+            this.BtnInHoaDon.Name = "BtnInHoaDon";
+            this.BtnInHoaDon.Size = new System.Drawing.Size(75, 35);
+            this.BtnInHoaDon.TabIndex = 3;
+            this.BtnInHoaDon.Text = "In Hóa Đơn";
+            this.BtnInHoaDon.Click += new System.EventHandler(this.BtnInHoaDon_Click);
+            // 
             // FrmChiTietDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 411);
+            this.Controls.Add(this.BtnInHoaDon);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.GcSP_HDB);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
@@ -227,5 +238,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton BtnInHoaDon;
     }
 }

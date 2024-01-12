@@ -46,8 +46,8 @@ namespace market_management
 
         private void BbiThemMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmThemNV f = new FrmThemNV();
-            f.ShowDialog();
+            FrmThemNV frmNV = new FrmThemNV();
+            frmNV.ShowDialog();
         }
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -108,9 +108,9 @@ namespace market_management
             {
                 GridView currentView = (GridView)GcDanhMucNV.FocusedView;
 
-                int _MaNV = (int) currentView.GetRowCellValue(currentView.FocusedRowHandle, currentView.Columns[0]);
+                int maNV = (int) currentView.GetRowCellValue(currentView.FocusedRowHandle, currentView.Columns[0]);
 
-                dataAccess.UpdateData(string.Format("delete from NHAN_VIEN where MaNV = "+ _MaNV));
+                dataAccess.UpdateData(string.Format("delete from NHAN_VIEN where MaNV = "+ maNV));
                 XtraMessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData();
             }
@@ -221,11 +221,6 @@ namespace market_management
             {
                 e.Handled = true;
             }
-        }
-
-        private void UcNhanVien_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

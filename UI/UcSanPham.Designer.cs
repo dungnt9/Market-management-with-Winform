@@ -63,14 +63,14 @@
             // 
             // GcSP
             // 
-            this.GcSP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcSP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.GcSP.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GcSP.Location = new System.Drawing.Point(0, 296);
             this.GcSP.MainView = this.gridView;
             this.GcSP.MenuManager = this.RcDanhMucSP;
             this.GcSP.Name = "GcSP";
             this.GcSP.Size = new System.Drawing.Size(870, 364);
-            this.GcSP.TabIndex = 2;
+            this.GcSP.TabIndex = 10;
             this.GcSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
             // 
@@ -204,7 +204,9 @@
             this.TeGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeGiaBan.Properties.Appearance.Options.UseFont = true;
             this.TeGiaBan.Size = new System.Drawing.Size(245, 26);
-            this.TeGiaBan.TabIndex = 24;
+            this.TeGiaBan.TabIndex = 5;
+            this.TeGiaBan.EditValueChanged += new System.EventHandler(this.TeGiaBan_EditValueChanged);
+            this.TeGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeGiaBan_KeyPress);
             // 
             // TeSoLuong
             // 
@@ -214,7 +216,8 @@
             this.TeSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeSoLuong.Properties.Appearance.Options.UseFont = true;
             this.TeSoLuong.Size = new System.Drawing.Size(245, 26);
-            this.TeSoLuong.TabIndex = 25;
+            this.TeSoLuong.TabIndex = 4;
+            this.TeSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeSoLuong_KeyPress);
             // 
             // labelControl6
             // 
@@ -236,7 +239,8 @@
             this.TeGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeGiaNhap.Properties.Appearance.Options.UseFont = true;
             this.TeGiaNhap.Size = new System.Drawing.Size(245, 26);
-            this.TeGiaNhap.TabIndex = 32;
+            this.TeGiaNhap.TabIndex = 3;
+            this.TeGiaNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TeGiaNhap_KeyPress);
             // 
             // CbePhanLoai
             // 
@@ -249,7 +253,7 @@
             this.CbePhanLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbePhanLoai.Size = new System.Drawing.Size(225, 26);
-            this.CbePhanLoai.TabIndex = 39;
+            this.CbePhanLoai.TabIndex = 2;
             // 
             // LbcMaSP
             // 
@@ -281,7 +285,7 @@
             this.CmbTrangThai.Location = new System.Drawing.Point(576, 262);
             this.CmbTrangThai.Name = "CmbTrangThai";
             this.CmbTrangThai.Size = new System.Drawing.Size(245, 28);
-            this.CmbTrangThai.TabIndex = 48;
+            this.CmbTrangThai.TabIndex = 6;
             // 
             // TeTenSP
             // 
@@ -291,7 +295,7 @@
             this.TeTenSP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeTenSP.Properties.Appearance.Options.UseFont = true;
             this.TeTenSP.Size = new System.Drawing.Size(225, 26);
-            this.TeTenSP.TabIndex = 51;
+            this.TeTenSP.TabIndex = 1;
             // 
             // UcSanPham
             // 

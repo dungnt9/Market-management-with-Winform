@@ -69,29 +69,29 @@ namespace market_management
         {
             if (TeTenChuongTrinh.Text != "")
             {
-                int PhanTram = Convert.ToInt32(CbePhanTram.Text);
-                string TrangThai = "1";
-                string MoTa = "";
+                int phanTram = Convert.ToInt32(CbePhanTram.Text);
+                string trangThai = "1";
+                string moTa = "";
                 if (RbNgayLe.Checked)
                 {
-                    MoTa = $"Ngày lễ {CbeNgayLe.Text}";
+                    moTa = $"Ngày lễ {CbeNgayLe.Text}";
                 }
                 else if (RbDiemTich.Checked)
                 {
-                    MoTa = $"Điểm cần tích: {CbeDiemTich.Text}";
+                    moTa = $"Điểm cần tích: {CbeDiemTich.Text}";
                 }
                 else if (RbNgauNhien.Checked)
                 {
-                    MoTa = $"Nhân viên sẽ cung cấp cho khách hàng";
+                    moTa = $"Nhân viên sẽ cung cấp cho khách hàng";
 
                 }
-                string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia, TenChuongTrinh, PhanTram, NgayTao, NgayHetHan, TrangThai, Mota) VALUES" + "('{0}',N'{1}','{2}','{3}','{4}','{5}',N'{6}')", MaGiamGia, TeTenChuongTrinh.Text, PhanTram, DeNgayTao.Text, DeNgayHetHan.Text,TrangThai, MoTa);
+                string s = string.Format("INSERT INTO MA_GIAM_GIA (MaGiamGia, TenChuongTrinh, PhanTram, NgayTao, NgayHetHan, TrangThai, Mota) VALUES" + "('{0}',N'{1}','{2}','{3}','{4}','{5}',N'{6}')", MaGiamGia, TeTenChuongTrinh.Text, phanTram, DeNgayTao.Text, DeNgayHetHan.Text, trangThai, moTa);
                 MessageBox.Show("Thêm thành công");
                 dataAccess.UpdateData(s);
                 if (RbDiemTich.Checked)
                 {
-                    int DiemTich = Convert.ToInt32(CbeDiemTich.Text);
-                    GanMaGiamGia(DiemTich);
+                    int diemTich = Convert.ToInt32(CbeDiemTich.Text);
+                    GanMaGiamGia(diemTich);
                 }
                 this.Close();
             }
@@ -114,10 +114,10 @@ namespace market_management
             RbDiemTich.Checked = false;
         }
 
-        public void GanMaGiamGia(int DiemTich)
+        public void GanMaGiamGia(int diemTich)
         {
 
-            string s = string.Format("UPDATE KHACH_HANG \r\nSET MaGiamGia = '{0}'\r\nWHERE Diem >= '{1}'", 1, DiemTich);
+            string s = string.Format("UPDATE KHACH_HANG \r\nSET MaGiamGia = '{0}'\r\nWHERE Diem >= '{1}'", 1, diemTich);
             dataAccess.UpdateData(s);
         }
     }

@@ -19,10 +19,6 @@ namespace market_management
             objConnection = new SqlConnection(strConnection);
 
         }
-        /// <summary>
-        /// Phương thức thực hiện Thêm, Xóa, Sửa bảng dữ liệu
-        /// </summary>
-        /// <param name="i_updateCommand">Câu lệnh INSERT, DELETE, UPDATE</param>
         public void UpdateData(string i_updateCommand)
         {
             try

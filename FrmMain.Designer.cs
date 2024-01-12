@@ -51,15 +51,16 @@
             this.QLMaGiamGia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.BaoCaoThongKe = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.TKDoanhThuBanHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.TKTongTienNhap = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.TKHangTon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.TKSPDaBan1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TKLoaiSPDaBan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.TKSPDaBan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TKHangBoSung = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.TKHangTon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.TKTongTienNhap = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.TKDoanhThuBanHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.DangXuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.DangKy = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.TKSPDaBan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.BsiChucvu = new DevExpress.XtraBars.BarStaticItem();
             this.BsiTenNV = new DevExpress.XtraBars.BarStaticItem();
@@ -250,37 +251,23 @@
             // BaoCaoThongKe
             // 
             this.BaoCaoThongKe.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.TKDoanhThuBanHang,
-            this.TKTongTienNhap,
-            this.TKHangTon,
+            this.TKSPDaBan1,
             this.TKLoaiSPDaBan,
-            this.TKSPDaBan,
-            this.TKHangBoSung});
+            this.TKHangBoSung,
+            this.TKHangTon,
+            this.TKTongTienNhap,
+            this.TKDoanhThuBanHang});
             this.BaoCaoThongKe.Expanded = true;
             this.BaoCaoThongKe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BaoCaoThongKe.ImageOptions.Image")));
             this.BaoCaoThongKe.Name = "BaoCaoThongKe";
             this.BaoCaoThongKe.Text = "Báo cáo thống kê";
             // 
-            // TKDoanhThuBanHang
+            // TKSPDaBan1
             // 
-            this.TKDoanhThuBanHang.Name = "TKDoanhThuBanHang";
-            this.TKDoanhThuBanHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.TKDoanhThuBanHang.Text = "Thống kê doanh thu bán hàng";
-            this.TKDoanhThuBanHang.Click += new System.EventHandler(this.TKDoanhThuBanHang_Click);
-            // 
-            // TKTongTienNhap
-            // 
-            this.TKTongTienNhap.Name = "TKTongTienNhap";
-            this.TKTongTienNhap.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.TKTongTienNhap.Text = "Thống kê tổng tiền nhập";
-            this.TKTongTienNhap.Click += new System.EventHandler(this.TKTongTienNhap_Click);
-            // 
-            // TKHangTon
-            // 
-            this.TKHangTon.Name = "TKHangTon";
-            this.TKHangTon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.TKHangTon.Text = "Thống kê hàng tồn kho";
-            this.TKHangTon.Click += new System.EventHandler(this.TKHangTon_Click);
+            this.TKSPDaBan1.Name = "TKSPDaBan1";
+            this.TKSPDaBan1.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.TKSPDaBan1.Text = "Thống kê sản phẩm đã bán";
+            this.TKSPDaBan1.Click += new System.EventHandler(this.TKSPDaBan1_Click_1);
             // 
             // TKLoaiSPDaBan
             // 
@@ -289,19 +276,33 @@
             this.TKLoaiSPDaBan.Text = "Thống kê loại sản phẩm đã bán";
             this.TKLoaiSPDaBan.Click += new System.EventHandler(this.TKLoaiSPDaBan_Click);
             // 
-            // TKSPDaBan
-            // 
-            this.TKSPDaBan.Name = "TKSPDaBan";
-            this.TKSPDaBan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.TKSPDaBan.Text = "Thống kê sản phẩm đã bán";
-            this.TKSPDaBan.Click += new System.EventHandler(this.TKSPDaBan_Click);
-            // 
             // TKHangBoSung
             // 
             this.TKHangBoSung.Name = "TKHangBoSung";
             this.TKHangBoSung.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.TKHangBoSung.Text = "Thống kê hàng cần bổ sung";
             this.TKHangBoSung.Click += new System.EventHandler(this.TKHangBoSung_Click);
+            // 
+            // TKHangTon
+            // 
+            this.TKHangTon.Name = "TKHangTon";
+            this.TKHangTon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.TKHangTon.Text = "Thống kê hàng tồn kho";
+            this.TKHangTon.Click += new System.EventHandler(this.TKHangTon_Click);
+            // 
+            // TKTongTienNhap
+            // 
+            this.TKTongTienNhap.Name = "TKTongTienNhap";
+            this.TKTongTienNhap.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.TKTongTienNhap.Text = "Thống kê tổng tiền nhập";
+            this.TKTongTienNhap.Click += new System.EventHandler(this.TKTongTienNhap_Click);
+            // 
+            // TKDoanhThuBanHang
+            // 
+            this.TKDoanhThuBanHang.Name = "TKDoanhThuBanHang";
+            this.TKDoanhThuBanHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.TKDoanhThuBanHang.Text = "Thống kê doanh thu bán hàng";
+            this.TKDoanhThuBanHang.Click += new System.EventHandler(this.TKDoanhThuBanHang_Click);
             // 
             // accordionControlSeparator6
             // 
@@ -323,6 +324,13 @@
             this.DangKy.Text = "Tạo tài khoản nhân viên";
             this.DangKy.Visible = false;
             this.DangKy.Click += new System.EventHandler(this.DangKy_Click);
+            // 
+            // TKSPDaBan
+            // 
+            this.TKSPDaBan.Name = "TKSPDaBan";
+            this.TKSPDaBan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.TKSPDaBan.Text = "Thống kê sản phẩm đã bán";
+            this.TKSPDaBan.Click += new System.EventHandler(this.TKSPDaBan_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -452,5 +460,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement TKTongTienNhap;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ChucVu;
         private DevExpress.XtraBars.Navigation.AccordionControlElement TKHangBoSung;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement TKSPDaBan1;
     }
 }

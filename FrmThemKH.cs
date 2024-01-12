@@ -38,7 +38,7 @@ namespace market_management
         }
         private List<string> LayGioiTinh()
         {
-            List<string> GioiTinh = new List<string>();
+            List<string> gioiTinh = new List<string>();
             string query = "SELECT DISTINCT GioiTinh FROM KHACH_HANG";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
@@ -49,19 +49,19 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        GioiTinh.Add(reader["GioiTinh"].ToString());
+                        gioiTinh.Add(reader["GioiTinh"].ToString());
                     }
                 }
 
                 dataAccess.objConnection.Close();
 
             }
-            return GioiTinh;
+            return gioiTinh;
         }
 
         private List<string> LayMaGiamGia()
         {
-            List<string> MaGiamGia = new List<string>();
+            List<string> maGiamGia = new List<string>();
             string query = "SELECT MaGiamGia FROM MA_GIAM_GIA";
 
             using (SqlCommand cmd = new SqlCommand(query, dataAccess.objConnection))
@@ -72,27 +72,27 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                        MaGiamGia.Add(reader["MaGiamGia"].ToString());
+                        maGiamGia.Add(reader["MaGiamGia"].ToString());
                     }
                 }
 
                 dataAccess.objConnection.Close();
 
             }
-            return MaGiamGia;
+            return maGiamGia;
         }
         private void HienThiGioiTinh()
         {
-            List<string> GioiTinh = LayGioiTinh();
-            CbeGioiTinh.Properties.Items.AddRange(GioiTinh);
+            List<string> gioiTinh = LayGioiTinh();
+            CbeGioiTinh.Properties.Items.AddRange(gioiTinh);
 
             CbeGioiTinh.Properties.AutoComplete = true;
             CbeGioiTinh.Properties.CaseSensitiveSearch = false;
         }
         private void HienThiMaGiamGia()
         {
-            List<string> MaGiamGia = LayMaGiamGia();
-            CbeMaGiamGia.Properties.Items.AddRange(MaGiamGia);
+            List<string> maGiamGia = LayMaGiamGia();
+            CbeMaGiamGia.Properties.Items.AddRange(maGiamGia);
 
             CbeMaGiamGia.Properties.AutoComplete = true;
             CbeMaGiamGia.Properties.CaseSensitiveSearch = false;

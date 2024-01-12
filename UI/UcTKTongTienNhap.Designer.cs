@@ -49,58 +49,67 @@
             // 
             this.LbBieuDo.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbBieuDo.Appearance.Options.UseFont = true;
-            this.LbBieuDo.Location = new System.Drawing.Point(420, 216);
+            this.LbBieuDo.Location = new System.Drawing.Point(490, 266);
+            this.LbBieuDo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LbBieuDo.Name = "LbBieuDo";
-            this.LbBieuDo.Size = new System.Drawing.Size(366, 20);
+            this.LbBieuDo.Size = new System.Drawing.Size(467, 25);
             this.LbBieuDo.TabIndex = 22;
             this.LbBieuDo.Text = "Biểu đồ thống kê tiền nhập hàng từng tháng trong năm";
             // 
             // GcNhapHang
             // 
-            this.GcNhapHang.Location = new System.Drawing.Point(3, 262);
+            this.GcNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcNhapHang.Location = new System.Drawing.Point(4, 322);
             this.GcNhapHang.MainView = this.gridView1;
+            this.GcNhapHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GcNhapHang.Name = "GcNhapHang";
-            this.GcNhapHang.Size = new System.Drawing.Size(864, 395);
+            this.GcNhapHang.Size = new System.Drawing.Size(1008, 486);
             this.GcNhapHang.TabIndex = 21;
             this.GcNhapHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.GcNhapHang;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 933;
             // 
             // LbNam
             // 
             this.LbNam.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNam.Appearance.Options.UseFont = true;
-            this.LbNam.Location = new System.Drawing.Point(38, 112);
+            this.LbNam.Location = new System.Drawing.Point(44, 138);
+            this.LbNam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LbNam.Name = "LbNam";
-            this.LbNam.Size = new System.Drawing.Size(32, 20);
+            this.LbNam.Size = new System.Drawing.Size(40, 25);
             this.LbNam.TabIndex = 20;
             this.LbNam.Text = "Năm";
             // 
             // CbeNam
             // 
             this.CbeNam.EditValue = "2024";
-            this.CbeNam.Location = new System.Drawing.Point(86, 109);
+            this.CbeNam.Location = new System.Drawing.Point(100, 134);
+            this.CbeNam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbeNam.Name = "CbeNam";
             this.CbeNam.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbeNam.Properties.Appearance.Options.UseFont = true;
             this.CbeNam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbeNam.Size = new System.Drawing.Size(100, 26);
+            this.CbeNam.Size = new System.Drawing.Size(117, 32);
             this.CbeNam.TabIndex = 19;
+            this.CbeNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbeNam_KeyPress);
             // 
             // LbDoanhThu
             // 
             this.LbDoanhThu.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.LbDoanhThu.Appearance.Options.UseFont = true;
-            this.LbDoanhThu.Location = new System.Drawing.Point(18, 14);
+            this.LbDoanhThu.Location = new System.Drawing.Point(21, 39);
+            this.LbDoanhThu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LbDoanhThu.Name = "LbDoanhThu";
-            this.LbDoanhThu.Size = new System.Drawing.Size(232, 32);
+            this.LbDoanhThu.Size = new System.Drawing.Size(427, 41);
             this.LbDoanhThu.TabIndex = 18;
-            this.LbDoanhThu.Text = "Thống Kê Nhập Hàng";
+            this.LbDoanhThu.Text = "Thống Kê Tổng Tiền Nhập Hàng";
             // 
             // CcBanHang
             // 
@@ -109,7 +118,8 @@
             this.CcBanHang.Diagram = xyDiagram1;
             this.CcBanHang.Legend.LegendID = -1;
             this.CcBanHang.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.CcBanHang.Location = new System.Drawing.Point(449, 14);
+            this.CcBanHang.Location = new System.Drawing.Point(524, 17);
+            this.CcBanHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CcBanHang.Name = "CcBanHang";
             series1.ArgumentDataMember = "Tháng";
             series1.Name = "Series 2";
@@ -117,12 +127,12 @@
             series1.ValueDataMembersSerializable = "Tổng Tiền Bán";
             this.CcBanHang.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.CcBanHang.Size = new System.Drawing.Size(306, 196);
+            this.CcBanHang.Size = new System.Drawing.Size(357, 241);
             this.CcBanHang.TabIndex = 17;
             // 
             // UcTKTongTienNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.LbBieuDo);
             this.Controls.Add(this.GcNhapHang);
@@ -130,8 +140,9 @@
             this.Controls.Add(this.CbeNam);
             this.Controls.Add(this.LbDoanhThu);
             this.Controls.Add(this.CcBanHang);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UcTKTongTienNhap";
-            this.Size = new System.Drawing.Size(870, 660);
+            this.Size = new System.Drawing.Size(1015, 812);
             ((System.ComponentModel.ISupportInitialize)(this.GcNhapHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeNam.Properties)).EndInit();

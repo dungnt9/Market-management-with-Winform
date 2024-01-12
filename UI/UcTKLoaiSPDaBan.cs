@@ -23,26 +23,24 @@ namespace market_management.UI
 
         private void LoadData()
         {
-
-            // Bảng loại sản phẩm có số lượng bán từ cao đến thấp
-            DataTable dataTable2 = LayLoaiSPDaBan();
-            GcLoaiSanPhamDaBan.DataSource = dataTable2;
+            DataTable dataTable1 = LayLoaiSPDaBan();
+            GcLoaiSanPhamDaBan.DataSource = dataTable1;
         }
         private void LayLoaiSPBanNhieuNhat()
         {
-            DataRow maxSoldProductTypeRow = LayDongLoaiSPBanNhieuNhat();
+            DataRow dongLoaiSPBanNhieuNhat = LayDongLoaiSPBanNhieuNhat();
 
-            if (maxSoldProductTypeRow != null)
+            if (dongLoaiSPBanNhieuNhat != null)
             {
-                LbcTenLoaiSP.Text = maxSoldProductTypeRow["TenLoaiSP"].ToString();
-                LbcSoLoaiSP.Text = maxSoldProductTypeRow["SoLuongDaBan"].ToString() + " sản phẩm";
+                LbcTenLoaiSP.Text = dongLoaiSPBanNhieuNhat["TenLoaiSP"].ToString();
+                LbcSoLoaiSP.Text = dongLoaiSPBanNhieuNhat["SoLuongDaBan"].ToString() + " sản phẩm";
             }
         }
         private DataRow LayDongLoaiSPBanNhieuNhat()
         {
             DataTable dataTable = LayLoaiSPDaBan();
-            DataRow maxSoldProductTypeRow = dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
-            return maxSoldProductTypeRow;
+            DataRow dongLoaiSPBanNhieuNhat = dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
+            return dongLoaiSPBanNhieuNhat;
         }
         private DataTable LayLoaiSPDaBan()
         {

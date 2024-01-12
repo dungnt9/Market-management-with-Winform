@@ -57,7 +57,7 @@
             this.BbiSua,
             this.BbiLamMoi});
             this.RcDanhMucLoaiSP.Location = new System.Drawing.Point(0, 0);
-            this.RcDanhMucLoaiSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RcDanhMucLoaiSP.Margin = new System.Windows.Forms.Padding(4);
             this.RcDanhMucLoaiSP.MaxItemId = 20;
             this.RcDanhMucLoaiSP.Name = "RcDanhMucLoaiSP";
             this.RcDanhMucLoaiSP.OptionsMenuMinWidth = 385;
@@ -113,7 +113,7 @@
             // 
             // CbeTenLoaiSP
             // 
-            this.CbeTenLoaiSP.Location = new System.Drawing.Point(526, 150);
+            this.CbeTenLoaiSP.Location = new System.Drawing.Point(416, 177);
             this.CbeTenLoaiSP.MenuManager = this.RcDanhMucLoaiSP;
             this.CbeTenLoaiSP.Name = "CbeTenLoaiSP";
             this.CbeTenLoaiSP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,13 +122,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CbeTenLoaiSP.Properties.Sorted = true;
             this.CbeTenLoaiSP.Size = new System.Drawing.Size(232, 26);
-            this.CbeTenLoaiSP.TabIndex = 22;
+            this.CbeTenLoaiSP.TabIndex = 1;
             // 
             // LbTenLSP
             // 
             this.LbTenLSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTenLSP.Appearance.Options.UseFont = true;
-            this.LbTenLSP.Location = new System.Drawing.Point(391, 153);
+            this.LbTenLSP.Location = new System.Drawing.Point(270, 180);
             this.LbTenLSP.Name = "LbTenLSP";
             this.LbTenLSP.Size = new System.Drawing.Size(120, 20);
             this.LbTenLSP.TabIndex = 20;
@@ -136,11 +136,11 @@
             // 
             // GcLoaiSP
             // 
-            this.GcLoaiSP.Location = new System.Drawing.Point(0, 268);
+            this.GcLoaiSP.Location = new System.Drawing.Point(0, 265);
             this.GcLoaiSP.MainView = this.gridView1;
             this.GcLoaiSP.MenuManager = this.RcDanhMucLoaiSP;
             this.GcLoaiSP.Name = "GcLoaiSP";
-            this.GcLoaiSP.Size = new System.Drawing.Size(870, 389);
+            this.GcLoaiSP.Size = new System.Drawing.Size(870, 392);
             this.GcLoaiSP.TabIndex = 37;
             this.GcLoaiSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -149,13 +149,14 @@
             // 
             this.gridView1.GridControl = this.GcLoaiSP;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // LbcMaLoaiSP
             // 
             this.LbcMaLoaiSP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbcMaLoaiSP.Appearance.Options.UseFont = true;
-            this.LbcMaLoaiSP.Location = new System.Drawing.Point(230, 156);
+            this.LbcMaLoaiSP.Location = new System.Drawing.Point(416, 144);
             this.LbcMaLoaiSP.Name = "LbcMaLoaiSP";
             this.LbcMaLoaiSP.Size = new System.Drawing.Size(21, 20);
             this.LbcMaLoaiSP.TabIndex = 41;
@@ -165,7 +166,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(103, 156);
+            this.labelControl1.Location = new System.Drawing.Point(270, 144);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(121, 20);
             this.labelControl1.TabIndex = 42;
@@ -175,7 +176,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(392, 208);
+            this.labelControl2.Location = new System.Drawing.Point(270, 217);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(66, 20);
             this.labelControl2.TabIndex = 45;
@@ -188,10 +189,10 @@
             this.CmbTrangThai.Items.AddRange(new object[] {
             "Đang kinh doanh",
             "Không còn kinh doanh"});
-            this.CmbTrangThai.Location = new System.Drawing.Point(526, 200);
+            this.CmbTrangThai.Location = new System.Drawing.Point(416, 214);
             this.CmbTrangThai.Name = "CmbTrangThai";
             this.CmbTrangThai.Size = new System.Drawing.Size(232, 28);
-            this.CmbTrangThai.TabIndex = 46;
+            this.CmbTrangThai.TabIndex = 2;
             // 
             // UcLoaiSanPham
             // 

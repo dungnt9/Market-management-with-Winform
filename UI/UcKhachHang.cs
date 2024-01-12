@@ -163,7 +163,6 @@ namespace market_management
             var SDT = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[4]).ToString();
             var diaChi = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[5]).ToString();
             var maGiamGia = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[6]).ToString();
-            //var Diem = gridView.GetRowCellValue(e.FocusedRowHandle, currentView.Columns[7]).ToString();
             TeMaKH.Text = maKH;
             TeTenKH.Text = tenKH;
             CbeGioiTinh.Text = gioiTinh;

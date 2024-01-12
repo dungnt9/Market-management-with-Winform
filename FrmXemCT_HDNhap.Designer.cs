@@ -41,7 +41,7 @@
             this.GcChiTiet.MainView = this.gridView1;
             this.GcChiTiet.Margin = new System.Windows.Forms.Padding(2);
             this.GcChiTiet.Name = "GcChiTiet";
-            this.GcChiTiet.Size = new System.Drawing.Size(686, 574);
+            this.GcChiTiet.Size = new System.Drawing.Size(688, 399);
             this.GcChiTiet.TabIndex = 0;
             this.GcChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -51,17 +51,18 @@
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.GcChiTiet;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsEditForm.PopupEditFormWidth = 600;
             // 
-            // XemChiTietDonNhap
+            // FrmXemCT_HDNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 578);
+            this.ClientSize = new System.Drawing.Size(685, 401);
             this.Controls.Add(this.GcChiTiet);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "XemChiTietDonNhap";
+            this.Name = "FrmXemCT_HDNhap";
             this.Text = "Form Xem chi tiết đơn nhập";
             ((System.ComponentModel.ISupportInitialize)(this.GcChiTiet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
