@@ -27,9 +27,19 @@ namespace market_management
         {
             if (TeTenKH.Text != "")
             {
-                string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}')", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text, DeNgaySinh.Text);
-                MessageBox.Show("Thêm thành công");
-                dataAccess.UpdateData(s);
+                string ngaySinh = DeNgaySinh.Text;
+                if(ngaySinh != "")
+                {
+                    string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}')", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text, DeNgaySinh.Text);
+                    MessageBox.Show("Thêm thành công");
+                    dataAccess.UpdateData(s);
+                }
+                else
+                {
+                    string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}',NULL)", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text);
+                    MessageBox.Show("Thêm thành công");
+                    dataAccess.UpdateData(s);
+                }
             }
             else
             {
