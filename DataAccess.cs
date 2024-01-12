@@ -14,7 +14,7 @@ namespace market_management
         public DataAccess()
         {
             string strConnection = @"Data Source=.\SQLEXPRESS01;Initial Catalog=QLST;Integrated Security=True";
-
+            // Vui lòng đổi lại đường dẫn khi thao tác tại máy
 
             objConnection = new SqlConnection(strConnection);
 
