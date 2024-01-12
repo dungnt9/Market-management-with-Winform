@@ -341,6 +341,7 @@
     <Compile Include="FrmXemCT_HDNhap.Designer.cs">
       <DependentUpon>FrmXemCT_HDNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util.cs" />
     <EmbeddedResource Include="FrmChiTietDonBan.resx">
       <DependentUpon>FrmChiTietDonBan.cs</DependentUpon>
     </EmbeddedResource>

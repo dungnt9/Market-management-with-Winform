@@ -37,7 +37,7 @@ namespace market_management.UI
             GcQLBanHang.DataSource = dataAccess.GetDataTable("SELECT \r\n" +
                 "    HDB.MaHDB AS 'Mã Hóa Đơn Bán',\r\n" +
                 "    KH.TenKH AS 'Tên Khách Hàng',\r\n" +
-                "    KH.SDT AS 'Số Điện Thoại Khách Hàng',\r\n" +
+                "    KH.SDT AS 'Số Điện Thoại',\r\n" +
                 "    HDB.TongTien AS 'Tổng Tiền',\r\n" +
                 "    HDB.ThoiGian AS 'Thời Gian',\r\n" +
                 "    NV.TenNV AS 'Tên nhân viên'\r\n" +
@@ -62,9 +62,9 @@ namespace market_management.UI
                 return;
             }
 
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn bán này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var xacnhan = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn bán này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (confirmationResult == DialogResult.Yes)
+            if (xacnhan == DialogResult.Yes)
             {
                 var sqlDeleteCT_HDB = $"DELETE FROM CT_HOA_DON_BAN WHERE MaHDB = '{maHDB}'";
                 var sqlDelete_HDB = $"DELETE FROM HOA_DON_BAN WHERE MaHDB = '{maHDB}'";

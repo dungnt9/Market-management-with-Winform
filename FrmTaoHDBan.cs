@@ -21,8 +21,8 @@ namespace market_management
         DataAccess dataAccess = new DataAccess();
         System.Data.DataTable dataTable;
 
-        string maHDB = GenerateRandomString(8);
-        string current_time = DateTime.Now.ToShortDateString();
+        string maHDB = Util.TaoMaHoaDon(8);
+        string thoigian = DateTime.Now.ToShortDateString();
 
         int maKH = -1;
         int phantramGiamGia = 0;
@@ -49,9 +49,9 @@ namespace market_management
             GvSP_HDB.Columns["Giá Bán Lẻ"].OptionsColumn.ReadOnly = true;
 
 
-            LbThoiGian.Text = current_time;
+            LbThoiGian.Text = thoigian;
             LbMaHDB.Text = maHDB;
-            LbTenNV.Text = "";
+            LbTenNV.Text = Session.tenNV;
         }
 
         private bool KiemTraKhachHang()
@@ -127,8 +127,8 @@ namespace market_management
                 LuuHoaDon();
                 LuuCTHoaDon();
 
-                var result = XtraMessageBox.Show("Thêm hóa đơn bán thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
+                var ketqua = XtraMessageBox.Show("Thêm hóa đơn bán thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (ketqua == DialogResult.OK)
                 {
                     this.Close();
                 }
@@ -189,11 +189,11 @@ namespace market_management
 
             if (sanpham.Rows.Count > 0)
             {
-                DataRow newRow = dataTable.NewRow();
-                newRow["Mã Sản Phẩm"] = sanpham.Rows[0]["Mã Sản Phẩm"];
-                newRow["Tên Sản Phẩm"] = sanpham.Rows[0]["Tên Sản Phẩm"];
-                newRow["Giá Bán Lẻ"] = sanpham.Rows[0]["Giá Bán Lẻ"];
-                newRow["Số Lượng"] = TeSoLuong.Text;
+                DataRow row = dataTable.NewRow();
+                row["Mã Sản Phẩm"] = sanpham.Rows[0]["Mã Sản Phẩm"];
+                row["Tên Sản Phẩm"] = sanpham.Rows[0]["Tên Sản Phẩm"];
+                row["Giá Bán Lẻ"] = sanpham.Rows[0]["Giá Bán Lẻ"];
+                row["Số Lượng"] = TeSoLuong.Text;
 
                 if (Convert.ToInt32(TeSoLuong.Text) > soluongKho)
                 {
@@ -201,7 +201,7 @@ namespace market_management
                     return;
                 }
 
-                dataTable.Rows.Add(newRow);
+                dataTable.Rows.Add(row);
             }   
 
             //LbTongTien.Text = TinhTongTien().ToString();
@@ -310,21 +310,6 @@ namespace market_management
             thanhtien = tongtien - (tongtien * phantramGiamGia) / 100;
             LbTongTien.Text = tongtien.ToString();
             LbThanhTien.Text = thanhtien.ToString();
-        }
-
-        
-        static string GenerateRandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            Random random = new Random();
-            char[] randomArray = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                randomArray[i] = chars[random.Next(chars.Length)];
-            }
-
-            return new string(randomArray);
         }
         
 

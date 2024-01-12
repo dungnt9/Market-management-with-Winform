@@ -49,13 +49,13 @@ namespace market_management.UI
                 return;
             }
 
-            var confirmationResult = XtraMessageBox.Show("Bạn Có Chắc Chắn Muốn Sửa Nhà Cung Cấp Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var xacnhan = XtraMessageBox.Show("Bạn Có Chắc Chắn Muốn Sửa Nhà Cung Cấp Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             string tenNCC = TeTenNCC.Text;
             string sdtNCC = TeSĐTNCC.Text;
             string diachiNCC = TeDiaChiNCC.Text;
 
-            if (confirmationResult == DialogResult.Yes)
+            if (xacnhan == DialogResult.Yes)
             {
                 var sqlDelete = $"UPDATE NHA_CUNG_CAP SET TenNCC = N'{tenNCC}', DiaChi = N'{diachiNCC}', SDT = '{sdtNCC}' WHERE MaNCC = '{maNCC}'";
 
@@ -80,9 +80,9 @@ namespace market_management.UI
                 return;
             }
 
-            var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa Nhà Cung Cấp Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var xacnhan = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa Nhà Cung Cấp Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (confirmationResult == DialogResult.Yes)
+            if (xacnhan == DialogResult.Yes)
             {
                 var sqlDelete = $"DELETE FROM NHA_CUNG_CAP WHERE MaNCC = '{maNCC}'";
 

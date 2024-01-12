@@ -36,7 +36,7 @@ namespace market_management.UI
                 return;
             }
 
-            var confirmationResult = XtraMessageBox.Show("Bạn Có Chắc Chắn Muốn Sửa Chức Vụ Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var xacnhan = XtraMessageBox.Show("Bạn Có Chắc Chắn Muốn Sửa Chức Vụ Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             string tenCV = TeTenCV.Text;
             string capCV = CbeCapQuanLy.Text;
@@ -52,7 +52,7 @@ namespace market_management.UI
                 capQL = false;
             }
 
-            if (confirmationResult == DialogResult.Yes)
+            if (xacnhan == DialogResult.Yes)
             {
                 var sqlDelete = $"UPDATE CHUC_VU SET TenCV = N'{tenCV}', CapQuanLy = '{capQL}', MoTa = '{mota}' WHERE MaCV = '{maCV}'";
 
@@ -96,9 +96,9 @@ namespace market_management.UI
                 return;
             }
 
-            var confirmationResult = XtraMessageBox.Show("Bạn Có Chắc Chắn Muốn Xóa Chức Vụ Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var xacnhan = XtraMessageBox.Show("Bạn Có Chắc Chắn Muốn Xóa Chức Vụ Này?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (confirmationResult == DialogResult.Yes)
+            if (xacnhan == DialogResult.Yes)
             {
                 string sqlDeleteCV = $"DELETE FROM CHUC_VU WHERE MaCV = {maCV}";
                 string sqlUpdateCV_NV = $"UPDATE NHAN_VIEN SET MaCV = null WHERE MaCV = '{maCV}'";

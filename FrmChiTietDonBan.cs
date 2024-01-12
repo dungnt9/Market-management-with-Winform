@@ -35,7 +35,7 @@ namespace market_management
         {
             HienThiThongTinKH(MaHDB);
 
-            LbTongTien.Text = tongTien + " VND";
+            LbTongTien.Text = tongTien;
             LbThoiGian.Text = thoigian;
             LbTenNV.Text = Session.tenNV;
 
@@ -45,16 +45,16 @@ namespace market_management
         private void HienThiThongTinKH(string maHDB)
         {
             string query = $"select TenKH, SDT, GioiTinh, DiaChi, NgaySinh from KHACH_HANG join HOA_DON_BAN on KHACH_HANG.MaKH = HOA_DON_BAN.MaKH where MaHDB = '{maHDB}'";
-            DataTable dataTable = dataAccess.GetDataTable(query);
+            DataTable thongtinKH = dataAccess.GetDataTable(query);
 
-            if(dataTable.Rows.Count == 0)
+            if(thongtinKH.Rows.Count == 0)
             {
                 return;
             }    
 
-            LbTenKH.Text = dataTable.Rows[0]["TenKH"].ToString();
-            LbSDT.Text = dataTable.Rows[0]["SDT"].ToString();
-            LbDiaChi.Text = dataTable.Rows[0]["DiaChi"].ToString();
+            LbTenKH.Text = thongtinKH.Rows[0]["TenKH"].ToString();
+            LbSDT.Text = thongtinKH.Rows[0]["SDT"].ToString();
+            LbDiaChi.Text = thongtinKH.Rows[0]["DiaChi"].ToString();
         }    
 
         private void HienThiSanPham(string MaHDB)
@@ -75,15 +75,15 @@ namespace market_management
 
             if (result == DialogResult.OK)
             {
-                string outputPath = saveFileDialog.FileName;
+                string duong_dan = saveFileDialog.FileName;
 
-                PrintFormToPdf(outputPath);
+                InHoaDonPDF(duong_dan);
             }
         }
 
-        private void PrintFormToPdf(string outputPath)
+        private void InHoaDonPDF(string duong_dan)
         {
-            using (FileStream fs = new FileStream(outputPath, FileMode.Create))
+            using (FileStream fs = new FileStream(duong_dan, FileMode.Create))
             {
                 using (PdfWriter writer = new PdfWriter(fs))
                 {
@@ -106,7 +106,7 @@ namespace market_management
                 }
             }
 
-            MessageBox.Show($"PDF đã được lưu tại {outputPath}", "PDF Đã Tạo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Hóa Đơn Bán đã được lưu tại {duong_dan}", "Hóa Đơn Bán Đã Tạo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

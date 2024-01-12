@@ -38,15 +38,5 @@ namespace market_management
                 //e.Cancel = true;
             }    
         }
-
-        private void TeMatKhau_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LbMaNV_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

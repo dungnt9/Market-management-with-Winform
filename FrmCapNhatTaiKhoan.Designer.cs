@@ -118,7 +118,6 @@
             this.TeMatKhau.Name = "TeMatKhau";
             this.TeMatKhau.Size = new System.Drawing.Size(168, 20);
             this.TeMatKhau.TabIndex = 7;
-            this.TeMatKhau.EditValueChanged += new System.EventHandler(this.TeMatKhau_EditValueChanged);
             // 
             // TeNhapLaiMatKhau
             // 
@@ -148,7 +147,6 @@
             this.LbMaNV.Size = new System.Drawing.Size(45, 20);
             this.LbMaNV.TabIndex = 10;
             this.LbMaNV.Text = "0000";
-            this.LbMaNV.Click += new System.EventHandler(this.LbMaNV_Click);
             // 
             // FrmCapNhatTaiKhoan
             // 

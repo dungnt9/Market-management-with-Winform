@@ -24,7 +24,7 @@ namespace market_management.UI
 
         private void LoadData()
         {
-            string queryHangBoSung = $"SELECT * FROM SAN_PHAM WHERE SoLuong < {muctoithieu}"; // Thay TenBang và SoLuong bằng tên thực tế của bảng và cột trong cơ sở dữ liệu của bạn
+            string queryHangBoSung = $"SELECT SP.MaSP AS 'Mã Sản Phẩm', SP.TenSP AS 'Tên Sản Phẩm', LSP.TenLoaiSp AS 'Loại Sản Phẩm', SP.SoLuong AS 'Số Lượng', SP.HanSuDung AS 'Hạn Sử Dụng', SP.TrangThai AS 'Trạng Thái'  FROM SAN_PHAM SP JOIN LOAI_SAN_PHAM LSP ON SP.MaLoaiSP = LSP.MaLoaiSP WHERE SP.SoLuong < {muctoithieu};";
             DataTable dataTableHangBoSung = dataAccess.GetDataTable(queryHangBoSung);
 
             GcHangBoSung.DataSource = dataTableHangBoSung;

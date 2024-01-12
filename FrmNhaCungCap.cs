@@ -39,8 +39,8 @@ namespace market_management
             string sqlInsert = $"INSERT INTO NHA_CUNG_CAP (TenNCC, DiaChi, SDT, MaLoaiSP) VALUES (N'{tenNCC}', N'{diachiNCC}', '{sdtNCC}', {maLoaiSP})";
 
             dataAccess.UpdateData(sqlInsert);
-            var result = XtraMessageBox.Show("Thêm nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (result == DialogResult.OK)
+            var ketqua = XtraMessageBox.Show("Thêm nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (ketqua == DialogResult.OK)
             {
                 this.Close(); // Tắt Form hiện tại
             }

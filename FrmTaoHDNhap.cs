@@ -18,7 +18,7 @@ namespace market_management
     {
         DataAccess dataAccess = new DataAccess();
         System.Data.DataTable dataTable;
-        public string maHDN = GenerateRandomString(8);
+        public string maHDN = Util.TaoMaHoaDon(8);
         string current_time = DateTime.Now.ToShortDateString();
 
         public FrmTaoHDNhap()
@@ -225,19 +225,6 @@ namespace market_management
                 int soLuongNhap = Convert.ToInt32(row["Số Lượng"]);
                 dataAccess.UpdateData(string.Format($"UPDATE SAN_PHAM SET SoLuong = SoLuong + {soLuongNhap} where MaSP = {maSP}"));
             }
-        }
-        static string GenerateRandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-            Random random = new Random();
-            char[] randomArray = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                randomArray[i] = chars[random.Next(chars.Length)];
-            }
-            return new string(randomArray);
         }
         
         private void TeSoLuong_KeyPress(object sender, KeyPressEventArgs e)

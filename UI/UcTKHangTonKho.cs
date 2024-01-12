@@ -38,11 +38,11 @@ namespace market_management.UI
             try
             {
                 string queryQuantity = "SELECT SUM(SoLuong) AS TongSoLuong FROM SAN_PHAM";
-                object resultQuantity = dataAccess.GetScalar(queryQuantity);
+                object tongsoluong = dataAccess.GetScalar(queryQuantity);
 
-                if (resultQuantity != null && resultQuantity != DBNull.Value)
+                if (tongsoluong != null && tongsoluong != DBNull.Value)
                 {
-                    LbTongSoHang.Text = resultQuantity.ToString();
+                    LbTongSoHang.Text = tongsoluong.ToString();
                 }
                 else
                 {
@@ -50,11 +50,11 @@ namespace market_management.UI
                 }
 
                 string queryTotal = "SELECT SUM(CAST(GiaBanLe AS bigint) * CAST(SoLuong AS bigint)) AS TongGiaTri FROM SAN_PHAM"; 
-                object resultTotal = dataAccess.GetScalar(queryTotal);
+                object tonggiatri = dataAccess.GetScalar(queryTotal);
 
-                if (resultTotal != null && resultTotal != DBNull.Value)
+                if (tonggiatri != null && tonggiatri != DBNull.Value)
                 {
-                    LbTongGiaTriKho.Text = resultTotal.ToString();
+                    LbTongGiaTriKho.Text = tonggiatri.ToString();
                 }
                 else
                 {
@@ -76,7 +76,7 @@ namespace market_management.UI
                 {
                     return;
                 }    
-                string queryHangTon = $"SELECT * FROM SAN_PHAM WHERE SoLuong > {mucAnToan}";
+                string queryHangTon = $"SELECT SP.MaSP AS 'Mã Sản Phẩm', SP.TenSP AS 'Tên Sản Phẩm', LSP.TenLoaiSp AS 'Loại Sản Phẩm', SP.SoLuong AS 'Số Lượng', SP.HanSuDung AS 'Hạn Sử Dụng', SP.TrangThai AS 'Trạng Thái'  FROM SAN_PHAM SP JOIN LOAI_SAN_PHAM LSP ON SP.MaLoaiSP = LSP.MaLoaiSP WHERE SP.SoLuong > {mucAnToan};";
 
                 DataTable dataTableHangTon = dataAccess.GetDataTable(queryHangTon);
 

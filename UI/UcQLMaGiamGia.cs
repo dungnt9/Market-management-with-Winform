@@ -36,7 +36,7 @@ namespace market_management.UI
         void LoadData()
         {
             GcMaGiamGia.DataSource = dataAccess.GetDataTable("select MaGiamGia as 'Mã Giảm Giá', " +
-                                                                    "TenChuongTrinh as 'Tên Chuong Trinh'," +
+                                                                    "TenChuongTrinh as 'Tên Chương Trình'," +
                                                                     "PhanTram as 'Phần Trăm'," +
                                                                     "NgayTao as 'Ngày Tạo', " +
                                                                     "NgayHetHan as 'Ngày Hết Hạn', " +

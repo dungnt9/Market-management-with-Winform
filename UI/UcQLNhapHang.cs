@@ -22,18 +22,13 @@ namespace market_management.UI
             InitializeComponent();
             LoadData();
         }
-        /*private void BbiNew_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            FrmTaoDonNhap frmDonNhap = new FrmTaoDonNhap();
-            frmDonNhap.ShowDialog();
-        }*/
         void LoadData()
         {
 
             string stringQuery = "SELECT \r\n" +
                 "    HDN.MaHDN AS 'Mã đơn nhập',\r\n" +
                 "    NCC.TenNCC AS 'Tên nhà cung cấp',\r\n" +
-                "    NCC.SDT AS 'Số điện thoại NCC',\r\n" +
+                "    NCC.SDT AS 'Số điện thoại',\r\n" +
                 "    HDN.TongTien AS 'Tổng tiền',\r\n" +
                 "    HDN.ThoiGian AS 'Thời gian',\r\n" +
                 "    NV.TenNV AS 'Tên nhân viên'\r\n" +

@@ -46,7 +46,7 @@ namespace market_management.UI
         {
             DataTable dataTable = new DataTable();
 
-            string query = "SELECT LSP.MaLoaiSP, LSP.TenLoaiSP, SUM(CT.SoLuong) AS SoLuongDaBan " +
+            string query = "SELECT LSP.MaLoaiSP AS 'Mã Loại Sản Phẩm', LSP.TenLoaiSP AS 'Loại Sản Phẩm', SUM(CT.SoLuong) AS 'Số Lượng Đã Bán' " +
                            "FROM LOAI_SAN_PHAM LSP " +
                            "JOIN SAN_PHAM SP ON LSP.MaLoaiSP = SP.MaLoaiSP " +
                            "JOIN CT_HOA_DON_BAN CT ON SP.MaSP = CT.MaSP " +
