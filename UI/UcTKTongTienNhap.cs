@@ -33,11 +33,16 @@ namespace market_management.UI
 
         void LoadData()
         {
-            string Nam = CbeNam.Text;
-            if (CbeNam.Properties.Items.Contains(Nam))
+            string nam = CbeNam.Text;
+            if (CbeNam.Properties.Items.Contains(nam))
             {
-                GcNhapHang.DataSource = dataAccess.GetDataTable("SELECT MONTH(ThoiGian) AS 'Tháng', YEAR(ThoiGian) AS 'Năm'," +
-                                                           "SUM(TongTien) AS 'Tổng tiền nhập'\r\nFROM HOA_DON_NHAP \r\nGROUP BY ThoiGian;");
+                string s = string.Format("SELECT MONTH(ThoiGian) AS 'Tháng', YEAR(ThoiGian) AS 'Năm'," +
+                                        "SUM(TongTien) AS 'Tổng tiền nhập'\r\nFROM HOA_DON_NHAP \r\n WHERE YEAR(ThoiGian) = {0}\r\nGROUP BY ThoiGian;",nam);
+                GcNhapHang.DataSource = dataAccess.GetDataTable(s);
+            }
+            else
+            {
+                XtraMessageBox.Show("Không tồn tại năm vừa nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -51,14 +56,16 @@ namespace market_management.UI
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
         }
 
-        private void CbeNam_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbeNam_KeyPress(object sender, KeyPressEventArgs e)
         {
-            LoadData();
-        }
-
-        private void CbeNam_SelectedValueChanged(object sender, EventArgs e)
-        {
-            LoadData();
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                LoadData();
+            }
         }
     }
 }

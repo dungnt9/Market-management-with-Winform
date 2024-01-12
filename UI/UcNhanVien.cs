@@ -222,10 +222,5 @@ namespace market_management
                 e.Handled = true;
             }
         }
-
-        private void UcNhanVien_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
