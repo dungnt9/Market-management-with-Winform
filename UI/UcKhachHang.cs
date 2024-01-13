@@ -57,16 +57,21 @@ namespace market_management
 
         private void BbiSua_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (string.IsNullOrEmpty(TeMaKH.Text))
+            {
+                XtraMessageBox.Show("Vui lòng chọn khách hàng cần sửa", "Thông báo");
+                return;
+            }
             var confirmationResult = XtraMessageBox.Show("Bạn có chắc chắn muốn sửa thông tin khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirmationResult == DialogResult.Yes)
             {
                 try
                 {
-                    if(CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) == false)
+                    if(CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text))
                     {
                         string s = string.Format("UPDATE KHACH_HANG SET " + "TenKH = N'{1}', NgaySinh = '{2}', GioiTinh = '{3}', SDT = '{4}', DiaChi = N'{5}', MaGiamGia = N'{6}'" +
-                                             " where MaKH = {0} )", TeMaKH.Text, TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text);
+                                             " where MaKH = {0} )", TeMaKH.Text, TeTenKH.Text, DeNgaySinh.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text);
                         dataAccess.UpdateData(s);
                         XtraMessageBox.Show("Cập nhật khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
@@ -111,7 +116,7 @@ namespace market_management
                 {
                     while (reader.Read())
                     {
-                            
+                        gioiTinh.Add(reader["GioiTinh"].ToString());
                     }
                 }
 
