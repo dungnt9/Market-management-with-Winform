@@ -40,7 +40,7 @@
             this.RpQLNhapHang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RpgTacVuNhapHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.LbcMaDN = new DevExpress.XtraEditors.LabelControl();
+            this.LbcMaHDN = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.GcQLNhapHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -49,7 +49,7 @@
             // 
             // GcQLNhapHang
             // 
-            this.GcQLNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcQLNhapHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.GcQLNhapHang.Location = new System.Drawing.Point(0, 192);
             this.GcQLNhapHang.MainView = this.gridView;
             this.GcQLNhapHang.MenuManager = this.RcQLNhapHang;
@@ -152,15 +152,15 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.BsiXemChiTiet);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // LbcMaDN
+            // LbcMaHDN
             // 
-            this.LbcMaDN.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbcMaDN.Appearance.Options.UseFont = true;
-            this.LbcMaDN.Location = new System.Drawing.Point(435, 147);
-            this.LbcMaDN.Name = "LbcMaDN";
-            this.LbcMaDN.Size = new System.Drawing.Size(21, 20);
-            this.LbcMaDN.TabIndex = 81;
-            this.LbcMaDN.Text = "Mã";
+            this.LbcMaHDN.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbcMaHDN.Appearance.Options.UseFont = true;
+            this.LbcMaHDN.Location = new System.Drawing.Point(435, 147);
+            this.LbcMaHDN.Name = "LbcMaHDN";
+            this.LbcMaHDN.Size = new System.Drawing.Size(21, 20);
+            this.LbcMaHDN.TabIndex = 81;
+            this.LbcMaHDN.Text = "Mã";
             // 
             // labelControl1
             // 
@@ -177,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.LbcMaDN);
+            this.Controls.Add(this.LbcMaHDN);
             this.Controls.Add(this.GcQLNhapHang);
             this.Controls.Add(this.RcQLNhapHang);
             this.Name = "UcQLNhapHang";
@@ -203,7 +203,7 @@
         private DevExpress.XtraBars.BarButtonItem BbiLamMoi;
         private DevExpress.XtraBars.BarButtonItem BsiXemChiTiet;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraEditors.LabelControl LbcMaDN;
+        private DevExpress.XtraEditors.LabelControl LbcMaHDN;
         private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

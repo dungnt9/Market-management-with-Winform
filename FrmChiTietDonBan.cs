@@ -108,5 +108,10 @@ namespace market_management
 
             MessageBox.Show($"Hóa Đơn Bán đã được lưu tại {duong_dan}", "Hóa Đơn Bán Đã Tạo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void FrmChiTietDonBan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -87,7 +87,7 @@
             // 
             // LbTenNV
             // 
-            this.LbTenNV.Location = new System.Drawing.Point(532, 115);
+            this.LbTenNV.Location = new System.Drawing.Point(482, 114);
             this.LbTenNV.Name = "LbTenNV";
             this.LbTenNV.Size = new System.Drawing.Size(12, 13);
             this.LbTenNV.TabIndex = 11;
@@ -95,7 +95,7 @@
             // 
             // LbThoiGian
             // 
-            this.LbThoiGian.Location = new System.Drawing.Point(532, 81);
+            this.LbThoiGian.Location = new System.Drawing.Point(482, 80);
             this.LbThoiGian.Name = "LbThoiGian";
             this.LbThoiGian.Size = new System.Drawing.Size(12, 13);
             this.LbThoiGian.TabIndex = 10;
@@ -103,7 +103,7 @@
             // 
             // LbTongTien
             // 
-            this.LbTongTien.Location = new System.Drawing.Point(532, 44);
+            this.LbTongTien.Location = new System.Drawing.Point(482, 43);
             this.LbTongTien.Name = "LbTongTien";
             this.LbTongTien.Size = new System.Drawing.Size(12, 13);
             this.LbTongTien.TabIndex = 9;
@@ -113,7 +113,7 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(414, 112);
+            this.labelControl9.Location = new System.Drawing.Point(364, 111);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(92, 17);
             this.labelControl9.TabIndex = 8;
@@ -123,7 +123,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(414, 78);
+            this.labelControl8.Location = new System.Drawing.Point(364, 77);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(60, 17);
             this.labelControl8.TabIndex = 7;
@@ -133,7 +133,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(414, 45);
+            this.labelControl7.Location = new System.Drawing.Point(364, 44);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(63, 17);
             this.labelControl7.TabIndex = 6;
@@ -213,6 +213,7 @@
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.Name = "FrmChiTietDonBan";
             this.Text = "Form Xem chi tiết đơn bán";
+            this.Load += new System.EventHandler(this.FrmChiTietDonBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GcSP_HDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
