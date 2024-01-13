@@ -21,6 +21,7 @@ namespace market_management
 
             HienThiGioiTinh();
             HienThiMaGiamGia();
+            CbeMaGiamGia.Text = "zB8NKYT0";
         }
 
         private void BtnThem_Click(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace market_management
                 {
                     if (CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) || CbeGioiTinh.Text == "")
                     {
-                        string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh, TichDiem) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}', 0)", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text, DeNgaySinh.Text);
+                        string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh, TichDiem) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}',NULL, 0)", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text);
                         MessageBox.Show("Thêm thành công");
                         dataAccess.UpdateData(s);
                     }

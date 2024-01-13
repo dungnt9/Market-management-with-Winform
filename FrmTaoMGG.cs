@@ -61,7 +61,6 @@ namespace market_management
             CbeNgayLe.Properties.Items.Add("8/3");
             CbeNgayLe.Properties.Items.Add("19/11");
 
-
             DeNgayTao.Text = DateTime.Now.ToString().Substring(0, 9);
         }
 
