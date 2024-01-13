@@ -75,8 +75,8 @@ namespace market_management
                     if(CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) & CbeChucVu.Properties.Items.Contains(CbeChucVu.Text))
                     {
                         int maNV = Convert.ToInt32(TeMaNV.Text);
-                        string s = string.Format("UPDATE NHAN_VIEN SET " + "TenNV = {1}, NgaySinh = '{2}', GioiTinh = N'{3}', SDT = '{4}', DiaChi = N'{5}', CanCuoc = N'{6}', Email = {7}, ChucVu = {8}" +
-                                             " where MaKH = {0}", maNV, TeTenNV.Text, DeNgaySinh.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, TeCCCD.Text, TeEmail.Text, CbeChucVu.Text);
+                        string s = string.Format("UPDATE NHAN_VIEN SET " + "TenNV = {1}, NgaySinh = '{2}', GioiTinh = N'{3}', SDT = '{4}', DiaChi = N'{5}', CanCuoc = N'{6}', Email = {7}, MaCV = (SELECT MaCV FROM CHUC_VU WHERE TenCV = N'{8}')" +
+                                             " where MaNV = {0}", maNV, TeTenNV.Text, DeNgaySinh.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, TeCCCD.Text, TeEmail.Text, CbeChucVu.Text);
                         dataAccess.UpdateData(s);
                         XtraMessageBox.Show("Cập nhật nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();

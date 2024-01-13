@@ -28,7 +28,7 @@ namespace market_management
         {
             if (TeTenKH.Text != "")
             {
-                if(CbeMaGiamGia.Properties.Items.Contains(CbeMaGiamGia.Text) == false)
+                if(CbeMaGiamGia.Properties.Items.Contains(CbeMaGiamGia.Text))
                 {
                     string ngaySinh = DeNgaySinh.Text;
                     if (ngaySinh != "")
@@ -68,6 +68,7 @@ namespace market_management
             {
                 MessageBox.Show("Không được để trống các trường sau \n - Tên Khách Hàng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            this.Close();
         }
         private List<string> LayGioiTinh()
         {
