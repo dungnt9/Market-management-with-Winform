@@ -98,6 +98,7 @@ namespace market_management.UI
 
         private void BbiLamMoi_ItemClick(object sender, ItemClickEventArgs e)
         {
+            string s = string.Format("UPDATE MA_GIAM_GIA SET TrangThai = 0, MoTa = N'Lỗi' WHERE DATEDIFF(DAY, NgayTao, NgayHetHan) < 0 AND NOT(NgayHetHan = '1900-01-01')");
             string s = string.Format("UPDATE MA_GIAM_GIA SET TrangThai = 0 WHERE DATEDIFF(DAY, GETDATE(), NgayHetHan) < 0 AND NOT(NgayHetHan = '1900-01-01')");
             dataAccess.UpdateData(s);
             LoadData();

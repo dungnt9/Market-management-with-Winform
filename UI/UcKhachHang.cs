@@ -68,10 +68,11 @@ namespace market_management
             {
                 try
                 {
-                    if(CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text))
+                    if(CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) & CbeMaGiamGia.Properties.Items.Contains(CbeMaGiamGia.Text))
                     {
-                        string s = string.Format("UPDATE KHACH_HANG SET " + "TenKH = N'{1}', NgaySinh = '{2}', GioiTinh = '{3}', SDT = '{4}', DiaChi = N'{5}', MaGiamGia = N'{6}'" +
-                                             " where MaKH = {0} )", TeMaKH.Text, TeTenKH.Text, DeNgaySinh.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text);
+                        int maKH = Convert.ToInt32(TeMaKH.Text);
+                        string s = string.Format("UPDATE KHACH_HANG SET " + "TenKH = N'{1}', NgaySinh = '{2}', GioiTinh = N'{3}', SDT = '{4}', DiaChi = N'{5}', MaGiamGia = '{6}' " +
+                                             " \r\n WHERE MaKH = {0}", maKH, TeTenKH.Text, DeNgaySinh.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text);
                         dataAccess.UpdateData(s);
                         XtraMessageBox.Show("Cập nhật khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
