@@ -21,10 +21,10 @@ using System.IO;
 
 namespace market_management
 {
-    public partial class FrmChiTietDonBan : DevExpress.XtraEditors.XtraForm
+    public partial class FrmXemCT_HDBan : DevExpress.XtraEditors.XtraForm
     {
         DataAccess dataAccess = new DataAccess();
-        public FrmChiTietDonBan(string MaHDB, string tongTien, string thoigian)
+        public FrmXemCT_HDBan(string MaHDB, string tongTien, string thoigian)
         {
             InitializeComponent();
             HienThiThongTinHoaDon(MaHDB, tongTien, thoigian);

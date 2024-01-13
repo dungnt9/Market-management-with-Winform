@@ -304,6 +304,7 @@
             this.Controls.Add(this.LbThemNV);
             this.Controls.Add(this.GrbDangKy);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.MaximizeBox = false;
             this.Name = "FrmThemNV";
             this.Text = "Form Thêm Nhân Viên";
             ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).EndInit();

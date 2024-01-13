@@ -91,7 +91,7 @@ namespace market_management.UI
                 return;
             }
 
-            FrmChiTietDonBan frmChiTietDonBan = new FrmChiTietDonBan(maHDB, tongTien, thoigian);
+            FrmXemCT_HDBan frmChiTietDonBan = new FrmXemCT_HDBan(maHDB, tongTien, thoigian);
             frmChiTietDonBan.ShowDialog();
         }
 

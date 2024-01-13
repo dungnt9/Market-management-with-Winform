@@ -13,10 +13,10 @@ using static DevExpress.Xpo.Helpers.AssociatedCollectionCriteriaHelper;
 
 namespace market_management
 {
-    public partial class FrmNhaCungCap : DevExpress.XtraEditors.XtraForm
+    public partial class FrmThemNCC : DevExpress.XtraEditors.XtraForm
     {
         DataAccess dataAccess = new DataAccess();
-        public FrmNhaCungCap()
+        public FrmThemNCC()
         {
             InitializeComponent();
 

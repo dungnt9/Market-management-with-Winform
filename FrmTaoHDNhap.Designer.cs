@@ -276,6 +276,7 @@
             this.Controls.Add(this.GcSP);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "FrmTaoHDNhap";
             this.Text = "Form tạo hóa đơn nhập hàng";
             this.Load += new System.EventHandler(this.FrmTaoDonNhap_Load);

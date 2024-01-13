@@ -217,6 +217,7 @@
             this.Controls.Add(this.GcChiTiet);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FrmXemCT_HDNhap";
             this.Text = "Form Xem chi tiết đơn nhập";
             ((System.ComponentModel.ISupportInitialize)(this.GcChiTiet)).EndInit();

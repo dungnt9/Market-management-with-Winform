@@ -138,6 +138,7 @@
             this.Controls.Add(this.BtnThemCV);
             this.Controls.Add(this.groupControl1);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.MaximizeBox = false;
             this.Name = "FrmThemChucVu";
             this.Text = "Form Thêm chức vụ";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

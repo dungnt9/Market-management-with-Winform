@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class FrmNhaCungCap
+    partial class FrmThemNCC
     {
         /// <summary>
         /// Required designer variable.
@@ -144,7 +144,7 @@
             this.BtnThemNCC.UseVisualStyleBackColor = true;
             this.BtnThemNCC.Click += new System.EventHandler(this.BtnThemNCC_Click);
             // 
-            // FrmNhaCungCap
+            // FrmThemNCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -152,7 +152,8 @@
             this.Controls.Add(this.BtnThemNCC);
             this.Controls.Add(this.GrcThemNCC);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
-            this.Name = "FrmNhaCungCap";
+            this.MaximizeBox = false;
+            this.Name = "FrmThemNCC";
             this.Text = "Form Thêm nhà cung cấp";
             ((System.ComponentModel.ISupportInitialize)(this.GrcThemNCC)).EndInit();
             this.GrcThemNCC.ResumeLayout(false);

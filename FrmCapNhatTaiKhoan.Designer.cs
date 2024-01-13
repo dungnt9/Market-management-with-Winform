@@ -165,6 +165,7 @@
             this.Controls.Add(this.svgImageBox1);
             this.Controls.Add(this.LbThongTinTaiKhoan);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.MaximizeBox = false;
             this.Name = "FrmCapNhatTaiKhoan";
             this.Text = "Form Cập nhật tài khoản";
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();

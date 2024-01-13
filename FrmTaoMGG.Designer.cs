@@ -30,6 +30,7 @@
         {
             this.LbDKTaiKhoan = new DevExpress.XtraEditors.LabelControl();
             this.GrbDangKy = new DevExpress.XtraEditors.GroupControl();
+            this.DeNgayHetHan = new DevExpress.XtraEditors.DateEdit();
             this.LbNgayHetHan = new DevExpress.XtraEditors.LabelControl();
             this.RbNgauNhien = new System.Windows.Forms.RadioButton();
             this.RbDiemTich = new System.Windows.Forms.RadioButton();
@@ -45,18 +46,16 @@
             this.LbTenChuongTrinh = new DevExpress.XtraEditors.LabelControl();
             this.BtnXoaThongTin = new DevExpress.XtraEditors.SimpleButton();
             this.BtnTao = new DevExpress.XtraEditors.SimpleButton();
-            this.DeNgayHetHan = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).BeginInit();
             this.GrbDangKy.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeDiemTich.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeNgayLe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanTram.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenChuongTrinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // LbDKTaiKhoan
@@ -102,6 +101,18 @@
             this.GrbDangKy.Size = new System.Drawing.Size(914, 258);
             this.GrbDangKy.TabIndex = 2;
             this.GrbDangKy.Text = "Thông tin mã giảm giá";
+            // 
+            // DeNgayHetHan
+            // 
+            this.DeNgayHetHan.EditValue = null;
+            this.DeNgayHetHan.Location = new System.Drawing.Point(695, 68);
+            this.DeNgayHetHan.Name = "DeNgayHetHan";
+            this.DeNgayHetHan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DeNgayHetHan.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DeNgayHetHan.Size = new System.Drawing.Size(122, 20);
+            this.DeNgayHetHan.TabIndex = 82;
             // 
             // LbNgayHetHan
             // 
@@ -267,18 +278,6 @@
             this.BtnTao.Text = "Tạo";
             this.BtnTao.Click += new System.EventHandler(this.BtnTao_Click);
             // 
-            // DeNgayHetHan
-            // 
-            this.DeNgayHetHan.EditValue = null;
-            this.DeNgayHetHan.Location = new System.Drawing.Point(695, 68);
-            this.DeNgayHetHan.Name = "DeNgayHetHan";
-            this.DeNgayHetHan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DeNgayHetHan.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DeNgayHetHan.Size = new System.Drawing.Size(122, 20);
-            this.DeNgayHetHan.TabIndex = 82;
-            // 
             // FrmTaoMGG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,20 +288,20 @@
             this.Controls.Add(this.LbDKTaiKhoan);
             this.Controls.Add(this.GrbDangKy);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.MaximizeBox = false;
             this.Name = "FrmTaoMGG";
             this.Text = "Form Tạo Mã Giảm Giá";
             ((System.ComponentModel.ISupportInitialize)(this.GrbDangKy)).EndInit();
             this.GrbDangKy.ResumeLayout(false);
             this.GrbDangKy.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeDiemTich.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbeNgayLe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeNgayTao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbePhanTram.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeTenChuongTrinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DeNgayHetHan.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

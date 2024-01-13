@@ -346,6 +346,7 @@
             this.Controls.Add(this.GcSP_HDB);
             this.Controls.Add(this.groupControl1);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.MaximizeBox = false;
             this.Name = "FrmTaoHDBan";
             this.Text = "Form Tạo hóa đơn bán hàng";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

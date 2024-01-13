@@ -1,6 +1,6 @@
 ﻿namespace market_management
 {
-    partial class FrmChiTietDonBan
+    partial class FrmXemCT_HDBan
     {
         /// <summary>
         /// Required designer variable.
@@ -211,6 +211,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.GcSP_HDB);
             this.IconOptions.Image = global::market_management.Properties.Resources.bieuTuong;
+            this.MaximizeBox = false;
             this.Name = "FrmChiTietDonBan";
             this.Text = "Form Xem chi tiết đơn bán";
             this.Load += new System.EventHandler(this.FrmChiTietDonBan_Load);
