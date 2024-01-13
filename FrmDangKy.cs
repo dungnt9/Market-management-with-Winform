@@ -104,7 +104,7 @@ namespace market_management
             }
             else
             {
-                MessageBox.Show("Không được để trống các trường sau \n - Mã Nhân Viên\n - Tên Khách Hàng \n - Mật Khẩu\n - Nhập Lại Mật Khẩu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không được để trống các trường sau \n - Mã Nhân Viên\n - Tên Khách Hàng \n - Mật Khẩu\n - Nhập Lại Mật Khẩu\nHoặc mật khẩu và mật khâu nhập lại không trùng nhau", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
