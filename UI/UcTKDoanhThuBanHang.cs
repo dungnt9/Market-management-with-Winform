@@ -27,7 +27,6 @@ namespace market_management
             CbeNam.Properties.Items.Add("2023");
             CbeNam.Properties.Items.Add("2024");
 
-            CcBanHang.DataSource = dataAccess.GetDataTable("SELECT MONTH(ThoiGian) AS 'Tháng', SUM(TongTien) AS 'Tổng tiền bán'\r\nFROM HOA_DON_BAN \r\nGROUP BY ThoiGian;");
             LoadData();
         }
 
@@ -38,6 +37,10 @@ namespace market_management
             {
                 string s = string.Format("SELECT MONTH(ThoiGian) AS 'Tháng', YEAR(ThoiGian) AS 'Năm'," +
                                          "SUM(TongTien) AS 'Tổng tiền bán'\r\nFROM HOA_DON_BAN \r\n WHERE YEAR(ThoiGian) = {0}\r\n GROUP BY ThoiGian;", nam);
+                string s1 = string.Format("SELECT MONTH(ThoiGian) AS 'Tháng', " +
+                                         "SUM(TongTien) AS 'Tổng tiền bán'\r\nFROM HOA_DON_BAN \r\n WHERE YEAR(ThoiGian) = {0}\r\n GROUP BY ThoiGian;", nam);
+                CcBanHang.DataSource = dataAccess.GetDataTable(s1);
+
                 GcBanHang.DataSource = dataAccess.GetDataTable(s);
             }
             else

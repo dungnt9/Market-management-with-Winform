@@ -27,7 +27,6 @@ namespace market_management.UI
             CbeNam.Properties.Items.Add("2023");
             CbeNam.Properties.Items.Add("2024");
 
-            CcBanHang.DataSource = dataAccess.GetDataTable("SELECT MONTH(ThoiGian) AS 'Tháng', SUM(TongTien) AS 'Tổng tiền bán'\r\nFROM HOA_DON_BAN \r\nGROUP BY ThoiGian;");
             LoadData();
         }
 
@@ -38,6 +37,9 @@ namespace market_management.UI
             {
                 string s = string.Format("SELECT MONTH(ThoiGian) AS 'Tháng', YEAR(ThoiGian) AS 'Năm'," +
                                         "SUM(TongTien) AS 'Tổng tiền nhập'\r\nFROM HOA_DON_NHAP \r\n WHERE YEAR(ThoiGian) = {0}\r\nGROUP BY ThoiGian;",nam);
+                string s1 = string.Format("SELECT MONTH(ThoiGian) AS 'Tháng', SUM(TongTien) AS 'Tổng tiền nhập'" +
+                                            "\r\nFROM HOA_DON_NHAP \r\n WHERE YEAR(ThoiGian) = {0}\r\nGROUP BY ThoiGian;", nam);
+                CcBanHang.DataSource = dataAccess.GetDataTable(s1);
                 GcNhapHang.DataSource = dataAccess.GetDataTable(s);
             }
             else
@@ -52,7 +54,7 @@ namespace market_management.UI
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             if (e.Column.FieldName == "Năm")
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            if (e.Column.FieldName == "Tổng tiền bán")
+            if (e.Column.FieldName == "Tổng tiền nhập")
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
         }
 

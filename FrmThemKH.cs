@@ -30,16 +30,31 @@ namespace market_management
                 string ngaySinh = DeNgaySinh.Text;
                 if(ngaySinh != "")
                 {
-                    string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}')", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text, DeNgaySinh.Text);
-                    MessageBox.Show("Thêm thành công");
-                    dataAccess.UpdateData(s);
+                    if (CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) || CbeGioiTinh.Text == "")
+                    {
+                        string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}')", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text, DeNgaySinh.Text);
+                        MessageBox.Show("Thêm thành công");
+                        dataAccess.UpdateData(s);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Giới tính không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}',NULL)", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text);
-                    MessageBox.Show("Thêm thành công");
-                    dataAccess.UpdateData(s);
+                    if (CbeGioiTinh.Properties.Items.Contains(CbeGioiTinh.Text) || CbeGioiTinh.Text == "")
+                    {
+                        string s = string.Format("INSERT INTO KHACH_HANG (TenKH,GioiTinh,SDT,DiaChi,MaGiamGia, NgaySinh) VALUES" + "(N'{0}',N'{1}','{2}',N'{3}','{4}','{5}')", TeTenKH.Text, CbeGioiTinh.Text, TeSDT.Text, TeDiaChi.Text, CbeMaGiamGia.Text, DeNgaySinh.Text);
+                        MessageBox.Show("Thêm thành công");
+                        dataAccess.UpdateData(s);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Giới tính không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+                this.Close();
             }
             else
             {
@@ -116,6 +131,14 @@ namespace market_management
             TeSDT.Text = "";
             CbeMaGiamGia.Text = "";
             TeDiaChi.Text = "";
+        }
+
+        private void TeSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
