@@ -13,8 +13,11 @@ namespace market_management
         public SqlConnection objConnection { get; private set; }
         public DataAccess()
         {
-            string strConnection = @"Data Source=LAPTOP-MSGIJ51R\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True";
             // Vui lòng đổi lại đường dẫn khi thao tác tại máy
+            //string strConnection = @"Data Source=.\SQLEXPRESS01;Initial Catalog=QLST;Integrated Security=True";
+
+            //Chuỗi kết nối bỏ qua kiểm tra chứng chỉ SSL:
+            string strConnection = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True;TrustServerCertificate=True;";
 
             objConnection = new SqlConnection(strConnection);
 
